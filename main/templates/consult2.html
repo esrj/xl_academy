@@ -1,0 +1,60 @@
+{% extends 'consult.html' %}
+
+
+
+
+{% block content %}
+<div class="blog-section">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12 text-center">
+				<div class="section-title">
+					<h4>世界名校</h4>
+					<h1>探索世界各地頂尖學府</h1>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-12">
+				<div class="product_nav">
+					<div class="product_menu">
+						<ul class="menu-filtering">
+							<li class="current_menu_item" data-filter="*"> All</li>
+							<li data-filter=".pub">公立大學</li>
+							<li data-filter=".pri"> 私立大學</li>
+							<li data-filter=".tech">技術學院</li>
+							<li data-filter=".lang">語言學校</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+		<div class="row image_load">
+
+			{% for collage in  collages %}
+				<div class="col-lg-3 col-md-6 grid-item {{collage.classification}}" style="margin-top:50px;margin-bottom:50px">
+					<div class="single-blog-box">
+						<div class="blog-content">
+							<img style="width:100%" src="/media/{{collage.emblem}}" alt="imgs">
+
+							<div class="meta-blog">
+								<span><i class="bi bi-map"></i>{{collage.country}}</span>
+							</div>
+							<div class="blog-content-title">
+								<h5><a style="font-weight: 400" href="/detail/{{ collage.id}}">{{collage.name}}</a></h5>
+							</div>
+							<div class="blog-content-button">
+								<a href="/detail/{{ collage.id }}">Read More<i class="bi bi-arrow-right"></i></a>
+							</div>
+						</div>
+					</div>
+				</div>
+			{% endfor %}
+
+		</div>
+	</div>
+</div>
+{% endblock %}

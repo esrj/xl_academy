@@ -1,0 +1,87 @@
+{% extends 'index.html' %}
+{% block loader %}
+{% endblock %}
+
+{% block content %}
+    <div class="breadcumb-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="breadcumb-content">
+                        <div  class="breadcubm-title">
+                            <h1>管理員登入 </h1>
+                            <ul>
+                                <li><a href="/">首頁</a></li>
+                                <li>/</li>
+                                <li><a href="#">登入</a></li>
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="">
+        <div class="container">
+            <div class="row justify-content-center my-auto">
+                <div class="col-md-8 col-lg-6 col-xl-5">
+                    <div style="border:1px solid #ced4da;padding:60px;margin-top:50px;margin-bottom:50px">
+                        <h4 style="line-height:10px">請輸入帳號與密碼 *</h4>
+                        <form class="auth-form text-white">
+                            <div >
+                                <input style="height:45px;margin-top: 50px" type="text" class="form-control" id="username" placeholder="使用者名稱">
+                            </div>
+                            <div >
+                                <input style="height:45px;margin-top: 30px" type="password" class="form-control" id="password" placeholder="密碼">
+                            </div>
+                            <div class="mt-3">
+                                <button style="height:45px;background:#FF393D;border:#FF393D;margin-top: 20px" type="button" onclick="login_()" class="btn btn-primary w-100">登入</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<script>
+    function login_(){
+
+        axios({
+            url:'/management/',
+            method:"POST",
+            headers:{'X-CSRFToken': "{{ csrf_token }}"},
+            data:{
+                'username':$('#username').val(),
+                'password':$('#password').val(),
+            }
+        }).then(res=>{
+            if(res.data.errno === 0){
+                swal({
+                    'title':'登入成功',
+                    'text':'正在為您跳轉到管理員頁面',
+                    'icon':'success',
+                    'buttons':false,
+                    'timer':1500
+                })
+                setTimeout(()=>{
+                    location.href = '/management/contact/'
+                },1500)
+            }else{
+                swal({
+                    'title':'帳號或密碼錯誤',
+                    'text':'請聯絡管理員或開發人員',
+                    'icon':'error',
+                    'buttons':false,
+                    'timer':1500
+                })
+            }
+        })
+    }
+</script>
+
+
+
+{% endblock %}
+

@@ -1,0 +1,123 @@
+{% extends 'consult.html' %}
+
+{% block content %}
+
+
+<div class="blog-section">
+	<div class="container">
+		<div class="row">
+            <div class="col-lg-6 col-md-12 phone-style">
+				<div class="project-details-content">
+					<div class="project-details-title">
+                        <h2>{{testQuestion.classification}}</h2>
+                        <div class="categories-title">
+                            <h4 style="margin-top: 50px">{{testQuestion.title}}</h4>
+                        </div>
+					</div>
+
+					<div class="project-details-desc">
+						<p style="white-space: pre-line;font-size: large">{{testQuestion.introduce}}</p>
+					</div>
+					<p class="detail-info2" ><span style=";color:#2e2e2e">試題編號 : </span>{{testQuestion.id}}</p>
+                    <p class="detail-info2" ><span style=";color:#2e2e2e">價格 : </span>{{testQuestion.price}}</p>
+
+                    <div class="categories-title">
+						<h4 style="margin-top: 50px;">注意事項 </h4>
+					</div>
+                    <p class="detail-info" ><span style=";color:#2e2e2e">請您進行轉帳至以下銀行帳戶，如有任何疑問，請隨時向我們詢問。當您成功完成轉帳後，請填寫下方的表單，我們將盡快將試題寄送至您提供的電子郵件信箱。感謝您的合作。</span></p>
+                    <p class="detail-info2" ><span style=";color:#2e2e2e">銀行代號 : </span>700</p>
+                    <p class="detail-info2"><span style=";color:#2e2e2e">帳號名稱 : </span>1232412 3456754</p>
+				</div>
+			</div>
+			<div class="col-lg-6 col-md-12 phone-style">
+				<div class="widget-categories-box" style="margin-top: 20px">
+					<!-- categories title -->
+					<div class="categories-title">
+						<h4> 全部試題 </h4>
+					</div>
+
+					{% for product in testQuestions %}
+					<div class="sidber-widget-recent-post">
+						<div class="recent-widget-content" style="padding-top: 12px;">
+							<a style="margin-left: 20px;font-weight: 500" href="/product/{{product.id}}">{{product.title}}</a>
+							<span  style="display:flex;align-items: flex-end;padding: 0;margin-left: 20px;margin-bottom: 7px">
+								<span style="color: black;margin-right: 10px">分類 : </span><span style="margin-right: 10px">{{product.classification}}</span>
+								<span style="color: black;margin-right: 10px">價格 : </span><span style="margin-right: 10px">{{product.price}} $</span>
+							</span>
+						</div>
+					</div>
+					{% endfor %}
+
+
+				</div>
+			</div>
+		</div>
+        <div class="contact_form">
+            <div class="col-md-12 text-center">
+				<div>
+                    <div class="section-title left">
+					    <h4 style="display: flex;">關於我們</h4>
+                    </div>
+					<form>
+						<div class ="contact_form_">
+							<div class="col-lg-6 col-md-6 contact_form_margin" style="margin-left: 5px;margin-right:5px">
+								<div class="input-box">
+									<input id="username" style="height: 50px;margin-bottom: 15px;background-color: white;border-color:#f3f3f3" type="text"  placeholder="姓名 *" required="">
+								</div>
+								<div class="input-box">
+									<input id="email" style="height: 50px;margin-bottom: 15px;" type="Email" name="Email" placeholder="電子郵件信箱 *" required="">
+								</div>
+								<div class="input-box">
+									<input id="phone" style="height: 50px;margin-bottom: 15px;" placeholder="聯絡號碼" >
+								</div>
+							</div>
+                            <div class="col-lg-6 col-md-6" style="margin-left: 5px;margin-right:5px">
+								<div class="input-box">
+									<input id="account" style="height: 50px;margin-bottom: 15px;background-color: white;border-color:#f3f3f3" type="text"  placeholder="匯款帳號後 5 碼 *" required="">
+								</div>
+								<div class="input-box">
+									<input id="price" style="height: 50px;margin-bottom: 15px;" type="Email" name="Email" placeholder="銀行代號 *" required="">
+								</div>
+								<div class="input-box">
+									<input id="id" style="height: 50px;margin-bottom: 15px;" placeholder="試題編號 *" >
+								</div>
+							</div>
+						</div>
+					</form>
+					<div class="submit-button" >
+						<button style="margin-top: 0" type="submit" onclick="submit_order()">確定送出<i class="bi bi-arrow-right"></i></button>
+					</div>
+				  </div>
+			</div>
+        </div>
+	</div>
+</div>
+
+<script>
+function submit_order(){
+	axios({
+		url:'/shop/',
+		method:"POST",
+		headers:{'X-CSRFToken': "{{ csrf_token }}"},
+		data:{
+			'username':$('#username').val(),
+			'email':$('#email').val(),
+			'phone':$('#phone').val(),
+			'account':$('#account').val(),
+			'price':$('#price').val(),
+			'id':$('#id').val(),
+		}
+	}).then(res=>{
+		if(res.data.errno === 0){
+			swal({
+				'title':'已傳送',
+				'text':'確認收款後我們會盡快將試題傳送至您的電子郵件信箱',
+				'icon':'success',
+				'buttons':false,
+				'timer':3000
+			})
+		}
+	})
+}
+</script>
+{% endblock %}

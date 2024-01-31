@@ -1,0 +1,195 @@
+{% extends 'index.html' %}
+
+{% block loader %}
+{% endblock %}
+
+{% block navbar %}
+<div id="sticky-header" class="main-header" style="height: 90px;border: 1px solid #efefef;">
+	<div class="container" style="height: 90px">
+		<div class="row align-items-center" style="height: 90px">
+			<div class="col-lg-2" style="height: 90px">
+				<div class="header-logo">
+					<a href="/"><img style="height:55px;position: relative;bottom: -5px; " src="/static/picture/footer-logo.png" alt="logo"></a>
+				</div>
+			</div>
+			<div class="col-lg-8" style="position: relative;bottom: 10px; ">
+				<div class="header-menu">
+					<ul class="nav_scroll">
+						<li class="menu-item-has-children">
+							<a style="font-weight: 500;color:#522b2b" href="/management/contact/">聯絡狀態</a>
+						</li>
+						<li class="menu-item-has-children">
+							<a style="font-weight: 500;color:#522b2b" href="#">上傳</a>
+							<i class="fas fa-caret-down"></i>
+							<ul class="sub-menu">
+								<li><a href="/management/testimony/">感言影片</a></li>
+								<li><a href="/management/collage/">大學資訊</a></li>
+								<li><a href="/management/upload/">試題</a></li>
+							</ul>
+						</li>
+						<li class="menu-item-has-children">
+							<a style="font-weight: 500;color:#522b2b" href="/management/mail/">發送郵件</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div style="position: relative;bottom: 10px; " class="col-lg-2">
+				<div class="header-button">
+					<a href="#" onclick="logout()">登出</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="mobile-menu-area d-sm-block d-md-block d-lg-none">
+	<div class="mobile-menu">
+		<nav class="header-menu" style="display: block;">
+			<ul class="nav_scroll">
+				<li class="menu-item-has-children">
+					<a style="font-weight: 500;color:#522b2b" href="/management/contact/">聯絡狀態</a>
+				</li>
+				<li class="menu-item-has-children">
+					<a style="font-weight: 500;color:#522b2b" href="#">上傳</a>
+					<ul class="sub-menu">
+						<li><a href="/management/testimony/">感言影片</a></li>
+						<li><a href="/management/collage/">大學資訊</a></li>
+						<li><a href="/management/upload/">試題</a></li>
+					</ul>
+				</li>
+				<li class="menu-item-has-children">
+					<a style="font-weight: 500;color:#522b2b" href="/management/mail/">發送郵件</a>
+				</li>
+			</ul>
+		</nav>
+	</div>
+</div>
+<script>
+	function logout(){
+
+		axios({
+            url:'/management/logout/',
+            method:"POST",
+            headers:{'X-CSRFToken': "{{ csrf_token }}"},
+        }).then(res=>{
+			console.log(res.data)
+			if(res.data.errno === 0){
+				swal({
+					'title':'已成功登出',
+					'text':'正在跳轉回登入頁面',
+					'timer':1500,
+					"buttons":false,
+					'icon':'success'
+				})
+				setTimeout(()=>{
+					location.href = '/management/'
+				},1500)
+			}
+		})
+	}
+</script>
+
+{% endblock %}
+
+{% block content %}
+<div class="content" style="margin: 20px;margin-top :55px;margin-bottom: 55px">
+	<div class="page-inner">
+		<div class="row">
+			<div class="col-md-10" style="margin: 0 auto">
+				<div class="card">
+					<div style="background-color: white" class="card-header">
+						<div style="color: #0C0C0C;font-weight: 600" class="card-title">聯絡狀態</div>
+					</div>
+					<div class="card-body">
+                        <table class="table table-hover">
+							<thead>
+							<tr style="cursor: auto;">
+								<th scope="col">#</th>
+								<th scope="col">聯絡日期</th>
+								<th scope="col">姓名</th>
+								<th scope="col">電子郵件</th>
+								<th scope="col">聯絡電話</th>
+								<th scope="col">已聯絡</th>
+								<th></th>
+							</tr>
+							</thead>
+							<tbody id="contact_">
+
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.5/axios.min.js" integrity="sha512-TjBzDQIDnc6pWyeM1bhMnDxtWH0QpOXMcVooglXrali/Tj7W569/wd4E8EDjk1CwOAOPSJon1VfcEt1BI4xIrA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script>
+	axios({
+		url:'/management/contact/',
+		method:"POST",
+		headers:{'X-CSRFToken': "{{ csrf_token }}"},
+	}).then(res=>{
+		if(res.data.errno === 0){
+			const contacts = res.data.contact
+			contacts.forEach((item)=>{
+				if (item.reply === true){
+					$('#contact_').append($(`
+						<tr id="contact_${item.id}">
+							<td  onclick="single(${item.id})" >${item.id}</td>
+							<td  onclick="single(${item.id})" >${item.date}</td>
+							<td  onclick="single(${item.id})" >${item.name}</td>
+							<td  onclick="single(${item.id})" >${item.email}</td>
+							<td  onclick="single(${item.id})" >${item.phone}</td>
+							<td>
+								<div style="margin-bottom:3px;margin-top: 3px " class=" form-check">
+	                                <input onclick= "reply(${item.id})" type="checkbox" class="form-check-input"   checked="checked">
+									<label class="form-check-label" >已回覆</label>
+								</div>
+							</td>
+						</tr>
+					`))
+				}else{
+					$('#contact_').append($(`
+						<tr id="contact_${item.id}">
+							<td  onclick="single(${item.id})" >${item.id}</td>
+							<td  onclick="single(${item.id})" >${item.date}</td>
+							<td  onclick="single(${item.id})" >${item.name}</td>
+							<td  onclick="single(${item.id})" >${item.email}</td>
+							<td  onclick="single(${item.id})" >${item.phone}</td>
+							<td>
+								<div style="margin-bottom:3px;margin-top: 3px " class=" form-check">
+	<!--                                <input onclick= "unread(${item.id})" type="checkbox" class="form-check-input"   checked="checked">-->
+									<input onclick= "reply(${item.id})" type="checkbox" class="form-check-input"  >
+									<label class="form-check-label" >已回覆</label>
+								</div>
+							</td>
+						</tr>
+					`))
+				}
+			})
+		}
+	})
+
+	function single(id){
+		location.href = `/management/single/${id}`
+	}
+
+	function reply(id){
+		axios({
+			url:'/management/contact/',
+			method:"PATCH",
+			headers:{'X-CSRFToken': "{{ csrf_token }}"},
+			data:{
+				'id':id
+			}
+		})
+	}
+
+</script>
+
+
+{% endblock %}
+

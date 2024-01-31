@@ -1,0 +1,108 @@
+{% extends 'contact.html' %}
+
+
+
+{% block content %}
+<div class="content" style="margin: 20px;margin-top :55px;margin-bottom: 55px">
+    <div class="col-md-9" style="margin: 0 auto">
+        <h4>更改感言影片與文章內容</h4>
+        <form>
+            <div class="mb-3">
+                <h6 style="font-weight: 500">上傳試題:</h6>
+                <input id="pdf" type="file" class="form-control">
+            </div>
+
+            <select id="classification" class=" form-select  mb-3 " style="border: 1px solid #cfd5dc;border-radius: 4px;" aria-label="Default select example">
+                  <option value="0" selected>類型</option>
+                  <option value="SAT">SAT</option>
+                  <option value="AP">AP</option>
+                  <option value="IB">IB</option>
+            </select>
+
+            <div class="mb-3">
+                <input id="title" type="text" class="form-control"  placeholder="標題">
+            </div>
+            <div class="mb-3">
+                <input id="price" type="number" class="form-control"  placeholder="價格">
+            </div>
+            <div class="mb-3">
+                <textarea id="introduce" class="form-control"  rows="3" placeholder="介紹"></textarea>
+            </div>
+            <button onclick="upload_()" style="background: #ff3938;border: #ff3938;" type="button" class="btn btn-primary">確定上傳</button>
+        </form>
+    </div>
+</div>
+<script>
+
+    function isNumber(value) {
+        try{
+            Number(value)
+            return true
+        }catch (e){
+            return false
+        }
+    }
+
+    function isPDF(filename) {
+        return filename.toLowerCase().endsWith('.pdf');
+    }
+
+
+    function upload_(){
+
+        if($('#title').val() && $('#price').val() && $('#introduce').val() && $('#pdf').prop('files')[0] && $('#classification').val() !== "0" ){
+            if(!isPDF($('#pdf').prop('files')[0]['name'])){
+                swal({
+                    'title':'格式不符',
+                    'text':'檔案必須是 pdf',
+                    "buttons":['確定'],
+                    'icon':'warning'
+                })
+            }else if(!isNumber( $('#price').val())){
+                swal({
+                    'title':'格式不符',
+                    'text':'價格必須是數字',
+                    "buttons":['確定'],
+                    'icon':'warning'
+                })
+            }else {
+                const formData = new FormData();
+                formData.append('title', $('#title').val());
+                formData.append('price', $('#price').val());
+                formData.append('introduce', $('#introduce').val());
+                formData.append('classification', $('#classification').val());
+                formData.append('pdf', $('#pdf').prop('files')[0]);
+                axios({
+                    url: '/management/upload/',
+                    method: "POST",
+                    headers: {
+                        'X-CSRFToken': "{{ csrf_token }}",
+                        'Content-Type': 'multipart/form-data;charset=UTF-8'
+                    },
+                    data: formData
+                }).then(res=>{
+                    if(res.data.errno === 0){
+                        swal({
+                            'title':'上傳成功',
+                            'text':'請至主頁面檢查',
+                            "timer": 1500,
+                            'icon':'success'
+                        })
+                    }
+                })
+            }
+        }else{
+
+            swal({
+                'title':'資料不全',
+                'text':'所有資料皆為必填',
+                "buttons":['確定'],
+                'icon':'warning'
+            })
+        }
+    }
+</script>
+
+
+{% endblock %}
+

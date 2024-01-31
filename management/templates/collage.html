@@ -1,0 +1,180 @@
+{% extends 'contact.html' %}
+
+{% block loader %}
+{% endblock %}
+
+
+{% block content %}
+<div class="content" style="margin: 20px;margin-top :55px;margin-bottom: 55px">
+    <div class="col-md-9" style="margin: 0 auto">
+        <h4>上傳大學資訊</h4>
+        <form>
+            <div class="mb-3">
+                <h6 style="font-weight: 500">上傳校徽:(限制：白底、正方形)</h6>
+                <input id="emblem" type="file" class="form-control">
+            </div>
+            <div class="mb-3">
+                <h6 style="font-weight: 500">上傳學校形象照片:</h6>
+                <input id="picture" type="file" class="form-control" >
+            </div>
+            <div class="row">
+                <h6 style="font-weight: 500">學校名稱:</h6>
+                <div class="mb-3 col-lg-6 col-md-12">
+                    <input id="name" type="text" class="form-control"  placeholder="輸入學校名稱">
+                </div>
+                <div class="mb-3  col-lg-6 col-md-12">
+                    <input id="en_name" type="text" class="form-control"  placeholder="輸入學校英文名稱">
+                </div>
+
+                <h6 style="font-weight: 500">學校資訊:</h6>
+                <div class="mb-3">
+                    <input id="info" type="text" class="form-control"  placeholder="輸入學校資訊（排名、特色等）">
+                </div>
+
+                <h6 style="font-weight: 500">學校位置:</h6>
+                <div class="mb-3  col-lg-4 col-md-12">
+                    <input id="country" type="text" class="form-control"  placeholder="輸入學校所在國家">
+                </div>
+
+                <div class="mb-3  col-lg-4 col-md-12">
+                    <input id="city" type="text" class="form-control"  placeholder="輸入學校所在城市">
+                </div>
+
+
+                <select id="continent" class="  mb-3  col-lg-4 col-md-12 " style="border: 1px solid #cfd5dc;border-radius: 4px;" aria-label="Default select example">
+                  <option value="0" selected>選擇學校所在洲</option>
+                  <option value="America">America</option>
+                  <option value="Europe">Europe</option>
+                  <option value="Asia">Asia</option>
+                  <option value="Australia">Australia</option>
+                </select>
+            </div>
+
+            <div class="mb-3 ">
+                <input id="address" type="text" class="form-control"  placeholder="輸入學校所在國家">
+            </div>
+
+            <h6 style="font-weight: 500">詳細資訊:</h6>
+
+            <div class="mb-3">
+                <input id="link" type="text" class="form-control"  placeholder="輸入學校官方網址">
+            </div>
+
+
+            <select id="classification" class="form-select  mb-3" aria-label="Default select example">
+              <option value="0" selected>選擇學校類別</option>
+              <option value="1">公立大學</option>
+              <option value="2">私立大學</option>
+              <option value="3">公立技術學院</option>
+              <option value="4">私立技術學院</option>
+              <option value="5">大學附設語言學校</option>
+              <option value="6">技術學院附設語言學校</option>
+              <option value="7">私立語言學校</option>
+            </select>
+
+            <div class="mb-3">
+                <textarea id="introduction" class="form-control"  rows="10" placeholder="輸入主要大學介紹(建議300-400字左右)"></textarea>
+            </div>
+            <div class="mb-3">
+                <textarea id="achievement" class="form-control"  rows="3" placeholder="輸入大學學術成就(每條輸入結束換行)"></textarea>
+            </div>
+             <div class="mb-3">
+                <textarea id="reason" class="form-control"  rows="3" placeholder="選擇此大學的理由"></textarea>
+             </div>
+                <div class="mb-3">
+                <textarea id="popular_departments" class="form-control"  rows="3" placeholder="選擇熱門科系(每條輸入結束換行)"></textarea>
+             </div>
+
+            <button onclick="upload_()" style="background: #ff3938;border: #ff3938;" type="button" class="btn btn-primary">確定上傳</button>
+        </form>
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.5/axios.min.js" integrity="sha512-TjBzDQIDnc6pWyeM1bhMnDxtWH0QpOXMcVooglXrali/Tj7W569/wd4E8EDjk1CwOAOPSJon1VfcEt1BI4xIrA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script>
+
+
+    function isImage(filename) {
+        const allowedExtensions = ['.jpg', '.jpeg', '.png'];
+        return allowedExtensions.some(ext => filename.toLowerCase().endsWith(ext));
+    }
+
+    function upload_(){
+        if( $('#picture').prop('files')[0] &&
+            $('#emblem').prop('files')[0] &&
+            $('#name').val() &&
+            $('#en_name').val()  &&
+            $('#info').val() &&
+            $('#country').val() &&
+            $('#city').val()  &&
+            $('#continent').val() !==0 &&
+            $('#address').val()  &&
+            $('#link').val() &&
+            $('#classification').val() !==0 &&
+            $('#introduction').val()  &&
+            $('#achievement').val() &&
+            $('#reason').val() &&
+            $('#popular_departments').val()){
+            if(!isImage($('#emblem').prop('files')[0]['name']) || !isImage($('#picture').prop('files')[0]['name'])){
+                swal({
+                    'title':'格式不符',
+                    'text':'照片必須是 jpg、png、jpeg 檔案',
+                    "buttons":['確定'],
+                    'icon':'warning'
+                })
+            }else{
+                const formData = new FormData();
+                formData.append('image', $('#picture').prop('files')[0]);
+                formData.append('emblem', $('#emblem').prop('files')[0]);
+                formData.append('name', $('#name').val());
+                formData.append('en_name', $('#en_name').val());
+                formData.append('info', $('#info').val());
+                formData.append('country', $('#country').val());
+                formData.append('address', $('#address').val());
+                formData.append('city', $('#city').val());
+                formData.append('continent', $('#continent').val());
+                formData.append('link', $('#link').val());
+                formData.append('classification', $('#classification').val());
+                formData.append('introduction', $('#introduction').val());
+                formData.append('achievement', $('#achievement').val());
+                formData.append('reason', $('#reason').val());
+                formData.append('popular_departments', $('#popular_departments').val());
+                axios({
+                    url:'/management/collage/',
+                    method:"POST",
+                    headers:{
+                        'X-CSRFToken': "{{ csrf_token }}",
+                        'Content-Type': 'multipart/form-data;charset=UTF-8'
+                    },
+                    data:formData
+                }).then(res=>{
+                    if(res.data.errno === 0){
+                        swal({
+                            'title':'已成功更新',
+                            'text':'請回主頁檢查',
+                            "buttons":['確定'],
+                            'icon':'success'
+                        })
+                    }
+                })
+            }
+
+        }else{
+            swal({
+                'title':'資料不全',
+                'text':'所有資料皆為必填',
+                "buttons":['確定'],
+                'icon':'warning'
+            })
+        }
+    }
+
+
+
+</script>
+
+
+{% endblock %}
+

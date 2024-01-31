@@ -1,0 +1,57 @@
+{% extends 'contact.html' %}
+
+
+
+{% block content %}
+<div class="content" style="margin: 20px;margin-top :55px;margin-bottom: 55px">
+	<div class="page-inner">
+		<div class="row">
+			<div class="col-md-10" style="margin: 0 auto">
+				<div class="card">
+					<div style="background-color: white" class="card-header">
+						<div style="color: #0C0C0C;font-weight: 600" class="card-title">聯絡狀態</div>
+					</div>
+					<div class="card-body">
+                        <table class="table table-hover">
+							<thead>
+							<tr style="cursor: auto;">
+								<th scope="col">發送日期</th>
+								<th scope="col">姓名</th>
+								<th scope="col">電子郵件</th>
+								<th scope="col">帳號後五碼</th>
+                                <th scope="col">試題編號</th>
+								<th></th>
+							</tr>
+							</thead>
+							<tbody >
+								{% for order in orders %}
+								<tr id="contact_${item.id}">
+									<td  onclick="single('{{order.id}}')" >{{order.date}}</td>
+									<td  onclick="single('{{order.id}}')" >{{order.username}}</td>
+									<td  onclick="single('{{order.id}}')" >{{order.email}}</td>
+									<td  onclick="single('{{order.id}}')" >{{order.account}}</td>
+									<td  onclick="single('{{order.id}}')" >{{order.page_id}}</td>
+								</tr>
+								{% endfor %}
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.5/axios.min.js" integrity="sha512-TjBzDQIDnc6pWyeM1bhMnDxtWH0QpOXMcVooglXrali/Tj7W569/wd4E8EDjk1CwOAOPSJon1VfcEt1BI4xIrA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script>
+
+	function single(id){
+		location.href = `/management/mail/${id}`
+	}
+
+
+</script>
+
+
+{% endblock %}

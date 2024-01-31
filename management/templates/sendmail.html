@@ -1,0 +1,111 @@
+{% extends 'contact.html' %}
+
+
+
+{% block content %}
+<div class="content" style="margin: 20px;margin-top :100px;">
+	<div class="page-inner">
+		<div class="row">
+			<div class="col-md-8" style="margin: 0 auto">
+				<div class="card">
+					<div class="card-header">
+						<div class="card-title">詳細內容</div>
+					</div>
+					<div class="card-body">
+                        姓名：{{order.username}}
+                        <hr>
+                        聯絡電話：{{order.phone}}
+                        <hr>
+                        電子郵件信箱：{{order.email}}
+                        <hr>
+                        帳號後五碼：{{order.account}}
+                        <hr>
+                        試題編號：{{order.page_id}}
+                        <hr>
+                        {% if order.is_send %}
+                            <p style="color:#007bff;">已確認寄出</p>
+                        {% else %}
+                            <div class="mb-3">
+                                <input id="email" type="text" class="form-control"  placeholder="電子郵件信箱">
+                            </div>
+                            <div class="mb-3">
+                                <input id="name" type="text" class="form-control"  placeholder="購買者姓名">
+                            </div>
+                            <p>要傳送的試題：</p>
+                            <div id="check_box">
+                                {% for testQuestion in testQuestions %}
+                                <div class="form-check" style="margin:10px">
+                                  <input  class="form-check-input" type="checkbox" value="{{testQuestion.id}}" >
+                                  <label class="form-check-label" style="color:#000;position: relative; bottom: 3px;">
+                                    {{testQuestion.title}}
+                                  </label>
+                                </div>
+
+                                {% endfor %}
+                            <div>
+                            <button type="button" onclick="sendmail_()" class="btn btn-primary">發送郵件</button>
+
+                        {% endif %}
+                            <hr>
+                            <button type="button" onclick="delete_('{{order.id}}')" class="btn btn-danger">刪除</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    function sendmail_(){
+
+
+        var checkedValues = [];
+
+        $("#check_box input[type='checkbox']:checked").each(function() {
+          // 取得 checkbox 的 value 並加入到陣列中
+          checkedValues.push($(this).val());
+        });
+
+        if( checkedValues === []){
+            swal({
+		        'title':'未選擇檔案',
+		        'text':"請先選擇要傳送的試題",
+		        'icon':'error',
+		        'buttons':false,
+		        'timer':1000
+		    })
+        }else if( !$('#email').val() || !$('#name').val() ){
+            swal({
+		        'title':'表單填寫不全',
+		        'text':"所有表結為必填",
+		        'icon':'error',
+		        'buttons':false,
+		        'timer':1000
+		    })
+        }else{
+            axios({
+                url:'/management/mail/{{order.id}}/',
+                method:"POST",
+                headers:{'X-CSRFToken': "{{ csrf_token }}"},
+                data:{
+                    'email':$("#email").val().replace(/\s+$/, ''),
+                    'name':$('#name').val().replace(/\s+$/, ''),
+                    'checkedValue':checkedValues
+                }
+            }).then(res=>{
+                if(res.data === 'Email sent successfully!'){
+                    swal({
+                        'title':'已成功寄出',
+                        'text':" ",
+                        'icon':'success',
+                        'buttons':false,
+                        'timer':1000
+                    })
+                }
+            })
+        }
+    }
+</script>
+
+{% endblock %}

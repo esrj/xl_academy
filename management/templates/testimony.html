@@ -1,0 +1,101 @@
+{% extends 'contact.html' %}
+
+
+
+{% block content %}
+<div class="content" style="margin: 20px;margin-top :55px;margin-bottom: 55px">
+    <div class="col-md-9" style="margin: 0 auto">
+        <h4>更改感言影片與文章內容</h4>
+        <form>
+            <div class="mb-3">
+                <h6 style="font-weight: 500">上傳影片:</h6>
+                <input id="video" type="file" class="form-control">
+            </div>
+            <div class="mb-3">
+                <h6 style="font-weight: 500">上傳封面相片:</h6>
+                <input id="picture" type="file" class="form-control" placeholder="影片封面圖片">
+            </div>
+            <div class="mb-3">
+                <input id="title" type="text" class="form-control"  placeholder="標題（建議5-8字）">
+            </div>
+            <div class="mb-3">
+                <input id="student_name" type="text" class="form-control"  placeholder="學生姓名">
+            </div>
+            <div class="mb-3">
+                <textarea id="content" class="form-control"  rows="3" placeholder="內容（建議150-200字左右）"></textarea>
+            </div>
+
+            <button onclick="upload_()" style="background: #ff3938;border: #ff3938;" type="button" class="btn btn-primary">確定上傳</button>
+        </form>
+    </div>
+</div>
+<script>
+
+    function isMP4(filename) {
+        return filename.toLowerCase().endsWith('.mp4');
+    }
+
+    function isImage(filename) {
+        const allowedExtensions = ['.jpg', '.jpeg', '.png'];
+        return allowedExtensions.some(ext => filename.toLowerCase().endsWith(ext));
+    }
+
+    function upload_(){
+
+        if($('#content').val() && $('#student_name').val() && $('#title').val() && $('#video').prop('files')[0]  && $('#picture').prop('files')[0]){
+            if(!isMP4($('#video').prop('files')[0]['name'])){
+                swal({
+                    'title':'格式不符',
+                    'text':'封面照片必須是 jpg、png、jpeg 檔案',
+                    "buttons":['確定'],
+                    'icon':'warning'
+                })
+            }else if($('#picture').prop('files')[0]&&!isImage($('#picture').prop('files')[0]['name'])){
+                swal({
+                    'title':'格式不符',
+                    'text':'影片必須是 mp4 檔案',
+                    "buttons":['確定'],
+                    'icon':'warning'
+                })
+            }else{
+                console.log( $('#picture').prop('files')[0]['name'])
+                const formData = new FormData();
+                formData.append('title', $('#title').val());
+                formData.append('video', $('#video').prop('files')[0]);
+                formData.append('picture', $('#picture').prop('files')[0]);
+                formData.append('student_name', $('#student_name').val());
+                formData.append('content', $('#content').val());
+                axios({
+                    url:'/management/testimony/',
+                    method:"POST",
+                    headers:{
+                        'X-CSRFToken': "{{ csrf_token }}",
+                        'Content-Type': 'multipart/form-data;charset=UTF-8'
+                    },
+                    data:formData
+                }).then(res=>{
+                    if(res.data.errno === 0){
+                        swal({
+                            'title':'已成功更新',
+                            'text':'請回主頁檢查',
+                            "buttons":['確定'],
+                            'icon':'success'
+                        })
+                    }
+                })
+            }
+
+        }else{
+            swal({
+                'title':'資料不全',
+                'text':'所有資料皆為必填',
+                "buttons":['確定'],
+                'icon':'warning'
+            })
+        }
+    }
+</script>
+
+
+{% endblock %}
+

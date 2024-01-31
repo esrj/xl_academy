@@ -1,0 +1,57 @@
+{% extends 'consult.html' %}
+
+
+{% block content %}
+
+<div class="blog-section">
+	<div class="container">
+        <div class="row">
+			<div class="col-md-12 text-center">
+				<div class="section-title">
+					<h4>模擬試題</h4>
+					<h1>線上購買模擬試題</h1>
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-md-12">
+				<div class="product_nav">
+					<div class="product_menu">
+						<ul class="menu-filtering">
+							<li class="current_menu_item" data-filter="*"> All</li>
+							<li data-filter=".SAT">SAT</li>
+							<li data-filter=".AP"> AP</li>
+							<li data-filter=".IB">IB</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row image_load">
+			{% for testQuestion in testQuestions %}
+			<div class="col-lg-3 col-md-6 grid-item SAT ">
+				<div class="single-products-box">
+					<div class="products-content" style="padding-bottom: 10px">
+						<div class="products-title">
+							<h3>{{testQuestion.classification}}</h3>
+							<p ><a style="font-weight: 400" href="/product/{{testQuestion.id}}/">{{testQuestion.title}}</a></p>
+							<p class="dolor">${{testQuestion.price}}</p>
+						</div>
+						<div class="products-rating">
+							<ul>
+								<li><i class="fas fa-star"></i></li>
+								<li><i class="fas fa-star"></i></li>
+								<li><i class="fas fa-star"></i></li>
+								<li><i class="fas fa-star"></i></li>
+								<li><i class="fas fa-star"></i></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+			{% endfor %}
+		</div>
+	</div>
+</div>
+{% endblock %}
