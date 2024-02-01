@@ -11,7 +11,7 @@
 
 .contact_us_form{
     background-color:#f3f3f5;
-    padding: 50px 80px 30px 70px;
+    padding: 40px 80px 25px 70px;
     margin-bottom: 150px
 }
 .contact_form_{
@@ -456,6 +456,19 @@
     color:#ff3838;
 }
 
+.join-us-icon {
+    font-size: 70px;font-weight: bold;color: #ff3838;
+}
+.join-us-h4{
+    color: #522b2b;font-size: 20px;
+}
+
+.join-us-section{
+    background-color: #fafaf6;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    margin-bottom: 50px
+}
 /*==========================
  <--start-Service-section-->
 ===========================*/
@@ -611,12 +624,26 @@
     margin-bottom: -2px;
 }
 
+.section-separate {
+    background-color: #f5f7f9;
+    padding-top: 55px;
+    padding-bottom: 40px
+
+}
+
+.section-separate-title {
+    position: relative;
+    bottom:15px
+}
+
+
+
 .section-title h1 {
     line-height: 63px;
     margin-top: 0;
-    font-size: 42px;
+    font-size: 39px;
     color: #523532;
-    font-weight:400
+    font-weight:500
 }
 
 .section-title p {

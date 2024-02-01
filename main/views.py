@@ -23,9 +23,13 @@ def index(request):
             contact = Contact.objects.create(name = username,email = email,content = content)
         else:
             contact = Contact.objects.create(name = username,email = email,phone=phone,content = content)
-
         contact.save()
         return JsonResponse({'errno':0})
+    if request.method == 'PUT':
+        testimony = Testimony.objects.all().first()
+        print(testimony.video)
+        return  JsonResponse({'video':str(testimony.video)})
+
 
 def consult(request):
     if request.method == 'GET':

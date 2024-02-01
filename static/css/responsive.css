@@ -6,7 +6,7 @@
     }
     .section-title h1 {
         line-height: 60px;
-        font-size: 40px;
+        font-size: 36px;
     }
     .video-rwd2{
         border-radius: 25px;
@@ -17,7 +17,10 @@
 }
 
 
-@media (min-width: 1600px) and (max-width: 1800px){
+@media (min-width: 1601px) and (max-width: 1800px){
+
+
+
     .video-rwd2{
         border-radius: 25px;
         width: 77%;
@@ -41,11 +44,25 @@
 
     .section-title h1 {
         line-height: 55px;
-        font-size: 38px;
+        font-size: 35px;
     }
 }
 /* Normal desktop :1400x. */
 @media (min-width: 1400px) and (max-width: 1600px){
+
+.section-separate {
+    background-color: #f5f7f9;
+    padding-top: 55px;
+    padding-bottom: 35px
+
+}
+
+
+.section-separate-title {
+    position: relative;
+    bottom:20px
+}
+
 .video-rwd2{
     border-radius: 25px;
     width: 78%;
@@ -58,7 +75,7 @@
 }
 .section-title h1 {
     line-height: 50px;
-    font-size: 36px;
+    font-size: 34px;
 }
 
 .slider-sub-title h4:before {
@@ -124,6 +141,17 @@
 
 /* Normal desktop :1300px. */
 @media (min-width: 1300px) and (max-width: 1399px) {
+
+.section-separate-title {
+    position: relative;
+    bottom:10px
+}
+.section-separate {
+    background-color: #f5f7f9;
+    padding-top: 55px;
+    padding-bottom: 45px
+
+}
 
 .img-height {
     height: 391px;
@@ -208,7 +236,7 @@
 }
 
 .service-content h4 {
-    font-size: 20px;
+    font-size: 24px;
 }
 /*about-section*/
 .about-section-shape {
@@ -266,7 +294,7 @@
 }
 .section-title h1 {
     line-height: 48px;
-    font-size: 35px;
+    font-size: 33px;
 }
 .services-box-tow {
     padding: 60px 0 52px 12px;
@@ -380,6 +408,18 @@
 /* Normal desktop :1200px. */
 @media (min-width: 1200px) and (max-width: 1299px) {
 
+
+.section-separate-title {
+    position: relative;
+    bottom:10px
+}
+.section-separate {
+    background-color: #f5f7f9;
+    padding-top: 55px;
+    padding-bottom: 45px
+
+}
+
 .img-height {
     height: 391px;
     object-fit: cover
@@ -455,7 +495,7 @@
     padding: 17px 18px 46px;
 }
 .service-content h4 {
-    font-size: 18px;
+    font-size: 22px;
 }
 
 
@@ -531,7 +571,7 @@
 }
 .section-title h1 {
     line-height: 45px;
-    font-size: 35px;
+    font-size: 33px;
 }
 .services-box-tow {
     padding: 60px 5px 52px 13px;
@@ -673,6 +713,51 @@
 
 /* Normal desktop :992px. */
 @media (min-width: 992px) and (max-width: 1199px) {
+.section-separate-title {
+    position: relative;
+    bottom:10px
+}
+.section-separate {
+    background-color: #f5f7f9;
+    padding-top: 50px;
+    padding-bottom: 45px
+
+}
+ .join-us-icon {
+    font-size: 65px;font-weight: bold;color: #ff3838;
+}
+
+.join-us-h4{
+    font-size: 19px;
+}
+
+.join-us-text{
+    display: none;
+}
+
+.join-us-section{
+    padding-top: 70px;
+    padding-bottom: 70px;
+    margin-bottom: 20px
+}
+
+.service-box:before {
+    position: absolute;
+    content: "";
+    width: 190px;
+    height: 190px;
+    left: -66px;
+    bottom: -82px;
+    background: #EDF0F5;
+    border-radius: 48%;
+    z-index: -1;
+}
+
+.images-icon {
+    position: absolute;
+    left: 30px;
+    bottom: 24px;
+}
 
 .img-height {
     height: 329px;
@@ -781,10 +866,10 @@
     padding: 17px 9px 46px;
 }
 .service-content h4 {
-    font-size: 15px;
+    font-size: 20px;
 }
 .service-content p {
-    font-size: 14px;
+    font-size: 14.5px;
     line-height: 24px;
 }
 .service-button i {
@@ -808,7 +893,7 @@
 /*about-section*/
 .section-title h1 {
     line-height: 52px;
-    font-size: 35px;
+    font-size: 33px;
 }
 
 .section-title p {
@@ -1118,6 +1203,41 @@
 
 /* Tablet desktop :768px. */
 @media (min-width: 768px) and (max-width: 991px) {
+
+.section-separate {
+    background-color: #f5f7f9;
+    padding-top: 45px;
+    padding-bottom: 35px
+
+}
+
+ .service-content h4 {
+    font-size: 24px;
+    transition: 0.5s;
+}
+
+.section-title h1 {
+    line-height: 45px;
+    font-size: 30px;
+}
+
+ .join-us-icon {
+    font-size: 65px;font-weight: bold;color: #ff3838;
+}
+
+.join-us-h4{
+    font-size: 19px;
+}
+
+/*.join-us-text{*/
+/*    display: none;*/
+/*}*/
+
+.join-us-section{
+    padding-top: 70px;
+    padding-bottom: 70px;
+    margin-bottom: 15px
+}
 
 .contact_us_form{
     padding: 20px 50px 25px 40px;
@@ -1533,6 +1653,41 @@
 
 /* Large Mobile :600px. */
 @media only screen and (min-width: 600px) and (max-width: 767px) {
+
+.section-separate {
+    background-color: #f5f7f9;
+    padding-top: 40px;
+    padding-bottom: 27px
+
+}
+
+.service-content h4 {
+    font-size: 23px;
+    transition: 0.5s;
+}
+ .join-us-icon {
+    font-size: 65px;font-weight: bold;color: #ff3838;
+}
+
+.join-us-h4{
+    font-size: 18px;
+}
+
+/*.join-us-text{*/
+/*    display: none;*/
+/*}*/
+
+.join-us-section{
+    padding-top: 60px;
+    padding-bottom: 60px;
+    margin-bottom: 10px
+}
+
+.contact_us_form{
+    padding: 20px 50px 25px 40px;
+    margin: 0;
+    max-width: 2000px
+}
 
 .form_{
     margin-right: 0;
@@ -2050,6 +2205,46 @@
 }
 /* Large Mobile :480px. */
 @media only screen and (min-width: 480px) and (max-width:599px) {
+
+.section-separate-title {
+    position: relative;
+    bottom:15px
+}
+
+.section-separate {
+    background-color: #f5f7f9;
+    padding-top: 40px;
+    padding-bottom: 0px
+}
+
+.service-content h4 {
+    font-size: 22px;
+    transition: 0.5s;
+}
+
+ .join-us-icon {
+    font-size: 60px;font-weight: bold;color: #ff3838;
+}
+
+.join-us-h4{
+    font-size: 17px;
+}
+
+.join-us-text{
+    display: none;
+}
+
+.join-us-section{
+    padding-top: 50px;
+    padding-bottom: 50px;
+    margin-bottom: 5px
+}
+
+.contact_us_form{
+    padding: 20px 50px 25px 40px;
+    margin: 0;
+    max-width: 2000px
+}
 
 
 .form_{
@@ -2603,6 +2798,41 @@
 
 /* small mobile :320px. */
 @media only screen and (min-width: 320px) and (max-width: 479px) {
+
+.section-separate-title {
+    position: relative;
+    bottom:5px
+}
+
+.section-separate {
+    background-color: #f5f7f9;
+    padding-top: 30px;
+    padding-bottom: 0px
+}
+
+.service-content h4 {
+    font-size: 21px;
+    transition: 0.5s;
+}
+
+ .join-us-icon {
+    font-size: 50px;font-weight: bold;color: #ff3838;
+}
+
+.join-us-h4{
+    font-size: 16px;
+}
+
+.join-us-text{
+    display: none;
+}
+
+.join-us-section{
+    padding-top: 40px;
+    padding-bottom: 40px;
+    margin-bottom: 0px
+}
+
 
 
 .contact_us_form{
