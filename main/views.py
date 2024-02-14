@@ -74,3 +74,9 @@ def product(request,id):
         return render(request,'product.html',locals())
 
 
+def error_view(request, exception=None, template_name='error.html'):
+    status_code = 404
+    title = '很抱歉，此頁面不存在或不提供瀏覽'
+    if exception:
+        status_code = getattr(exception, 'status_code', 404)
+    return render(request, 'error.html', locals())

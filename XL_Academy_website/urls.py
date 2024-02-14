@@ -2,7 +2,8 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
-
+from django.conf.urls import handler404, handler500
+from main.views import error_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -11,5 +12,8 @@ urlpatterns = [
     path('auth/', include('social_django.urls', namespace='social')),
 
 ]
+handler404 = error_view
+handler403 = error_view
+handler500 = error_view
 if settings.DEBUG:
     urlpatterns+=static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)

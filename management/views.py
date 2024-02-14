@@ -96,9 +96,12 @@ def testimony(request):
     if request.method == 'POST':
         previous = Testimony.objects.all()
         for prev in previous:
-            os.remove( os.path.join(os.path.dirname(os.path.dirname(__file__)),'media',str(prev.video)))
-            os.remove( os.path.join(os.path.dirname(os.path.dirname(__file__)),'media',str(prev.picture)))
-            prev.delete()
+            try:
+                os.remove( os.path.join(os.path.dirname(os.path.dirname(__file__)),'media',str(prev.video)))
+                os.remove( os.path.join(os.path.dirname(os.path.dirname(__file__)),'media',str(prev.picture)))
+                prev.delete()
+            except:
+                pass
         video = request.FILES.get('video')
         picture = request.FILES.get('picture')
         title = request.POST.get('title')
@@ -154,10 +157,6 @@ def mail(request):
     for order in (orders):
         print(order.date)
     return render(request,'mail.html',locals())
-
-
-
-
 
 @login_required(login_url='/management/')
 def sendmail(request, id):
