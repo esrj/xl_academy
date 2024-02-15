@@ -21,8 +21,8 @@ from email import encoders
 
 
 
-SCOPES = ['https://mail.google.com/']
 
+SCOPES = ['https://mail.google.com/']
 
 
 
@@ -77,7 +77,6 @@ def contact(request):
         contact.save()
         print(contact.reply)
         return JsonResponse({'errno':0})
-
 
 @login_required(login_url='/management/')
 def single(request,id):
@@ -154,28 +153,39 @@ def collage(request):
 @login_required(login_url='/management/')
 def mail(request):
     orders = Order.objects.all()
-    for order in (orders):
-        print(order.date)
     return render(request,'mail.html',locals())
+
+from google.oauth2 import service_account
+from django.core.mail import send_mail
+def create_message(sender, to, subject, message_text):
+    message = MIMEText(message_text)
+    message['to'] = to
+    message['from'] = sender
+    message['subject'] = subject
+    raw_message = base64.urlsafe_b64encode(message.as_bytes())
+    raw_message = raw_message.decode()
+    return {'raw': raw_message}
+
+
 
 @login_required(login_url='/management/')
 def sendmail(request, id):
     if request.method == 'GET':
-        order = Order.objects.filter(id=id).first()
-        testQuestions = TestQuestion.objects.all()
-        return render(request, 'sendmail.html', locals())
+            order = Order.objects.filter(id=id).first()
+            testQuestions = TestQuestion.objects.all()
+            return render(request, 'sendmail.html', locals())
     if request.method == 'POST':
         req = json.loads(request.body)
-        if not os.path.exists('token.json'):
-            return HttpResponse('Token file not found. Run OAuth 2.0 flow to generate tokens.')
         creds = Credentials.from_authorized_user_file('token.json', SCOPES)
-        if not creds or not creds.valid:
-            if creds and creds.expired and creds.refresh_token:
+        if creds and creds.expired and creds.refresh_token:
+            try:
                 creds.refresh(Request())
-            else:
-                flow = InstalledAppFlow.from_client_secrets_file(
-                    'credentials.json', SCOPES)
+            except Exception as e:
+                flow = InstalledAppFlow.from_client_secrets_file('credentials.json', SCOPES, access_type='offline')
                 creds = flow.run_local_server(port=0)
+        else:
+            flow = InstalledAppFlow.from_client_secrets_file('credentials.json', SCOPES,    access_type='offline')
+            creds = flow.run_local_server(port=0)
         with open('token.json', 'w') as token:
             token.write(creds.to_json())
         service = build('gmail', 'v1', credentials=creds)
@@ -188,26 +198,23 @@ def sendmail(request, id):
         image_filename = 'static/picture/footer-logo.png'
         with open(image_filename, 'rb') as image_file:
             image_data = base64.b64encode(image_file.read()).decode('utf-8')
-        html_body = html_body.replace('<!-- INSERT_IMAGE_HERE -->', f'<img style="height:38px" src="data:image/jpeg;base64,{image_data}" alt="Image">')
+        html_body = html_body.replace('<!-- INSERT_IMAGE_HERE -->',                                  f'<img style="height:38px" src="data:image/jpeg;base64,{image_data}" alt="Image">')
         html_body = html_body.replace('<!-- INSERT_NAME -->', req['name'])
         html_msg = MIMEText(html_body, 'html')
         message.attach(html_msg)
-
         for id in list(req['checkedValue']):
-            testQuestion = TestQuestion.objects.filter(id= id).first()
-            pdf_filename = f'media/{testQuestion.pdf}'
-            with open(pdf_filename, 'rb') as pdf_file:
-                    pdf_attachment = MIMEBase('application', 'octet-stream')
-                    pdf_attachment.set_payload(pdf_file.read())
-                    encoders.encode_base64(pdf_attachment)
-                    pdf_attachment.add_header('Content-Disposition', f'attachment; filename={pdf_filename}')
-                    message.attach(pdf_attachment)
+                testQuestion = TestQuestion.objects.filter(id= id).first()
+                pdf_filename = f'media/{testQuestion.pdf}'
+                with open(pdf_filename, 'rb') as pdf_file:
+                        pdf_attachment = MIMEBase('application', 'octet-stream')
+                        pdf_attachment.set_payload(pdf_file.read())
+                        encoders.encode_base64(pdf_attachment)
+                        pdf_attachment.add_header('Content-Disposition', f'attachment; filename={pdf_filename}')
+                        message.attach(pdf_attachment)
 
         raw_message = base64.urlsafe_b64encode(message.as_bytes()).decode("utf-8")
         try:
             message = service.users().messages().send(userId="me", body={"raw": raw_message}).execute()
-            print('Message Id: %s' % message['id'])
             return HttpResponse('Email sent successfully!')
         except Exception as error:
-            print(f'An error occurred: {error}')
             return HttpResponse('Error sending email.')

@@ -58,7 +58,6 @@
                     'icon':'warning'
                 })
             }else{
-                console.log( $('#picture').prop('files')[0]['name'])
                 const formData = new FormData();
                 formData.append('title', $('#title').val());
                 formData.append('video', $('#video').prop('files')[0]);
@@ -77,7 +76,7 @@
                     if(res.data.errno === 0){
                         swal({
                             'title':'已成功更新',
-                            'text':'請回主頁檢查',
+                            'text':'影片上傳需要時間，大約5-30分鐘後時效',
                             "buttons":['確定'],
                             'icon':'success'
                         })
