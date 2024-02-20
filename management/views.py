@@ -171,9 +171,9 @@ def create_message(sender, to, subject, message_text):
 @login_required(login_url='/management/')
 def sendmail(request, id):
     if request.method == 'GET':
-            order = Order.objects.filter(id=id).first()
-            testQuestions = TestQuestion.objects.all()
-            return render(request, 'sendmail.html', locals())
+        order = Order.objects.filter(id=id).first()
+        testQuestions = TestQuestion.objects.all()
+        return render(request, 'sendmail.html', locals())
     if request.method == 'POST':
         req = json.loads(request.body)
         creds = Credentials.from_authorized_user_file('token.json', SCOPES)
@@ -183,9 +183,7 @@ def sendmail(request, id):
             except Exception as e:
                 flow = InstalledAppFlow.from_client_secrets_file('credentials.json', SCOPES, access_type='offline')
                 creds = flow.run_local_server(port=0)
-        else:
-            flow = InstalledAppFlow.from_client_secrets_file('credentials.json', SCOPES,    access_type='offline')
-            creds = flow.run_local_server(port=0)
+
         with open('token.json', 'w') as token:
             token.write(creds.to_json())
         service = build('gmail', 'v1', credentials=creds)
@@ -198,7 +196,7 @@ def sendmail(request, id):
         image_filename = 'static/picture/footer-logo.png'
         with open(image_filename, 'rb') as image_file:
             image_data = base64.b64encode(image_file.read()).decode('utf-8')
-        html_body = html_body.replace('<!-- INSERT_IMAGE_HERE -->',                                  f'<img style="height:38px" src="data:image/jpeg;base64,{image_data}" alt="Image">')
+        html_body = html_body.replace('<!-- INSERT_IMAGE_HERE -->',f'<img style="height:38px" src="data:image/jpeg;base64,{image_data}" alt="Image">')
         html_body = html_body.replace('<!-- INSERT_NAME -->', req['name'])
         html_msg = MIMEText(html_body, 'html')
         message.attach(html_msg)
@@ -218,3 +216,57 @@ def sendmail(request, id):
             return HttpResponse('Email sent successfully!')
         except Exception as error:
             return HttpResponse('Error sending email.')
+
+
+
+
+'''
+@login_required(login_url='/management/')
+def sendmail(request, id):
+    if request.method == 'GET':
+            order = Order.objects.filter(id=id).first()
+            testQuestions = TestQuestion.objects.all()
+            return render(request, 'sendmail.html', locals())
+    if request.method == 'POST':
+        req = json.loads(request.body)
+        creds = Credentials.from_authorized_user_file('/var/www/xl_academy/token.json', SCOPES)
+        if creds and creds.expired and creds.refresh_token:
+            try:
+                creds.refresh(Request())
+            except Exception as e:
+                flow = InstalledAppFlow.from_client_secrets_file('/var/www/xl_academy/credentials.json', SCOPES, access_type='offline')
+                creds = flow.run_local_server(port=0)
+        with open('/var/www/xl_academy/token.json', 'w') as token:
+            token.write(creds.to_json())
+        service = build('gmail', 'v1', credentials=creds)
+        message = MIMEMultipart()
+        message['to'] = req['email']
+        message['subject'] = 'XL Academy 試題購買'
+        html_filename = '/var/www/xl_academy/media/mail_template/mail.html'
+        with open(html_filename, 'r',encoding='utf-8') as html_file:
+            html_body = html_file.read()
+        image_filename = '/var/www/staticfiles/static/picture/footer-logo.png'
+        with open(image_filename, 'rb') as image_file:
+            image_data = base64.b64encode(image_file.read()).decode('utf-8')
+        html_body = html_body.replace('<!-- INSERT_IMAGE_HERE -->', f'<img style="height:38px" src="data:image/jpeg;base64,{image_data}" alt="Image">')
+        html_body = html_body.replace('<!-- INSERT_NAME -->', req['name'])
+        html_msg = MIMEText(html_body, 'html')
+        message.attach(html_msg)
+        for id in list(req['checkedValue']):
+                testQuestion = TestQuestion.objects.filter(id= id).first()
+                if testQuestion:
+                    pdf_filename = f'/var/www/xl_academy/media/{testQuestion.pdf}'
+                    with open(pdf_filename, 'rb') as pdf_file:
+                        pdf_attachment = MIMEBase('application', 'octet-stream')
+                        pdf_attachment.set_payload(pdf_file.read())
+                        encoders.encode_base64(pdf_attachment)
+                        pdf_attachment.add_header('Content-Disposition', f'attachment; filename={pdf_filename}')
+                        message.attach(pdf_attachment)
+
+        raw_message = base64.urlsafe_b64encode(message.as_bytes()).decode("utf-8")
+        try:
+            message = service.users().messages().send(userId="me", body={"raw": raw_message}).execute()
+            return HttpResponse('Email sent successfully!')
+        except Exception as error:
+            return HttpResponse('Error sending email.')
+'''

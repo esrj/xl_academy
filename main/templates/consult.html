@@ -30,15 +30,8 @@
 						<li class="menu-item-has-children">
 							<a   style="font-weight: 500;color:#522b2b" href="/shop">
 								線上試題
-<!--								<i class="fas fa-caret-down"></i>-->
 							</a>
-<!--							<ul class="sub-menu">-->
-<!--								<li><a href="about-us.html">About</a></li>-->
-<!--								<li><a href="service.html">Service</a></li>-->
-<!--							</ul>-->
 						</li>
-
-
 					</ul>
 				</div>
 			</div>
@@ -111,7 +104,7 @@
 		<div class="row image_load">
 
 			{% for collage in  collages %}
-				<div class="col-lg-3 col-md-6 grid-item {{collage.continent}}" style="margin-top:50px;margin-bottom:100px">
+				<div class="col-lg-3 col-md-4 col-sm-6 col-6 grid-item {{collage.continent}}" style="margin-top:50px;margin-bottom:100px">
 					<div class="single-blog-box">
 						<div class="blog-content">
 							<img style="width:100%" src="/media/{{collage.emblem}}" alt="imgs">
@@ -120,17 +113,40 @@
 								<span><i class="bi bi-map"></i>{{collage.country}}</span>
 							</div>
 							<div class="blog-content-title">
-								<h5><a style="font-weight: 400" href="/detail/{{ collage.id}}">{{collage.name}}</a></h5>
+								<h5 class="collage_title"><a class="collage_title" style="font-weight: 400" href="/detail/{{ collage.id}}">{{collage.name}}</a></h5>
 							</div>
 							<div class="blog-content-button">
-								<a href="/detail/{{ collage.id }}">Read More<i class="bi bi-arrow-right"></i></a>
+								<a class="collage_read_more" href="/detail/{{ collage.id }}">Read More<i class="bi bi-arrow-right"></i></a>
 							</div>
 						</div>
 					</div>
 				</div>
 			{% endfor %}
-
 		</div>
+		<nav aria-label="Page navigation example" style="display: flex;flex-direction: column;align-items: center;">
+            <ul class="pagination" >
+                {% if num > 1 %}
+                <li class="page-item">
+                    <a style="color:black" class="page-link" href="/consult/?type=classification&page={{prev}}" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                    </a>
+                </li>
+                {% endif %}
+                {% for i in all_page %}
+                    <li class="page-item" ><a style="color:black" class="page-link" href="/consult/?type=classification&page={{i}}">{{i}}</a></li>
+                {% endfor %}
+                {% if num !=  num_page  %}
+                <li class="page-item">
+                    <a style="color:black" class="page-link" href="/consult/?page={{next}}" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                    </a>
+                </li>
+                {% endif %}
+            </ul>
+        </nav>
 	</div>
 </div>
+
+
+
 {% endblock %}

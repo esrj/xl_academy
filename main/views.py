@@ -6,6 +6,8 @@ import json
 from django.views.decorators.csrf import csrf_exempt
 from main.models import Profile,Contact,Testimony,Collage,TestQuestion,Order
 from django.contrib.auth.decorators import login_required
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+
 
 
 # Create your views here.
@@ -34,8 +36,24 @@ def index(request):
 def consult(request):
     if request.method == 'GET':
         collages = Collage.objects.all().values('id','emblem','name','country','continent','classification')
-        collages = list(collages)
-        type = request.GET.get('type', '')
+        pages = Paginator(collages, 16)
+
+
+        page = request.GET.get('page')
+        type = request.GET.get('type')
+
+        try:
+            objects = pages.page(page)
+        except PageNotAnInteger:
+            objects = pages.page(1)
+        except EmptyPage:
+            objects = pages.page(paginator.num_pages)
+        num = (objects.number)
+        num_page = (objects.paginator.num_pages)
+        all_page = range(1,num_page+1)
+        prev = num-1
+        next = num+1
+        collages = list(collages)[4*(num-1):16*(num)]
         if type == 'classification':
             for collage in collages:
                 if collage['classification'] == '公立大學':
