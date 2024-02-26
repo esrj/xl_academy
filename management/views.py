@@ -168,7 +168,7 @@ def create_message(sender, to, subject, message_text):
 
 
 
-@login_required(login_url='/management/')
+'''@login_required(login_url='/management/')
 def sendmail(request, id):
     if request.method == 'GET':
         order = Order.objects.filter(id=id).first()
@@ -218,9 +218,9 @@ def sendmail(request, id):
             return HttpResponse('Error sending email.')
 
 
-
-
 '''
+
+
 @login_required(login_url='/management/')
 def sendmail(request, id):
     if request.method == 'GET':
@@ -269,4 +269,3 @@ def sendmail(request, id):
             return HttpResponse('Email sent successfully!')
         except Exception as error:
             return HttpResponse('Error sending email.')
-'''
