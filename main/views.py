@@ -36,7 +36,7 @@ def index(request):
 def consult(request):
     if request.method == 'GET':
         collages = Collage.objects.all().values('id','emblem','name','country','continent','classification')
-        pages = Paginator(collages, 16)
+        pages = Paginator(collages, 24)
 
 
         page = request.GET.get('page')
@@ -53,7 +53,7 @@ def consult(request):
         all_page = range(1,num_page+1)
         prev = num-1
         next = num+1
-        collages = list(collages)[4*(num-1):16*(num)]
+        collages = list(collages)[4*(num-1):24*(num)]
         if type == 'classification':
             for collage in collages:
                 if collage['classification'] == '公立大學':
