@@ -102,6 +102,22 @@
                         'buttons':false,
                         'timer':1000
                     })
+                }else if(res.data === 'reset email token'){
+                    swal({
+                        'title':'Email Token 過期',
+                        'text':"請更換可用的 email token",
+                        'icon':'warning',
+                        'buttons':false,
+                        'timer':1000
+                    })
+                }else if(res.data === 'Error sending email.'){
+                    swal({
+                        'title':'Error sending email',
+                        'text':"請聯絡開發人員",
+                        'icon':'error',
+                        'buttons':false,
+                        'timer':1000
+                    })
                 }
             })
         }

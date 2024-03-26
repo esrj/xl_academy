@@ -22,7 +22,17 @@
                 <input id="student_name" type="text" class="form-control"  placeholder="學生姓名">
             </div>
             <div class="mb-3">
-                <textarea id="content" class="form-control"  rows="3" placeholder="內容（建議150-200字左右）"></textarea>
+                <textarea id="content" class="form-control"  rows="3" placeholder="內容（建議150字左右）"></textarea>
+            </div>
+
+            <div class="mb-3">
+                <input id="title_en" type="text" class="form-control"  placeholder="英文標題（建議 10-20 字母）">
+            </div>
+            <div class="mb-3">
+                <input id="student_name_en" type="text" class="form-control"  placeholder="學生英文姓名">
+            </div>
+            <div class="mb-3">
+                <textarea id="content_en" class="form-control"  rows="3" placeholder="英文內容"></textarea>
             </div>
 
             <button onclick="upload_()" style="background: #ff3938;border: #ff3938;" type="button" class="btn btn-primary">確定上傳</button>
@@ -64,6 +74,9 @@
                 formData.append('picture', $('#picture').prop('files')[0]);
                 formData.append('student_name', $('#student_name').val());
                 formData.append('content', $('#content').val());
+                formData.append('content_en', $('#content_en').val());
+                formData.append('title_en', $('#title_en').val());
+                formData.append('student_name_en', $('#student_name_en').val());
                 axios({
                     url:'/management/testimony/',
                     method:"POST",

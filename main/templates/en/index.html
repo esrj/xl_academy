@@ -1,0 +1,807 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<title>XL Academy - 台北市私立艾司樂文理短期補習班</title>
+    <meta name="description" content="XL Academy 台北市私立艾司樂文理短期補習班;Collect consulting;SAT, AP, IB, Group Classes & After school program">
+	<meta name="owner" content="XL Academy 台北市私立艾司樂文理短期補習班" />
+	<meta name="author" content="XL Academy 台北市私立艾司樂文理短期補習班">
+
+	<link rel="icon" href="/static/picture/icon.png" type="image/png" />
+
+
+	<meta name="viewport" content="width=devicUSAe-width, initial-scale=1">
+	<link rel="stylesheet" href="/static/css/bootstrap.min.css" type="text/css" media="all">
+	<link rel="stylesheet" href="/static/css/owl.carousel.min.css" type="text/css" media="all">
+	<link rel="stylesheet" href="/static/css/animate.css" type="text/css" media="all">
+	<link rel="stylesheet" href="/static/css/animated-text.css" type="text/css" media="all">
+	<link rel="stylesheet" href="/static/css/all.min.css" type="text/css" media="all">
+	<link rel="stylesheet" href="/static/css/flaticon.css" type="text/css" media="all">
+	<link rel="stylesheet" href="/static/css/theme-default.css" type="text/css" media="all">
+	<link rel="stylesheet" href="/static/css/meanmenu.min.css" type="text/css" media="all">
+	<link rel="stylesheet" href="/static/css/style.css" type="text/css" media="all">
+	<link rel="stylesheet" href="/static/css/owl.transitions.css" type="text/css" media="all">
+	<link rel="stylesheet" href="/static/css/venobox.css" type="text/css" media="all">
+    <link rel="stylesheet" href="/static/css/progresscircle.css" type="text/css" media="all">
+	<link rel="stylesheet" href="/static/css/responsive.css" type="text/css" media="all">
+	<link rel="stylesheet" href="/static/css/icon/flaticon.css" type="text/css" media="all">
+	<link rel="stylesheet" href="/static/assets/owl.theme.default.min.css" type="text/css" media="all">
+<!--	<link rel="stylesheet" href="/static/assets/style.min.css" type="text/css" media="all">-->
+
+	<script src="/static/js/modernizr-3.5.0.min.js"></script>
+	<link rel="stylesheet" href="/static/css/bootstrap-icons.css">
+</head>
+
+<style>
+
+.slider-content {
+    position: relative;
+    z-index: 200;
+}
+.section-button{
+	position: relative;
+    z-index: 200;
+}
+::placeholder {
+      color: #8d8c8c;
+}
+
+</style>
+<body>
+
+{% block loader %}
+
+	<div class="loader-wrapper">
+		<div class="loader"></div>
+		<div style="background-color: white;" class="loder-section left-section"></div>
+		<div style="background-color: white;" class="loder-section right-section"></div>
+	</div>
+{% endblock %}
+
+
+
+{% block navbar %}
+<div id="sticky-header" class="main-header" style="height: 90px;    background: rgba(0,0,0,0);">
+	<div class="container" style="height: 90px;position: relative; z-index: 100;">
+		<div class="row align-items-center" style="height: 90px">
+			<div class="col-lg-2" style="height: 90px">
+				<div class="header-logo">
+					<a href="/"><img style="height:55px;position: relative; top:5px" src="/static/picture/footer-logo.png" alt="logo"></a>
+				</div>
+			</div>
+			<div class="col-lg-8" style="position: relative;bottom: 10px; ">
+				<div class="header-menu">
+					<ul class="nav_scroll">
+						<li class="menu-item-has-children">
+							<a id="sticky-header-text1"   style="font-weight: 500;color:#ffffff" href="/">Home</a>
+						</li>
+						<li class="menu-item-has-children">
+							<a id="sticky-header-text2"   style="font-weight: 500;color:#ffffff" href="/consult">
+								Collage consult
+								<i class="fas fa-caret-down"></i>
+							</a>
+							<ul class="sub-menu">
+								<li><a href="/consult">University Admission Counseling</a></li>
+								<li><a href="/consult?classification=type">Classification of school types</a></li>
+								<li><a href="/consult?classification=region">classification of schools by region</a></li>
+							</ul>
+						</li>
+						<li class="menu-item-has-children">
+							<a id="sticky-header-text3"   style="font-weight: 500;color:#ffffff" href="/course/">
+								Academic Guidance
+								<i class="fas fa-caret-down"></i>
+							</a>
+							<ul class="sub-menu">
+								<li><a href="/course/">Academic Guidance</a></li>
+								<li><a href="/course?type=tutor">Tutor</a></li>
+								<li><a href="/shop/">Online test questions</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div style="position: relative;bottom: 10px; " class="col-lg-2">
+				<div class="header-button">
+					<a href="/#contact">Contact us<i class="bi bi-arrow-right"></i></a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="mobile-menu-area d-sm-block d-md-block d-lg-none">
+		<div class="mobile-menu">
+			<nav class="header-menu" style="display: block;">
+				<ul class="nav_scroll">
+					<li class="menu-item-has-children"><a style="color:#522b2b" href="/">Home</a>
+
+					</li>
+					<li class="menu-item-has-children">
+						<a style="font-weight: 500;color:#522b2b" href="#">
+							collage consult
+							<i class="fas fa-caret-down"></i>
+						</a>
+						<ul class="sub-menu">
+							<li><a href="/consult">University Admission Counseling</a></li>
+							<li><a href="/consult?classification=type">Classification of school types</a></li>
+							<li><a href="/consult?classification=region">"Classification of schools by region</a></li>
+						</ul>
+					</li>
+
+					<li class="menu-item-has-children">
+						<a style="font-weight: 500;color:#522b2b" href="/course/">
+							Academic Guidance
+							<i class="fas fa-caret-down"></i>
+						</a>
+						<ul class="sub-menu">
+							<li><a href="/course/">Academic Guidance</a></li>
+							<li><a href="/course?type=tutor">Tutor</a></li>
+							<li><a href="/shop/">Online test questions</a></li>
+						</ul>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+{% endblock %}
+
+{% block content %}
+<div class="slider_list owl-carousel" style="top: -90px;">
+	<div class="slider-section align-items-center d-flex">
+		<div class="container">
+			<div class="row align-items-center cell-phone-style">
+				<div class="col-md-12 text-center">
+					<div style="top: 30px" class="slider-content">
+						<div class="slider-sub-title">
+							<h4>XL Academy</h4>
+						</div>
+						<h1 >Taipei City Private XL Academy</h1>
+						<h1 >Cram School</h1>
+					</div>
+					<div class="section-button">
+						<a href="#service">Service<i class="bi bi-arrow-right"></i></a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="slider-section style-2 align-items-center d-flex">
+		<div class="container">
+			<div class="row align-items-center cell-phone-style">
+				<div class="col-md-12 text-center">
+					<div style="top: 30px" class="slider-content">
+						<div class="slider-sub-title">
+							<h4>XL Academy</h4>
+						</div>
+						<h1 >Taipei City Private XL Academy</h1>
+						<h1 >Cram School</h1>
+					</div>
+					<div class="section-button">
+						<a href="#service">Service<i class="bi bi-arrow-right"></i></a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+
+<div style="margin-bottom: 100px" class=" style-home2">
+	<div class="container">
+		<div class="row align-items-center cell-phone-style">
+			<div class="col-lg-6 col-md-12">
+				<div class="section-title left">
+					<h4>About as</h4>
+					<h1>Enlighten wisdom, achieve the future.</h1>
+					<p>
+						We were founded in 2015 by Ellen Chu, an outstanding graduate of the University of California, Berkeley, dedicated to providing excellent educational services. XL Academy is renowned for its rich educational experience, outstanding academic guidance, and successful placement of students in globally recognized universities.
+					</p>
+				</div>
+				<div class="about-list-item">
+					<ul>
+						<li><img src="/static/picture/about-list-icon.png" alt="icon">We've guided 200+ students into top-tier universities like Stanford, MIT, and beyond</li>
+						<li><img src="/static/picture/about-list-icon.png" alt="icon">Our focus lies in fostering critical thinking, creativity, and a strong sense of responsibility</li>
+						<li><img src="/static/picture/about-list-icon.png" alt="icon">Through innovative, personalized teaching methods, we empower students with the confidence to tackle academic hurdles head-on</li>
+					</ul>
+				</div>
+				<div class="section-button">
+					<a href="/#contact">Contact us<i class="bi bi-arrow-right"></i></a>
+				</div>
+			</div>
+			<div class="col-lg-6 col-md-12">
+				<div >
+					<img style="width:100%;border-radius:25px" src="/static/image/about.jpg" alt="about imgs">
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<div  class=" style-home2 section-separate" >
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12 text-center">
+				<div class="section-title">
+					<h4 class="service-h4">Message for students</h4>
+					<h1 class="section-separate-title">Beacon to a brighter future</h1>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!--感言-->
+<div  class=" style-home2" style="background-color: #fff;padding-top: 100px;padding-bottom: 100px">
+	<div class="container">
+		<div class="row cell-phone-style">
+			<div class="col-lg-7 col-md-12">
+				<div class="service-details-video-thumb video-rwd">
+					<div class="service-details-video-thumb-inner">
+						<video id="videoPlayer" class="video-rwd2" controls poster="/media/{{testimony.picture}}">
+							<source src="/media/{{testimony.video}}" type="video/mp4">
+							很抱歉你的瀏覽器不支援此影片格式
+						</video>
+					</div>
+					<div class="video-icon">
+						<a id="playButton" class="video-vemo-icon" ><i class="fa fa-play"></i></a>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-lg-5 col-md-12">
+				<div class="section-title section-testimony">
+					<h4>testimony</h4>
+					<h1>{{testimony.title_en}}</h1>
+					<a style="position: relative;top: 30px">
+						{{testimony.content_en}}
+                    </a>
+                    <h5 style="position: relative;top: 40px;color:#522b2b">Student name：{{testimony.student_name_en}}</h5>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+<!--加入我們-->
+<div  class=" style-home2 join-us-section" >
+	<div class="container">
+		<div class="row cell-phone-style">
+			<div class="col-md-12 text-center">
+				<div class="section-title">
+					<h4 style="line-height: 30px" class="service-h4">Join us</h4>
+					<h1 style="position: relative;bottom: 5px">Maximize your potential</h1>
+				</div>
+			</div>
+		</div>
+		<div class="row cell-phone-style">
+			<div class="col-sm-3" >
+				<div style="text-align: center; transition: .4s;margin-bottom: 20px;">
+					<div class="feature-icon">
+						<i  class="flaticon-user  join-us-icon"></i>
+					</div>
+					<div class="feature-text">
+						<h4 style="line-height: 30px;margin-top: 20px" class = "join-us-h4">Professional faculty team</h4>
+						<p class="join-us-text">Our faculty boasts exceptional academic credentials, ensuring top-tier instruction for all our students</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-3" >
+				<div style="text-align: center; transition: .4s;margin-bottom: 20px;">
+					<div class="feature-icon">
+						<i  class="flaticon-idea join-us-icon"></i>
+					</div>
+					<div class="feature-text">
+						<h4 style="line-height: 30px;margin-top: 20px" class = "join-us-h4">self-growth</h4>
+						<p class="join-us-text">Offering personalized support to help students uncover their strengths and potential</p>
+
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-3" >
+				<div style="text-align: center; transition: .4s;margin-bottom: 20px;">
+					<div class="feature-icon">
+						<i  class="flaticon-flag join-us-icon"></i>
+					</div>
+					<div class="feature-text">
+						<h4  style="line-height: 30px;margin-top: 20px" class = "join-us-h4">nurturing interests</h4>
+						<p class="join-us-text">Fostering a passion for learning, and nurturing their unique talents and abilities</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-3" >
+				<div style="text-align: center; transition: .4s;margin-bottom: 20px;">
+					<div class="feature-icon">
+						<i  class="flaticon-help join-us-icon"></i>
+					</div>
+					<div class="feature-text">
+						<h4 style="line-height: 30px;margin-top: 20px" class = "join-us-h4">lifelong support</h4>
+						<p class="join-us-text">Supporting students from college to career with ongoing guidance at every step</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!--服務項目-->
+<div id="service" class="recent-work-section style-home2">
+	<div class="container">
+		<div class="row cell-phone-style">
+			<div class="col-md-12 text-center">
+				<div class="section-title">
+					<h4 class="service-h4">Service</h4>
+					<h1>Comprehensive service to leave you worry-free</h1>
+					<div class="section-title-embar-2"></div>
+					<div class="section-title-embar-4"></div>
+				</div>
+			</div>
+		</div>
+		<div class="row cell-phone-style" style="display: flex; justify-content: center;">
+			<div class="col-lg-4 col-md-12">
+				<div class="service-box style-inner">
+					<div class="service-content">
+						<h4>Collage consult</h4>
+						<p >Expert guidance for overseas university applications, simplifying the complex application journey</p>
+					</div>
+					<div class="service-icon">
+						<div class="images-icon">
+							<img src="/static/picture/service-icon4.png" alt="icon">
+						</div>
+						<div class="service-button">
+							<a href="/consult"><i class="bi bi-arrow-right"></i></a>
+						</div>
+					</div>
+
+				</div>
+			</div>
+			<div class="col-lg-4 col-md-12">
+				<div class="service-box style-inner">
+					<div class="service-content">
+						<h4>SAT/AP/IB </h4>
+						<p class="service_p_height">Leverage our test trend insights, rich resources, and tailored DSAT practice materials</p>
+					</div>
+					<div class="service-icon">
+						<div class="images-icon">
+							<img src="/static/picture/service-icon3.png" alt="icon">
+						</div>
+						<div class="service-button">
+							<a href="/shop"><i class="bi bi-arrow-right"></i></a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-4 col-md-12">
+				<div class="service-box style-inner">
+					<div class="service-content">
+						<h4>Academic Guidance</h4>
+						<p>Enhancing your academic journey with personalized tutoring, seasonal camps, and post-class support</p>
+					</div>
+					<div class="service-icon">
+						<div class="images-icon">
+							<img src="/static/picture/service-icon1.png" alt="icon">
+						</div>
+						<div class="service-button">
+							<a href="/course/"><i class="bi bi-arrow-right"></i></a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+
+<div style="background-color: #f9fdf7;padding-top: 50px;padding-bottom: 50px" class="recent-work-section style-home2">
+	<div class="container">
+			<div class="row align-items-center justify-content-center cell-phone-style">
+				<div class="col-md-12 text-center">
+					<div class="section-title">
+						<h4 class="service-h4">faculty team</h4>
+						<h1>Introduction to our outstanding faculty team</h1>
+						<div class="section-title-embar-2"></div>
+						<div class="section-title-embar-4"></div>
+					</div>
+				</div>
+			</div>
+	</div>
+
+	<div class="  container-fluid px-120">
+        <div class="row justify-content-center">
+            <div class="col-lg-12">
+                <div class="testimonials-slides owl-carousel owl-theme">
+
+                    <div class="card team-box border-0 bg-transparent mt-3">
+						 <div class="position-relative mx-auto">
+                                <img src="/static/picture/teacher.jpg" alt="team" style="height: 250px ;width: 250px ; border-radius: 50%; object-fit: cover"
+									 class="img-fluid rounded-circle img-thumbnail">
+                                <ul class="team-social list-unstyled">
+                                    <li><a href="#" class="primary-link"><i class="mdi mdi-facebook"></i></a></li>
+                                    <li class="my-1"><a href="#" class="primary-link"><i class="mdi mdi-twitter"></i></a>
+                                    </li>
+                                    <li><a href="#" class="primary-link"><i class="mdi mdi-skype"></i></a></li>
+                                </ul>
+						 </div>
+						 <div class="text-center">
+                                <h6 class="mb-0"><a href="#" class="primary-link">A</a></h6>
+                                <p class="text-muted fs-14 mb-0">CEO/Founder</p>
+						 </div>
+					</div>
+
+
+                     <div class="card team-box border-0 bg-transparent mt-3">
+						 <div class="position-relative mx-auto">
+                                <img src="/static/picture/teacher.jpg" alt="team" style="height: 250px ;width: 250px ; border-radius: 50%; object-fit: cover"
+									 class="img-fluid rounded-circle img-thumbnail">
+                                <ul class="team-social list-unstyled">
+                                    <li><a href="#" class="primary-link"><i class="mdi mdi-facebook"></i></a></li>
+                                    <li class="my-1"><a href="#" class="primary-link"><i class="mdi mdi-twitter"></i></a>
+                                    </li>
+                                    <li><a href="#" class="primary-link"><i class="mdi mdi-skype"></i></a></li>
+                                </ul>
+						 </div>
+						 <div class="text-center">
+                                <h6 class="mb-0"><a href="#" class="primary-link">B</a></h6>
+                                <p class="text-muted fs-14 mb-0">CEO/Founder</p>
+						 </div>
+					</div>
+					<div class="card team-box border-0 bg-transparent mt-3">
+						 <div class="position-relative mx-auto">
+                                <img src="/static/picture/teacher.jpg" alt="team" style="height: 250px ;width: 250px ; border-radius: 50%; object-fit: cover"
+									 class="img-fluid rounded-circle img-thumbnail">
+                                <ul class="team-social list-unstyled">
+                                    <li><a href="#" class="primary-link"><i class="mdi mdi-facebook"></i></a></li>
+                                    <li class="my-1"><a href="#" class="primary-link"><i class="mdi mdi-twitter"></i></a>
+                                    </li>
+                                    <li><a href="#" class="primary-link"><i class="mdi mdi-skype"></i></a></li>
+                                </ul>
+						 </div>
+						 <div class=" text-center">
+                                <h6 class="mb-0"><a href="#" class="primary-link">C</a></h6>
+                                <p class="text-muted fs-14 mb-0">CEO/Founder</p>
+						 </div>
+					</div>
+					<div class="card team-box border-0 bg-transparent mt-3">
+						 <div class="position-relative mx-auto">
+                                <img src="/static/picture/teacher.jpg" alt="team" style="height: 250px ;width: 250px ; border-radius: 50%; object-fit: cover"
+									 class="img-fluid rounded-circle img-thumbnail">
+                                <ul class="team-social list-unstyled">
+                                    <li><a href="#" class="primary-link"><i class="mdi mdi-facebook"></i></a></li>
+                                    <li class="my-1"><a href="#" class="primary-link"><i class="mdi mdi-twitter"></i></a>
+                                    </li>
+                                    <li><a href="#" class="primary-link"><i class="mdi mdi-skype"></i></a></li>
+                                </ul>
+						 </div>
+						 <div class="text-center">
+                                <h6 class="mb-0"><a href="#" class="primary-link">D</a></h6>
+                                <p class="text-muted fs-14 mb-0">CEO/Founder</p>
+						 </div>
+					</div>
+					<div class="card team-box border-0 bg-transparent mt-3">
+						 <div class="position-relative mx-auto">
+                                <img src="/static/picture/teacher.jpg" alt="team" style="height: 250px ;width: 250px ; border-radius: 50%; object-fit: cover"
+									 class="img-fluid rounded-circle img-thumbnail">
+                                <ul class="team-social list-unstyled">
+                                    <li><a href="#" class="primary-link"><i class="mdi mdi-facebook"></i></a></li>
+                                    <li class="my-1"><a href="#" class="primary-link"><i class="mdi mdi-twitter"></i></a>
+                                    </li>
+                                    <li><a href="#" class="primary-link"><i class="mdi mdi-skype"></i></a></li>
+                                </ul>
+						 </div>
+						 <div class="card-body text-center">
+                                <h6 class="mb-0"><a href="#" class="primary-link">E</a></h6>
+                                <p class="text-muted fs-14 mb-0">CEO/Founder</p>
+						 </div>
+					</div>
+
+                 </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div style="padding-top: 90px;padding-bottom: 50px" class="style-home2">
+
+	<div class="container">
+		<div class="row align-items-center justify-content-center">
+				<div class="col-md-12 text-center">
+					<div class="section-title">
+						<h4 class="service-h4">environment</h4>
+						<h1>Introduction to the classroom environment</h1>
+<!--						<div class="section-title-embar-2"></div>-->
+<!--						<div class="section-title-embar-4"></div>-->
+					</div>
+				</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-4 class_env_phone">
+				<div class="single-blog-box inner">
+					<div class="single-blog-thumb">
+						<img style="border-radius: 20px" src="/static/image/env1.jpg" alt="imgs">
+					</div>
+					<div class="blog-content  class_env class-content" style="border-radius: 15px;background-color: #f7f7f9">
+						<div class="meta-blog">
+							<span><i class="bi bi-person"></i>By Admin</span>
+						</div>
+						<div class="blog-content-title">
+							<h5 ><a class="class_env_font">Providing a wealth of creative activities and resources to stimulate students' creativity</a></h5>
+						</div>
+
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-4 class_env_phone">
+				<div class="single-blog-box inner">
+					<div class="single-blog-thumb">
+						<img style="border-radius: 20px" src="/static/image/env2.jpg" alt="imgs">
+					</div>
+					<div class="blog-content  class_env class-content" style="border-radius: 15px;background-color: #f7f7f9">
+						<div class="meta-blog">
+							<span><i class="bi bi-person"></i>By Admin</span>
+						</div>
+						<div class="blog-content-title ">
+							<h4><a  class="class_env_font">dopting an interdisciplinary teaching approach to integrate knowledge from various domains</a></h4>
+						</div>
+
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-4 class_env_phone">
+				<div class="single-blog-box inner">
+					<div class="single-blog-thumb">
+						<img style="border-radius: 20px" src="/static/image/env3.jpg" alt="imgs">
+					</div>
+					<div class="blog-content class_env class-content" style="border-radius: 15px;background-color: #f7f7f9">
+						<div class="meta-blog">
+							<span><i class="bi bi-person"></i>By Admin</span>
+						</div>
+						<div class="blog-content-title">
+							<h4><a  class="class_env_font">Encouraging student engagement in discussions to foster a vibrant interactive learning environment</a></h4>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+
+ <div style="padding-bottom: 0px" class=" style-home2" id="contact" >
+	<div class="container contact_us_form"  >
+		<div class="row" >
+			<div class="col-md-12 text-center">
+				<div class="section-title" style="display: flex;margin: 0;margin-left: 5px">
+					<h4>Contact us</h4>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-12 text-center" >
+			<div>
+				<form>
+					<div class="contact_us_form_">
+						<div class="col-lg-6 col-md-6 form_" >
+							<div class="input-box">
+								<input id="username" style="height: 50px;background-color: white;border-color:#e5e5e5" type="text"  placeholder="Name *" required="">
+							</div>
+							<div class="input-box">
+								<input id="email" style="height: 50px;background-color: white;border-color:#e5e5e5" type="Email" name="Email" placeholder="Email address *" required="">
+							</div>
+							<div class="input-box">
+								<input id="phone" style="height: 50px;background-color: white;border-color:#e5e5e5" placeholder="Phone number" >
+							</div>
+						</div>
+						<div class="col-lg-6 col-md-6">
+							<div class="input-box">
+								<textarea id="content" name="message" style="background-color: white;border-color:#e5e5e5"  cols="30" rows="9" placeholder="Please enter your question ... *"></textarea>
+							</div>
+						</div>
+					</div>
+				</form>
+				<div class="submit-button" >
+					<button style="margin: 10px" type="submit" onclick="submit_()">Submit<i class="bi bi-arrow-right"></i></button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+{% endblock %}
+
+<div  style="padding: 75px 0 34px;background-color: #4e4e4e;">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-3 col-md-6">
+				<div class="footer-logo">
+					<a  href="/">
+						<img style="height: 60px;position: relative; top: -22px" src="/static/picture/footer-logo.png" alt="logo">
+					</a>
+				</div>
+				<div class="footer-widget-text" style=" height: 100px;position: relative; top: 16px">
+					<p style="margin-right: 10px">
+						XL Academy offers you access to the most comprehensive educational resources.
+					</p>
+				</div>
+				<div class="footer-social-icon" style="margin-top: 20px;">
+					<ul>
+						<li><a target="_blank" href="https://www.facebook.com/xlacademytw?mibextid=YMEMSu"><i class="fab fa-facebook-f"></i></a></li>
+						<li><a target="_blank" href="https://www.youtube.com/@xlacademy698"><i class="fab fa-youtube"></i></a></li>
+
+						<li><a target="_blank" href="https://line.me/R/ti/p/@xlacademy"><i class="fab fa-line"></i></a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="col-lg-3 col-md-6">
+				<div class="footer-widget-content">
+					<div class="footer-widget-title">
+						<h4>Link</h4>
+					</div>
+					<div class="footer-widget-menu">
+						<ul>
+							<li><a href="/" style="font-weight: 500;">Home</a></li>
+							<li><a href="/consult/" style="font-weight: 500;">collage consult</a></li>
+							<li><a  href="/shop/" style="font-weight: 500;">online test question</a></li>
+							<li><a  href="/course/" style="font-weight: 500;">Academic Guidance</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-3 col-md-6">
+				<div class="footer-widget-content">
+					<div class="footer-widget-title">
+						<h4>Contact information</h4>
+					</div>
+					<div class="footer-widget-contact">
+						<ul>
+							<li><i class="bi bi-envelope"></i><a href="mailto:xlacademy168@gmail.com">xlacademy168@gmail.com</a></li>
+							<li><i class="bi bi-telephone-fill"></i><a href="tel:02 2532 2393">02 2532 2393</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-3 col-md-6">
+				<div class="footer-widget-content">
+					<div class="footer-widget-title">
+						<h4>Location</h4>
+					</div>
+					<div class="footer-widget-text-2">
+						<p>st Floor, No. 61, Alley 7, Lane 397, Minshui Road., Taipei, Taiwan</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="copyriht-area">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12 text-center">
+					<div class="copyriht-content">
+						<span>Copyright &copy; 2024.XL Academy All rights reserved . <a style="color: white" target="_blank" href="https://www.freepik.com">Image Source </a></span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="scroll-area">
+	<div class="top-wrap">
+		<div class="go-top-btn-wraper">
+			<div class="go-top go-top-button">
+				<i class="bi bi-chevron-double-up"></i>
+				<i class="bi bi-chevron-double-up"></i>
+			</div>
+		</div>
+	</div>
+</div>
+	<script src="/static/js/jquery-3.6.2.min.js"></script>
+	<script src="/static/js/bootstrap.min.js"></script>
+	<script src="/static/js/owl.carousel.min.js"></script>
+	<script src="/static/js/jquery.counterup.min.js"></script>
+	<script src="/static/js/waypoints.min.js"></script>
+	<script src="/static/js/wow.js"></script>
+	<script src="/static/js/imagesloaded.pkgd.min.js"></script>
+	<script src="/static/js/animated-text.js"></script>
+	<script src="/static/js/isotope.pkgd.min.js"></script>
+	<script src="/static/js/ajax-mail.py"></script>
+	<script src="/static/js/jquery.meanmenu.js"></script>
+	<script src="/static/js/jquery.scrollUp.js"></script>
+	<script src="/static/js/theme.js"></script>
+	<script src="/static/js/jquery.barfiller.js"></script>
+	<script src="/static/js/progresscircle.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.5/axios.min.js" integrity="sha512-TjBzDQIDnc6pWyeM1bhMnDxtWH0QpOXMcVooglXrali/Tj7W569/wd4E8EDjk1CwOAOPSJon1VfcEt1BI4xIrA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<script  src="/static/js/script.js"> </script>
+	<script>
+
+		const video = document.getElementById('videoPlayer');
+		const playButton = $('#playButton');
+
+		$(document).ready(function() {
+
+			video.onplay = function() {
+				playButton.hide();
+			};
+
+			video.onpause = function() {
+				playButton.show();
+			};
+
+
+			playButton.on('click', function() {
+				video.play();
+				playButton.hide();
+			});
+
+			video.onended = function() {
+				playButton.show();
+			};
+		});
+
+
+		function isNullOrWhitespace(value) {
+		  return value === undefined || value === null || value.trim() === '' || value === 'none';
+		}
+
+
+
+		function submit_(){
+			if(isNullOrWhitespace($('#username').val())==true || isNullOrWhitespace($('#email').val())==true || isNullOrWhitespace($('#content').val())==true){
+				swal({
+					'title':'資料填寫不全',
+					'text':'＊號為必填表格',
+					'icon':'warning',
+					'buttons':false,
+					'timer':1500
+				})
+			}else{
+				axios({
+					url:'/',
+					method:"POST",
+					headers:{'X-CSRFToken': "{{ csrf_token }}"},
+					data:{
+						'username':$('#username').val(),
+						'email':$('#email').val(),
+						'phone':$('#phone').val(),
+						'content':$('#content').val(),
+					}
+				}).then(res=>{
+					if(res.data.errno === 0){
+						swal({
+							'title':'已傳送',
+							'text':'我們會盡快回覆您',
+							'icon':'success',
+							'buttons':false,
+							'timer':1500
+						})
+					}else{
+						swal({
+							'title':'傳送失敗',
+							'text':'無效資料或填寫補全',
+							'icon':'error',
+							'buttons':false,
+							'timer':1500
+						})
+					}
+				})
+			}
+		}
+	</script>
+
+
+</body></html>
+
+
+
+

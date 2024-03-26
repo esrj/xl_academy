@@ -9,8 +9,16 @@
     margin-right: 15px
 }
 
+.service_p_height{
+    height: 90px;
+}
+
+.responsive_collage_title{
+    height: 99px;
+}
+
 .contact_us_form{
-    background-color:#f3f3f5;
+    background-color:#f7f7f9;
     padding: 40px 80px 25px 70px;
     margin-bottom: 150px
 }
@@ -1571,10 +1579,18 @@
 }
 
 .blog-content-title {
-    border-bottom: 1px solid #E6E6E6;
-    margin-bottom: 26px;
-    margin-top: 0px;
+    border-bottom: 0;
+    margin-bottom: 0;
+    margin-top: 0;
     position: relative;
+}
+.class-content{
+    padding:35px !important;
+}
+
+
+.class_env_font{
+    font-size: 17px !important;
 }
 
 .blog-content-title a {
@@ -3629,11 +3645,11 @@ transform:rotateX(0deg) translateY(0px)
 ==========================*/
 .breadcumb-area {
     position: relative;
-    background: url(../image/login-bg.jpg);
+    background: url(../image/slider2.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
-    padding: 110px 0 110px;
+    padding: 170px 0 170px;
     text-align: center;
     min-height: 200px; /* 设置一个最小高度，适应不同屏幕尺寸 */
 }
@@ -4400,7 +4416,7 @@ button.icons {
     list-style: none;
     margin-bottom: 15px;
     background: transparent;
-    padding: 16px 20px 16px;
+    padding: 10px 14px 10px;
     border-radius: 4px;
     transition: .5s;
     border: 2px solid #ff3838;
@@ -4430,20 +4446,20 @@ button.icons {
 
 .widget-categories-menu ul li a {
     display: block;
-    color:#ff3838;
+    /*color:#ff3838;*/
     transition: .5s;
 }
 
 .widget-categories-menu ul li a span {
     display: inline-block;
     float: right;
-    background: #ff3838;
+    /*background: #ff3838;*/
     height: 22px;
     width: 22px;
     font-size: 12px;
     text-align: center;
     margin-top: 6px;
-    color: #fff;
+    /*color: #fff;*/
     line-height: 22px;
     transition: .5s;
 }

@@ -1,8 +1,11 @@
-{% extends 'index.html' %}
+{% extends 'zh/index.html' %}
+
+
 
 
 
 {% block navbar %}
+{% if lang == 'zh' %}
 <div id="sticky-header" class="main-header" style="height: 90px;    background: rgba(0,0,0,0);">
 	<div class="container" style="height: 90px;position: relative; z-index: 100;">
 		<div class="row align-items-center" style="height: 90px">
@@ -23,14 +26,21 @@
 								<i class="fas fa-caret-down"></i>
 							</a>
 							<ul class="sub-menu">
-								<li><a href="/consult?type=classification">學校類型分類</a></li>
-								<li><a href="/consult">學校地區分類</a></li>
+								<li><a href="/consult">升學諮詢服務</a></li>
+								<li><a href="/consult?classification=type">學校類型分類</a></li>
+								<li><a href="/consult?classification=region">學校地區分類</a></li>
 							</ul>
 						</li>
 						<li class="menu-item-has-children">
-							<a   style="font-weight: 500;color:#522b2b" href="/shop">
-								線上試題
+							<a  style="font-weight: 500;color:#522b2b" href="/course/">
+								課後專班
+								<i class="fas fa-caret-down"></i>
 							</a>
+							<ul class="sub-menu">
+								<li><a href="/course/">課後專班</a></li>
+								<li><a href="/course?type=tutor">一對一家教</a></li>
+								<li><a href="/shop/">線上試題</a></li>
+							</ul>
 						</li>
 					</ul>
 				</div>
@@ -57,24 +67,120 @@
 							<i class="fas fa-caret-down"></i>
 						</a>
 						<ul class="sub-menu">
-							<li><a href="/consult?type=classification">學校類型分類</a></li>
-							<li><a href="/consult">學校地區</a></li>
+							<li><a href="/consult">升學諮詢</a></li>
+							<li><a href="/consult?classification=type">學校類型分類</a></li>
+							<li><a href="/consult?classification=region">學校地區</a></li>
 						</ul>
 					</li>
 					<li class="menu-item-has-children">
-						<a style="font-weight: 500;color:#522b2b" href="/shop">
-							線上試題
+						<a style="font-weight: 500;color:#522b2b" href="/course/">
+							學術指導
+							<i class="fas fa-caret-down"></i>
 						</a>
+						<ul class="sub-menu">
+							<li><a href="/course/">課後專班</a></li>
+							<li><a href="/consult?type=tutor">一對一教學</a></li>
+							<li><a href="/shop/">線上試題</a></li>
+						</ul>
 					</li>
 				</ul>
 			</nav>
 		</div>
 	</div>
+{% else %}
+<div id="sticky-header" class="main-header" style="height: 90px;    background: rgba(0,0,0,0);">
+	<div class="container" style="height: 90px;position: relative; z-index: 100;">
+		<div class="row align-items-center" style="height: 90px">
+			<div class="col-lg-2" style="height: 90px">
+				<div class="header-logo">
+					<a href="/"><img style="height:55px;position: relative; top:5px " src="/static/picture/footer-logo.png" alt="logo"></a>
+				</div>
+			</div>
+			<div class="col-lg-8" style="position: relative;bottom: 10px; ">
+				<div class="header-menu">
+					<ul class="nav_scroll">
+						<li class="menu-item-has-children">
+							<a    style="font-weight: 500;color:#522b2b" href="/">Home</a>
+						</li>
+						<li class="menu-item-has-children">
+							<a  style="font-weight: 500;color:#522b2b" href="/consult">
+								Collage consult
+								<i class="fas fa-caret-down"></i>
+							</a>
+							<ul class="sub-menu">
+
+								<li><a href="/consult">University Admission Counseling</a></li>
+								<li><a href="/consult?classification=type">Classification of school types</a></li>
+								<li><a href="/consult?classification=region">Classification of schools by region</a></li>
+							</ul>
+						</li>
+						<li class="menu-item-has-children">
+							<a style="font-weight: 500;color:#522b2b" href="/course/">
+								Academic Guidance
+								<i class="fas fa-caret-down"></i>
+							</a>
+							<ul class="sub-menu">
+								<li><a href="/course/">Academic Guidance</a></li>
+								<li><a href="/course?type=tutor">Tutor</a></li>
+								<li><a href="/shop/">Online test questions</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div style="position: relative;bottom: 10px; " class="col-lg-2">
+				<div class="header-button">
+					<a href="/#contact">Contact us<i class="bi bi-arrow-right"></i></a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="mobile-menu-area d-sm-block d-md-block d-lg-none">
+		<div class="mobile-menu">
+			<nav class="header-menu" style="display: block;">
+				<ul class="nav_scroll">
+					<li class="menu-item-has-children">
+						<a style="color:#522b2b" href="/">Home</a>
+					</li>
+					<li class="menu-item-has-children">
+						<a style="font-weight: 500;color:#522b2b" href="#">
+							Collage consult
+							<i class="fas fa-caret-down"></i>
+						</a>
+						<ul class="sub-menu">
+							<li><a href="/consult">University Admission Counseling</a></li>
+							<li><a href="/consult?classification=type">Classification of school types</a></li>
+							<li><a href="/consult?classification=region">Classification os schools by region</a></li>
+						</ul>
+					</li>
+					<li class="menu-item-has-children">
+						<a style="font-weight: 500;color:#522b2b" href="/course/">
+							Academic Guidance
+							<i class="fas fa-caret-down"></i>
+						</a>
+						<ul class="sub-menu">
+							<li><a href="/course/">Academic Guidance</a></li>
+							<li><a href="/course?type=tutor">Tutor</a></li>
+							<li><a href="/shop/">Online test questions</a></li>
+						</ul>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+
+{% endif %}
 {% endblock %}
 
 {% block content %}
+
 <div class="blog-section">
 	<div class="container">
+
+		{% if lang == 'zh' %}
+
 		<div class="row">
 			<div class="col-md-12 text-center">
 				<div class="section-title">
@@ -84,6 +190,54 @@
 			</div>
 		</div>
 
+		{% else %}
+		<div class="row">
+			<div class="col-md-12 text-center">
+				<div class="section-title">
+					<h4>universities</h4>
+					<h1>Explore renowned universities around the world</h1>
+				</div>
+			</div>
+		</div>
+
+		{% endif %}
+		{% if classification ==  'type' %}
+
+		{% if lang == 'zh' %}
+        <div class="row">
+			<div class="col-md-12">
+				<div class="product_nav">
+					<div class="product_menu">
+						<ul class="menu-filtering">
+							<li class="current_menu_item" data-filter="*"> All</li>
+							<li data-filter=".pub">公立大學</li>
+							<li data-filter=".pri">私立大學</li>
+							<li data-filter=".tech">技術學院</li>
+							<li data-filter=".lang">語言學校</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		{% else %}
+		<div class="row">
+			<div class="col-md-12">
+				<div class="product_nav">
+					<div class="product_menu">
+						<ul class="menu-filtering">
+							<li class="current_menu_item" data-filter="*"> All</li>
+							<li data-filter=".pub">Public universities</li>
+							<li data-filter=".pri">Private universities</li>
+							<li data-filter=".tech">Technical colleges</li>
+							<li data-filter=".lang">Language schools</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		{% endif %}
+		{% else %}
 		<div class="row">
 			<div class="col-md-12">
 				<div class="product_nav">
@@ -99,10 +253,38 @@
 				</div>
 			</div>
 		</div>
+		{% endif %}
 
 
 		<div class="row image_load">
+		    {% if classification == 'type' %}
+			{% for collage in  collages %}
+				<div class="col-lg-3 col-md-4 col-sm-6 col-6 grid-item {{collage.classification}}" style="margin-top:50px;margin-bottom:100px">
+					<div class="single-blog-box">
+						<div class="blog-content">
+							<img style="width:100%" src="/media/{{collage.emblem}}" alt="imgs">
 
+							<div class="meta-blog">
+								<span class="collage_place"><i class="bi bi-map collage_place"></i>{{collage.country}}</span>
+							</div>
+
+							<div class="blog-content-title">
+								{% if lang == 'zh' %}
+								<h5 class="collage_title"><a class="collage_title" style="font-weight: 400" href="/detail/{{ collage.id}}">{{collage.name}}</a></h5>
+								{% else %}
+								<h5 class="collage_title responsive_collage_title" ><a  style="font-weight: 400;font-size:17px" href="/detail/{{ collage.id}}">{{collage.en_name}}</a></h5>
+								{% endif %}
+							</div>
+							<div class="blog-content-button">
+								<a class="collage_read_more" href="/detail/{{ collage.id }}">Read More<i class="bi bi-arrow-right"></i></a>
+							</div>
+						</div>
+					</div>
+				</div>
+			{%endfor %}
+
+
+			{% else %}
 			{% for collage in  collages %}
 				<div class="col-lg-3 col-md-4 col-sm-6 col-6 grid-item {{collage.continent}}" style="margin-top:50px;margin-bottom:100px">
 					<div class="single-blog-box">
@@ -113,8 +295,11 @@
 								<span class="collage_place"><i class="bi bi-map collage_place"></i>{{collage.country}}</span>
 							</div>
 							<div class="blog-content-title">
+								{% if lang == 'zh' %}
 								<h5 class="collage_title"><a class="collage_title" style="font-weight: 400" href="/detail/{{ collage.id}}">{{collage.name}}</a></h5>
-							</div>
+								{% else %}
+								<h5 class="collage_title"><a class="collage_title" style="font-weight: 400" href="/detail/{{ collage.id}}">{{collage.en_name}}</a></h5>
+								{% endif %}							</div>
 							<div class="blog-content-button">
 								<a class="collage_read_more" href="/detail/{{ collage.id }}">Read More<i class="bi bi-arrow-right"></i></a>
 							</div>
@@ -122,24 +307,41 @@
 					</div>
 				</div>
 			{% endfor %}
+			{% endif %}
 		</div>
 		<nav aria-label="Page navigation example" style="display: flex;flex-direction: column;align-items: center;">
             <ul class="pagination" >
                 {% if num > 1 %}
                 <li class="page-item">
-                    <a style="color:black" class="page-link" href="/consult/?type=classification&page={{prev}}" aria-label="Previous">
+					{% if classification == 'type' %}
+                    <a style="color:black" class="page-link" href="/consult/?classification=type&page={{prev}}" aria-label="Previous">
                         <span aria-hidden="true">&laquo;</span>
                     </a>
+					{% else %}
+					 <a style="color:black" class="page-link" href="/consult/?classification=region&page={{prev}}" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                    </a>
+					{% endif %}
                 </li>
                 {% endif %}
                 {% for i in all_page %}
-                    <li class="page-item" ><a style="color:black" class="page-link" href="/consult/?type=classification&page={{i}}">{{i}}</a></li>
+					{% if classification == 'type' %}
+                    <li class="page-item" ><a style="color:black" class="page-link" href="/consult/?classification=type&page={{i}}">{{i}}</a></li>
+					{% else %}
+					<li class="page-item" ><a style="color:black" class="page-link" href="/consult/?classification=region&page={{i}}">{{i}}</a></li>
+					{% endif %}
                 {% endfor %}
                 {% if num !=  num_page  %}
                 <li class="page-item">
-                    <a style="color:black" class="page-link" href="/consult/?page={{next}}" aria-label="Next">
+					{% if classification == 'type' %}
+                    <a style="color:black" class="page-link" href="/consult/?classification=type&page={{next}}" aria-label="Next">
                         <span aria-hidden="true">&raquo;</span>
                     </a>
+					{% else %}
+					 <a style="color:black" class="page-link" href="/consult/?classification=region&page={{next}}" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                    </a>
+					{% endif %}
                 </li>
                 {% endif %}
             </ul>
@@ -148,5 +350,161 @@
 </div>
 
 
+
+{% endblock %}
+
+{% block footer %}
+
+{% if lang == 'zh' %}
+	<div  style="padding: 75px 0 34px;background-color: #4e4e4e;">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-3 col-md-6">
+				<div class="footer-logo">
+					<a  href="/">
+						<img style="height: 60px;position: relative; top: -22px" src="/static/picture/footer-logo.png" alt="logo">
+					</a>
+				</div>
+				<div class="footer-widget-text" style=" height: 100px;position: relative; top: 16px">
+					<p style="margin-right: 10px">
+						台北市私立艾司樂文理補習班，讓您享受最完善的教育資源。
+					</p>
+				</div>
+				<div class="footer-social-icon" style="margin-top: 20px;">
+					<ul>
+						<li><a target="_blank" href="https://www.facebook.com/xlacademytw?mibextid=YMEMSu"><i class="fab fa-facebook-f"></i></a></li>
+						<li><a target="_blank" href="https://www.youtube.com/@xlacademy698"><i class="fab fa-youtube"></i></a></li>
+
+						<li><a target="_blank" href="https://line.me/R/ti/p/@xlacademy"><i class="fab fa-line"></i></a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="col-lg-3 col-md-6">
+				<div class="footer-widget-content">
+					<div class="footer-widget-title">
+						<h4>所有頁面</h4>
+					</div>
+					<div class="footer-widget-menu">
+						<ul>
+							<li><a href="/" style="font-weight: 500;">首頁</a></li>
+							<li><a href="/cousult/" style="font-weight: 500;">大學諮詢</a></li>
+							<li><a  href="/shop/" style="font-weight: 500;">線上試題</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-3 col-md-6">
+				<div class="footer-widget-content">
+					<div class="footer-widget-title">
+						<h4>聯絡方式</h4>
+					</div>
+					<div class="footer-widget-contact">
+						<ul>
+							<li><i class="bi bi-envelope"></i><a href="mailto:xlacademy168@gmail.com">xlacademy168@gmail.com</a></li>
+							<li><i class="bi bi-telephone-fill"></i><a href="tel:02 2532 2393">02 2532 2393</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-3 col-md-6">
+				<div class="footer-widget-content">
+					<div class="footer-widget-title">
+						<h4>所在位置</h4>
+					</div>
+					<div class="footer-widget-text-2">
+						<p>明水路397巷7弄61號1Ｆ, Taipei, Taiwan</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="copyriht-area">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12 text-center">
+					<div class="copyriht-content">
+						<span>Copyright &copy; 2024.XL Academy All rights reserved . <a style="color: white" target="_blank" href="https://www.freepik.com">Image Source </a></span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{% else %}
+	<div  style="padding: 75px 0 34px;background-color: #4e4e4e;">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-3 col-md-6">
+				<div class="footer-logo">
+					<a  href="/">
+						<img style="height: 60px;position: relative; top: -22px" src="/static/picture/footer-logo.png" alt="logo">
+					</a>
+				</div>
+				<div class="footer-widget-text" style=" height: 100px;position: relative; top: 16px">
+					<p style="margin-right: 10px">
+						XL Academy offers you access to the most comprehensive educational resources.
+					</p>
+				</div>
+				<div class="footer-social-icon" style="margin-top: 20px;">
+					<ul>
+						<li><a target="_blank" href="https://www.facebook.com/xlacademytw?mibextid=YMEMSu"><i class="fab fa-facebook-f"></i></a></li>
+						<li><a target="_blank" href="https://www.youtube.com/@xlacademy698"><i class="fab fa-youtube"></i></a></li>
+
+						<li><a target="_blank" href="https://line.me/R/ti/p/@xlacademy"><i class="fab fa-line"></i></a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="col-lg-3 col-md-6">
+				<div class="footer-widget-content">
+					<div class="footer-widget-title">
+						<h4>Link</h4>
+					</div>
+					<div class="footer-widget-menu">
+						<ul>
+							<li><a href="/" style="font-weight: 500;">Home</a></li>
+							<li><a href="/consult" style="font-weight: 500;">collage consult</a></li>
+							<li><a  href="/shop/" style="font-weight: 500;">online test question</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-3 col-md-6">
+				<div class="footer-widget-content">
+					<div class="footer-widget-title">
+						<h4>Contact information</h4>
+					</div>
+					<div class="footer-widget-contact">
+						<ul>
+							<li><i class="bi bi-envelope"></i><a href="mailto:xlacademy168@gmail.com">xlacademy168@gmail.com</a></li>
+							<li><i class="bi bi-telephone-fill"></i><a href="tel:02 2532 2393">02 2532 2393</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-3 col-md-6">
+				<div class="footer-widget-content">
+					<div class="footer-widget-title">
+						<h4>Location</h4>
+					</div>
+					<div class="footer-widget-text-2">
+						<p>st Floor, No. 61, Alley 7, Lane 397, Minshui Road., Taipei, Taiwan</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="copyriht-area">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12 text-center">
+					<div class="copyriht-content">
+						<span>Copyright &copy; 2024.XL Academy All rights reserved . <a style="color: white" target="_blank" href="https://www.freepik.com">Image Source </a></span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{% endif %}
 
 {% endblock %}

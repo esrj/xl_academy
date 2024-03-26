@@ -1,0 +1,94 @@
+{% extends 'contact.html' %}
+
+
+
+{% block content %}
+<div class="content" style="margin: 20px;margin-top :55px;margin-bottom: 55px">
+    <div class="col-md-9" style="margin: 0 auto">
+        <h4>上傳最新課程資訊</h4>
+        <form>
+            <div class="mb-3">
+                <input id="picture" type="file" class="form-control">
+            </div>
+
+
+            <div class="mb-3">
+                <input id="title" type="text" class="form-control"  placeholder="標題">
+            </div>
+            <div class="mb-3">
+                <input id="title_en" type="text" class="form-control"  placeholder="標題(英文)">
+            </div>
+            <div class="mb-3">
+                <input id="date" type="text" class="form-control"  placeholder="開課時間">
+            </div>
+            <div class="mb-3">
+                <textarea id="text" class="form-control"  rows="3" placeholder="詳細內容"></textarea>
+            </div>
+
+
+            <div class="mb-3">
+                <textarea id="text_en" class="form-control"  rows="3" placeholder="詳細內容(英文)"></textarea>
+            </div>
+            <button onclick="upload_()" style="background: #ff3938;border: #ff3938;" type="button" class="btn btn-primary">確定上傳</button>
+        </form>
+    </div>
+</div>
+<script>
+
+    function isImage(filename) {
+        const allowedExtensions = ['.jpg', '.jpeg', '.png'];
+        return allowedExtensions.some(ext => filename.toLowerCase().endsWith(ext));
+    }
+
+    function upload_(){
+
+        if($('#picture').prop('files')[0]['name'] && $('#title').val() && $('#text').val() &&  $('#date').val()  ){
+            if(!isImage($('#picture').prop('files')[0]['name'])){
+                swal({
+                    'title':'格式不符',
+                    'text':'檔案必須是 jpg jpeg png',
+                    "buttons":['確定'],
+                    'icon':'warning'
+                })
+            }else {
+                const formData = new FormData();
+                formData.append('picture', $('#picture').val());
+                formData.append('text', $('#text').val());
+                formData.append('title', $('#title').val());
+                formData.append('date', $('#date').val());
+                formData.append('title_en', $('#title_en').val());
+                formData.append('text_en', $('#text_en').val());
+                axios({
+                    url: '/management/course/',
+                    method: "POST",
+                    headers: {
+                        'X-CSRFToken': "{{ csrf_token }}",
+                        'Content-Type': 'multipart/form-data;charset=UTF-8'
+                    },
+                    data: formData
+                }).then(res=>{
+                    if(res.data.errno === 0){
+                        swal({
+                            'title':'上傳成功',
+                            'text':'請至主頁面檢查',
+                            "timer": 1500,
+                            'icon':'success'
+                        })
+                    }
+                })
+            }
+        }else{
+
+            swal({
+                'title':'資料不全',
+                'text':'所有資料皆為必填',
+                "buttons":['確定'],
+                'icon':'warning'
+            })
+        }
+    }
+</script>
+
+
+{% endblock %}
+

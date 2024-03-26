@@ -1,0 +1,147 @@
+{% extends 'consult.html' %}
+
+
+{% block content %}
+<div class="breadcumb-area">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="breadcumb-content">
+					<div class="breadcubm-title">
+					    {% if lang == 'zh' %}
+						<h1 class="academy_title">個性化學習體驗，開啟無限可能！</h1>
+						<ul>
+							<li><a href="/">首頁</a></li>
+							<li>/ 一對一教學 </li>
+						</ul>
+						{% else %}
+
+                            <h1 class="academy_title">Personalized Learning Experience, Unlock Infinite Possibilities!</h1>
+                            <ul>
+                                <li><a href="/">Home</a></li>
+                                <li>/ One-on-One Teaching</li>
+                            </ul>
+						{% endif %}
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="service-section">
+	<div class="container">
+		<div class="row">
+
+		    {% if lang == 'zh' %}
+			<div class="col-md-12 text-center">
+			    <div class="section-title">
+					<h4>一對一教學</h4>
+					<h1>個人化指導，成就你的學習目標</h1>
+					<div class="section-title-embar-1"></div>
+					<div class="section-title-embar-2"></div>
+					<div class="section-title-embar-3"></div>
+					<div class="section-title-embar-4"></div>
+				</div>
+			</div>
+
+
+			<div class="col-lg-6 col-md-12">
+				<div class="section-title left">
+					<p >
+					歡迎來到我們的一對一教學區域！這裡是你專屬的學習空間，我們的專業老師將根據你的學習需求和節奏，量身訂製教學計劃，確保每一堂課都能夠精準解決你的學習難題。無論是學業上的疑惑還是考試準備，我們都將提供最有效的指導，讓你事半功倍，輕鬆取得學習成果。立即加入我們的一對一教學，開啟專屬你的成功之路！
+					</p>
+				</div>
+				<div class="about-list-item">
+					<ul>
+						<li><img src="/static/picture/about-list-icon.png" alt="icon">專業師資：我們擁有經驗豐富、專業的師資團隊</li>
+						<li><img src="/static/picture/about-list-icon.png" alt="icon">個人化教學：量身定制教學計劃，確保教學效果最大化</li>
+						<li><img src="/static/picture/about-list-icon.png" alt="icon">靈活彈性：提供彈性的上課時間安排，適應學生的時間和節奏</li>
+						<li><img src="/static/picture/about-list-icon.png" alt="icon">全方位支援：提供全面的學習支援，包括資源分享、作業輔導和考試準備</li>
+					</ul>
+				</div>
+				<div class="section-button">
+					<a href="/#contact">詢問詳細細節<i class="bi bi-arrow-right"></i></a>
+				</div>
+			</div>
+			{% else %}
+
+            <div class="col-md-12 text-center">
+                <div class="section-title">
+                    <h4>One-on-One Teaching</h4>
+                    <h1>Personalized Guidance to Achieve Your Learning Goals</h1>
+                </div>
+            </div>
+
+            <div class="col-lg-6 col-md-12">
+                <div class="section-title left">
+                    <p>
+                        Welcome to our one-on-one teaching area! This is your exclusive learning space, where our professional teachers will tailor teaching plans based on your learning needs and pace, ensuring that each lesson precisely addresses your learning challenges. Whether it's academic doubts or exam preparation, we will provide the most effective guidance to help you achieve your learning goals with ease. Join our one-on-one teaching now and embark on the path to your personal success!
+                    </p>
+                </div>
+                <div class="about-list-item">
+                    <ul>
+                        <li><img src="/static/picture/about-list-icon.png" alt="icon">Experienced Faculty</li>
+                        <li><img src="/static/picture/about-list-icon.png" alt="icon">Personalized Teaching</li>
+                        <li><img src="/static/picture/about-list-icon.png" alt="icon">Flexible Scheduling</li>
+                        <li><img src="/static/picture/about-list-icon.png" alt="icon">Comprehensive Support</li>
+                    </ul>
+                </div>
+                <div class="section-button">
+                    <a href="/#contact">Inquire for Details<i class="bi bi-arrow-right"></i></a>
+                </div>
+            </div>
+
+			{% endif %}
+
+
+			<div class="col-lg-6 col-md-12">
+				<div >
+					<img style="width:100%;border-radius:25px" src="/static/picture/teacher.jpg" alt="about imgs">
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="service-section">
+	<div class="container">
+		<div class="row">
+			<div class="row align-items-center">
+				<div class="col-md-12 phone-style">
+					<div class="project-details-content">
+						{% if lang == 'zh' %}
+						<div class="project-details-title">
+							<div class="section-title">
+								<h1 style="color:#522b2b;margin-top: 30px;margin-bottom: 10px">年度榜單</h1>
+							</div>
+							<p>我們非常榮幸地宣布，今年我們的補習班獲得了非常漂亮的榜單！這是對我們團隊的共同努力的最佳證明，也是對家長學生信任的極大回饋。值此喜慶時刻，我們滿懷自豪地宣布，我們的學子們在這個學年錄取了眾多優秀學府。未來，我們將繼續秉承培育精英的使命，為更多學子的夢想啟航！</p>
+						</div>
+						<div style="position: relative;top:30px">
+							{% for ranking in rankings %}
+							<p style="display: inline;border-radius: 20px;background: #F3F3F5;padding:12px 25px;margin-right: 15px;line-height: 50px;">{{ranking.title}}</p>
+							{% endfor %}
+						</div>
+						{% else %}
+						<div class="project-details-title">
+							<div class="section-title">
+								<h1 style="color:#522b2b;margin-top: 30px;margin-bottom: 10px">Annual Rankings</h1>
+							</div>
+							<p>We are delighted to announce that our tutoring center has achieved an impressive ranking this year! This is the best proof of our team's collective efforts and a great feedback from parents and students. In this joyful moment, we proudly announce that our students have been accepted into numerous prestigious institutions this academic year. In the future, we will continue our mission of nurturing excellence and set sail for more students' dreams!</p>
+						</div>
+						<div style="position: relative;top:30px">
+							{% for ranking in rankings %}
+							<p style="display: inline;border-radius: 20px;background: #F3F3F5;padding:12px 25px;margin-right: 15px;line-height: 50px;">{{ranking.title_en}}</p>
+							{% endfor %}
+						</div>
+						{% endif %}
+
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+{% endblock %}

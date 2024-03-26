@@ -15,21 +15,43 @@
 			</div>
 			<div class="col-lg-5 col-md-12 phone-style">
 				<div class="project-info" style="background:white">
-					<h3 style="font-weight:500;color:#2e2e2e" class="project-info-title title-size"> {{collage.name}} </h3>
-					<p style=";color:#2e2e2e" >{{collage.en_name}}</p>
-					<p>{{collage.info}}</p>
-					<p class="detail-info" ><span style=";color:#2e2e2e">校區位置 : </span>{{collage.country}}</p>
-					<p class="detail-info2" ><span style=";color:#2e2e2e">所在城市 : </span>{{collage.city}}</p>
-					<p class="detail-info2"><span style=";color:#2e2e2e">學校地址 : </span>{{collage.address}}</p>
-					<p class="detail-info2" ><span style=";color:#2e2e2e">學校類型 : </span>{{collage.classification}}</p>
-					<div  class="detail-info2 project-info-social-icon">
-						<ul>
-						    <li><a href="#"><i class="fab fa-youtube"  style=" background: #efefef"></i></a></li>
-						    <li><a href="{{collage.links}}"><i class="fa fa-link"  style=" background:#efefef"></i></a></li>
-							<li><a href="#"><i class="fab fa-facebook-f"  style=" background: #efefef"></i></a></li>
 
-						</ul>
-					</div>
+					{% if lang == 'zh'%}
+						<h3 style="font-weight:500;color:#2e2e2e" class="project-info-title title-size"> {{collage.name}} </h3>
+						<p style=";color:#2e2e2e" >{{collage.en_name}}</p>
+
+						<p>{{collage.info}}</p>
+						<p class="detail-info" ><span style=";color:#2e2e2e">校區位置 : </span>{{collage.country}}</p>
+						<p class="detail-info2" ><span style=";color:#2e2e2e">所在城市 : </span>{{collage.city}}</p>
+						<p class="detail-info2"><span style=";color:#2e2e2e">學校地址 : </span>{{collage.address}}</p>
+						<p class="detail-info2" ><span style=";color:#2e2e2e">學校類型 : </span>{{collage.classification}}</p>
+						<div  class="detail-info2 project-info-social-icon">
+							<ul>
+								<li><a href="#"><i class="fab fa-youtube"  style=" background: #efefef"></i></a></li>
+								<li><a href="{{collage.links}}"><i class="fa fa-link"  style=" background:#efefef"></i></a></li>
+								<li><a href="#"><i class="fab fa-facebook-f"  style=" background: #efefef"></i></a></li>
+
+							</ul>
+						</div>
+					{% else %}
+						<h3 style="font-weight:500;color:#2e2e2e" class="project-info-title title-size"> {{collage.en_name}} </h3>
+						<p style=";color:#2e2e2e" >{{collage.name}}</p>
+
+						<p>{{collage.info_en}}</p>
+						<p class="detail-info" ><span style=";color:#2e2e2e">Campus Location: </span>{{collage.country_en}}</p>
+						<p class="detail-info2" ><span style=";color:#2e2e2e">City: </span>{{collage.city_en}}</p>
+						<p class="detail-info2"><span style=";color:#2e2e2e">School Address: </span>{{collage.address}}</p>
+						<p class="detail-info2" ><span style=";color:#2e2e2e">School Type: </span>{{collage.classification}}</p>
+						<div  class="detail-info2 project-info-social-icon">
+							<ul>
+								<li><a href="#"><i class="fab fa-youtube"  style=" background: #efefef"></i></a></li>
+								<li><a href="{{collage.links}}"><i class="fa fa-link"  style=" background:#efefef"></i></a></li>
+								<li><a href="#"><i class="fab fa-facebook-f"  style=" background: #efefef"></i></a></li>
+
+							</ul>
+						</div>
+					{% endif %}
+
 				</div>
 			</div>
 		</div>
@@ -37,27 +59,51 @@
 		<div class="row align-items-center">
 			<div class="col-md-12 phone-style">
 				<div class="project-details-content">
+					{% if lang == 'zh'%}
+						<div class="project-details-title">
+							<h2 style="color:#522b2b;margin-top: 30px;margin-bottom: 10px">大學介紹 <span style="font-weight: 400;color:#6a6a6a;font-size: 16px"></span></h2>
+						</div>
+						<div class="project-details-desc">
+							<p style="white-space: pre-line">{{collage.introduction}}</p>
+						</div>
+						<div class="project-details-title">
+							<h6 style="color:#522b2b;margin-top: 10px;margin-bottom: 10px">{{collage.name}}的學術成就</h6>
+						</div>
+						{% for achievement in achievements %}
+						<div class="project-details-desc">
+							<p style="white-space: pre-line">{{achievement}}</p>
+						</div>
+						{% endfor %}
+						<div class="project-details-title">
+							<h6 style="color:#522b2b;margin-top: 10px;margin-bottom: 10px">選擇{{collage.name}}的首要理由</h6>
+						</div>
+						<div class="project-details-desc">
+							<p style="white-space: pre-line">{{collage.reason}}</p>
+						</div>
+					{% else %}
 
-					<div class="project-details-title">
-						<h2 style="color:#522b2b;margin-top: 30px;margin-bottom: 10px">Introduction <span style="font-weight: 400;color:#6a6a6a;font-size: 16px"></span></h2>
-					</div>
-					<div class="project-details-desc">
-						<p style="white-space: pre-line">{{collage.introduction}}</p>
-					</div>
-					<div class="project-details-title">
-						<h6 style="color:#522b2b;margin-top: 10px;margin-bottom: 10px">{{collage.name}}的學術成就</h6>
-					</div>
-					{% for achievement in achievements %}
-					<div class="project-details-desc">
-						<p style="white-space: pre-line">{{achievement}}</p>
-					</div>
-					{% endfor %}
-					<div class="project-details-title">
-						<h6 style="color:#522b2b;margin-top: 10px;margin-bottom: 10px">選擇{{collage.name}}的首要理由</h6>
-					</div>
-					<div class="project-details-desc">
-						<p style="white-space: pre-line">{{collage.reason}}</p>
-					</div>
+						<div class="project-details-title">
+							<h2 style="color:#522b2b;margin-top: 30px;margin-bottom: 10px">University Introduction <span style="font-weight: 400;color:#6a6a6a;font-size: 16px"></span></h2>
+						</div>
+						<div class="project-details-desc">
+							<p style="white-space: pre-line">{{collage.introduction_en}}</p>
+						</div>
+						<div class="project-details-title">
+							<h6 style="color:#522b2b;margin-top: 10px;margin-bottom: 10px">Academic Achievements of {{collage.en_name}}</h6>
+						</div>
+						{% for achievement in achievements_en %}
+						<div class="project-details-desc">
+							<p style="white-space: pre-line">{{achievement}}</p>
+						</div>
+						{% endfor %}
+						<div class="project-details-title">
+							<h6 style="color:#522b2b;margin-top: 10px;margin-bottom: 10px">Primary Reasons for Choosing {{collage.en_name}}</h6>
+						</div>
+						<div class="project-details-desc">
+							<p style="white-space: pre-line">{{collage.reason_en}}</p>
+						</div>
+
+					{% endif %}
 
 				</div>
 			</div>
@@ -67,14 +113,26 @@
 		<div class="row align-items-center">
 			<div class="col-md-12 phone-style">
 				<div class="project-details-content">
+					{% if lang == 'zh' %}
 					<div class="project-details-title">
-						<h2 style="color:#522b2b;margin-top: 30px;margin-bottom: 10px">Recommended Courses</h2>
+						<h2 style="color:#522b2b;margin-top: 30px;margin-bottom: 10px">熱門系所</h2>
 					</div>
 					<div style="display: contents">
 					{% for popular_department in popular_departments %}
 						<span style="border-radius: 20px;background: #F3F3F5;padding:12px 25px;margin-right: 15px;line-height: 50px;">{{popular_department}}</span>
 					{% endfor %}
 					</div>
+
+					{% else %}
+					<div class="project-details-title">
+						<h2 style="color:#522b2b;margin-top: 30px;margin-bottom: 10px">Popular departments</h2>
+					</div>
+					<div style="display: contents">
+					{% for popular_department in popular_departments_en %}
+						<span style="border-radius: 20px;background: #F3F3F5;padding:12px 25px;margin-right: 15px;line-height: 50px;">{{popular_department}}</span>
+					{% endfor %}
+					</div>
+					{% endif %}
 				</div>
 			</div>
 

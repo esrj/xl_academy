@@ -13,7 +13,8 @@ urlpatterns = [
     path('collage/',views.collage),
     path('mail/',views.mail),
     path('mail/<int:id>/',views.sendmail),
-    path('single/<int:id>/',views.single)
+    path('single/<int:id>/',views.single),
+    path('course/',views.course)
 
 
 ]

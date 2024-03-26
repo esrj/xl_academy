@@ -4,7 +4,7 @@ from django.contrib.auth import authenticate
 from django.contrib import auth
 import json
 from django.views.decorators.csrf import csrf_exempt
-from main.models import Profile,Contact,Testimony,Collage,TestQuestion,Order
+from main.models import Profile,Contact,Testimony,Collage,TestQuestion,Order,Course,Ranking
 from django.contrib.auth.decorators import login_required
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
@@ -14,7 +14,11 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 def index(request):
     if request.method == 'GET':
         testimony = Testimony.objects.all().first()
-        return render(request,'index.html',locals())
+        language = request.META.get('HTTP_ACCEPT_LANGUAGE')
+        if language.split(',')[0] == 'zh-TW'  or language.split(',')[0] == 'zh':
+            return render(request,'zh/index.html',locals())
+        else:
+            return render(request,'en/index.html',locals())
     if request.method == 'POST':
         req = json.loads(request.body)
         username = req['username']
@@ -35,41 +39,53 @@ def index(request):
 
 def consult(request):
     if request.method == 'GET':
-        collages = Collage.objects.all().values('id','emblem','name','country','continent','classification')
-        pages = Paginator(collages, 24)
-
-
-        page = request.GET.get('page')
-        type = request.GET.get('type')
-
-        try:
-            objects = pages.page(page)
-        except PageNotAnInteger:
-            objects = pages.page(1)
-        except EmptyPage:
-            objects = pages.page(paginator.num_pages)
-        num = (objects.number)
-        num_page = (objects.paginator.num_pages)
-        all_page = range(1,num_page+1)
-        prev = num-1
-        next = num+1
-        collages = list(collages)[4*(num-1):24*(num)]
-        if type == 'classification':
+        language = request.META.get('HTTP_ACCEPT_LANGUAGE')
+        if language.split(',')[0] == 'zh-TW'  or language.split(',')[0] == 'zh':
+            lang = 'zh'
+        else:
+            lang = 'en'
+        classification = request.GET.get('classification',None)
+        if classification == None:
+        # zh , en 下的 consult 是 11 點介紹，無串接資料庫
+            if lang == 'zh':
+                return render(request,'zh/consult.html',locals())
+            else :
+                return render(request,'en/consult.html',locals())
+        # template 下的 consult 是大學介紹，有串接資料苦
+        else:
+            collages = Collage.objects.all().values('id','emblem','name','country','continent','classification','en_name')
+            pages = Paginator(collages, 24)
+            page = request.GET.get('page')
+            try:
+                objects = pages.page(page)
+            except PageNotAnInteger:
+                objects = pages.page(1)
+            except EmptyPage:
+                objects = pages.page(paginator.num_pages)
+            num = (objects.number)
+            num_page = (objects.paginator.num_pages)
+            all_page = range(1,num_page+1)
+            prev = num-1
+            next = num+1
+            collages = list(collages)[4*(num-1):24*(num)]
             for collage in collages:
                 if collage['classification'] == '公立大學':
-                    collage['classification'] = 'pub'
+                   collage['classification'] = 'pub'
                 elif collage['classification'] == '私立大學':
-                    collage['classification'] = 'pri'
+                   collage['classification'] = 'pri'
                 elif '技術學院' in collage['classification'] :
-                    collage['classification'] = 'tech'
+                   collage['classification'] = 'tech'
                 else:
-                    collage['classification'] = 'lang'
-            return render(request,'consult2.html',locals())
-        else:
+                   collage['classification'] = 'lang'
             return render(request,'consult.html',locals())
 
 def shop(request):
     if request.method == 'GET':
+        language = request.META.get('HTTP_ACCEPT_LANGUAGE')
+        if language.split(',')[0] == 'zh-TW'  or language.split(',')[0] == 'zh':
+            lang = 'zh'
+        else:
+            lang = 'en'
         testQuestions = list(TestQuestion.objects.all())
         return render(request,'shop.html',locals())
     if request.method == 'POST':
@@ -79,22 +95,49 @@ def shop(request):
         return JsonResponse({'errno':0})
 
 def detail(request,id):
-    collage = Collage.objects.filter(id=id).values('id','image','name','en_name','info','country','city','continent','address','classification','links','introduction','achievement','reason','popular_departments')
+    language = request.META.get('HTTP_ACCEPT_LANGUAGE')
+    if language.split(',')[0] == 'zh-TW'  or language.split(',')[0] == 'zh':
+            lang = 'zh'
+    else:
+            lang = 'en'
+    collage = Collage.objects.filter(id=id).values('id','image','name','en_name','info','country','city','continent','address','classification','links','introduction','achievement','reason','popular_departments','achievement_en','popular_departments_en','reason_en','introduction_en','city_en','country_en')
     collage = collage[0]
     popular_departments = collage['popular_departments'].split('\n')
+    popular_departments_en = collage['popular_departments_en'].split('\n')
     achievements = collage['achievement'].split('\n')
+    achievements_en = collage['achievement_en'].split('\n')
     return render(request,'detail.html',locals())
 
 def product(request,id):
     if request.method == 'GET':
+        language = request.META.get('HTTP_ACCEPT_LANGUAGE')
+        if language.split(',')[0] == 'zh-TW'  or language.split(',')[0] == 'zh':
+            lang = 'zh'
+        else:
+            lang = 'en'
         testQuestion = TestQuestion.objects.filter(id=id).first()
         testQuestions = TestQuestion.objects.all()
         return render(request,'product.html',locals())
 
+def course(request):
+    language = request.META.get('HTTP_ACCEPT_LANGUAGE')
+    if language.split(',')[0] == 'zh-TW'  or language.split(',')[0] == 'zh':
+        lang = 'zh'
+    else:
+        lang = 'en'
+
+    rankings = Ranking.objects.all()
+    if  request.GET.get('type') == 'tutor':
+        return render(request,'tutor.html',locals())
+    else:
+        courses = Course.objects.all()
+        return render(request,'course.html',locals())
 
 def error_view(request, exception=None, template_name='error.html'):
-    status_code = 404
-    title = '很抱歉，此頁面不存在或不提供瀏覽'
-    if exception:
-        status_code = getattr(exception, 'status_code', 404)
-    return render(request, 'error.html', locals())
+    language = request.META.get('HTTP_ACCEPT_LANGUAGE')
+    if language.split(',')[0] == 'zh-TW'  or language.split(',')[0] == 'zh':
+        return render(request,'zh/error.html',locals())
+    else:
+        return render(request,'en/error.html',locals())
+
+

@@ -30,14 +30,26 @@
                 <div class="mb-3">
                     <input id="info" type="text" class="form-control"  placeholder="輸入學校資訊（排名、特色等）">
                 </div>
-
-                <h6 style="font-weight: 500">學校位置:</h6>
-                <div class="mb-3  col-lg-4 col-md-12">
-                    <input id="country" type="text" class="form-control"  placeholder="輸入學校所在國家">
+                <h6 style="font-weight: 500">學校資訊(英文):</h6>
+                <div class="mb-3">
+                    <input id="info_en" type="text" class="form-control"  placeholder="輸入學校資訊（排名、特色等）(英文)">
                 </div>
 
+                <h6 style="font-weight: 500">學校所在國家:</h6>
+                <div class="mb-3">
+                    <input id="country" type="text" class="form-control"  placeholder="輸入學校所在國家">
+                </div>
+                <h6 style="font-weight: 500">學校所在國家(英文):</h6>
+                <div class="mb-3 ">
+                    <input id="country_en" type="text" class="form-control"  placeholder="輸入學校所在國家(英文)">
+                </div>
+
+                <h6 style="font-weight: 500">學校位置詳細資訊:</h6>
                 <div class="mb-3  col-lg-4 col-md-12">
                     <input id="city" type="text" class="form-control"  placeholder="輸入學校所在城市">
+                </div>
+                <div class="mb-3  col-lg-4 col-md-12">
+                    <input id="city_en" type="text" class="form-control"  placeholder="輸入學校所在城市(英文)">
                 </div>
 
 
@@ -48,11 +60,14 @@
                   <option value="Asia">Asia</option>
                   <option value="Australia">Australia</option>
                 </select>
+
+                <div class="mb-3 ">
+                    <input id="address" type="text" class="form-control"  placeholder="輸入學校所在地址">
+                </div>
+
             </div>
 
-            <div class="mb-3 ">
-                <input id="address" type="text" class="form-control"  placeholder="輸入學校所在國家">
-            </div>
+
 
             <h6 style="font-weight: 500">詳細資訊:</h6>
 
@@ -73,16 +88,28 @@
             </select>
 
             <div class="mb-3">
-                <textarea id="introduction" class="form-control"  rows="10" placeholder="輸入主要大學介紹(建議300-400字左右)"></textarea>
+                <textarea id="introduction" class="form-control"  rows="5" placeholder="輸入主要大學介紹(建議300-400字左右)"></textarea>
+            </div>
+            <div class="mb-3">
+                <textarea id="introduction_en" class="form-control"  rows="5" placeholder="輸入主要大學介紹(英文)"></textarea>
             </div>
             <div class="mb-3">
                 <textarea id="achievement" class="form-control"  rows="3" placeholder="輸入大學學術成就(每條輸入結束換行)"></textarea>
             </div>
+            <div class="mb-3">
+                <textarea id="achievement_en" class="form-control"  rows="3" placeholder="輸入大學學術成就(每條輸入結束換行)(英文)"></textarea>
+            </div>
              <div class="mb-3">
                 <textarea id="reason" class="form-control"  rows="3" placeholder="選擇此大學的理由"></textarea>
              </div>
-                <div class="mb-3">
+             <div class="mb-3">
+                <textarea id="reason_en" class="form-control"  rows="3" placeholder="選擇此大學的理由(英文)"></textarea>
+             </div>
+             <div class="mb-3">
                 <textarea id="popular_departments" class="form-control"  rows="3" placeholder="選擇熱門科系(每條輸入結束換行)"></textarea>
+             </div>
+             <div class="mb-3">
+                <textarea id="popular_departments_en" class="form-control"  rows="3" placeholder="選擇熱門科系(每條輸入結束換行)(英文)"></textarea>
              </div>
 
             <button onclick="upload_()" style="background: #ff3938;border: #ff3938;" type="button" class="btn btn-primary">確定上傳</button>
@@ -131,16 +158,23 @@
                 formData.append('name', $('#name').val());
                 formData.append('en_name', $('#en_name').val());
                 formData.append('info', $('#info').val());
+                formData.append('info_en', $('#info_en').val());
                 formData.append('country', $('#country').val());
+                formData.append('country_en', $('#country_en').val());
                 formData.append('address', $('#address').val());
                 formData.append('city', $('#city').val());
+                formData.append('city_en', $('#city_en').val());
                 formData.append('continent', $('#continent').val());
                 formData.append('link', $('#link').val());
                 formData.append('classification', $('#classification').val());
                 formData.append('introduction', $('#introduction').val());
+                formData.append('introduction_en', $('#introduction_en').val());
                 formData.append('achievement', $('#achievement').val());
+                formData.append('achievement_en', $('#achievement_en').val());
                 formData.append('reason', $('#reason').val());
+                formData.append('reason_en', $('#reason_en').val());
                 formData.append('popular_departments', $('#popular_departments').val());
+                formData.append('popular_departments_en', $('#popular_departments_en').val());
                 axios({
                     url:'/management/collage/',
                     method:"POST",

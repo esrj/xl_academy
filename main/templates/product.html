@@ -7,6 +7,7 @@
 	<div class="container">
 		<div class="row">
             <div class="col-lg-6 col-md-12 phone-style">
+            {% if lang == 'zh' %}
 				<div class="project-details-content">
 					<div class="project-details-title">
                         <h2>{{testQuestion.classification}}</h2>
@@ -18,9 +19,9 @@
 					<div class="project-details-desc">
 						<p style="white-space: pre-line;font-size: large">{{testQuestion.introduce}}</p>
 					</div>
-					<p class="detail-info2" ><span style=";color:#2e2e2e">試題編號 : </span>{{testQuestion.id}}</p>
-                    <p class="detail-info2" ><span style=";color:#2e2e2e">價格 : </span>{{testQuestion.price}}</p>
 
+                    <p class="detail-info2" ><span style=";color:#2e2e2e">試題編號 : </span>{{testQuestion.id}}</p>
+                    <p class="detail-info2" ><span style=";color:#2e2e2e">價格 : </span>{{testQuestion.price}}</p>
                     <div class="categories-title">
 						<h4 style="margin-top: 50px;">注意事項 </h4>
 					</div>
@@ -28,22 +29,58 @@
                     <p class="detail-info2" ><span style=";color:#2e2e2e">銀行代號 : </span>700</p>
                     <p class="detail-info2"><span style=";color:#2e2e2e">帳號名稱 : </span>1232412 3456754</p>
 				</div>
+				{% else %}
+				<div class="project-details-content">
+					<div class="project-details-title">
+                        <h2>{{testQuestion.classification}}</h2>
+                        <div class="categories-title">
+                            <h4 style="margin-top: 50px">{{testQuestion.title_en}}</h4>
+                        </div>
+					</div>
+
+					<div class="project-details-desc">
+						<p style="white-space: pre-line;font-size: large">{{testQuestion.introduce_en}}</p>
+					</div>
+
+                     <p class="detail-info2" ><span style=";color:#2e2e2e">Test question id : </span>{{testQuestion.id}}</p>
+                    <p class="detail-info2" ><span style=";color:#2e2e2e">price : </span>{{testQuestion.price}}</p>
+                    <div class="categories-title">
+                        <h4 style="margin-top: 50px;">Notice</h4>
+                    </div>
+                    <p class="detail-info"><span style=";color:#2e2e2e">Please transfer to the following bank account. If you have any questions, feel free to inquire with us. Once you have successfully completed the transfer, please fill out the form below, and we will promptly send the test to the email address you provided. Thank you for your cooperation.</span></p>
+                    <p class="detail-info2"><span style=";color:#2e2e2e">Bank Code: </span>700</p>
+                    <p class="detail-info2"><span style=";color:#2e2e2e">Account Name: </span>1232412 3456754</p>
+				</div>
+				{% endif %}
 			</div>
 			<div class="col-lg-6 col-md-12 phone-style">
 				<div class="widget-categories-box" style="margin-top: 20px">
-					<!-- categories title -->
 					<div class="categories-title">
+					    {% if lang == 'zh' %}
 						<h4> 全部試題 </h4>
+						{% else %}
+						<h4>All Test Questions</h4>
+					    {% endif %}
 					</div>
+
 
 					{% for product in testQuestions %}
 					<div class="sidber-widget-recent-post">
 						<div class="recent-widget-content" style="padding-top: 12px;">
+						    {% if lang == 'zh' %}
 							<a style="margin-left: 20px;font-weight: 500" href="/product/{{product.id}}">{{product.title}}</a>
+
 							<span  style="display:flex;align-items: flex-end;padding: 0;margin-left: 20px;margin-bottom: 7px">
 								<span style="color: black;margin-right: 10px">分類 : </span><span style="margin-right: 10px">{{product.classification}}</span>
 								<span style="color: black;margin-right: 10px">價格 : </span><span style="margin-right: 10px">{{product.price}} $</span>
 							</span>
+							{% else %}
+							<a style="margin-left: 20px;font-weight: 500" href="/product/{{product.id}}">{{product.title_en}}</a>
+							<span  style="display:flex;align-items: flex-end;padding: 0;margin-left: 20px;margin-bottom: 7px">
+								<span style="color: black;margin-right: 10px">classification : </span><span style="margin-right: 10px">{{product.classification}}</span>
+								<span style="color: black;margin-right: 10px">price : </span><span style="margin-right: 10px">{{product.price}} $</span>
+							</span>
+							{% endif %}
 						</div>
 					</div>
 					{% endfor %}
@@ -55,8 +92,10 @@
         <div class="contact_form">
             <div class="col-md-12 text-center">
 				<div>
+
+				    {% if lang == 'zh' %}
                     <div class="section-title left">
-					    <h4 style="display: flex;">關於我們</h4>
+					    <h4 style="display: flex;">填寫表單</h4>
                     </div>
 					<form>
 						<div class ="contact_form_">
@@ -87,7 +126,41 @@
 					<div class="submit-button" >
 						<button style="margin-top: 0" type="submit" onclick="submit_order()">確定送出<i class="bi bi-arrow-right"></i></button>
 					</div>
-				  </div>
+					{% else %}
+                    <div class="section-title left">
+                        <h4 style="display: flex;">Fill out the Form</h4>
+                    </div>
+                    <form>
+                        <div class="contact_form_">
+                            <div class="col-lg-6 col-md-6 contact_form_margin" style="margin-left: 5px;margin-right:5px">
+                                <div class="input-box">
+                                    <input id="username" style="height: 50px;margin-bottom: 15px;background-color: white;border-color:#f3f3f3" type="text" placeholder="Name *" required="">
+                                </div>
+                                <div class="input-box">
+                                    <input id="email" style="height: 50px;margin-bottom: 15px;" type="Email" name="Email" placeholder="Email Address *" required="">
+                                </div>
+                                <div class="input-box">
+                                    <input id="phone" style="height: 50px;margin-bottom: 15px;" placeholder="Contact Number">
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6" style="margin-left: 5px;margin-right:5px">
+                                <div class="input-box">
+                                    <input id="account" style="height: 50px;margin-bottom: 15px;background-color: white;border-color:#f3f3f3" type="text" placeholder="Last 5 Digits of Remittance Account *" required="">
+                                </div>
+                                <div class="input-box">
+                                    <input id="price" style="height: 50px;margin-bottom: 15px;" type="Email" name="Email" placeholder="Bank Code *" required="">
+                                </div>
+                                <div class="input-box">
+                                    <input id="id" style="height: 50px;margin-bottom: 15px;" placeholder="Test ID *" >
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                    <div class="submit-button">
+                        <button style="margin-top: 0" type="submit" onclick="submit_order()">Submit<i class="bi bi-arrow-right"></i></button>
+                    </div>
+					{% endif %}
+				</div>
 			</div>
         </div>
 	</div>

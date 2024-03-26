@@ -20,6 +20,10 @@ class Testimony(models.Model):
     picture = models.FileField(upload_to = 'picture/')
     student_name = models.TextField()
     content = models.TextField()
+    title_en = models.TextField(default="")
+    content_en = models.TextField(default="")
+    student_name_en = models.TextField(default="")
+
 
 
 class Collage(models.Model):
@@ -34,19 +38,29 @@ class Collage(models.Model):
     address = models.CharField(max_length=200)
     classification = models.CharField(max_length=50)
     links = models.CharField(max_length=500)
+    yt_links = models.CharField(max_length=500,default = "/#")
+    fb_links =  models.CharField(max_length=500 ,default = "/#")
     introduction = models.TextField()
     achievement = models.TextField()
     reason  = models.TextField()
     popular_departments = models.TextField()
 
+    info_en = models.CharField(max_length=200,default="")
+    city_en =  models.CharField(max_length=50,default="")
+    country_en = models.CharField(max_length=50,default="")
+    introduction_en = models.TextField(default="")
+    achievement_en = models.TextField(default="")
+    reason_en  = models.TextField(default="")
+    popular_departments_en = models.TextField(default="")
+
 class TestQuestion(models.Model):
     pdf = models.FileField(upload_to='file/')
     title = models.CharField(max_length=200)
+    title_en = models.CharField(max_length=200,default="")
     price = models.CharField(max_length=15)
     introduce = models.TextField()
+    introduce_en = models.TextField(default="")
     classification = models.CharField(max_length=15)
-
-
 
 
 class BankAccount(models.Model):
@@ -63,3 +77,25 @@ class Order(models.Model):
     price = models.CharField(max_length = 25)
     page_id  = models.CharField(max_length=50)
     is_send = models.BooleanField(default = False)
+
+class Token(models.Model):
+    access_token = models.CharField(max_length = 300)
+    scope = models.CharField(max_length = 100)
+    token_type = models.CharField(max_length = 300)
+    expires_in = models.IntegerField()
+    refresh_token = models.CharField(max_length = 300)
+    client_id = models.CharField(max_length = 300)
+    client_secret = models.CharField(max_length = 100)
+
+
+class Course(models.Model):
+    title =  models.CharField(max_length = 300)
+    picture = models.FileField(upload_to = 'picture/')
+    text = models.TextField()
+    date = models.CharField(max_length = 100)
+    title_en =  models.CharField(max_length = 300,default="")
+    text_en = models.TextField(default="")
+
+class Ranking(models.Model):
+    title =   models.CharField(max_length = 300)
+    title_en =   models.CharField(max_length = 300,default="")
