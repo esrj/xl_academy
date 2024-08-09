@@ -8,19 +8,13 @@ from django.contrib.auth.decorators import login_required
 import os
 from google.oauth2.credentials import Credentials
 from google.auth.transport.requests import Request
-from google_auth_oauthlib.flow import InstalledAppFlow
 from googleapiclient.discovery import build
 from django.shortcuts import render
 from django.http import HttpResponse
 import os.path
-import base64
-from email.mime.multipart import MIMEMultipart
-from email.mime.text import MIMEText
-from email.mime.base import MIMEBase
-from email import encoders
+
 from .mail import write_message
-from google.oauth2 import service_account
-from django.core.mail import send_mail
+
 
 SCOPES = ['https://mail.google.com/']
 

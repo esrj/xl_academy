@@ -1,7 +1,6 @@
+{# 升學大學介紹 #}
+
 {% extends 'zh/index.html' %}
-
-
-
 
 
 {% block navbar %}
@@ -109,9 +108,9 @@
 							</a>
 							<ul class="sub-menu">
 
-								<li><a href="/consult">University Admission Counseling</a></li>
-								<li><a href="/consult?classification=type">Classification of school types</a></li>
-								<li><a href="/consult?classification=region">Classification of schools by region</a></li>
+								<li><a href="/consult">College Counseling</a></li>
+								<li><a href="/consult?classification=type">University Guide</a></li>
+								<li><a href="/consult?classification=region">University Guide by region</a></li>
 							</ul>
 						</li>
 						<li class="menu-item-has-children">
@@ -262,7 +261,7 @@
 				<div class="col-lg-3 col-md-4 col-sm-6 col-6 grid-item {{collage.classification}}" style="margin-top:50px;margin-bottom:100px">
 					<div class="single-blog-box">
 						<div class="blog-content">
-							<img style="width:100%" src="/media/{{collage.emblem}}" alt="imgs">
+							<img style="width:100%" src="/media/{{collage.emblem}}" alt="image load error">
 
 							<div class="meta-blog">
 								<span class="collage_place"><i class="bi bi-map collage_place"></i>{{collage.country}}</span>
@@ -289,7 +288,7 @@
 				<div class="col-lg-3 col-md-4 col-sm-6 col-6 grid-item {{collage.continent}}" style="margin-top:50px;margin-bottom:100px">
 					<div class="single-blog-box">
 						<div class="blog-content">
-							<img style="width:100%" src="/media/{{collage.emblem}}" alt="imgs">
+							<img style="width:100%" src="/media/{{collage.emblem}}" alt="image load error">
 
 							<div class="meta-blog">
 								<span class="collage_place"><i class="bi bi-map collage_place"></i>{{collage.country}}</span>
@@ -298,8 +297,9 @@
 								{% if lang == 'zh' %}
 								<h5 class="collage_title"><a class="collage_title" style="font-weight: 400" href="/detail/{{ collage.id}}">{{collage.name}}</a></h5>
 								{% else %}
-								<h5 class="collage_title"><a class="collage_title" style="font-weight: 400" href="/detail/{{ collage.id}}">{{collage.en_name}}</a></h5>
-								{% endif %}							</div>
+								<h5 class="collage_title responsive_collage_title"><a class="collage_title" style="font-weight: 400;font-size:17px" href="/detail/{{ collage.id}}">{{collage.en_name}}</a></h5>
+								{% endif %}
+                            </div>
 							<div class="blog-content-button">
 								<a class="collage_read_more" href="/detail/{{ collage.id }}">Read More<i class="bi bi-arrow-right"></i></a>
 							</div>
