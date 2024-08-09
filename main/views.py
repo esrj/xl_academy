@@ -77,7 +77,7 @@ def consult(request):
                    collage['classification'] = 'tech'
                 else:
                    collage['classification'] = 'lang'
-            return render(request,'consult.html',locals())
+            return render(request, 'school.html', locals())
 
 def shop(request):
     if request.method == 'GET':
