@@ -12,8 +12,9 @@ from googleapiclient.discovery import build
 from django.shortcuts import render
 from django.http import HttpResponse
 import os.path
+from XL_Academy_website import settings
 
-from .mail import write_message
+from .mail import send_email
 
 
 SCOPES = ['https://mail.google.com/']
@@ -185,32 +186,45 @@ def sendmail(request, id):
         return render(request, 'sendmail.html', locals())
     if request.method == 'POST':
         req = json.loads(request.body)
-        creds = Credentials.from_authorized_user_file('token.json', SCOPES)
-        if creds and creds.expired and creds.refresh_token:
-            try:
-                creds.refresh(Request())
-            except Exception as e:
-                #引入新 token
-                data = Token.objects.all().values('access_token','scope','token_type','expires_in','refresh_token','client_id','client_secret')
-                data = list(data)[0]
-                json_data = json.dumps(data, indent=4)
-                with open('token.json', 'w') as token:
-                    token.write(json_data)
-                creds = Credentials.from_authorized_user_file('token.json', SCOPES)
-                if creds and creds.expired and creds.refresh_token:
-                    return HttpResponse('reset email token')
-        with open('token.json', 'w') as token:
-            token.write(creds.to_json())
-        service = build('gmail', 'v1', credentials=creds)
-        # 測試環境
-        raw_message = write_message(req['email'],'media/mail_template/mail.html','static/picture/footer-logo.png',req['checkedValue'],req['name'],'media')
+        send_email(req['email'],'media/mail_template/mail.html','static/picture/footer-logo.png',req['checkedValue'],req['name'],'media')
         # 伺服器環境
-#         raw_message = write_message(req['email'],'/var/www/xl_academy/media/mail_template/mail.html','/var/www/staticfiles/static/picture/footer-logo.png',req['checkedValue'],req['name'],'/var/www/xl_academy/media')
-        try:
-            message = service.users().messages().send(userId="me", body={"raw": raw_message}).execute()
-            return HttpResponse('Email sent successfully!')
-        except Exception as error:
-            return HttpResponse('Error sending email.')
+        # send_email(req['email'],'/var/www/xl_academy/media/mail_template/mail.html','/var/www/staticfiles/static/picture/footer-logo.png',req['checkedValue'],req['name'],'/var/www/xl_academy/media')
+
+        return JsonResponse({"message": "Email sent successfully!"})
+
+
+
+def google_auth(request):
+    auth_url = (
+            "https://accounts.google.com/o/oauth2/auth"
+            "?client_id=" + settings.GMAIL_CLIENT_ID +
+            "&redirect_uri=" + settings.GMAIL_REDIRECT_URI +
+            "&response_type=code"
+            "&scope=https://www.googleapis.com/auth/gmail.send"
+            "&access_type=offline"
+    )
+    return redirect(auth_url)
+
+
+# 取得 refresh_token
+def google_callback(request):
+    code = request.GET.get("code")
+    token_url = "https://oauth2.googleapis.com/token"
+    data = {
+        "client_id": settings.GMAIL_CLIENT_ID,
+        "client_secret": settings.GMAIL_CLIENT_SECRET,
+        "code": code,
+        "redirect_uri": settings.GMAIL_REDIRECT_URI,
+        "grant_type": "authorization_code",
+    }
+
+    response = request.post(token_url, data=data).json()
+
+    refresh_token = response.get("refresh_token")
+    if refresh_token:
+        print("請存入 settings.py：", refresh_token)
+
+    return render(request, "callback.html", {"response": response})
 
 
 

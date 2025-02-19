@@ -69,6 +69,16 @@
             stickyHeaderText3.addClass('sticky-header-text');
         }
     });
+
+    var stickyHeaderText4 = $('#sticky-header-text4');
+    wind.on('scroll', function () {
+        var scroll = wind.scrollTop();
+        if (scroll < 100) {
+            stickyHeaderText4.removeClass('sticky-header-text');
+        } else {
+            stickyHeaderText4.addClass('sticky-header-text');
+        }
+    });
      //Header Search
     if($('.search-box-outer').length) {
         $('.search-box-outer').on('click', function() {
@@ -300,7 +310,6 @@
         animation: 'fade'
     })
 
-      <!--barfiller script -->
         $(".skills").addClass("active")
         $(".skills .skill .skill-bar span").each(function() {
            $(this).animate({

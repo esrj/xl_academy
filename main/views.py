@@ -141,3 +141,12 @@ def error_view(request, exception=None, template_name='error.html'):
         return render(request,'en/error.html',locals())
 
 
+def afficient(request):
+    language = request.META.get('HTTP_ACCEPT_LANGUAGE')
+    if language.split(',')[0] == 'zh-TW' or language.split(',')[0] == 'zh':
+        lang = 'zh'
+    else:
+        lang = 'en'
+    return render(request,'afficient.html',locals())
+
+
