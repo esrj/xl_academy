@@ -52,7 +52,7 @@
                 })
             }else {
                 const formData = new FormData();
-                formData.append('picture', $('#picture').val());
+                formData.append('picture', $('#picture').prop('files')[0]);
                 formData.append('text', $('#text').val());
                 formData.append('title', $('#title').val());
                 formData.append('date', $('#date').val());
