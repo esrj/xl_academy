@@ -168,6 +168,7 @@ def course(request):
         return render(request,'course_.html')
     else:
         picture = request.FILES.get('picture')
+        print(picture)
         title = request.POST.get('title')
         date = request.POST.get('date')
         text = request.POST.get('text')

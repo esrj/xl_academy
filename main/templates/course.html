@@ -84,7 +84,7 @@
 			</div>
 			<div class="col-lg-6 col-md-12">
 				<div >
-					<img style="width:100%;border-radius:25px" src="/static/picture/teacher.jpg" alt="about imgs">
+					<img style="width:100%;border-radius:25px;margin-top: 25px" src="/static/image/logo2.jpg" alt="about imgs">
 				</div>
 			</div>
 		</div>
@@ -111,7 +111,7 @@
 				{% for course in courses %}
 			<div class="col-lg-4 col-md-6 col-sm-6">
 				<div class="card" style="margin:15px">
-					<img src="/static/image/env1.jpg" class="card-img-top" alt="...">
+					<img src="/media/{{ course.picture}} " class="card-img-top" alt="...">
 					<div class="card-body">
 						<h5 class="card-title">{{course.title}}</h5>
 						<p class="card-text">{{course.text}}</p>
@@ -140,7 +140,7 @@
 			{% for course in courses %}
 			<div class="col-lg-4 col-md-6 col-sm-6">
 				<div class="card" style="margin:15px">
-					<img src="/static/image/env1.jpg" class="card-img-top" alt="...">
+					<img src="/media/{{ course.picture}} " class="card-img-top" alt="...">
 					<div class="card-body">
 						<h5 class="card-title">{{course.title_en}}</h5>
 						<p class="card-text">{{course.text_en}}</p>
