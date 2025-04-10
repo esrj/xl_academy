@@ -89,21 +89,15 @@ def testimony(request):
     if request.method == 'POST':
         previous = Testimony.objects.all()
         for prev in previous:
-            try:
-                os.remove( os.path.join(os.path.dirname(os.path.dirname(__file__)),'media',str(prev.video)))
-                os.remove( os.path.join(os.path.dirname(os.path.dirname(__file__)),'media',str(prev.picture)))
-                prev.delete()
-            except:
-                pass
-        video = request.FILES.get('video')
-        picture = request.FILES.get('picture')
+            prev.delete()
+        video = request.POST.get('video')
         title = request.POST.get('title')
         student_name = request.POST.get('student_name')
         content = request.POST.get('content')
         content_en = request.POST.get('content_en')
         title_en = request.POST.get('title_en')
         student_name_en = request.POST.get('student_name_en')
-        testimony = Testimony.objects.create(title = title,video = video,picture = picture,student_name = student_name ,content = content , content_en = content_en,title_en = title_en ,student_name_en = student_name_en)
+        testimony = Testimony.objects.create(title = title,video = video,student_name = student_name ,content = content , content_en = content_en,title_en = title_en ,student_name_en = student_name_en)
         testimony.save()
         return JsonResponse({'errno':0})
 

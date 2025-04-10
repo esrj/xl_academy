@@ -5,22 +5,22 @@
 
 {% block navbar %}
 {% if lang == 'zh' %}
-<div id="sticky-header" class="main-header" style="height: 90px;    background: rgba(0,0,0,0);">
+<div id="sticky-header" class="main-header" style="height: 90px;  background: #ffffff;">
 	<div class="container" style="height: 90px;position: relative; z-index: 100;">
 		<div class="row align-items-center" style="height: 90px">
 			<div class="col-lg-2" style="height: 90px">
 				<div class="header-logo">
-					<a href="/"><img style="height:55px;position: relative; top:5px " src="/static/picture/footer-logo.png" alt="logo"></a>
+					<a href="/"><img style="height:55px;position: relative; top:5px " src="/static/picture/logo.png" alt="logo"></a>
 				</div>
 			</div>
 			<div class="col-lg-8" style="position: relative;bottom: 10px; ">
 				<div class="header-menu">
 					<ul class="nav_scroll">
 						<li class="menu-item-has-children">
-							<a    style="font-weight: 500;color:#522b2b" href="/">首頁</a>
+							<a    style="font-weight: 300;color:#000000" href="/">首頁</a>
 						</li>
 						<li class="menu-item-has-children">
-							<a  style="font-weight: 500;color:#522b2b" href="/consult">
+							<a style="font-weight: 300;color:#000000" href="/consult">
 								大學諮詢
 								<i class="fas fa-caret-down"></i>
 							</a>
@@ -31,7 +31,7 @@
 							</ul>
 						</li>
 						<li class="menu-item-has-children">
-							<a  style="font-weight: 500;color:#522b2b" href="/course/">
+							<a  style="font-weight: 300;color:#000000" href="/course/">
 								課後專班
 								<i class="fas fa-caret-down"></i>
 							</a>
@@ -42,7 +42,7 @@
 							</ul>
 						</li>
                         <li class="menu-item-has-children">
-							<a  style="font-weight: 500;color:#522b2b"href="/afficient/">
+							<a style="font-weight: 300;color:#000000" href="/afficient/">
 								Afficient
 							</a>
 						</li>
@@ -50,7 +50,7 @@
 				</div>
 			</div>
 			<div style="position: relative;bottom: 10px; " class="col-lg-2">
-				<div class="header-button">
+				<div class="second-header-button" >
 					<a href="/#contact">聯絡我們<i class="bi bi-arrow-right"></i></a>
 				</div>
 			</div>
@@ -58,144 +58,143 @@
 	</div>
 </div>
 
-<div class="mobile-menu-area d-sm-block d-md-block d-lg-none">
+<div class="mobile-menu-area d-sm-block d-md-block d-lg-none" >
 		<div class="mobile-menu">
-			<nav class="header-menu" style="display: block;">
+			<nav class="header-menu" style="display: block;color: black">
 				<ul class="nav_scroll">
 					<li class="menu-item-has-children">
-						<a style="color:#522b2b" href="/">首頁</a>
+						<a style="font-weight: 300;color:#000000" href="/">首頁</a>
 					</li>
 					<li class="menu-item-has-children">
-						<a style="font-weight: 500;color:#522b2b" href="#">
+						<a style="font-weight: 300;color:#000000" href="#">
 							大學諮詢
 							<i class="fas fa-caret-down"></i>
 						</a>
 						<ul class="sub-menu">
-							<li><a href="/consult">升學諮詢</a></li>
-							<li><a href="/consult?classification=type">學校類型分類</a></li>
-							<li><a href="/consult?classification=region">學校地區</a></li>
+							<li><a style="font-weight: 300;color:#000000" href="/consult">升學諮詢</a></li>
+							<li><a style="font-weight: 300;color:#000000" href="/consult?classification=type">學校類型分類</a></li>
+							<li><a style="font-weight: 300;color:#000000" href="/consult?classification=region">學校地區</a></li>
 						</ul>
 					</li>
 					<li class="menu-item-has-children">
-						<a style="font-weight: 500;color:#522b2b" href="/course/">
+						<a style="font-weight: 300;color:#000000" href="/course/">
 							學術指導
 							<i class="fas fa-caret-down"></i>
 						</a>
 						<ul class="sub-menu">
-							<li><a href="/course/">課後專班</a></li>
-							<li><a href="/consult?type=tutor">一對一教學</a></li>
-							<li><a href="/shop/">線上試題</a></li>
+							<li><a style="font-weight: 300;color:#000000" href="/course/">課後專班</a></li>
+							<li><a style="font-weight: 300;color:#000000" href="/consult?type=tutor">一對一教學</a></li>
+							<li><a style="font-weight: 300;color:#000000" href="/shop/">線上試題</a></li>
 						</ul>
 					</li>
                     <li class="menu-item-has-children">
-							<a  style="font-weight: 500;color:#522b2b"href="/afficient/">
-								Afficient
-							</a>
-						</li>
+                        <a  style="font-weight: 300;color:#000000" href="/afficient/">
+                            Afficient
+                        </a>
+                    </li>
 				</ul>
 			</nav>
 		</div>
 	</div>
 {% else %}
-<div id="sticky-header" class="main-header" style="height: 90px;    background: rgba(0,0,0,0);">
-	<div class="container" style="height: 90px;position: relative; z-index: 100;">
-		<div class="row align-items-center" style="height: 90px">
-			<div class="col-lg-2" style="height: 90px">
-				<div class="header-logo">
-					<a href="/"><img style="height:55px;position: relative; top:5px " src="/static/picture/footer-logo.png" alt="logo"></a>
-				</div>
-			</div>
-			<div class="col-lg-8" style="position: relative;bottom: 10px; ">
-				<div class="header-menu">
-					<ul class="nav_scroll">
-						<li class="menu-item-has-children">
-							<a    style="font-weight: 500;color:#522b2b" href="/">Home</a>
-						</li>
-						<li class="menu-item-has-children">
-							<a  style="font-weight: 500;color:#522b2b" href="/consult">
-								Collage consultant
-								<i class="fas fa-caret-down"></i>
-							</a>
-							<ul class="sub-menu">
-
-								<li><a href="/consult">College Counseling</a></li>
-								<li><a href="/consult?classification=type">University Guide</a></li>
-								<li><a href="/consult?classification=region">University Guide by region</a></li>
-							</ul>
-						</li>
-						<li class="menu-item-has-children">
-							<a style="font-weight: 500;color:#522b2b" href="/course/">
-								Academic Guidance
-								<i class="fas fa-caret-down"></i>
-							</a>
-							<ul class="sub-menu">
-								<li><a href="/course/">Academic Guidance</a></li>
-								<li><a href="/course?type=tutor">Tutor</a></li>
-								<li><a href="/shop/">Online test questions</a></li>
-							</ul>
-						</li>
-                        <li class="menu-item-has-children">
-							<a  style="font-weight: 500;color:#522b2b"href="/afficient/">
-								Afficient
-							</a>
-						</li>
-					</ul>
-				</div>
-			</div>
-			<div style="position: relative;bottom: 10px; " class="col-lg-2">
-				<div class="header-button">
-					<a href="/#contact">Contact us<i class="bi bi-arrow-right"></i></a>
-				</div>
-			</div>
-		</div>
-	</div>
+<div id="sticky-header" class="main-header" style="height: 90px; background: #ffffff;">
+  <div class="container" style="height: 90px; position: relative; z-index: 100;">
+    <div class="row align-items-center" style="height: 90px">
+      <div class="col-lg-2" style="height: 90px">
+        <div class="header-logo">
+          <a href="/"><img style="height:55px; position: relative; top:5px" src="/static/picture/logo.png" alt="logo"></a>
+        </div>
+      </div>
+      <div class="col-lg-8" style="position: relative; bottom: 10px;">
+        <div class="header-menu">
+          <ul class="nav_scroll">
+            <li class="menu-item-has-children">
+              <a style="font-weight: 300; color:#000000" href="/">Home</a>
+            </li>
+            <li class="menu-item-has-children">
+              <a style="font-weight: 300; color:#000000" href="/consult">
+                about
+                <i class="fas fa-caret-down"></i>
+              </a>
+              <ul class="sub-menu">
+                <li><a href="/consult">about as</a></li>
+                <li><a href="/consult?classification=type">School Types</a></li>
+                <li><a href="/consult?classification=region">School Regions</a></li>
+              </ul>
+            </li>
+            <li class="menu-item-has-children">
+              <a style="font-weight: 300; color:#000000" href="/course/">
+                Service
+                <i class="fas fa-caret-down"></i>
+              </a>
+              <ul class="sub-menu">
+                <li><a href="/course/">Courses</a></li>
+                <li><a href="/course?type=tutor">Tutoring</a></li>
+                <li><a href="/shop/">Online Tests</a></li>
+              </ul>
+            </li>
+            <li class="menu-item-has-children">
+              <a style="font-weight: 300; color:#000000" href="/afficient/">
+                Afficient
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-lg-2" style="position: relative; bottom: 10px;">
+        <div class="second-header-button">
+          <a href="/#contact">Contact <i class="bi bi-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
 <div class="mobile-menu-area d-sm-block d-md-block d-lg-none">
-		<div class="mobile-menu">
-			<nav class="header-menu" style="display: block;">
-				<ul class="nav_scroll">
-					<li class="menu-item-has-children">
-						<a style="color:#522b2b" href="/">Home</a>
-					</li>
-					<li class="menu-item-has-children">
-						<a style="font-weight: 500;color:#522b2b" href="#">
-							Collage consultant
-							<i class="fas fa-caret-down"></i>
-						</a>
-						<ul class="sub-menu">
-							<li><a href="/consult">University Admission Counseling</a></li>
-							<li><a href="/consult?classification=type">Classification of school types</a></li>
-							<li><a href="/consult?classification=region">Classification os schools by region</a></li>
-						</ul>
-					</li>
-					<li class="menu-item-has-children">
-						<a style="font-weight: 500;color:#522b2b" href="/course/">
-							Academic Guidance
-							<i class="fas fa-caret-down"></i>
-						</a>
-						<ul class="sub-menu">
-							<li><a href="/course/">Academic Guidance</a></li>
-							<li><a href="/course?type=tutor">Tutor</a></li>
-							<li><a href="/shop/">Online test questions</a></li>
-						</ul>
-					</li>
-                    <li class="menu-item-has-children">
-							<a  style="font-weight: 500;color:#522b2b"href="/afficient/">
-								Afficient
-							</a>
-						</li>
-				</ul>
-			</nav>
-		</div>
-	</div>
+  <div class="mobile-menu">
+    <nav class="header-menu" style="display: block; color: black">
+      <ul class="nav_scroll">
+        <li class="menu-item-has-children">
+          <a style="font-weight: 300; color:#000000" href="/">Home</a>
+        </li>
+        <li class="menu-item-has-children">
+          <a style="font-weight: 300; color:#000000" href="#">
+            About
+            <i class="fas fa-caret-down"></i>
+          </a>
+          <ul class="sub-menu">
+            <li><a style="font-weight: 300; color:#000000" href="/consult">About as</a></li>
+            <li><a style="font-weight: 300; color:#000000" href="/consult?classification=type">School Types</a></li>
+            <li><a style="font-weight: 300; color:#000000" href="/consult?classification=region">School Regions</a></li>
+          </ul>
+        </li>
+        <li class="menu-item-has-children">
+          <a style="font-weight: 300; color:#000000" href="/course/">
+            service
+            <i class="fas fa-caret-down"></i>
+          </a>
+          <ul class="sub-menu">
+            <li><a style="font-weight: 300; color:#000000" href="/course/">Courses</a></li>
+            <li><a style="font-weight: 300; color:#000000" href="/consult?type=tutor">Tutoring</a></li>
+            <li><a style="font-weight: 300; color:#000000" href="/shop/">Online Tests</a></li>
+          </ul>
+        </li>
+        <li class="menu-item-has-children">
+          <a style="font-weight: 300; color:#000000" href="/afficient/">
+            Afficient
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</div>
 
 {% endif %}
 {% endblock %}
 
 {% block content %}
 
-<div class="blog-section">
+<div class="blog-section" style="background-color: #f9f9fc;">
 	<div class="container">
 
 		{% if lang == 'zh' %}
@@ -277,56 +276,54 @@
 
 		<div class="row image_load">
 		    {% if classification == 'type' %}
-			{% for collage in  collages %}
-				<div class="col-lg-3 col-md-4 col-sm-6 col-6 grid-item {{collage.classification}}" style="margin-top:50px;margin-bottom:100px">
-					<div class="single-blog-box">
-						<div class="blog-content">
-							<img style="width:100%" src="/media/{{collage.emblem}}" alt="image load error">
+                {% for collage in  collages %}
+                    <div class="col-lg-3 col-md-4 col-sm-6 col-6 grid-item {{collage.classification}}" style="margin-top:50px;margin-bottom:75px;">
+                        <div class="single-blog-box" style="margin:10px;box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);border-radius: 0">
+                            <div class="blog-content" style="background-color: #ffffff">
+                                <img style="width:100%" src="/media/{{collage.emblem}}" alt="image load error">
 
-							<div class="meta-blog">
-								<span class="collage_place"><i class="bi bi-map collage_place"></i>{{collage.country}}</span>
-							</div>
+                                <div class="meta-blog">
+                                    <span class="collage_place"><i class="bi bi-map collage_place"></i>{{collage.country}}</span>
+                                </div>
 
-							<div class="blog-content-title">
-								{% if lang == 'zh' %}
-								<h5 class="collage_title"><a class="collage_title" style="font-weight: 400" href="/detail/{{ collage.id}}">{{collage.name}}</a></h5>
-								{% else %}
-								<h5 class="collage_title responsive_collage_title" ><a  style="font-weight: 400;font-size:17px" href="/detail/{{ collage.id}}">{{collage.en_name}}</a></h5>
-								{% endif %}
-							</div>
-							<div class="blog-content-button">
-								<a class="collage_read_more" href="/detail/{{ collage.id }}">Read More<i class="bi bi-arrow-right"></i></a>
-							</div>
-						</div>
-					</div>
-				</div>
-			{%endfor %}
-
-
-			{% else %}
-			{% for collage in  collages %}
-				<div class="col-lg-3 col-md-4 col-sm-6 col-6 grid-item {{collage.continent}}" style="margin-top:50px;margin-bottom:100px">
-					<div class="single-blog-box">
-						<div class="blog-content">
-							<img style="width:100%" src="/media/{{collage.emblem}}" alt="image load error">
-
-							<div class="meta-blog">
-								<span class="collage_place"><i class="bi bi-map collage_place"></i>{{collage.country}}</span>
-							</div>
-							<div class="blog-content-title">
-								{% if lang == 'zh' %}
-								<h5 class="collage_title"><a class="collage_title" style="font-weight: 400" href="/detail/{{ collage.id}}">{{collage.name}}</a></h5>
-								{% else %}
-								<h5 class="collage_title responsive_collage_title"><a class="collage_title" style="font-weight: 400;font-size:17px" href="/detail/{{ collage.id}}">{{collage.en_name}}</a></h5>
-								{% endif %}
+                                <div class="blog-content-title">
+                                    {% if lang == 'zh' %}
+                                    <h5 class="collage_title"><a class="collage_title" style="font-weight: 400" href="/detail/{{ collage.id}}">{{collage.name}}</a></h5>
+                                    {% else %}
+                                    <h5 class="collage_title responsive_collage_title" ><a  style="font-weight: 400;font-size:17px" href="/detail/{{ collage.id}}">{{collage.en_name}}</a></h5>
+                                    {% endif %}
+                                </div>
+                                <div class="blog-content-button">
+                                    <a class="collage_read_more" href="/detail/{{ collage.id }}">Read More<i class="bi bi-arrow-right"></i></a>
+                                </div>
                             </div>
-							<div class="blog-content-button">
-								<a class="collage_read_more" href="/detail/{{ collage.id }}">Read More<i class="bi bi-arrow-right"></i></a>
-							</div>
-						</div>
-					</div>
-				</div>
-			{% endfor %}
+                        </div>
+                    </div>
+                {%endfor %}
+			{% else %}
+                {% for collage in  collages %}
+                    <div class="col-lg-3 col-md-4 col-sm-6 col-6 grid-item  {{collage.continent}}" style="margin-top:50px;margin-bottom:75px">
+                        <div class="single-blog-box" style="margin:10px;box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);border-radius: 0">
+                            <div class="blog-content" style="background-color: #ffffff">
+                                <img style="width:100%" src="/media/{{collage.emblem}}" alt="image load error">
+
+                                <div class="meta-blog">
+                                    <span class="collage_place"><i class="bi bi-map collage_place"></i>{{collage.country}}</span>
+                                </div>
+                                <div class="blog-content-title">
+                                    {% if lang == 'zh' %}
+                                    <h5 class="collage_title"><a class="collage_title" style="font-weight: 400" href="/detail/{{ collage.id}}">{{collage.name}}</a></h5>
+                                    {% else %}
+                                    <h5 class="collage_title responsive_collage_title"><a class="collage_title" style="font-weight: 400;font-size:17px" href="/detail/{{ collage.id}}">{{collage.en_name}}</a></h5>
+                                    {% endif %}
+                                </div>
+                                <div class="blog-content-button">
+                                    <a class="collage_read_more" href="/detail/{{ collage.id }}">Read More<i class="bi bi-arrow-right"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
 			{% endif %}
 		</div>
 		<nav aria-label="Page navigation example" style="display: flex;flex-direction: column;align-items: center;">
@@ -376,7 +373,7 @@
 {% block footer %}
 
 {% if lang == 'zh' %}
-	<div  style="padding: 75px 0 34px;background-color: #4e4e4e;">
+	<div  style="padding: 75px 0 34px;background-color:  #000000">
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-3 col-md-6">
@@ -451,7 +448,7 @@
 	</div>
 </div>
 {% else %}
-	<div  style="padding: 75px 0 34px;background-color: #4e4e4e;">
+	<div  style="padding: 75px 0 34px;background-color: #000000;">
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-3 col-md-6">
@@ -525,6 +522,10 @@
 		</div>
 	</div>
 </div>
+
+
+
 {% endif %}
 
 {% endblock %}
+

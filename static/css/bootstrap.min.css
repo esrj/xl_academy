@@ -1,4 +1,11 @@
-/*!
+.img-thumbnail {
+    padding: .1rem;
+    background-color: #fff;
+    border: 0;
+    border-radius: .25rem;
+    max-width: 100%;
+    height: auto;
+}
  * Bootstrap v5.0.2 (https://getbootstrap.com/)
  * Copyright 2011-2021 The Bootstrap Authors
  * Copyright 2011-2021 Twitter, Inc.

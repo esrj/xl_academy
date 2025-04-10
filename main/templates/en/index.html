@@ -27,38 +27,11 @@
 	<link rel="stylesheet" href="/static/css/responsive.css" type="text/css" media="all">
 	<link rel="stylesheet" href="/static/css/icon/flaticon.css" type="text/css" media="all">
 	<link rel="stylesheet" href="/static/assets/owl.theme.default.min.css" type="text/css" media="all">
-<!--	<link rel="stylesheet" href="/static/assets/style.min.css" type="text/css" media="all">-->
-
 	<script src="/static/js/modernizr-3.5.0.min.js"></script>
 	<link rel="stylesheet" href="/static/css/bootstrap-icons.css">
 </head>
 
-<style>
-
-.slider-content {
-    position: relative;
-    z-index: 200;
-}
-.section-button{
-	position: relative;
-    z-index: 200;
-}
-::placeholder {
-      color: #8d8c8c;
-}
-
-</style>
-<body>
-
-{% block loader %}
-
-	<div class="loader-wrapper">
-		<div class="loader"></div>
-		<div style="background-color: white;" class="loder-section left-section"></div>
-		<div style="background-color: white;" class="loder-section right-section"></div>
-	</div>
-{% endblock %}
-
+<body style=" background: #f1f1f1">
 
 
 {% block navbar %}
@@ -67,39 +40,39 @@
 		<div class="row align-items-center" style="height: 90px">
 			<div class="col-lg-2" style="height: 90px">
 				<div class="header-logo">
-					<a href="/"><img style="height:55px;position: relative; top:5px" src="/static/picture/footer-logo.png" alt="logo"></a>
+					<a href="/"><img id="sticky-header-logo" class="logo-white"  style="height:55px;position: relative; top:5px" src="/static/picture/footer-logo.png" alt="logo"></a>
 				</div>
 			</div>
 			<div class="col-lg-8" style="position: relative;bottom: 10px; ">
 				<div class="header-menu">
 					<ul class="nav_scroll">
 						<li class="menu-item-has-children">
-							<a id="sticky-header-text1"   style="font-weight: 500;color:#ffffff" href="/">Home</a>
+							<a id="sticky-header-text1"   href="/">Home</a>
 						</li>
 						<li class="menu-item-has-children">
-							<a id="sticky-header-text2"   style="font-weight: 500;color:#ffffff" href="/consult">
-								Collage consultant
+							<a id="sticky-header-text2"    href="/consult">
+								About
 								<i class="fas fa-caret-down"></i>
 							</a>
 							<ul class="sub-menu">
-								<li><a href="/consult">College Counseling</a></li>
-								<li><a href="/consult?classification=type">University Guide</a></li>
-								<li><a href="/consult?classification=region">University Guide by region</a></li>
+								<li><a href="/consult">About as</a></li>
+								<li><a href="/consult?classification=type">School Types</a></li>
+								<li><a href="/consult?classification=region">School Regions</a></li>
 							</ul>
 						</li>
 						<li class="menu-item-has-children">
-							<a id="sticky-header-text3"   style="font-weight: 500;color:#ffffff" href="/course/">
-								Academic Guidance
+							<a id="sticky-header-text3"    href="/course/">
+								Service
 								<i class="fas fa-caret-down"></i>
 							</a>
 							<ul class="sub-menu">
-								<li><a href="/course/">Academic Guidance</a></li>
-								<li><a href="/course?type=tutor">Tutor</a></li>
-								<li><a href="/shop/">Online test questions</a></li>
+								<li><a href="/course/">Courses</a></li>
+								<li><a href="/course?type=tutor">Tutoring</a></li>
+								<li><a href="/shop/">Online test </a></li>
 							</ul>
 						</li>
                         <li class="menu-item-has-children">
-							<a id="sticky-header-text4" style="font-weight: 500;color:#ffffff" href="/afficient/">
+							<a id="sticky-header-text4" href="/afficient/">
 								Afficient
 							</a>
 						</li>
@@ -108,7 +81,7 @@
 			</div>
 			<div style="position: relative;bottom: 10px; " class="col-lg-2">
 				<div class="header-button">
-					<a href="/#contact">Contact us<i class="bi bi-arrow-right"></i></a>
+					<a id="sticky-header-button" href="/#contact">Contact us<i class="bi bi-arrow-right"></i></a>
 				</div>
 			</div>
 		</div>
@@ -119,63 +92,52 @@
 		<div class="mobile-menu">
 			<nav class="header-menu" style="display: block;">
 				<ul class="nav_scroll">
-					<li class="menu-item-has-children"><a style="color:#522b2b" href="/">Home</a>
+					<li class="menu-item-has-children"><a style="color:#000000;font-weight: 300" href="/">Home</a>
 
 					</li>
 					<li class="menu-item-has-children">
-						<a style="font-weight: 500;color:#522b2b" href="#">
-							Collage consultant
+						<a style="color:#000000;font-weight: 300" href="#">
+							About
 							<i class="fas fa-caret-down"></i>
 						</a>
 						<ul class="sub-menu">
-							<li><a href="/consult">University Admission Counseling</a></li>
-							<li><a href="/consult?classification=type">Classification of school types</a></li>
-							<li><a href="/consult?classification=region">"Classification of schools by region</a></li>
+							<li><a style="color:#000000;font-weight: 300" href="/consult">About as</a></li>
+							<li><a style="color:#000000;font-weight: 300" href="/consult?classification=type">School Types</a></li>
+							<li><a style="color:#000000;font-weight: 300" href="/consult?classification=region">School Regions</a></li>
 						</ul>
 					</li>
 
 					<li class="menu-item-has-children">
-						<a style="font-weight: 500;color:#522b2b" href="/course/">
-							Academic Guidance
+						<a style="color:#000000;font-weight: 300" href="/course/">
+							service
 						</a>
 						<ul class="sub-menu">
-							<li><a href="/course/">Academic Guidance</a></li>
-							<li><a href="/course?type=tutor">Tutor</a></li>
-							<li><a href="/shop/">Online test questions</a></li>
+							<li><a style="color:#000000;font-weight: 300" href="/course/">Course</a></li>
+							<li><a style="color:#000000;font-weight: 300" href="/course?type=tutor">Tutoring</a></li>
+							<li><a style="color:#000000;font-weight: 300" href="/shop/">Online test</a></li>
 						</ul>
 					</li>
                     <li class="menu-item-has-children">
-                        <a style="font-weight: 500;color:#522b2b"  href="/afficient/">
+                        <a style="color:#000000;font-weight: 300"  href="/afficient/">
                             Afficient
                         </a>
                     </li>
 				</ul>
 			</nav>
 		</div>
-	</div>
+</div>
 {% endblock %}
 
 {% block content %}
+
+{#封面 #}
 <div class="slider_list owl-carousel" style="top: -90px;">
-	<div class="slider-section align-items-center d-flex">
-		<div class="container">
-			<div class="row align-items-center cell-phone-style">
-				<div class="col-md-12 text-center">
-					<div style="top: 30px" class="slider-content">
-						<div class="slider-sub-title">
-							<h4>XL Academy</h4>
-						</div>
-						<h1 >Taipei City Private XL Academy</h1>
-						<h1 >Cram School</h1>
-					</div>
-					<div class="section-button">
-						<a href="#service">Service<i class="bi bi-arrow-right"></i></a>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+
 	<div class="slider-section style-2 align-items-center d-flex">
+        <video autoplay loop muted playsinline>
+            <source src="/static/slider/slider.mp4" type="video/mp4">
+            您的瀏覽器不支援此影片。
+        </video>
 		<div class="container">
 			<div class="row align-items-center cell-phone-style">
 				<div class="col-md-12 text-center">
@@ -183,10 +145,10 @@
 						<div class="slider-sub-title">
 							<h4>XL Academy</h4>
 						</div>
-						<h1 >Taipei City Private XL Academy</h1>
-						<h1 >Cram School</h1>
+						<h1  style="font-weight: 400;">Taipei City Private XL Academy</h1>
+						<h1  style="font-weight: 400;">Cram School</h1>
 					</div>
-					<div class="section-button">
+					<div class ="cover-button" >
 						<a href="#service">Service<i class="bi bi-arrow-right"></i></a>
 					</div>
 				</div>
@@ -195,241 +157,168 @@
 	</div>
 </div>
 
+{#加入我們    #}
+<div  class=" style-home2 join-us-section" style="margin: 0;background-color:#111111;position: relative;bottom: 100px">
+	<div class="container">
+		<div class="row cell-phone-style">
+			<div class="col-md-12 text-center">
+				<div class="section-title2 animate-block">
+					<h4 class="service-h4">Join us</h4>
+					<h1 style="position: relative;bottom: 25px">Maximize your potential</h1>
+                    <p style="color: #d5d6d8;">
+                        With our guidance, gain essential study abroad info and personalized application strategies.
+                    </p>
+                    <p style="color: #d5d6d8;">
+                        Enjoy one-on-one advice from school selection to interview coaching.
+                    </p>
+                    <p style="color: #d5d6d8;margin-bottom: 40px">
+                        Join us and start your international journey!
+                    </p>
+				</div>
+
+			</div>
+		</div>
+		<div class="row cell-phone-style d-flex align-items-stretch">
+          <div class="col-lg-3 col-sm-6 d-flex">
+            <div class="flex-fill text-center join-us-block animate-left" >
+              <div class="feature-icon">
+                <i style="font-size: xxx-large;" class="flaticon-user join-us-icon"></i>
+              </div>
+              <div class="feature-text">
+                  <h4 class = "join-us-h4" style="line-height: 1.2;min-height: 50px;font-weight: 400;">Professional faculty</h4>
+                  <p style="font-size: 14px;line-height: 1.2">Our faculty boasts exceptional academic credentials, ensuring top-tier instruction for all our students</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-sm-6 d-flex">
+              <div class="flex-fill text-center join-us-block animate-left">
+                <div class="feature-icon">
+                  <i style="font-size: xxx-large;" class="flaticon-idea join-us-icon"></i>
+                </div>
+                <div class="feature-text">
+                  <h4 class = "join-us-h4" style="line-height: 1.2;min-height: 50px;font-weight: 400;">self-growth</h4>
+                  <p style="font-size: 14px;line-height: 1.2">Offering personalized support to help students uncover their strengths and potential</p>
+                </div>
+              </div>
+          </div>
+          <div class="col-lg-3 col-sm-6 d-flex">
+            <div class="flex-fill text-center join-us-block animate-right" >
+              <div class="feature-icon">
+                <i style="font-size: xxx-large;" class="flaticon-flag join-us-icon"></i>
+              </div>
+              <div class="feature-text">
+                <h4  class = "join-us-h4" style="line-height: 1.2;min-height: 50px;font-weight: 400;">nurturing interests</h4>
+				<p style="font-size: 14px;line-height: 1.2">Fostering a passion for learning, and nurturing their unique talents and abilities</p>
+
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-sm-6 d-flex">
+            <div class="flex-fill text-center join-us-block animate-right" >
+              <div class="feature-icon">
+                <i style="font-size: xxx-large;" class="flaticon-help join-us-icon"></i>
+              </div>
+              <div class="feature-text">
+                <h4 class = "join-us-h4" style="line-height: 1.2;min-height: 50px;font-weight: 400;">lifelong support</h4>
+				<p style="font-size: 14px;line-height: 1.2">Supporting students from college to career with ongoing guidance at every step</p>
+
+              </div>
+            </div>
+          </div>
+        </div>
+	</div>
+</div>
+
+{#  跑馬燈  #}
+<div  class=" style-home2 section-separate" style="position: relative;bottom: 100px;padding-bottom: 0;background-color: #f1f1f1">
+    <div class="marquee-container">
+      <div class="marquee-text">
+        <span class="hollow">EMPOWERING  </span><span class="filled"> STUDENTS </span><span class="hollow"> FOR A BRIGHTER </span><span class="filled"> TOMORROW</span>
+      </div>
+    </div>
+</div>
+
+{# 影片#}
+<div  class=" style-home2" style="background-color: #000000;padding-top: 100px;padding-bottom: 100px;position: relative;bottom: 100px;">
+	<div class="container">
+		<div class="row cell-phone-style">
+			<div class="col-lg-7 col-md-12 animate-left">
+                <div class="video-wrapper">
+                    <iframe width="100%" height="100%"
+                        src="{{testimony.video}}"
+                        title="YouTube video player"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+			</div>
+
+			<div class="col-lg-5 col-md-12 animate-right">
+				<div class="section-title2 section-testimony">
+					<h4>testimony</h4>
+					<h1 style="line-height: 1.3">{{testimony.title_en}}</h1>
+					<p  style="position: relative;top: 30px;color: #aaabad">
+						{{testimony.content_en}}
+                    </p>
+                    <h5 class="student_name">Student name：{{testimony.student_name_en}}</h5>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
 
 
-
+{# 關於我們#}
 <div style="margin-bottom: 100px" class=" style-home2">
 	<div class="container">
 		<div class="row align-items-center cell-phone-style">
-			<div class="col-lg-6 col-md-12">
+			<div class="col-lg-6 col-md-12 animate-left">
 				<div class="section-title left">
 					<h4>About as</h4>
-					<h1>Enlighten wisdom, achieve the future.</h1>
+					<h1 style="margin-bottom: 10px">Enlighten wisdom, achieve the future</h1>
 					<p>
 						We were founded in 2015 by Ellen Chu, an outstanding graduate of the University of California, Berkeley, dedicated to providing excellent educational services. XL Academy is renowned for its rich educational experience, outstanding academic guidance, and successful placement of students in globally recognized universities.
 					</p>
 				</div>
 				<div class="about-list-item">
 					<ul>
-						<li><img src="/static/picture/about-list-icon.png" alt="icon">We've guided 200+ students into top-tier universities like Stanford, MIT, and beyond</li>
-						<li><img src="/static/picture/about-list-icon.png" alt="icon">Our focus lies in fostering critical thinking, creativity, and a strong sense of responsibility</li>
-						<li><img src="/static/picture/about-list-icon.png" alt="icon">Through innovative, personalized teaching methods, we empower students with the confidence to tackle academic hurdles head-on</li>
-					</ul>
+                      <li><img src="/static/picture/about-list-icon.png" alt="icon">Guided 200+ students to elite universities like Stanford and MIT.</li>
+                      <li><img src="/static/picture/about-list-icon.png" alt="icon">We nurture critical thinking, creativity, and responsibility.</li>
+                      <li><img src="/static/picture/about-list-icon.png" alt="icon">Innovative teaching empowers students to overcome challenges.</li>
+                    </ul>
 				</div>
 				<div class="section-button">
 					<a href="/#contact">Contact us<i class="bi bi-arrow-right"></i></a>
 				</div>
 			</div>
-			<div class="col-lg-6 col-md-12">
+			<div class="col-lg-6 col-md-12 animate-right">
 				<div >
-					<img style="width:100%;border-radius:25px" src="/static/image/about.jpg" alt="about imgs">
+					<img  class="img_photo" src="/static/image/about.jpg" alt="about imgs">
 				</div>
 			</div>
 		</div>
 	</div>
 </div>
 
-
-<div  class=" style-home2 section-separate" >
+{#  團隊介紹  #}
+<div style="background-color: #111111;padding-top: 50px;padding-bottom: 50px" class="recent-work-section style-home2">
 	<div class="container">
-		<div class="row">
-			<div class="col-md-12 text-center">
-				<div class="section-title">
-					<h4 class="service-h4">Message for students</h4>
-					<h1 class="section-separate-title">Beacon to a brighter future</h1>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-<!--感言-->
-<div  class=" style-home2" style="background-color: #fff;padding-top: 100px;padding-bottom: 100px">
-	<div class="container">
-		<div class="row cell-phone-style">
-			<div class="col-lg-7 col-md-12">
-				<div class="service-details-video-thumb video-rwd">
-					<div class="service-details-video-thumb-inner">
-						<video id="videoPlayer" class="video-rwd2" controls poster="/media/{{testimony.picture}}">
-							<source src="/media/{{testimony.video}}" type="video/mp4">
-							很抱歉你的瀏覽器不支援此影片格式
-						</video>
-					</div>
-					<div class="video-icon">
-						<a id="playButton" class="video-vemo-icon" ><i class="fa fa-play"></i></a>
-					</div>
-				</div>
-			</div>
+        <div class="row align-items-center justify-content-center cell-phone-style">
+            <div class="col-md-12 text-center">
+                <div class="section-title2">
+                    <h4 class="service-h4">faculty team</h4>
+                    <h1 style="position: relative;bottom: 20px">Introduction to our outstanding faculty team</h1>
+                </div>
+            </div>
+        </div>
 
-			<div class="col-lg-5 col-md-12">
-				<div class="section-title section-testimony">
-					<h4>testimony</h4>
-					<h1>{{testimony.title_en}}</h1>
-					<a style="position: relative;top: 30px">
-						{{testimony.content_en}}
-                    </a>
-                    <h5 style="position: relative;top: 40px;color:#522b2b">Student name：{{testimony.student_name_en}}</h5>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-
-
-
-<!--加入我們-->
-<div  class=" style-home2 join-us-section" >
-	<div class="container">
-		<div class="row cell-phone-style">
-			<div class="col-md-12 text-center">
-				<div class="section-title">
-					<h4 style="line-height: 30px" class="service-h4">Join us</h4>
-					<h1 style="position: relative;bottom: 5px">Maximize your potential</h1>
-				</div>
-			</div>
-		</div>
-		<div class="row cell-phone-style">
-			<div class="col-sm-3" >
-				<div style="text-align: center; transition: .4s;margin-bottom: 20px;">
-					<div class="feature-icon">
-						<i  class="flaticon-user  join-us-icon"></i>
-					</div>
-					<div class="feature-text">
-						<h4 style="line-height: 30px;margin-top: 20px" class = "join-us-h4">Professional faculty team</h4>
-						<p class="join-us-text">Our faculty boasts exceptional academic credentials, ensuring top-tier instruction for all our students</p>
-					</div>
-				</div>
-			</div>
-			<div class="col-sm-3" >
-				<div style="text-align: center; transition: .4s;margin-bottom: 20px;">
-					<div class="feature-icon">
-						<i  class="flaticon-idea join-us-icon"></i>
-					</div>
-					<div class="feature-text">
-						<h4 style="line-height: 30px;margin-top: 20px" class = "join-us-h4">self-growth</h4>
-						<p class="join-us-text">Offering personalized support to help students uncover their strengths and potential</p>
-
-					</div>
-				</div>
-			</div>
-			<div class="col-sm-3" >
-				<div style="text-align: center; transition: .4s;margin-bottom: 20px;">
-					<div class="feature-icon">
-						<i  class="flaticon-flag join-us-icon"></i>
-					</div>
-					<div class="feature-text">
-						<h4  style="line-height: 30px;margin-top: 20px" class = "join-us-h4">nurturing interests</h4>
-						<p class="join-us-text">Fostering a passion for learning, and nurturing their unique talents and abilities</p>
-					</div>
-				</div>
-			</div>
-			<div class="col-sm-3" >
-				<div style="text-align: center; transition: .4s;margin-bottom: 20px;">
-					<div class="feature-icon">
-						<i  class="flaticon-help join-us-icon"></i>
-					</div>
-					<div class="feature-text">
-						<h4 style="line-height: 30px;margin-top: 20px" class = "join-us-h4">lifelong support</h4>
-						<p class="join-us-text">Supporting students from college to career with ongoing guidance at every step</p>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-
-<!--服務項目-->
-<div id="service" class="recent-work-section style-home2">
-	<div class="container">
-		<div class="row cell-phone-style">
-			<div class="col-md-12 text-center">
-				<div class="section-title">
-					<h4 class="service-h4">Service</h4>
-					<h1>Comprehensive service to leave you worry-free</h1>
-					<div class="section-title-embar-2"></div>
-					<div class="section-title-embar-4"></div>
-				</div>
-			</div>
-		</div>
-		<div class="row cell-phone-style" style="display: flex; justify-content: center;">
-			<div class="col-lg-4 col-md-12">
-				<div class="service-box style-inner">
-					<div class="service-content">
-						<h4>Collage consult</h4>
-						<p >Expert guidance for overseas university applications, simplifying the complex application journey</p>
-					</div>
-					<div class="service-icon">
-						<div class="images-icon">
-							<img src="/static/picture/service-icon4.png" alt="icon">
-						</div>
-						<div class="service-button">
-							<a href="/consult"><i class="bi bi-arrow-right"></i></a>
-						</div>
-					</div>
-
-				</div>
-			</div>
-			<div class="col-lg-4 col-md-12">
-				<div class="service-box style-inner">
-					<div class="service-content">
-						<h4>SAT/AP/IB </h4>
-						<p class="service_p_height">Leverage our test trend insights, rich resources, and tailored DSAT practice materials</p>
-					</div>
-					<div class="service-icon">
-						<div class="images-icon">
-							<img src="/static/picture/service-icon3.png" alt="icon">
-						</div>
-						<div class="service-button">
-							<a href="/shop"><i class="bi bi-arrow-right"></i></a>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-lg-4 col-md-12">
-				<div class="service-box style-inner">
-					<div class="service-content">
-						<h4>Academic Guidance</h4>
-						<p>Enhancing your academic journey with personalized tutoring, seasonal camps, and post-class support</p>
-					</div>
-					<div class="service-icon">
-						<div class="images-icon">
-							<img src="/static/picture/service-icon1.png" alt="icon">
-						</div>
-						<div class="service-button">
-							<a href="/course/"><i class="bi bi-arrow-right"></i></a>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-
-
-
-
-<div style="background-color: #f7f7f9;padding-top: 50px;padding-bottom: 50px" class="recent-work-section style-home2">
-	<div class="container">
-			<div class="row align-items-center justify-content-center cell-phone-style">
-				<div class="col-md-12 text-center">
-					<div class="section-title">
-						<h4 class="service-h4">faculty team</h4>
-						<h1>Introduction to our outstanding faculty team</h1>
-						<div class="section-title-embar-2"></div>
-						<div class="section-title-embar-4"></div>
-					</div>
-				</div>
-			</div>
-	</div>
-
-	<div class="  container-fluid px-120">
-        <div class="row justify-content-center">
-            <div class="col-lg-12">
+	    <div class="row justify-content-center">
+            <div class="col-lg-12 animate-block">
                 <div class="testimonials-slides owl-carousel owl-theme">
 
-                    <div class="card team-box border-0 bg-transparent mt-3">
+                    <div class="card team-box border-0  mt-3 teacher_border" >
 						 <div class="position-relative mx-auto">
-                                <img src="/static/picture/1.jpg" alt="team" style="height: 250px ;width: 250px ; border-radius: 50%; object-fit: cover"
-									 class="img-fluid rounded-circle img-thumbnail">
+                                <img src="/static/picture/1.jpg" alt="team"  class="img-fluid rounded-circle  teacher_img">
                                 <ul class="team-social list-unstyled">
                                     <li><a href="#" class="primary-link"><i class="mdi mdi-facebook"></i></a></li>
                                     <li class="my-1"><a href="#" class="primary-link"><i class="mdi mdi-twitter"></i></a>
@@ -438,17 +327,17 @@
                                 </ul>
 						 </div>
 						 <div class="text-center">
-                                <h6 class="mb-0"><a href="#" class="primary-link">Ellen Chu</a></h6>
-                                <p class="text-muted fs-14 mb-0">Owner/Founder</p>
-                                <p class="text-muted fs-14 mb-0">UC Berkley</p>
+                                <h6 style="color: white" class="mb-0">Ellen Chu</h6>
+                                <p class="text-muted fs-14 mb-0" style="line-height: 1.2">Owner/Founder</p>
+                                <p class="text-muted fs-14 mb-0" style="line-height: 1.2">UC Berkley</p>
+                                <p class="teacher_text">XL Academy is the educational revolution students have been waiting for. With innovative teaching methods and expert tutors, every lesson is designed to spark success.</p>
 						 </div>
 					</div>
 
 
-                     <div class="card team-box border-0 bg-transparent mt-3">
+                     <div class="card team-box border-0 mt-3 teacher_border">
 						 <div class="position-relative mx-auto">
-                                <img src="/static/picture/2.jpg" alt="team" style="height: 250px ;width: 250px ; border-radius: 50%; object-fit: cover"
-									 class="img-fluid rounded-circle img-thumbnail">
+                                <img src="/static/picture/2.jpg" alt="team" class="img-fluid rounded-circle teacher_img">
                                 <ul class="team-social list-unstyled">
                                     <li><a href="#" class="primary-link"><i class="mdi mdi-facebook"></i></a></li>
                                     <li class="my-1"><a href="#" class="primary-link"><i class="mdi mdi-twitter"></i></a>
@@ -457,15 +346,15 @@
                                 </ul>
 						 </div>
 						 <div class="text-center">
-                                <h6 class="mb-0"><a href="#" class="primary-link">Eric Chang</a></h6>
-                                <p class="text-muted fs-14 mb-0">Academic Director</p>
-                                <p class="text-muted fs-14 mb-0">University of British Columbia</p>
+                                <h6 style="color: white" class="mb-0">Eric Chang</h6>
+                                <p class="text-muted fs-14 mb-0" style="line-height: 1.2">Academic Director</p>
+                                <p class="text-muted fs-14 mb-0" style="line-height: 1.2">University of British Columbia</p>
+                                <p class="teacher_text">Driven by creativity and commitment, XL Academy redefines tutoring. We focus on engagement, tailored instruction, and practical skills that prepare students for the future.</p>
 						 </div>
 					</div>
-					<div class="card team-box border-0 bg-transparent mt-3">
+					<div class="card team-box border-0 mt-3 teacher_border">
 						 <div class="position-relative mx-auto">
-                                <img src="/static/picture/3.jpg" alt="team" style="height: 250px ;width: 250px ; border-radius: 50%; object-fit: cover"
-									 class="img-fluid rounded-circle img-thumbnail">
+                                <img src="/static/picture/3.jpg" alt="team" class="img-fluid rounded-circle  teacher_img">
                                 <ul class="team-social list-unstyled">
                                     <li><a href="#" class="primary-link"><i class="mdi mdi-facebook"></i></a></li>
                                     <li class="my-1"><a href="#" class="primary-link"><i class="mdi mdi-twitter"></i></a>
@@ -474,15 +363,15 @@
                                 </ul>
 						 </div>
 						 <div class=" text-center">
-                                <h6 class="mb-0"><a href="#" class="primary-link">Stephanie Chen</a></h6>
-                                <p class="text-muted fs-14 mb-0">Teacher</p>
-                                <p class="text-muted fs-14 mb-0">Boston University</p>
+                                <h6 style="color: white"  class="mb-0">Stephanie Chen</h6>
+                                <p class="text-muted fs-14 mb-0" style="line-height: 1.2">Teacher</p>
+                                <p class="text-muted fs-14 mb-0" style="line-height: 1.2">Boston University</p>
+                                <p  class="teacher_text">XL Academy revolutionizes learning by combining innovative teaching, personalized tutoring, and a dedicated team to unlock every student’s full potential.</p>
 						 </div>
 					</div>
-					<div class="card team-box border-0 bg-transparent mt-3">
+					<div class="card team-box border-0  mt-3 teacher_border">
 						 <div class="position-relative mx-auto">
-                                <img src="/static/picture/4.jpg" alt="team" style="height: 250px ;width: 250px ; border-radius: 50%; object-fit: cover"
-									 class="img-fluid rounded-circle img-thumbnail">
+                                <img src="/static/picture/4.jpg" alt="team" class="img-fluid rounded-circle  teacher_img">
                                 <ul class="team-social list-unstyled">
                                     <li><a href="#" class="primary-link"><i class="mdi mdi-facebook"></i></a></li>
                                     <li class="my-1"><a href="#" class="primary-link"><i class="mdi mdi-twitter"></i></a>
@@ -491,16 +380,15 @@
                                 </ul>
 						 </div>
 						 <div class="text-center">
-                                <h6 class="mb-0"><a href="#" class="primary-link">Amy</a></h6>
-                                <p class="text-muted fs-14 mb-0">Teacher</p>
-                                <p class="text-muted fs-14 mb-0">University of Alberta</p>
-
+                                <h6 style="color: white" class="mb-0">Amy</h6>
+                                <p class="text-muted fs-14 mb-0" style="line-height: 1.2">Teacher</p>
+                                <p class="text-muted fs-14 mb-0" style="line-height: 1.2">University of Alberta</p>
+                                <p class="teacher_text">XL Academy offers a dynamic, student-centered experience. Our expert educators and advanced methods ensure that learning is both effective and inspiring.</p>
 						 </div>
 					</div>
-					<div class="card team-box border-0 bg-transparent mt-3">
+					<div class="card team-box border-0  mt-3 teacher_border">
 						 <div class="position-relative mx-auto">
-                                <img src="/static/picture/5.jpg" alt="team" style="height: 250px ;width: 250px ; border-radius: 50%; object-fit: cover"
-									 class="img-fluid rounded-circle img-thumbnail">
+                                <img src="/static/picture/5.jpg" alt="team" class="img-fluid rounded-circle  teacher_img">
                                 <ul class="team-social list-unstyled">
                                     <li><a href="#" class="primary-link"><i class="mdi mdi-facebook"></i></a></li>
                                     <li class="my-1"><a href="#" class="primary-link"><i class="mdi mdi-twitter"></i></a>
@@ -508,16 +396,16 @@
                                     <li><a href="#" class="primary-link"><i class="mdi mdi-skype"></i></a></li>
                                 </ul>
 						 </div>
-						 <div class="card-body text-center">
-                                <h6 class="mb-0"><a href="#" class="primary-link">Sven</a></h6>
-                                <p class="text-muted fs-14 mb-0">Teacher</p>
-                                <p class="text-muted fs-14 mb-0">National Taiwan University</p>
+						 <div class=" text-center">
+                                <h6 style="color: white" class="mb-0">Sven</h6>
+                                <p class="text-muted fs-14 mb-0" style="line-height: 1.2">Teacher</p>
+                                <p class="text-muted fs-14 mb-0" style="line-height: 1.2">National Taiwan University</p>
+                                <p class="teacher_text">XL Academy is the educational revolution students have been waiting for. With innovative teaching methods and expert tutors, every lesson is designed to spark success.</p>
 						 </div>
 					</div>
-                    <div class="card team-box border-0 bg-transparent mt-3">
+                    <div class="card team-box border-0  mt-3 teacher_border">
 						 <div class="position-relative mx-auto">
-                                <img src="/static/picture/6.jpg" alt="team" style="height: 250px ;width: 250px ; border-radius: 50%; object-fit: cover"
-									 class="img-fluid rounded-circle img-thumbnail">
+                                <img src="/static/picture/6.jpg" alt="team"  class="img-fluid rounded-circle  teacher_img">
                                 <ul class="team-social list-unstyled">
                                     <li><a href="#" class="primary-link"><i class="mdi mdi-facebook"></i></a></li>
                                     <li class="my-1"><a href="#" class="primary-link"><i class="mdi mdi-twitter"></i></a>
@@ -525,11 +413,11 @@
                                     <li><a href="#" class="primary-link"><i class="mdi mdi-skype"></i></a></li>
                                 </ul>
 						 </div>
-						 <div class="card-body text-center">
-                                <h6 class="mb-0"><a href="#" class="primary-link">Preston</a></h6>
-                                <p class="text-muted fs-14 mb-0">Teacher</p>
-                                <p class="text-muted fs-14 mb-0">Columbia University</p>
-
+						 <div class=" text-center">
+                                <h6 style="color: white" class="mb-0">Preston</h6>
+                                <p class="text-muted fs-14 mb-0" style="line-height: 1.2">Teacher</p>
+                                <p class="text-muted fs-14 mb-0" style="line-height: 1.2">Columbia University</p>
+                                <p class="teacher_text">In today’s competitive landscape, XL Academy stands out with modern techniques and a passion for education. We empower students to excel academically and beyond</p>
 						 </div>
 					</div>
                  </div>
@@ -538,119 +426,143 @@
     </div>
 </div>
 
-<div style="padding-top: 90px;padding-bottom: 50px" class="style-home2">
-
-	<div class="container">
-		<div class="row align-items-center justify-content-center">
-				<div class="col-md-12 text-center">
-					<div class="section-title">
-						<h4 class="service-h4">environment</h4>
-						<h1>Introduction to the classroom environment</h1>
-<!--						<div class="section-title-embar-2"></div>-->
-<!--						<div class="section-title-embar-4"></div>-->
-					</div>
-				</div>
-		</div>
-		<div class="row">
-			<div class="col-sm-4 class_env_phone">
-				<div class="single-blog-box inner">
-					<div class="single-blog-thumb">
-						<img style="border-radius: 20px" src="/static/image/env1.jpg" alt="imgs">
-					</div>
-					<div class="blog-content  class_env class-content" style="border-radius: 15px;background-color: #f7f7f9">
-						<div class="meta-blog">
-							<span><i class="bi bi-person"></i>By Admin</span>
-						</div>
-						<div class="blog-content-title">
-							<h5 ><a class="class_env_font">Providing a wealth of creative activities and resources to stimulate students' creativity</a></h5>
-						</div>
-
-					</div>
-				</div>
-			</div>
-			<div class="col-sm-4 class_env_phone">
-				<div class="single-blog-box inner">
-					<div class="single-blog-thumb">
-						<img style="border-radius: 20px" src="/static/image/env2.jpg" alt="imgs">
-					</div>
-					<div class="blog-content  class_env class-content" style="border-radius: 15px;background-color: #f7f7f9">
-						<div class="meta-blog">
-							<span><i class="bi bi-person"></i>By Admin</span>
-						</div>
-						<div class="blog-content-title ">
-							<h4><a  class="class_env_font">dopting an interdisciplinary teaching approach to integrate knowledge from various domains</a></h4>
-						</div>
-
-					</div>
-				</div>
-			</div>
-			<div class="col-sm-4 class_env_phone">
-				<div class="single-blog-box inner">
-					<div class="single-blog-thumb">
-						<img style="border-radius: 20px" src="/static/image/env3.jpg" alt="imgs">
-					</div>
-					<div class="blog-content class_env class-content" style="border-radius: 15px;background-color: #f7f7f9">
-						<div class="meta-blog">
-							<span><i class="bi bi-person"></i>By Admin</span>
-						</div>
-						<div class="blog-content-title">
-							<h4><a  class="class_env_font">Encouraging student engagement in discussions to foster a vibrant interactive learning environment</a></h4>
-						</div>
-
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+{#  數字#}
+<div class="style-home2 section-separate" style="background-color: #1b1c1e">
+    <div class="container">
+        <div class="row cell-phone-style">
+            <div class="col-md-12 text-center">
+                <div style="display: flex; justify-content: center; align-items: baseline;">
+                    <h1 class="hour_title" id="counter" data-target="200000">0</h1>
+                    <h1 class="hour_title">+</h1>
+                </div>
+               <h3 class="hour_text">Hours of Tutoring Delivered</h3>
+            </div>
+        </div>
+    </div>
 </div>
 
+{# 環境照片 #}
+<div style="padding-top: 80px; padding-bottom: 90px; background-color:#111111" class="style-home2">
+  <div class="container">
+    <div class="row" style="align-items: stretch;">
+      <div class="col-lg-3 col-sm-6 animate-block d-flex blog-content-block">
+        <div class="single-blog-box blog-block flex-fill">
+          <div class="single-blog-thumb">
+            <img src="/static/image/env1.jpg" alt="imgs">
+          </div>
+          <div class="blog-content">
+            <div class="meta-blog">
+              <span><i class="bi bi-person"></i> By Admin</span>
+            </div>
+            <div class="blog-content-title">
+              <p>
+                Offering innovative courses and state-of-the-art facilities, nurturing independent thinking and problem-solving skills to empower students to create their future.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
 
+      <div class="col-lg-3 col-sm-6 animate-block d-flex blog-content-block">
+        <div class="single-blog-box blog-block flex-fill">
+          <div class="single-blog-thumb">
+            <img src="/static/image/env2.jpg" alt="imgs">
+          </div>
+          <div class="blog-content">
+            <div class="meta-blog">
+              <span><i class="bi bi-person"></i> By Admin</span>
+            </div>
+            <div class="blog-content-title">
+              <p>
+                Utilizing interdisciplinary teaching that blends technology and art, broadening students' perspectives and driving success on the global stage.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
 
+      <div class="col-lg-3 col-sm-6 animate-block d-flex blog-content-block">
+        <div class="single-blog-box blog-block flex-fill">
+          <div class="single-blog-thumb">
+            <img src="/static/image/env3.jpg" alt="imgs">
+          </div>
+          <div class="blog-content">
+            <div class="meta-blog">
+              <span><i class="bi bi-person"></i> By Admin</span>
+            </div>
+            <div class="blog-content-title">
+              <p>
+                Creating an interactive learning environment that inspires discussion and collaboration, fostering exceptional communication and leadership skills.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
 
- <div style="padding-bottom: 0px" class=" style-home2" id="contact" >
-	<div class="container contact_us_form"  >
-		<div class="row" >
-			<div class="col-md-12 text-center">
-				<div class="section-title" style="display: flex;margin: 0;margin-left: 5px">
-					<h4>Contact us</h4>
-				</div>
-			</div>
-		</div>
-		<div class="col-md-12 text-center" >
-			<div>
-				<form>
-					<div class="contact_us_form_">
-						<div class="col-lg-6 col-md-6 form_" >
-							<div class="input-box">
-								<input id="username" style="height: 50px;background-color: white;border-color:#e5e5e5" type="text"  placeholder="Name *" required="">
-							</div>
-							<div class="input-box">
-								<input id="email" style="height: 50px;background-color: white;border-color:#e5e5e5" type="Email" name="Email" placeholder="Email address *" required="">
-							</div>
-							<div class="input-box">
-								<input id="phone" style="height: 50px;background-color: white;border-color:#e5e5e5" placeholder="Phone number" >
-							</div>
-						</div>
-						<div class="col-lg-6 col-md-6">
-							<div class="input-box">
-								<textarea id="content" name="message" style="background-color: white;border-color:#e5e5e5"  cols="30" rows="9" placeholder="Please enter your question ... *"></textarea>
-							</div>
-						</div>
-					</div>
-				</form>
-				<div class="submit-button" >
-					<button style="margin: 10px" type="submit" onclick="submit_()">Submit<i class="bi bi-arrow-right"></i></button>
-				</div>
-			</div>
-		</div>
-	</div>
+      <div class="col-lg-3 col-sm-6 animate-block d-flex blog-content-block">
+        <div class="single-blog-box blog-block flex-fill">
+          <div class="single-blog-thumb">
+            <img src="/static/image/env2.jpg" alt="imgs">
+          </div>
+          <div class="blog-content">
+            <div class="meta-blog">
+              <span><i class="bi bi-person"></i> By Admin</span>
+            </div>
+            <div class="blog-content-title">
+              <p>
+                Integrating an international curriculum with diverse cultures, encouraging exploration of the unknown, and expanding global perspectives as well as cross-cultural communication skills.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
 </div>
+
+{# 聯絡我們#}
+<div class="style-home2" id="contact">
+  <div class="container contact_us_form">
+    <div class="col-md-12 text-center animate-block form-content-block">
+      <div style="border-radius: 15px; padding: 50px; box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);background: #ffffff">
+        <div class="col-md-12 text-center">
+          <div class="section-title">
+            <h3 style="display: inline-block; border-bottom: 5px solid #ff3839; line-height: 1.2">Contact Us</h3>
+          </div>
+        </div>
+        <form>
+          <div class="contact_us_form_">
+            <div class="col">
+              <div class="input-box">
+                <input id="username" class="contact_form_small" type="text" placeholder="Name *" required="">
+              </div>
+              <div class="input-box">
+                <input id="email" class="contact_form_small" type="email" name="Email" placeholder="Email Address *" required="">
+              </div>
+              <div class="input-box">
+                <input id="phone" class="contact_form_small" placeholder="Contact Number">
+              </div>
+              <div class="input-box">
+                <textarea id="content" name="message" class="contact_form_large" style="height: 50px" cols="30" rows="3" placeholder="Please enter your question ... *"></textarea>
+              </div>
+            </div>
+          </div>
+        </form>
+        <div class="submit-button">
+          <button style="margin: 10px" type="submit" onclick="submit_()">Submit <i class="bi bi-arrow-right"></i></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 
 
 
 {% endblock %}
 
-<div  style="padding: 75px 0 34px;background-color: #4e4e4e;">
+<div  style="padding: 75px 0 34px;background-color: #111111;">
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-3 col-md-6">
@@ -828,6 +740,86 @@
 				})
 			}
 		}
+        try {
+            // 數字快速增加的特效函式
+            function animateCounter(el, duration) {
+                const target = +el.getAttribute('data-target');
+                const stepTime = Math.max(Math.floor(duration / target), 1);
+                let current = 0;
+
+                const timer = setInterval(() => {
+                    try {
+                        current += Math.ceil(target / (duration / stepTime));
+                        if (current >= target) {
+                            current = target;
+                            clearInterval(timer);
+                        }
+                        el.textContent = current.toLocaleString();
+                    } catch (error) {
+                        console.error('Error in animateCounter interval:', error);
+                    }
+                }, stepTime);
+            }
+
+              // 使用 Intersection Observer API 偵測元素進入畫面
+            const counterEl = document.getElementById('counter');
+            if (counterEl) {
+                const observer1 = new IntersectionObserver(entries => {
+                    try {
+                        entries.forEach(entry => {
+                            if (entry.isIntersecting) {
+                                // 避免重複觸發
+                                if (!counterEl.getAttribute('data-counted')) {
+                                    animateCounter(counterEl, 1000);
+                                    counterEl.setAttribute('data-counted', 'true');
+                                }
+                                observer1.unobserve(counterEl); // 停止觀察，避免重複觸發
+                            }
+                        });
+                    } catch (error) {
+                        console.error('Error in IntersectionObserver callback for counter:', error);
+                    }
+                }, {
+                    threshold: 0.5  // 元素超過一半進入視窗即觸發特效
+                });
+                observer1.observe(counterEl);
+            } else {
+                console.warn('找不到 id 為 counter 的元素');
+            }
+
+            document.addEventListener("DOMContentLoaded", () => {
+                try {
+                    const animationClasses = ['animate-block', 'animate-left', 'animate-right'];
+
+                    const observer = new IntersectionObserver(entries => {
+                        try {
+                          entries.forEach(entry => {
+                            if (entry.isIntersecting) {
+                              entry.target.classList.add('visible');
+                              observer.unobserve(entry.target);
+                            }
+                          });
+                        } catch (error) {
+                          console.error('Error in IntersectionObserver callback for animations:', error);
+                        }
+                    }, { threshold: 0.1 });
+                    animationClasses.forEach(animClass => {
+                        try {
+                          const elements = document.querySelectorAll(`.${animClass}`);
+                          elements.forEach(el => observer.observe(el));
+                        } catch (error) {
+                          console.error(`Error observing elements with class ${animClass}:`, error);
+                        }
+                    });
+                } catch (error) {
+                    console.error('Error during DOMContentLoaded:', error);
+                }
+                });
+            } catch (error) {
+                console.error('Error in overall script:', error);
+            }
+
+
 	</script>
 
 

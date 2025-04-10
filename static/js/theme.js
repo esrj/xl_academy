@@ -1,13 +1,14 @@
+
 (function($) {
     'use strict';
-	
+
 	// Mobile Menu
     $('.mobile-menu nav').meanmenu({
         meanScreenWidth: "991",
         meanMenuContainer: ".mobile-menu",
         meanMenuOpen: "<span></span> <span></span> <span></span>",
         onePage: false,
-    });	
+    });
 
         //======< Accordion Tab >======
             $(".accordion > li:eq(0) a").addClass("active").next().slideDown();
@@ -79,6 +80,29 @@
             stickyHeaderText4.addClass('sticky-header-text');
         }
     });
+
+    var stickyHeaderButton = $('#sticky-header-button');
+    wind.on('scroll', function () {
+        var scroll = wind.scrollTop();
+        if (scroll < 100) {
+            stickyHeaderButton.removeClass('sticky-header-button');
+        } else {
+            stickyHeaderButton.addClass('sticky-header-button');
+        }
+    });
+
+    var stickyHeaderLogo = $('#sticky-header-logo');
+    wind.on('scroll', function () {
+        var scroll = wind.scrollTop();
+        if (scroll < 100) {
+             stickyHeaderLogo.addClass('logo-white');
+        } else {
+            stickyHeaderLogo.removeClass('logo-white');
+        }
+    });
+
+
+
      //Header Search
     if($('.search-box-outer').length) {
         $('.search-box-outer').on('click', function() {
@@ -88,6 +112,7 @@
             $('body').removeClass('search-active');
         });
     }
+
     // animate
     new WOW().init();
 
@@ -96,7 +121,7 @@
       $('body').addClass('loaded');
     });
 
-         // slider_list 
+         // slider_list
     $('.slider_list').owlCarousel({
         loop: true,
         autoplay: true,
@@ -121,7 +146,7 @@
                 items: 1
             }
         }
-    }) 
+    })
 
      // Case Study Active
     $('.testi_list1').owlCarousel({
@@ -148,7 +173,7 @@
                 items: 2
             }
         }
-    }) 
+    })
 
     // testimonial Active
     $('.testi-list2').owlCarousel({
@@ -178,7 +203,7 @@
                 items: 1
             }
         }
-    })  
+    })
 
     // testimonial Active
     $('.testi-list3').owlCarousel({
@@ -208,7 +233,7 @@
                 items: 2
             }
         }
-    })  
+    })
 
     // Brand list
     $('.brand-list').owlCarousel({
@@ -238,10 +263,10 @@
                 items: 5
             }
         }
-    })  
+    })
 
 	/*---------------------
-    WOW active js 
+    WOW active js
     --------------------- */
     new WOW().init();
 
@@ -290,7 +315,7 @@
         };
 
     });
-	
+
 	 // Venubox
 
     $('.venobox').venobox({
@@ -323,7 +348,7 @@
 
 
         <!--jave script -->
-        
+
         $(window).on('scroll', function () {
             var scrolled = $(window).scrollTop();
             if (scrolled > 300) $('.go-top').addClass('active');
@@ -335,8 +360,8 @@
                 scrollTop: "0"
             }, 1200);
         });
-        
-        <!-- quantity js--> 
+
+        <!-- quantity js-->
             const plus= document.querySelector(".plus"),
             minus= document.querySelector(".minus"),
             num= document.querySelector(".num");
@@ -355,5 +380,5 @@
                 }
             });
 
-    
+
 })(jQuery);

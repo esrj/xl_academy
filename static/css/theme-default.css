@@ -4,6 +4,7 @@ font-family: 'Manrope', sans-serif;
 font-family: 'Roboto', sans-serif;
 
 */
+
 @import url('css2.css');
 html, body {
 	overflow-x: hidden;
@@ -12,7 +13,8 @@ html{
     scroll-behavior: smooth;
 }
 
-body {	
+body {
+    background-color: #f1f1f1;
     color:#6a6a6a;
     font-style: normal;
     font-weight: 400;
@@ -24,9 +26,9 @@ body {
 }
 
 p {
-
+    font-size: 15px;
     font-weight: 400;
-	font-style: normal;
+	font-style: inherit;
     margin: 0;
     transition: 0.5s;
     font-family: 'Roboto', sans-serif;
@@ -39,11 +41,11 @@ h5,
 h6 {
     color:#0d0d0d;
     font-family: 'Manrope', sans-serif;
-    font-style: normal;
+    font-style: inherit;
 	margin-bottom: 0;
 	margin-top: 10px;
     line-height: 60px;	
-    font-weight: 700;
+    font-weight: 600;
     -webkit-transition: 0.5s;
     transition:0.5s;
 }
@@ -125,7 +127,8 @@ label {
 }
 
 a,i, cite, em, var, address, dfn,ol,li,ul{
-	font-style:normal;
+    font-size: 15px;
+	font-style:inherit;
 	font-weight:400;
     text-decoration: none;
     text-transform: capitalize;
@@ -143,7 +146,7 @@ a,i, cite, em, var, address, dfn,ol,li,ul{
     text-shadow: none;
 }
 ::selection {
-    background: #4fc1f0;
+    background: #d8d8d8;;
     color: #454545;
     text-shadow: none;
 }

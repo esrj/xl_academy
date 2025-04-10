@@ -27,38 +27,11 @@
 	<link rel="stylesheet" href="/static/css/responsive.css" type="text/css" media="all">
 	<link rel="stylesheet" href="/static/css/icon/flaticon.css" type="text/css" media="all">
 	<link rel="stylesheet" href="/static/assets/owl.theme.default.min.css" type="text/css" media="all">
-<!--	<link rel="stylesheet" href="/static/assets/style.min.css" type="text/css" media="all">-->
-
-	<script src="/static/js/modernizr-3.5.0.min.js"></script>
+    <script src="/static/js/modernizr-3.5.0.min.js"></script>
 	<link rel="stylesheet" href="/static/css/bootstrap-icons.css">
 </head>
 
-<style>
-
-.slider-content {
-    position: relative;
-    z-index: 200;
-}
-.section-button{
-	position: relative;
-    z-index: 200;
-}
-::placeholder {
-      color: #8d8c8c;
-}
-
-</style>
-<body>
-
-{% block loader %}
-
-	<div class="loader-wrapper">
-		<div class="loader"></div>
-		<div style="background-color: white;" class="loder-section left-section"></div>
-		<div style="background-color: white;" class="loder-section right-section"></div>
-	</div>
-{% endblock %}
-
+<body style=" background: #f1f1f1">
 
 
 {% block navbar %}
@@ -67,18 +40,18 @@
 		<div class="row align-items-center" style="height: 90px">
 			<div class="col-lg-2" style="height: 90px">
 				<div class="header-logo">
-					<a href="/"><img style="height:55px;position: relative; top:5px" src="/static/picture/footer-logo.png" alt="logo"></a>
+					<a href="/"><img id="sticky-header-logo" class="logo-white" style="height:55px;position: relative; top:5px"  src="/static/picture/logo.png" alt="logo"></a>
 				</div>
 			</div>
 			<div class="col-lg-8" style="position: relative;bottom: 10px; ">
 				<div class="header-menu">
 					<ul class="nav_scroll">
 						<li class="menu-item-has-children">
-							<a id="sticky-header-text1"   style="font-weight: 500;color:#ffffff" href="/">首頁</a>
+							<a id="sticky-header-text1"    href="/">首頁</a>
 						</li>
 						<li class="menu-item-has-children">
-							<a id="sticky-header-text2"   style="font-weight: 500;color:#ffffff" href="/consult">
-								大學諮詢
+							<a id="sticky-header-text2"    href="/consult">
+								線上諮詢
 								<i class="fas fa-caret-down"></i>
 							</a>
 							<ul class="sub-menu">
@@ -89,8 +62,8 @@
 						</li>
 
 						<li class="menu-item-has-children">
-							<a id="sticky-header-text3" style="font-weight: 500;color:#ffffff" href="/course/">
-								課後專班
+							<a id="sticky-header-text3"  href="/course/">
+								服務項目
 								<i class="fas fa-caret-down"></i>
 							</a>
 							<ul class="sub-menu">
@@ -100,7 +73,7 @@
 							</ul>
 						</li>
                         <li class="menu-item-has-children">
-							<a id="sticky-header-text4" style="font-weight: 500;color:#ffffff" href="/afficient/">
+							<a id="sticky-header-text4"  href="/afficient/">
 								Afficient
 							</a>
 
@@ -111,7 +84,7 @@
 			</div>
 			<div style="position: relative;bottom: 10px; " class="col-lg-2">
 				<div class="header-button">
-					<a href="/#contact">聯絡我們<i class="bi bi-arrow-right"></i></a>
+					<a id="sticky-header-button" href="/#contact">聯絡我們<i class="bi bi-arrow-right"></i></a>
 				</div>
 			</div>
 		</div>
@@ -122,34 +95,34 @@
 		<div class="mobile-menu">
 			<nav class="header-menu" style="display: block;">
 				<ul class="nav_scroll">
-					<li class="menu-item-has-children"><a style="color:#522b2b" href="/">首頁</a>
+					<li class="menu-item-has-children"><a style="color:#000000;font-weight: 300" href="/">首頁</a>
 
 					</li>
 					<li class="menu-item-has-children">
-						<a style="font-weight: 500;color:#522b2b" href="/consult">
+						<a style="color:#000000;font-weight: 300" href="/consult">
 							大學諮詢
 							<i class="fas fa-caret-down"></i>
 						</a>
 						<ul class="sub-menu">
-							<li><a href="/consult">升學諮詢服務</a></li>
-							<li><a href="/consult?type=classification">學校類型分類</a></li>
-							<li><a href="/consult?type=region">學校地區</a></li>
+							<li><a style="color:#000000;font-weight: 300" href="/consult">升學諮詢服務</a></li>
+							<li><a style="color:#000000;font-weight: 300" href="/consult?type=classification">學校類型分類</a></li>
+							<li><a style="color:#000000;font-weight: 300" href="/consult?type=region">學校地區</a></li>
 						</ul>
 					</li>
 
 					<li class="menu-item-has-children">
-						<a style="font-weight: 500;color:#522b2b" href="/course/">
+						<a style="font-weight: 500;color:#000000;font-weight: 300" href="/course/">
 							學術指導
 							<i class="fas fa-caret-down"></i>
 						</a>
-						<ul class="sub-menu">
-							<li><a href="/course/">課後專班</a></li>
-							<li><a href="/consult?type=tutor">一對一教學</a></li>
-							<li><a href="/shop/">線上試題</a></li>
+						<ul class="sub-menu" >
+							<li><a style="font-weight: 500;color:#000000;font-weight: 300" href="/course/">課後專班</a></li>
+							<li><a style="font-weight: 500;color:#000000;font-weight: 300" href="/consult?type=tutor">一對一教學</a></li>
+							<li><a style="font-weight: 500;color:#000000;font-weight: 300" href="/shop/">線上試題</a></li>
 						</ul>
 					</li>
                     <li class="menu-item-has-children">
-                        <a style="font-weight: 500;color:#522b2b" href="/afficient/">
+                        <a style="font-weight: 500;color:#000000;font-weight: 300" href="/afficient/">
                             Afficient
                         </a>
                     </li>
@@ -161,25 +134,11 @@
 
 {% block content %}
 <div class="slider_list owl-carousel" style="top: -90px;">
-	<div class="slider-section align-items-center d-flex">
-		<div class="container">
-			<div class="row align-items-center cell-phone-style">
-				<div class="col-md-12 text-center">
-					<div style="top: 30px" class="slider-content">
-						<div class="slider-sub-title">
-							<h4>XL Academy</h4>
-						</div>
-						<h1 style="font-weight: 400;">台北市私立艾司樂文理 </h1>
-						<h1 style="font-weight: 400;">短期補習班</h1>
-					</div>
-					<div class="section-button">
-						<a href="#service">服務項目<i class="bi bi-arrow-right"></i></a>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
 	<div class="slider-section style-2 align-items-center d-flex">
+        <video autoplay loop muted playsinline>
+            <source src="/static/slider/slider.mp4" type="video/mp4">
+            您的瀏覽器不支援此影片。
+        </video>
 		<div class="container">
 			<div class="row align-items-center cell-phone-style">
 				<div class="col-md-12 text-center">
@@ -190,7 +149,7 @@
 						<h1 style="font-weight: 400;">台北市私立艾司樂文理 </h1>
 						<h1 style="font-weight: 400;">短期補習班</h1>
 					</div>
-					<div class="section-button">
+					<div  class="cover-button">
 						<a href="#service">服務項目<i class="bi bi-arrow-right"></i></a>
 					</div>
 				</div>
@@ -200,17 +159,139 @@
 </div>
 
 
+<div  class=" style-home2 join-us-section" style="margin: 0;background-color:#111111;position: relative;bottom: 100px" >
+	<div class="container">
+		<div class="row cell-phone-style">
+			<div class="col-md-12 text-center">
+				<div class="section-title2 animate-block">
+					<h4 class="service-h4 ">加入我們</h4>
+					<h1 style="position: relative;bottom: 25px">最大化你的淺能</h1>
+                    <p style="color: #d5d6d8;">
+                        在我們的協助下，你將獲得全方位的留學資訊與申請策略，從選校到面試輔導，我們提供個性化指導，助你順利開啟國際化的未來。
+                    </p>
+                    <p style="color: #d5d6d8;">
+                        從選校、申請文件準備到面試輔導，我們提供一對一的個性化指導，讓你在競爭激烈的國際舞台上脫穎而出。
+                    </p>
+                    <p style="color: #d5d6d8;margin-bottom: 40px">
+                        加入我們，開啟你的留學之旅，打造屬於自己的國際化未來！
+                    </p>
+				</div>
+			</div>
+		</div>
+		<div class="row cell-phone-style d-flex align-items-stretch">
+          <div class="col-lg-3 col-sm-6 d-flex">
+            <div class="flex-fill text-center join-us-block animate-left" >
+              <div class="feature-icon">
+                <i style="font-size: xxx-large;" class="flaticon-user join-us-icon"></i>
+              </div>
+              <div class="feature-text">
+                <h4 class="join-us-h4">專業師資團隊</h4>
+                <p style="font-size: 14px">
+                  我們的教師不僅擁有卓越的學術背景，更具備豐富的留學經驗，助你輕鬆邁向國際名校。
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-sm-6 d-flex">
+              <div class="flex-fill text-center join-us-block animate-left">
+                <div class="feature-icon">
+                  <i style="font-size: xxx-large;" class="flaticon-idea join-us-icon"></i>
+                </div>
+                <div class="feature-text">
+                  <h4 class="join-us-h4">自我成長</h4>
+                  <p style="font-size: 14px">
+                    個性化輔導與國際課程激發潛能，讓你在學業及留學準備中不斷突破自我。
+                  </p>
+                </div>
+              </div>
+          </div>
+          <div class="col-lg-3 col-sm-6 d-flex">
+            <div class="flex-fill text-center join-us-block animate-right" >
+              <div class="feature-icon">
+                <i style="font-size: xxx-large;" class="flaticon-flag join-us-icon"></i>
+              </div>
+              <div class="feature-text">
+                <h4 class="join-us-h4">培養興趣</h4>
+                <p style="font-size: 14px">
+                  多元化課程啟發國際視野，幫助你發掘興趣並建立走向海外的專業基礎。
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-sm-6 d-flex">
+            <div class="flex-fill text-center join-us-block animate-right" >
+              <div class="feature-icon">
+                <i style="font-size: xxx-large;" class="flaticon-help join-us-icon"></i>
+              </div>
+              <div class="feature-text">
+                <h4 class="join-us-h4">終身支持</h4>
+                <p style="font-size: 14px">
+                  從選校諮詢到留學準備，我們全程陪伴，確保你在國際求學路上獲得持續支持。
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+	</div>
+</div>
 
+<div  class=" style-home2 section-separate" style="position: relative;bottom: 100px;padding-bottom: 0;background-color: #f1f1f1">
+    <div class="marquee-container">
+      <div class="marquee-text">
+        <span class="hollow">EMPOWERING  </span><span class="filled"> STUDENTS </span><span class="hollow"> FOR A BRIGHTER </span><span class="filled"> TOMORROW</span>
+      </div>
+    </div>
+</div>
+
+<!--感言-->
+<div  class=" style-home2" style="background-color: #111111;padding-bottom: 100px;padding-top: 100px;;position: relative;bottom: 100px">
+	<div class="container">
+		<div class="row cell-phone-style">
+			<div class="col-lg-7 col-md-12 animate-left">
+                <div class="video-wrapper">
+                  <video id="videoPlayer" class="video-rwd2" poster="/media/{{testimony.picture}}">
+                    <source src="/media/{{testimony.video}}" type="video/mp4">
+                    很抱歉你的瀏覽器不支援此影片格式
+                  </video>
+                  <!-- 自訂控制列 -->
+                  <div class="custom-controls">
+                    <div class="video-icon">
+						<a id="playButton" class="video-vemo-icon" ><i class="fa fa-play"></i></a>
+					</div>
+                    <!-- 初始時隱藏進度條 -->
+{#                    <div id="progressBar" class="custom-progress" style="display: none;">#}
+{#                      <div id="progress" class="progress"></div>#}
+{#                    </div>#}
+                  </div>
+                </div>
+			</div>
+
+			<div class="col-lg-5 col-md-12 animate-right">
+				<div class="section-title2 section-testimony">
+					<h4>學員感言</h4>
+					<h1>{{testimony.title}}</h1>
+					<p  style="position: relative;top: 30px;color: #d5d6d8 ">
+						{{testimony.content}}
+                    </p>
+                    <h5 class="student_name">學員名稱：{{testimony.student_name}}</h5>
+				</div>
+			</div>
+		</div>
+
+
+	</div>
+</div>
 
 <div style="margin-bottom: 100px" class=" style-home2">
 	<div class="container">
 		<div class="row align-items-center cell-phone-style">
-			<div class="col-lg-6 col-md-12">
+			<div class="col-lg-6 col-md-12 animate-left">
 				<div class="section-title left">
 					<h4>關於我們</h4>
-					<h1>啟迪智慧，成就未來</h1>
+					<h1 style="margin-bottom: 5px">啟迪智慧，成就未來</h1>
 					<p>
-						我們於2015年由加州大學柏克萊分校傑出畢業生<strong> Ellen Chu </strong>創辦，致力於提供卓越的教育服務。XL Academy以豐富的教育經驗、卓越的學術指導，以及成功將學生錄取至全球知名大學而著稱。					</p>
+						我們於2015年由加州大學柏克萊分校傑出畢業生 Ellen Chu 創辦，致力於提供卓越的教育服務。XL Academy以豐富的教育經驗、卓越的學術指導，以及成功將學生錄取至全球知名大學而著稱。
+                    </p>
 				</div>
 				<div class="about-list-item">
 					<ul>
@@ -223,55 +304,9 @@
 					<a href="/#contact">聯絡我們<i class="bi bi-arrow-right"></i></a>
 				</div>
 			</div>
-			<div class="col-lg-6 col-md-12">
+			<div class="col-lg-6 col-md-12 animate-right">
 				<div >
-					<img style="width:100%;border-radius:25px" src="/static/image/about.jpg" alt="about imgs">
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-
-
-<div  class=" style-home2 section-separate" >
-	<div class="container">
-		<div class="row cell-phone-style">
-			<div class="col-md-12 text-center">
-				<div class="section-title">
-					<h4 class="service-h4">送給學子的一段話</h4>
-					<h1 class="section-separate-title">勇敢面對困難，成就不凡的人生</h1>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-
-<!--感言-->
-<div  class=" style-home2" style="background-color: #fff;padding-top: 100px;padding-bottom: 100px">
-	<div class="container">
-		<div class="row cell-phone-style">
-			<div class="col-lg-7 col-md-12">
-				<div class="service-details-video-thumb video-rwd">
-					<div class="service-details-video-thumb-inner">
-						<video id="videoPlayer" class="video-rwd2" controls poster="/media/{{testimony.picture}}">
-							<source src="/media/{{testimony.video}}" type="video/mp4">
-							很抱歉你的瀏覽器不支援此影片格式
-						</video>
-					</div>
-					<div class="video-icon">
-						<a id="playButton" class="video-vemo-icon" ><i class="fa fa-play"></i></a>
-					</div>
-				</div>
-			</div>
-
-			<div class="col-lg-5 col-md-12">
-				<div class="section-title section-testimony">
-					<h4>客戶感言</h4>
-					<h1>{{testimony.title}}</h1>
-					<a style="position: relative;top: 30px">
-						{{testimony.content}}
-                    </a>
-                    <h5 style="position: relative;top: 40px;color:#522b2b">學員：{{testimony.student_name}}</h5>
+					<img  class="img_photo" src="/static/image/about.jpg" alt="about imgs">
 				</div>
 			</div>
 		</div>
@@ -280,162 +315,95 @@
 
 
 
-<!--加入我們-->
-<div  class=" style-home2 join-us-section" >
+{#<!--服務項目-->#}
+{#<div id="service" class="recent-work-section style-home2">#}
+{#	<div class="container">#}
+{#		<div class="row cell-phone-style">#}
+{#			<div class="col-md-12 text-center">#}
+{#				<div class="section-title">#}
+{#					<h4 class="service-h4">服務項目</h4>#}
+{#					<h1>全方位的服務，讓您無後顧之憂</h1>#}
+{#					<div class="section-title-embar-2"></div>#}
+{#					<div class="section-title-embar-4"></div>#}
+{#				</div>#}
+{#			</div>#}
+{#		</div>#}
+{#		<div class="row cell-phone-style" style="display: flex; justify-content: center;">#}
+{#			<div class="col-lg-4 col-md-12 animate-block">#}
+{#				<div class="service-box style-inner">#}
+{#					<div class="service-content">#}
+{#						<h4>大學諮詢</h4>#}
+{#						<p>專業升學輔導，提供全方位的海外升學申請服務，引導您穿越繁瑣的大學申請流程</p>#}
+{#					</div>#}
+{#					<div class="service-icon">#}
+{#						<div class="images-icon">#}
+{#							<img src="/static/picture/service-icon4.png" alt="icon">#}
+{#						</div>#}
+{#						<div class="service-button">#}
+{#							<a href="/consult"><i class="bi bi-arrow-right"></i></a>#}
+{#						</div>#}
+{#					</div>#}
+{##}
+{#				</div>#}
+{#			</div>#}
+{#			<div class="col-lg-4 col-md-12 animate-block">#}
+{#				<div class="service-box style-inner">#}
+{#					<div class="service-content">#}
+{#						<h4>SAT/AP/IB 試題</h4>#}
+{#						<p>受益於我們對最新測驗趨勢的掌握，全面的資源以及精心製作的DSAT練習材料</p>#}
+{#					</div>#}
+{#					<div class="service-icon">#}
+{#						<div class="images-icon">#}
+{#							<img src="/static/picture/service-icon3.png" alt="icon">#}
+{#						</div>#}
+{#						<div class="service-button">#}
+{#							<a href="/shop"><i class="bi bi-arrow-right"></i></a>#}
+{#						</div>#}
+{#					</div>#}
+{#				</div>#}
+{#			</div>#}
+{#			<div class="col-lg-4 col-md-12 animate-block">#}
+{#				<div class="service-box style-inner">#}
+{#					<div class="service-content">#}
+{#						<h4>學術指導</h4>#}
+{#						<p>包括一對一課程、寒暑假營隊和課後輔導，助您學術之路更上一層樓</p>#}
+{#					</div>#}
+{#					<div class="service-icon">#}
+{#						<div class="images-icon">#}
+{#							<img src="/static/picture/service-icon1.png" alt="icon">#}
+{#						</div>#}
+{#						<div class="service-button">#}
+{#							<a href="/course/"><i class="bi bi-arrow-right"></i></a>#}
+{#						</div>#}
+{#					</div>#}
+{##}
+{#				</div>#}
+{#			</div>#}
+{##}
+{#		</div>#}
+{#	</div>#}
+{#</div>#}
+
+
+
+
+<div style="background-color: #111111;padding-top: 50px;padding-bottom: 50px" class="recent-work-section style-home2">
 	<div class="container">
-		<div class="row cell-phone-style">
-			<div class="col-md-12 text-center">
-				<div class="section-title">
-					<h4 class="service-h4">加入我們</h4>
-					<h1 style="position: relative;bottom: 5px">最大化你的淺能</h1>
-				</div>
-			</div>
-		</div>
-		<div class="row cell-phone-style">
-			<div class="col-sm-3" >
-				<div style="text-align: center; transition: .4s;margin-bottom: 20px;">
-					<div class="feature-icon">
-						<i  class="flaticon-user  join-us-icon"></i>
-					</div>
-					<div class="feature-text">
-						<h4 class = "join-us-h4">專業師資團隊</h4>
-						<p class="join-us-text">我們的師資隊伍擁有優秀的學術背景，為所有學生提供一流的教學</p>
-					</div>
-				</div>
-			</div>
-			<div class="col-sm-3" >
-				<div style="text-align: center; transition: .4s;margin-bottom: 20px;">
-					<div class="feature-icon">
-						<i  class="flaticon-idea join-us-icon"></i>
-					</div>
-					<div class="feature-text">
-						<h4 class = "join-us-h4">自我成長</h4>
-						<p class="join-us-text">為學生提供個人化的指導和支持，幫助他們發現自己的優勢和潛能</p>
-
-					</div>
-				</div>
-			</div>
-			<div class="col-sm-3" >
-				<div style="text-align: center; transition: .4s;margin-bottom: 20px;">
-					<div class="feature-icon">
-						<i  class="flaticon-flag join-us-icon"></i>
-					</div>
-					<div class="feature-text">
-						<h4 class = "join-us-h4">培養興趣</h4>
-						<p class="join-us-text">激發學習的熱情，並培育他們獨特的才能和能力</p>
-					</div>
-				</div>
-			</div>
-			<div class="col-sm-3" >
-				<div style="text-align: center; transition: .4s;margin-bottom: 20px;">
-					<div class="feature-icon">
-						<i  class="flaticon-help join-us-icon"></i>
-					</div>
-					<div class="feature-text">
-						<h4 class = "join-us-h4">終身支持</h4>
-						<p class="join-us-text">給予學生終身支持，從選校到畢業後，我們將一直陪伴他們，提供持續的協助和指導</p>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-
-<!--服務項目-->
-<div id="service" class="recent-work-section style-home2">
-	<div class="container">
-		<div class="row cell-phone-style">
-			<div class="col-md-12 text-center">
-				<div class="section-title">
-					<h4 class="service-h4">服務項目</h4>
-					<h1>全方位的服務，讓您無後顧之憂</h1>
-					<div class="section-title-embar-2"></div>
-					<div class="section-title-embar-4"></div>
-				</div>
-			</div>
-		</div>
-		<div class="row cell-phone-style" style="display: flex; justify-content: center;">
-			<div class="col-lg-4 col-md-12">
-				<div class="service-box style-inner">
-					<div class="service-content">
-						<h4>大學諮詢</h4>
-						<p>專業升學輔導，提供全方位的海外升學申請服務，引導您穿越繁瑣的大學申請流程</p>
-					</div>
-					<div class="service-icon">
-						<div class="images-icon">
-							<img src="/static/picture/service-icon4.png" alt="icon">
-						</div>
-						<div class="service-button">
-							<a href="/consult"><i class="bi bi-arrow-right"></i></a>
-						</div>
-					</div>
-
-				</div>
-			</div>
-			<div class="col-lg-4 col-md-12">
-				<div class="service-box style-inner">
-					<div class="service-content">
-						<h4>SAT/AP/IB 試題</h4>
-						<p>受益於我們對最新測驗趨勢的掌握，全面的資源以及精心製作的DSAT練習材料</p>
-					</div>
-					<div class="service-icon">
-						<div class="images-icon">
-							<img src="/static/picture/service-icon3.png" alt="icon">
-						</div>
-						<div class="service-button">
-							<a href="/shop"><i class="bi bi-arrow-right"></i></a>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-lg-4 col-md-12">
-				<div class="service-box style-inner">
-					<div class="service-content">
-						<h4>學術指導</h4>
-						<p>包括一對一課程、寒暑假營隊和課後輔導，助您學術之路更上一層樓</p>
-					</div>
-					<div class="service-icon">
-						<div class="images-icon">
-							<img src="/static/picture/service-icon1.png" alt="icon">
-						</div>
-						<div class="service-button">
-							<a href="/course/"><i class="bi bi-arrow-right"></i></a>
-						</div>
-					</div>
-
-				</div>
-			</div>
-
-		</div>
-	</div>
-</div>
-
-
-
-
-<div style="background-color: #f7f7f9;padding-top: 50px;padding-bottom: 50px" class="recent-work-section style-home2">
-	<div class="container">
-			<div class="row align-items-center justify-content-center cell-phone-style">
-				<div class="col-md-12 text-center">
-					<div class="section-title">
-						<h4 class="service-h4">專業師資</h4>
-						<h1>優秀師資團隊介紹</h1>
-						<div class="section-title-embar-2"></div>
-						<div class="section-title-embar-4"></div>
-					</div>
-				</div>
-			</div>
-	</div>
-
-	<div class="  container-fluid px-120">
+        <div class="row align-items-center justify-content-center cell-phone-style">
+            <div class="col-md-12 text-center">
+                <div class="section-title2">
+                    <h4 class="service-h4">專業師資</h4>
+                    <h1 style="position: relative;bottom: 20px">優秀師資團隊介紹</h1>
+                </div>
+            </div>
+        </div>
         <div class="row justify-content-center">
-            <div class="col-lg-12">
+            <div class="col-lg-12 animate-block">
                 <div class="testimonials-slides owl-carousel owl-theme">
 
-                    <div class="card team-box border-0 bg-transparent mt-3">
+                    <div class="card team-box border-0  mt-3 teacher_border" >
 						 <div class="position-relative mx-auto">
-                                <img src="/static/picture/1.jpg" alt="team" style="height: 250px ;width: 250px ; border-radius: 50%; object-fit: cover"
-									 class="img-fluid rounded-circle img-thumbnail">
+                                <img src="/static/picture/1.jpg" alt="team"  class="img-fluid rounded-circle  teacher_img">
                                 <ul class="team-social list-unstyled">
                                     <li><a href="#" class="primary-link"><i class="mdi mdi-facebook"></i></a></li>
                                     <li class="my-1"><a href="#" class="primary-link"><i class="mdi mdi-twitter"></i></a>
@@ -444,17 +412,17 @@
                                 </ul>
 						 </div>
 						 <div class="text-center">
-                                <h6 class="mb-0"><a href="#" class="primary-link">Ellen Chu</a></h6>
-                                <p class="text-muted fs-14 mb-0">Owner/Founder</p>
-                                <p class="text-muted fs-14 mb-0">UC Berkley</p>
+                                <h6 style="color: white" class="mb-0">Ellen Chu</h6>
+                                <p class="text-muted fs-14 mb-0" style="line-height: 1.2">Owner/Founder</p>
+                                <p class="text-muted fs-14 mb-0" style="line-height: 1.2">UC Berkley</p>
+                                <p class="teacher_text">XL Academy is the educational revolution students have been waiting for. With innovative teaching methods and expert tutors, every lesson is designed to spark success.</p>
 						 </div>
 					</div>
 
 
-                     <div class="card team-box border-0 bg-transparent mt-3">
+                     <div class="card team-box border-0 mt-3 teacher_border">
 						 <div class="position-relative mx-auto">
-                                <img src="/static/picture/2.jpg" alt="team" style="height: 250px ;width: 250px ; border-radius: 50%; object-fit: cover"
-									 class="img-fluid rounded-circle img-thumbnail">
+                                <img src="/static/picture/2.jpg" alt="team" class="img-fluid rounded-circle teacher_img">
                                 <ul class="team-social list-unstyled">
                                     <li><a href="#" class="primary-link"><i class="mdi mdi-facebook"></i></a></li>
                                     <li class="my-1"><a href="#" class="primary-link"><i class="mdi mdi-twitter"></i></a>
@@ -463,15 +431,15 @@
                                 </ul>
 						 </div>
 						 <div class="text-center">
-                                <h6 class="mb-0"><a href="#" class="primary-link">Eric Chang</a></h6>
-                                <p class="text-muted fs-14 mb-0">Academic Director</p>
-                                <p class="text-muted fs-14 mb-0">University of British Columbia</p>
+                                <h6 style="color: white" class="mb-0">Eric Chang</h6>
+                                <p class="text-muted fs-14 mb-0" style="line-height: 1.2">Academic Director</p>
+                                <p class="text-muted fs-14 mb-0" style="line-height: 1.2">University of British Columbia</p>
+                                <p class="teacher_text">Driven by creativity and commitment, XL Academy redefines tutoring. We focus on engagement, tailored instruction, and practical skills that prepare students for the future.</p>
 						 </div>
 					</div>
-					<div class="card team-box border-0 bg-transparent mt-3">
+					<div class="card team-box border-0 mt-3 teacher_border">
 						 <div class="position-relative mx-auto">
-                                <img src="/static/picture/3.jpg" alt="team" style="height: 250px ;width: 250px ; border-radius: 50%; object-fit: cover"
-									 class="img-fluid rounded-circle img-thumbnail">
+                                <img src="/static/picture/3.jpg" alt="team" class="img-fluid rounded-circle  teacher_img">
                                 <ul class="team-social list-unstyled">
                                     <li><a href="#" class="primary-link"><i class="mdi mdi-facebook"></i></a></li>
                                     <li class="my-1"><a href="#" class="primary-link"><i class="mdi mdi-twitter"></i></a>
@@ -480,15 +448,15 @@
                                 </ul>
 						 </div>
 						 <div class=" text-center">
-                                <h6 class="mb-0"><a href="#" class="primary-link">Stephanie Chen</a></h6>
-                                <p class="text-muted fs-14 mb-0">Teacher</p>
-                                <p class="text-muted fs-14 mb-0">Boston University</p>
+                                <h6 style="color: white"  class="mb-0">Stephanie Chen</h6>
+                                <p class="text-muted fs-14 mb-0" style="line-height: 1.2">Teacher</p>
+                                <p class="text-muted fs-14 mb-0" style="line-height: 1.2">Boston University</p>
+                                <p  class="teacher_text">XL Academy revolutionizes learning by combining innovative teaching, personalized tutoring, and a dedicated team to unlock every student’s full potential.</p>
 						 </div>
 					</div>
-					<div class="card team-box border-0 bg-transparent mt-3">
+					<div class="card team-box border-0  mt-3 teacher_border">
 						 <div class="position-relative mx-auto">
-                                <img src="/static/picture/4.jpg" alt="team" style="height: 250px ;width: 250px ; border-radius: 50%; object-fit: cover"
-									 class="img-fluid rounded-circle img-thumbnail">
+                                <img src="/static/picture/4.jpg" alt="team" class="img-fluid rounded-circle  teacher_img">
                                 <ul class="team-social list-unstyled">
                                     <li><a href="#" class="primary-link"><i class="mdi mdi-facebook"></i></a></li>
                                     <li class="my-1"><a href="#" class="primary-link"><i class="mdi mdi-twitter"></i></a>
@@ -497,16 +465,15 @@
                                 </ul>
 						 </div>
 						 <div class="text-center">
-                                <h6 class="mb-0"><a href="#" class="primary-link">Amy</a></h6>
-                                <p class="text-muted fs-14 mb-0">Teacher</p>
-                                <p class="text-muted fs-14 mb-0">University of Alberta</p>
-
+                                <h6 style="color: white" class="mb-0">Amy</h6>
+                                <p class="text-muted fs-14 mb-0" style="line-height: 1.2">Teacher</p>
+                                <p class="text-muted fs-14 mb-0" style="line-height: 1.2">University of Alberta</p>
+                                <p class="teacher_text">XL Academy offers a dynamic, student-centered experience. Our expert educators and advanced methods ensure that learning is both effective and inspiring.</p>
 						 </div>
 					</div>
-					<div class="card team-box border-0 bg-transparent mt-3">
+					<div class="card team-box border-0  mt-3 teacher_border">
 						 <div class="position-relative mx-auto">
-                                <img src="/static/picture/5.jpg" alt="team" style="height: 250px ;width: 250px ; border-radius: 50%; object-fit: cover"
-									 class="img-fluid rounded-circle img-thumbnail">
+                                <img src="/static/picture/5.jpg" alt="team" class="img-fluid rounded-circle  teacher_img">
                                 <ul class="team-social list-unstyled">
                                     <li><a href="#" class="primary-link"><i class="mdi mdi-facebook"></i></a></li>
                                     <li class="my-1"><a href="#" class="primary-link"><i class="mdi mdi-twitter"></i></a>
@@ -514,16 +481,16 @@
                                     <li><a href="#" class="primary-link"><i class="mdi mdi-skype"></i></a></li>
                                 </ul>
 						 </div>
-						 <div class="card-body text-center">
-                                <h6 class="mb-0"><a href="#" class="primary-link">Sven</a></h6>
-                                <p class="text-muted fs-14 mb-0">Teacher</p>
-                                <p class="text-muted fs-14 mb-0">National Taiwan University</p>
+						 <div class=" text-center">
+                                <h6 style="color: white" class="mb-0">Sven</h6>
+                                <p class="text-muted fs-14 mb-0" style="line-height: 1.2">Teacher</p>
+                                <p class="text-muted fs-14 mb-0" style="line-height: 1.2">National Taiwan University</p>
+                                <p class="teacher_text">XL Academy is the educational revolution students have been waiting for. With innovative teaching methods and expert tutors, every lesson is designed to spark success.</p>
 						 </div>
 					</div>
-                    <div class="card team-box border-0 bg-transparent mt-3">
+                    <div class="card team-box border-0  mt-3 teacher_border">
 						 <div class="position-relative mx-auto">
-                                <img src="/static/picture/6.jpg" alt="team" style="height: 250px ;width: 250px ; border-radius: 50%; object-fit: cover"
-									 class="img-fluid rounded-circle img-thumbnail">
+                                <img src="/static/picture/6.jpg" alt="team"  class="img-fluid rounded-circle  teacher_img">
                                 <ul class="team-social list-unstyled">
                                     <li><a href="#" class="primary-link"><i class="mdi mdi-facebook"></i></a></li>
                                     <li class="my-1"><a href="#" class="primary-link"><i class="mdi mdi-twitter"></i></a>
@@ -531,11 +498,11 @@
                                     <li><a href="#" class="primary-link"><i class="mdi mdi-skype"></i></a></li>
                                 </ul>
 						 </div>
-						 <div class="card-body text-center">
-                                <h6 class="mb-0"><a href="#" class="primary-link">Preston</a></h6>
-                                <p class="text-muted fs-14 mb-0">Teacher</p>
-                                <p class="text-muted fs-14 mb-0">Columbia University</p>
-
+						 <div class=" text-center">
+                                <h6 style="color: white" class="mb-0">Preston</h6>
+                                <p class="text-muted fs-14 mb-0" style="line-height: 1.2">Teacher</p>
+                                <p class="text-muted fs-14 mb-0" style="line-height: 1.2">Columbia University</p>
+                                <p class="teacher_text">In today’s competitive landscape, XL Academy stands out with modern techniques and a passion for education. We empower students to excel academically and beyond</p>
 						 </div>
 					</div>
                  </div>
@@ -544,101 +511,122 @@
     </div>
 </div>
 
-
-<div style="padding-top: 90px;padding-bottom: 50px" class="style-home2">
-
-	<div class="container">
-		<div class="row align-items-center justify-content-center">
-				<div class="col-md-12 text-center">
-					<div class="section-title">
-						<h4 class="service-h4">環境介紹</h4>
-						<h1>探索課堂環境</h1>
-					</div>
-				</div>
-		</div>
-		<div class="row">
-			<div class="col-sm-4 class_env_phone">
-				<div class="single-blog-box inner">
-					<div class="single-blog-thumb">
-						<img style="border-radius: 20px" src="/static/image/env1.jpg" alt="imgs">
-					</div>
-					<div class="blog-content  class_env class-content" style="border-radius: 15px;background-color: #f7f7f9">
-						<div class="meta-blog">
-							<span><i class="bi bi-person"></i>By Admin</span>
-						</div>
-						<div class="blog-content-title">
-							<h5 ><a class="class_env_font">提供豐富的創意活動和資源，激發學生的創造力</a></h5>
-						</div>
-
-					</div>
-				</div>
-			</div>
-			<div class="col-sm-4 class_env_phone">
-				<div class="single-blog-box inner">
-					<div class="single-blog-thumb">
-						<img style="border-radius: 20px" src="/static/image/env2.jpg" alt="imgs">
-					</div>
-					<div class="blog-content  class_env class-content" style="border-radius: 15px;background-color: #f7f7f9">
-						<div class="meta-blog">
-							<span><i class="bi bi-person"></i>By Admin</span>
-						</div>
-						<div class="blog-content-title ">
-							<h4><a  class="class_env_font">跨學科的教學方法，將不同領域的知識融合在一起</a></h4>
-						</div>
-
-					</div>
-				</div>
-			</div>
-			<div class="col-sm-4 class_env_phone">
-				<div class="single-blog-box inner">
-					<div class="single-blog-thumb">
-						<img style="border-radius: 20px" src="/static/image/env3.jpg" alt="imgs">
-					</div>
-					<div class="blog-content class_env class-content" style="border-radius: 15px;background-color: #f7f7f9">
-						<div class="meta-blog">
-							<span><i class="bi bi-person"></i>By Admin</span>
-						</div>
-						<div class="blog-content-title">
-							<h4><a  class="class_env_font">鼓勵學生參與討論，建立充滿活力的互動式學習環境</a></h4>
-						</div>
-
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+<div class="style-home2 section-separate" style="background-color: #1b1c1e">
+    <div class="container">
+        <div class="row cell-phone-style">
+            <div class="col-md-12 text-center">
+                <div style="display: flex; justify-content: center; align-items: baseline;">
+                    <h1 class="hour_title" id="counter" data-target="200000">0</h1>
+                    <h1 class="hour_title">+</h1>
+                </div>
+               <h3 class="hour_text">Hours of Tutoring Delivered</h3>
+            </div>
+        </div>
+    </div>
 </div>
 
+<div style="padding-top: 80px;padding-bottom: 80px;background-color:#111111 " class="style-home2">
+	<div class="container">
+      <div class="row" style=" align-items: stretch;">
+        <div class="col-lg-3 col-sm-6  animate-block d-flex blog-content-block">
+          <div class="single-blog-box blog-block flex-fill">
+            <div class="single-blog-thumb">
+              <img src="/static/image/env1.jpg" alt="imgs">
+            </div>
+            <div class="blog-content ">
+              <div class="meta-blog">
+                <span><i class="bi bi-person"></i> By Admin</span>
+              </div>
+              <div class="blog-content-title">
+                <p>
+                  提供創新課程與先進設備，培養獨立思考與解決能力，助學生創造未來。
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
 
+        <div class="col-lg-3 col-sm-6  animate-block d-flex blog-content-block">
+          <div class="single-blog-box blog-block flex-fill">
+            <div class="single-blog-thumb">
+              <img src="/static/image/env2.jpg" alt="imgs">
+            </div>
+            <div class="blog-content ">
+              <div class="meta-blog">
+                <span><i class="bi bi-person"></i> By Admin</span>
+              </div>
+              <div class="blog-content-title">
+                <p>
+                  採用跨學科教學，融合科技與藝術，拓展學生視野，助力全球舞台發展。
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
 
+        <div class="col-lg-3 col-sm-6  animate-block d-flex blog-content-block">
+          <div class="single-blog-box blog-block flex-fill">
+            <div class="single-blog-thumb">
+              <img src="/static/image/env3.jpg" alt="imgs">
+            </div>
+            <div class="blog-content ">
+              <div class="meta-blog">
+                <span><i class="bi bi-person"></i> By Admin</span>
+              </div>
+              <div class="blog-content-title">
+                <p>
+                  打造互動教學環境，激勵討論合作，培養卓越溝通與領導能力。
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
 
- <div style="padding-bottom: 0px" class=" style-home2" id="contact" >
+        <div class="col-lg-3 col-sm-6  animate-block d-flex blog-content-block">
+          <div class="single-blog-box blog-block flex-fill">
+            <div class="single-blog-thumb">
+              <img src="/static/image/env2.jpg" alt="imgs">
+            </div>
+            <div class="blog-content ">
+              <div class="meta-blog">
+                <span><i class="bi bi-person"></i> By Admin</span>
+              </div>
+              <div class="blog-content-title">
+                <p>
+                  結合國際課程與多元文化，鼓勵探索未知，拓展全球視野與跨文化溝通能力。
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+</div>
+
+<div class=" style-home2" id="contact" >
 	<div class="container contact_us_form"  >
-		<div class="row" >
-			<div class="col-md-12 text-center">
-				<div class="section-title" style="display: flex;margin: 0;margin-left: 5px">
-					<h4>聯絡我們</h4>
-				</div>
-			</div>
-		</div>
-		<div class="col-md-12 text-center" >
-			<div>
+		<div class="col-md-12 text-center animate-block form-content-block" >
+			<div style="border-radius: 15px;padding: 50px;box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);background: #ffffff">
+                <div class="col-md-12 text-center">
+                  <div class="section-title">
+                    <h3 style="display: inline-block; border-bottom: 5px solid #ff3839;line-height: 1.2"> 聯絡我們 </h3>
+                  </div>
+                </div>
 				<form>
 					<div class="contact_us_form_">
-						<div class="col-lg-6 col-md-6 form_" >
+						<div class="col" >
 							<div class="input-box">
-								<input id="username" style="height: 50px;background-color: white;border-color:#e5e5e5" type="text"  placeholder="姓名 *" required="">
+								<input id="username" class="contact_form_small" type="text"  placeholder="姓名 *" required="">
 							</div>
 							<div class="input-box">
-								<input id="email" style="height: 50px;background-color: white;border-color:#e5e5e5" type="Email" name="Email" placeholder="電子郵件信箱 *" required="">
+								<input id="email" class="contact_form_small" type="Email" name="Email" placeholder="電子郵件信箱 *" required="">
 							</div>
 							<div class="input-box">
-								<input id="phone" style="height: 50px;background-color: white;border-color:#e5e5e5" placeholder="聯絡號碼" >
+								<input id="phone" class="contact_form_small" placeholder="聯絡號碼" >
 							</div>
-						</div>
-						<div class="col-lg-6 col-md-6">
-							<div class="input-box">
-								<textarea id="content" name="message" style="background-color: white;border-color:#e5e5e5"  cols="30" rows="9" placeholder="請輸入您的問題 ... *"></textarea>
+                            <div class="input-box">
+								<textarea id="content" name="message" class="contact_form_large" style="height: 50px"  cols="30" rows="3" placeholder="請輸入您的問題 ... *"></textarea>
 							</div>
 						</div>
 					</div>
@@ -657,7 +645,7 @@
 
 {% block footer %}
 
-<div  style="padding: 75px 0 34px;background-color: #4e4e4e;">
+<div  style="padding: 75px 0 34px;background-color: #111111;">
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-3 col-md-6">
@@ -837,6 +825,86 @@
 				})
 			}
 		}
+        try {
+            // 數字快速增加的特效函式
+            function animateCounter(el, duration) {
+                const target = +el.getAttribute('data-target');
+                const stepTime = Math.max(Math.floor(duration / target), 1);
+                let current = 0;
+
+                const timer = setInterval(() => {
+                    try {
+                        current += Math.ceil(target / (duration / stepTime));
+                        if (current >= target) {
+                            current = target;
+                            clearInterval(timer);
+                        }
+                        el.textContent = current.toLocaleString();
+                    } catch (error) {
+                        console.error('Error in animateCounter interval:', error);
+                    }
+                }, stepTime);
+            }
+
+              // 使用 Intersection Observer API 偵測元素進入畫面
+            const counterEl = document.getElementById('counter');
+            if (counterEl) {
+                const observer1 = new IntersectionObserver(entries => {
+                    try {
+                        entries.forEach(entry => {
+                            if (entry.isIntersecting) {
+                                // 避免重複觸發
+                                if (!counterEl.getAttribute('data-counted')) {
+                                    animateCounter(counterEl, 1000);
+                                    counterEl.setAttribute('data-counted', 'true');
+                                }
+                                observer1.unobserve(counterEl); // 停止觀察，避免重複觸發
+                            }
+                        });
+                    } catch (error) {
+                        console.error('Error in IntersectionObserver callback for counter:', error);
+                    }
+                }, {
+                    threshold: 0.5  // 元素超過一半進入視窗即觸發特效
+                });
+                observer1.observe(counterEl);
+            } else {
+                console.warn('找不到 id 為 counter 的元素');
+            }
+
+            document.addEventListener("DOMContentLoaded", () => {
+                try {
+                    const animationClasses = ['animate-block', 'animate-left', 'animate-right'];
+
+                    const observer = new IntersectionObserver(entries => {
+                        try {
+                          entries.forEach(entry => {
+                            if (entry.isIntersecting) {
+                              entry.target.classList.add('visible');
+                              observer.unobserve(entry.target);
+                            }
+                          });
+                        } catch (error) {
+                          console.error('Error in IntersectionObserver callback for animations:', error);
+                        }
+                    }, { threshold: 0.1 });
+                    animationClasses.forEach(animClass => {
+                        try {
+                          const elements = document.querySelectorAll(`.${animClass}`);
+                          elements.forEach(el => observer.observe(el));
+                        } catch (error) {
+                          console.error(`Error observing elements with class ${animClass}:`, error);
+                        }
+                    });
+                } catch (error) {
+                    console.error('Error during DOMContentLoaded:', error);
+                }
+                });
+            } catch (error) {
+                console.error('Error in overall script:', error);
+            }
+
+
 	</script>
 
 

@@ -1,8 +1,8 @@
-
+<body style=" background:#f9f9fc">
 {% extends 'school.html' %}
 {% block navbar %}
 {% if lang == 'zh' %}
-<div id="sticky-header" class="main-header" style="height: 90px;    background: rgba(0,0,0,0);">
+<div id="sticky-header" class="main-header" style="height: 90px;  background: #ffffff;">
 	<div class="container" style="height: 90px;position: relative; z-index: 100;">
 		<div class="row align-items-center" style="height: 90px">
 			<div class="col-lg-2" style="height: 90px">
@@ -14,10 +14,10 @@
 				<div class="header-menu">
 					<ul class="nav_scroll">
 						<li class="menu-item-has-children">
-							<a    style="font-weight: 500;color:#522b2b" href="/">首頁</a>
+							<a    style="font-weight: 300;color:#000000" href="/">首頁</a>
 						</li>
 						<li class="menu-item-has-children">
-							<a  style="font-weight: 500;color:#522b2b" href="/consult">
+							<a style="font-weight: 300;color:#000000" href="/consult">
 								大學諮詢
 								<i class="fas fa-caret-down"></i>
 							</a>
@@ -28,7 +28,7 @@
 							</ul>
 						</li>
 						<li class="menu-item-has-children">
-							<a  style="font-weight: 500;color:#522b2b" href="/course/">
+							<a  style="font-weight: 300;color:#000000" href="/course/">
 								課後專班
 								<i class="fas fa-caret-down"></i>
 							</a>
@@ -39,16 +39,15 @@
 							</ul>
 						</li>
                         <li class="menu-item-has-children">
-							<a  style="font-weight: 500;color:#522b2b"href="/afficient/">
+							<a style="font-weight: 300;color:#000000" href="/afficient/">
 								Afficient
-								<i class="fas fa-caret-down"></i>
 							</a>
 						</li>
 					</ul>
 				</div>
 			</div>
 			<div style="position: relative;bottom: 10px; " class="col-lg-2">
-				<div class="header-button">
+				<div class="second-header-button" >
 					<a href="/#contact">聯絡我們<i class="bi bi-arrow-right"></i></a>
 				</div>
 			</div>
@@ -56,137 +55,136 @@
 	</div>
 </div>
 
-<div class="mobile-menu-area d-sm-block d-md-block d-lg-none">
+<div class="mobile-menu-area d-sm-block d-md-block d-lg-none" >
 		<div class="mobile-menu">
-			<nav class="header-menu" style="display: block;">
+			<nav class="header-menu" style="display: block;color: black">
 				<ul class="nav_scroll">
 					<li class="menu-item-has-children">
-						<a style="color:#522b2b" href="/">首頁</a>
+						<a style="font-weight: 300;color:#000000" href="/">首頁</a>
 					</li>
 					<li class="menu-item-has-children">
-						<a style="font-weight: 500;color:#522b2b" href="#">
+						<a style="font-weight: 300;color:#000000" href="#">
 							大學諮詢
 							<i class="fas fa-caret-down"></i>
 						</a>
 						<ul class="sub-menu">
-							<li><a href="/consult">升學諮詢</a></li>
-							<li><a href="/consult?classification=type">學校類型分類</a></li>
-							<li><a href="/consult?classification=region">學校地區</a></li>
+							<li><a style="font-weight: 300;color:#000000" href="/consult">升學諮詢</a></li>
+							<li><a style="font-weight: 300;color:#000000" href="/consult?classification=type">學校類型分類</a></li>
+							<li><a style="font-weight: 300;color:#000000" href="/consult?classification=region">學校地區</a></li>
 						</ul>
 					</li>
 					<li class="menu-item-has-children">
-						<a style="font-weight: 500;color:#522b2b" href="/course/">
+						<a style="font-weight: 300;color:#000000" href="/course/">
 							學術指導
 							<i class="fas fa-caret-down"></i>
 						</a>
 						<ul class="sub-menu">
-							<li><a href="/course/">課後專班</a></li>
-							<li><a href="/consult?type=tutor">一對一教學</a></li>
-							<li><a href="/shop/">線上試題</a></li>
+							<li><a style="font-weight: 300;color:#000000" href="/course/">課後專班</a></li>
+							<li><a style="font-weight: 300;color:#000000" href="/consult?type=tutor">一對一教學</a></li>
+							<li><a style="font-weight: 300;color:#000000" href="/shop/">線上試題</a></li>
 						</ul>
 					</li>
                     <li class="menu-item-has-children">
-							<a  style="font-weight: 500;color:#522b2b"href="/afficient/">
-								Afficient
-							</a>
-						</li>
+                        <a  style="font-weight: 300;color:#000000" href="/afficient/">
+                            Afficient
+                        </a>
+                    </li>
 				</ul>
 			</nav>
 		</div>
 	</div>
 {% else %}
-<div id="sticky-header" class="main-header" style="height: 90px;    background: rgba(0,0,0,0);">
-	<div class="container" style="height: 90px;position: relative; z-index: 100;">
-		<div class="row align-items-center" style="height: 90px">
-			<div class="col-lg-2" style="height: 90px">
-				<div class="header-logo">
-					<a href="/"><img style="height:55px;position: relative; top:5px " src="/static/image/afficient.png" alt="logo"></a>
-				</div>
-			</div>
-			<div class="col-lg-8" style="position: relative;bottom: 10px; ">
-				<div class="header-menu">
-					<ul class="nav_scroll">
-						<li class="menu-item-has-children">
-							<a    style="font-weight: 500;color:#522b2b" href="/">Home</a>
-						</li>
-						<li class="menu-item-has-children">
-							<a  style="font-weight: 500;color:#522b2b" href="/consult">
-								Collage consultant
-								<i class="fas fa-caret-down"></i>
-							</a>
-							<ul class="sub-menu">
-
-								<li><a href="/consult">College Counseling</a></li>
-								<li><a href="/consult?classification=type">University Guide</a></li>
-								<li><a href="/consult?classification=region">University Guide by region</a></li>
-							</ul>
-						</li>
-						<li class="menu-item-has-children">
-							<a style="font-weight: 500;color:#522b2b" href="/course/">
-								Academic Guidance
-								<i class="fas fa-caret-down"></i>
-							</a>
-							<ul class="sub-menu">
-								<li><a href="/course/">Academic Guidance</a></li>
-								<li><a href="/course?type=tutor">Tutor</a></li>
-								<li><a href="/shop/">Online test questions</a></li>
-							</ul>
-						</li>
-                        <li class="menu-item-has-children">
-							<a  style="font-weight: 500;color:#522b2b"href="/afficient/">
-								Afficient
-							</a>
-						</li>
-					</ul>
-				</div>
-			</div>
-			<div style="position: relative;bottom: 10px; " class="col-lg-2">
-				<div class="header-button">
-					<a href="/#contact">Contact us<i class="bi bi-arrow-right"></i></a>
-				</div>
-			</div>
-		</div>
-	</div>
+<div id="sticky-header" class="main-header" style="height: 90px; background: #ffffff;">
+  <div class="container" style="height: 90px; position: relative; z-index: 100;">
+    <div class="row align-items-center" style="height: 90px">
+      <div class="col-lg-2" style="height: 90px">
+        <div class="header-logo">
+          <a href="/"><img style="height:55px; position: relative; top:5px" src="/static/image/afficient.png" alt="logo"></a>
+        </div>
+      </div>
+      <div class="col-lg-8" style="position: relative; bottom: 10px;">
+        <div class="header-menu">
+          <ul class="nav_scroll">
+            <li class="menu-item-has-children">
+              <a style="font-weight: 300; color:#000000" href="/">Home</a>
+            </li>
+            <li class="menu-item-has-children">
+              <a style="font-weight: 300; color:#000000" href="/consult">
+                about
+                <i class="fas fa-caret-down"></i>
+              </a>
+              <ul class="sub-menu">
+                <li><a href="/consult">about as</a></li>
+                <li><a href="/consult?classification=type">School Types</a></li>
+                <li><a href="/consult?classification=region">School Regions</a></li>
+              </ul>
+            </li>
+            <li class="menu-item-has-children">
+              <a style="font-weight: 300; color:#000000" href="/course/">
+                Service
+                <i class="fas fa-caret-down"></i>
+              </a>
+              <ul class="sub-menu">
+                <li><a href="/course/">Courses</a></li>
+                <li><a href="/course?type=tutor">Tutoring</a></li>
+                <li><a href="/shop/">Online Tests</a></li>
+              </ul>
+            </li>
+            <li class="menu-item-has-children">
+              <a style="font-weight: 300; color:#000000" href="/afficient/">
+                Afficient
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-lg-2" style="position: relative; bottom: 10px;">
+        <div class="second-header-button">
+          <a href="/#contact">Contact <i class="bi bi-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
 <div class="mobile-menu-area d-sm-block d-md-block d-lg-none">
-		<div class="mobile-menu">
-			<nav class="header-menu" style="display: block;">
-				<ul class="nav_scroll">
-					<li class="menu-item-has-children">
-						<a style="color:#522b2b" href="/">Home</a>
-					</li>
-					<li class="menu-item-has-children">
-						<a style="font-weight: 500;color:#522b2b" href="#">
-							Collage consultant
-							<i class="fas fa-caret-down"></i>
-						</a>
-						<ul class="sub-menu">
-							<li><a href="/consult">University Admission Counseling</a></li>
-							<li><a href="/consult?classification=type">Classification of school types</a></li>
-							<li><a href="/consult?classification=region">Classification os schools by region</a></li>
-						</ul>
-					</li>
-					<li class="menu-item-has-children">
-						<a style="font-weight: 500;color:#522b2b" href="/course/">
-							Academic Guidance
-							<i class="fas fa-caret-down"></i>
-						</a>
-						<ul class="sub-menu">
-							<li><a href="/course/">Academic Guidance</a></li>
-							<li><a href="/course?type=tutor">Tutor</a></li>
-							<li><a href="/shop/">Online test questions</a></li>
-						</ul>
-					</li>
-                    <li class="menu-item-has-children">
-							<a  style="font-weight: 500;color:#522b2b"href="/afficient/">
-								Afficient
-							</a>
-						</li>
-				</ul>
-			</nav>
-		</div>
-	</div>
+  <div class="mobile-menu">
+    <nav class="header-menu" style="display: block; color: black">
+      <ul class="nav_scroll">
+        <li class="menu-item-has-children">
+          <a style="font-weight: 300; color:#000000" href="/">Home</a>
+        </li>
+        <li class="menu-item-has-children">
+          <a style="font-weight: 300; color:#000000" href="#">
+            About
+            <i class="fas fa-caret-down"></i>
+          </a>
+          <ul class="sub-menu">
+            <li><a style="font-weight: 300; color:#000000" href="/consult">About as</a></li>
+            <li><a style="font-weight: 300; color:#000000" href="/consult?classification=type">School Types</a></li>
+            <li><a style="font-weight: 300; color:#000000" href="/consult?classification=region">School Regions</a></li>
+          </ul>
+        </li>
+        <li class="menu-item-has-children">
+          <a style="font-weight: 300; color:#000000" href="/course/">
+            service
+            <i class="fas fa-caret-down"></i>
+          </a>
+          <ul class="sub-menu">
+            <li><a style="font-weight: 300; color:#000000" href="/course/">Courses</a></li>
+            <li><a style="font-weight: 300; color:#000000" href="/consult?type=tutor">Tutoring</a></li>
+            <li><a style="font-weight: 300; color:#000000" href="/shop/">Online Tests</a></li>
+          </ul>
+        </li>
+        <li class="menu-item-has-children">
+          <a style="font-weight: 300; color:#000000" href="/afficient/">
+            Afficient
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</div>
 
 {% endif %}
 {% endblock %}
@@ -226,23 +224,19 @@
 
 		    {% if lang == 'zh' %}
 			<div class="col-md-12 text-center">
-			    <div class="section-title">
+			    <div class="section-title" style="margin: 25px">
 					<h4>Afficient</h4>
 					<h1>AI數學與英語學習系統，助孩子高效提升！</h1>
-					<div class="section-title-embar-1"></div>
-					<div class="section-title-embar-2"></div>
-					<div class="section-title-embar-3"></div>
-					<div class="section-title-embar-4"></div>
 				</div>
 			</div>
 
 
-			<div class="col-lg-6 col-md-12">
-				<div class="about-list-item" style="margin: 0">
-                    <p >
+			<div class="col-lg-6 col-md-12" style="position: relative;bottom: 25px">
+				<div class="about-list-item" >
+                    <p class="course-phone-style">
                         Afficient Math（對應美國 K-12 Common Core）
                     </p>
-					<ul>
+					<ul class="course-phone-style2">
 						<li><img src="/static/picture/about-list-icon.png" alt="icon">AI智能診斷 + 個性化學習計劃，快速補強數學基礎</li>
 						<li><img src="/static/picture/about-list-icon.png" alt="icon">美國專利 AI 取題系統，精準推送知識點</li>
 						<li><img src="/static/picture/about-list-icon.png" alt="icon">平均 2-4 個月完成 1 個年級，高效學習</li>
@@ -250,10 +244,10 @@
 				</div>
 
 				<div class="about-list-item" >
-                    <p >
+                    <p class="course-phone-style">
                         Afficient English（對應美國 Common Core）
                     </p>
-					<ul>
+					<ul class="course-phone-style2">
 						<li><img src="/static/picture/about-list-icon.png" alt="icon">詞彙、閱讀理解、語法、寫作 四大核心能力全面提升</li>
 						<li><img src="/static/picture/about-list-icon.png" alt="icon">AI 智能學習系統，自動適配學習進度</li>
 						<li><img src="/static/picture/about-list-icon.png" alt="icon">以美國學校標準扎實學好英語</li>
@@ -261,10 +255,10 @@
 				</div>
 
 				<div class="about-list-item" >
-                    <p >
+                    <p class="course-phone-style">
                         AA 課程優勢
                     </p>
-					<ul>
+					<ul class="course-phone-style2">
 						<li><img src="/static/picture/about-list-icon.png" alt="icon">針對學校課綱，高效輔助學習</li>
 						<li><img src="/static/picture/about-list-icon.png" alt="icon">AI 智能推送知識點，確保熟練掌握/li>
 						<li><img src="/static/picture/about-list-icon.png" alt="icon">家長APP即時監控學習進度，線上/線下輔導靈活選擇</li>
@@ -276,20 +270,20 @@
 			</div>
 			{% else %}
 
-            <div class="col-md-12 text-center">
-                <div class="section-title">
+            <div class="col-md-12 text-center" >
+                <div class="section-title" style="margin: 25px">
                     <h4>Afficient</h4>
-                    <h1>AI Math & English Learning System</h1>
-                    <h1>Boost Your Child’s Learning Efficiency!</h1>
+                    <h1 style="line-height: 1.3">AI Math & English Learning System</h1>
+                    <h1 style="line-height: 1.3">Boost Your Child’s Learning Efficiency!</h1>
                 </div>
             </div>
 
-            <div class="col-lg-6 col-md-12">
-            <div class="about-list-item" style="margin: 0">
-                <p>
+            <div class="col-lg-6 col-md-12" style="position: relative;bottom: 25px">
+            <div class="about-list-item" >
+                <p class="course-phone-style">
                     Afficient Math (Aligned with U.S. K-12 Common Core)
                 </p>
-                <ul>
+                <ul class="course-phone-style2">
                     <li><img src="/static/picture/about-list-icon.png" alt="icon"> AI diagnostics + personalized plans to strengthen math basics</li>
                     <li><img src="/static/picture/about-list-icon.png" alt="icon"> Patented AI system for precise topic recommendations</li>
                     <li><img src="/static/picture/about-list-icon.png" alt="icon"> Finish one grade in just 2-4 months</li>
@@ -297,10 +291,10 @@
             </div>
 
             <div class="about-list-item">
-                <p>
+                <p class="course-phone-style">
                     Afficient English (Aligned with U.S. Common Core)
                 </p>
-                <ul>
+               <ul class="course-phone-style2">
                     <li><img src="/static/picture/about-list-icon.png" alt="icon"> AI-driven learning system that adapts to individual progress</li>
                     <li><img src="/static/picture/about-list-icon.png" alt="icon"> Master English according to U.S. school standards</li>
                     <li><img src="/static/picture/about-list-icon.png" alt="icon"> Improve vocabulary, reading comprehension, grammar, and writing skills.</li>
@@ -309,17 +303,17 @@
             </div>
 
             <div class="about-list-item">
-                <p>
+                <p class="course-phone-style">
                     AA Course Advantages
                 </p>
-                <ul>
+                 <ul class="course-phone-style2">
                     <li><img src="/static/picture/about-list-icon.png" alt="icon"> Tailored to school curricula for efficient learning support</li>
                     <li><img src="/static/picture/about-list-icon.png" alt="icon"> AI-powered knowledge point recommendations to ensure mastery</li>
-                    <li><img src="/static/picture/about-list-icon.png" alt="icon"> Parent app for real-time progress tracking, with flexible online/offline tutoring options</li>
+                    <li><img src="/static/picture/about-list-icon.png" alt="icon"> Parent app for real-time progress tracking, with flexible online tutoring options</li>
                 </ul>
             </div>
 
-            <div class="section-button">
+            <div class="section-button course-phone-style3">
                 <a href="/#contact">Inquire for details <i class="bi bi-arrow-right"></i></a>
             </div>
         </div>
@@ -329,7 +323,7 @@
 
 			<div class="col-lg-6 col-md-12">
 				<div >
-					<img style="width:100%;border-radius:25px;margin-top: 40px" src="/static/image/ai.jpg" alt="about imgs">
+					<img class="img_photo" style="margin-top: 25px" src="/static/image/ai.jpg" alt="about imgs">
 				</div>
 			</div>
 		</div>
@@ -345,10 +339,10 @@
 						{% if lang == 'zh' %}
                             <div class="row">
 
-                            <div class="col-lg-9">
+                            <div class="col-lg-8">
                                 <div class="project-details-title">
                                     <div class="section-title">
-                                        <h1 style="color:#522b2b;margin-top: 30px;margin-bottom: 10px">獲得 WASC 認證</h1>
+                                        <h1 style="margin-top: 30px;margin-bottom: 10px">獲得 WASC 認證</h1>
                                     </div>
                                     <p>WASC（Western Association of Schools and Colleges） 是美國西部學校與學院認證協會，負責評鑑學術機構的教學質量與認證標準。Afficient Academy 獲得 WASC 認證，代表我們的課程：</p>
                                     <div class="about-list-item">
@@ -360,9 +354,9 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-lg-3" style="margin-top: 40px">
-                                <div >
-                                    <img style="width:100%;border-radius:25px" src="/static/image/wasc.png" alt="about imgs">
+                            <div class="col-lg-4" style="margin-top: 40px">
+                                <div>
+                                    <img style="width:100%;border:1px dotted black ;padding: 5px;margin-top: 35px" src="/static/image/wasc.png" alt="WASC Accreditation">
                                 </div>
 
                             </div>
@@ -371,10 +365,10 @@
 
 						{% else %}
                             <div class="row">
-                                <div class="col-lg-9">
+                                <div class="col-lg-8">
                                     <div class="project-details-title">
                                         <div class="section-title">
-                                            <h1 style="color:#522b2b;margin-top: 30px;margin-bottom: 10px">WASC Accreditation</h1>
+                                            <h1 style="margin-top: 30px;margin-bottom: 10px">WASC Accreditation</h1>
                                         </div>
                                         <p>WASC (Western Association of Schools and Colleges) is an accreditation organization responsible for evaluating the academic quality and standards of educational institutions in the western United States. Afficient Academy has earned WASC accreditation, signifying that our programs:</p>
                                         <div class="about-list-item">
@@ -386,9 +380,9 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-lg-3" style="margin-top: 40px">
+                                <div class="col-lg-4" style="margin-top: 40px">
                                     <div>
-                                        <img style="width:100%;border-radius:25px" src="/static/image/wasc.png" alt="WASC Accreditation">
+                                        <img style="width:100%;border:1px dotted black ;padding: 5px;margin-top: 35px" src="/static/image/wasc.png" alt="WASC Accreditation">
                                     </div>
                                 </div>
                             </div>
@@ -405,3 +399,4 @@
 </div>
 
 {% endblock %}
+</body>

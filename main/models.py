@@ -16,8 +16,7 @@ class Contact(models.Model):
 
 class Testimony(models.Model):
     title = models.TextField()
-    video = models.FileField(upload_to='image/')
-    picture = models.FileField(upload_to = 'picture/')
+    video = models.TextField()
     student_name = models.TextField()
     content = models.TextField()
     title_en = models.TextField(default="")
@@ -86,7 +85,6 @@ class Token(models.Model):
     refresh_token = models.CharField(max_length = 300)
     client_id = models.CharField(max_length = 300)
     client_secret = models.CharField(max_length = 100)
-
 
 class Course(models.Model):
     title =  models.CharField(max_length = 300)

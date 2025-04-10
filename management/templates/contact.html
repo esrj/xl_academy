@@ -1,4 +1,9 @@
 {% extends 'zh/index.html' %}
+<style>
+    body{
+        background-color: #ffffff !important;
+    }
+</style>
 
 {% block loader %}
 {% endblock %}
@@ -16,27 +21,26 @@
 				<div class="header-menu">
 					<ul class="nav_scroll">
 						<li class="menu-item-has-children">
-							<a style="font-weight: 500;color:#522b2b" href="/management/contact/">聯絡狀態</a>
+							<a style="font-weight: 400;color: black" href="/management/contact/">聯絡狀態</a>
 						</li>
 						<li class="menu-item-has-children">
-							<a style="font-weight: 500;color:#522b2b" href="#">上傳</a>
+							<a style="font-weight: 400;color: black" href="#">上傳</a>
 							<i class="fas fa-caret-down"></i>
 							<ul class="sub-menu">
-								<li><a href="/management/testimony/">感言影片</a></li>
 								<li><a href="/management/collage/">大學資訊</a></li>
 								<li><a href="/management/upload/">試題</a></li>
 								<li><a href="/management/course/">最新課程</a></li>
 							</ul>
 						</li>
 						<li class="menu-item-has-children">
-							<a style="font-weight: 500;color:#522b2b" href="/management/mail/">發送郵件</a>
+							<a style="font-weight: 400;color: black" href="/management/mail/">發送郵件</a>
 						</li>
 					</ul>
 				</div>
 			</div>
-			<div style="position: relative;bottom: 10px; " class="col-lg-2">
+			<div style="position: relative;bottom: 10px" class="col-lg-2">
 				<div class="header-button">
-					<a href="#" onclick="logout()">登出</a>
+					<a href="#" style="color: black;border-color: black " onclick="logout()">登出</a>
 				</div>
 			</div>
 		</div>
@@ -191,7 +195,7 @@
 	}
 
 </script>
-
+</body>
 
 {% endblock %}
 

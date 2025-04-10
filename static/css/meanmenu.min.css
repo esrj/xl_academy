@@ -1,6 +1,5 @@
 a.meanmenu-reveal{display:none}
 .mean-container .mean-bar {
-    background: #ffffff;
     float: left;
     min-height: 60px;
     padding: 4px 0 0;
@@ -134,17 +133,17 @@ a.meanmenu-reveal{display:none}
   color: #fff;
 }
 .meanmenu-reveal.meanclose:hover {
-  color: #fff !important;
+  color: #111111;
 }
 .mean-container a.meanmenu-reveal span {
-  background: #d2362c;
+  background: #a7a7a7;
 }
 .mean-container .mean-bar::before {
-    color: #d2362c;
+    color: #a7a7a7;
     content: "XL Academy";
     font-size: 25px;
-    font-weight: 600;
-    left: 10px;
+    font-weight: 500;
+    left: 25px;
     position: absolute;
     top: 17px;
     font-family: serif;

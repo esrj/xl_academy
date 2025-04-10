@@ -14,6 +14,8 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 def index(request):
     if request.method == 'GET':
         testimony = Testimony.objects.all().first()
+        id = testimony.video.split('watch?v=')[1]
+        testimony.video = f"https://www.youtube.com/embed/{id}"
         language = request.META.get('HTTP_ACCEPT_LANGUAGE')
         if language.split(',')[0] == 'zh-TW'  or language.split(',')[0] == 'zh':
             return render(request,'zh/index.html',locals())
