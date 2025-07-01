@@ -277,6 +277,9 @@ color:#cccdcf;line-height: 1.4 ;font-size: 14px;margin-top: 20px
         position: relative;
         bottom: 25px;
     }
+    .footer-logo-pic{
+        height: 60px; position: relative; top: -22px
+    }
 
     .school-block{
         margin-top:50px;

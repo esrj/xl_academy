@@ -1,4 +1,5 @@
 {# 升學大學介紹 #}
+
 {% extends 'zh/index.html' %}
 
 
@@ -85,7 +86,7 @@
 						</a>
 						<ul class="sub-menu">
 							<li><a style="font-weight: 300;color:#000000" href="/course/">課程</a></li>
-							<li><a style="font-weight: 300;color:#000000" href="/consult?type=tutor">家教</a></li>
+							<li><a style="font-weight: 300;color:#000000" href="/course?type=tutor">家教</a></li>
                             <li><a style="color:#000000; font-weight: 300" href="/service/consult/">諮詢</a></li>
 							<li><a style="font-weight: 300;color:#000000" href="/shop/">線上試題</a></li>
 						</ul>
@@ -179,7 +180,7 @@
           </a>
           <ul class="sub-menu">
             <li><a style="font-weight: 300; color:#000000" href="/course/">Courses</a></li>
-            <li><a style="font-weight: 300; color:#000000" href="/consult?type=tutor">Tutoring</a></li>
+            <li><a style="font-weight: 300; color:#000000" href="/course?type=tutor">Tutoring</a></li>
             <li><a style="font-weight: 300; color:#000000" href="/service/consult/">Consult</a></li>
             <li><a style="font-weight: 300; color:#000000" href="/shop/">Online Tests</a></li>
           </ul>
@@ -372,165 +373,6 @@
 </div>
 
 
-
-{% endblock %}
-
-{% block footer %}
-
-{% if lang == 'zh' %}
-	<div  style="padding: 75px 0 34px;background-color:  #000000">
-	<div class="container">
-		<div class="row">
-			<div class="col-lg-3 col-md-6">
-				<div class="footer-logo">
-					<a  href="/">
-						<img style="height: 60px;position: relative; top: -22px" src="/static/picture/footer-logo.png" alt="logo">
-					</a>
-				</div>
-				<div class="footer-widget-text" style=" height: 100px;position: relative; top: 16px">
-					<p style="margin-right: 10px">
-						台北市私立艾司樂文理補習班，讓您享受最完善的教育資源。
-					</p>
-				</div>
-				<div class="footer-social-icon" style="margin-top: 20px;">
-					<ul>
-						<li><a target="_blank" href="https://www.facebook.com/xlacademytw?mibextid=YMEMSu"><i class="fab fa-facebook-f"></i></a></li>
-						<li><a target="_blank" href="https://www.youtube.com/@xlacademy698"><i class="fab fa-youtube"></i></a></li>
-
-						<li><a target="_blank" href="https://line.me/R/ti/p/@xlacademy"><i class="fab fa-line"></i></a></li>
-					</ul>
-				</div>
-			</div>
-			<div class="col-lg-3 col-md-6">
-				<div class="footer-widget-content">
-					<div class="footer-widget-title">
-						<h4>所有頁面</h4>
-					</div>
-					<div class="footer-widget-menu">
-						<ul>
-							<li><a href="/" style="font-weight: 500;">首頁</a></li>
-							<li><a href="/cousult/" style="font-weight: 500;">大學諮詢</a></li>
-							<li><a  href="/shop/" style="font-weight: 500;">線上試題</a></li>
-						</ul>
-					</div>
-				</div>
-			</div>
-			<div class="col-lg-3 col-md-6">
-				<div class="footer-widget-content">
-					<div class="footer-widget-title">
-						<h4>聯絡方式</h4>
-					</div>
-					<div class="footer-widget-contact">
-						<ul>
-							<li><i class="bi bi-envelope"></i><a href="mailto:xlacademy168@gmail.com">xlacademy168@gmail.com</a></li>
-							<li><i class="bi bi-telephone-fill"></i><a href="tel:02 2532 2393">02 2532 2393</a></li>
-						</ul>
-					</div>
-				</div>
-			</div>
-			<div class="col-lg-3 col-md-6">
-				<div class="footer-widget-content">
-					<div class="footer-widget-title">
-						<h4>所在位置</h4>
-					</div>
-					<div class="footer-widget-text-2">
-						<p>明水路397巷7弄61號1Ｆ, Taipei, Taiwan</p>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="copyriht-area">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-12 text-center">
-					<div class="copyriht-content">
-						<span>Copyright &copy; 2024.XL Academy All rights reserved . <a style="color: white" target="_blank" href="https://www.freepik.com">Image Source </a></span>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-{% else %}
-	<div  style="padding: 75px 0 34px;background-color: #000000;">
-	<div class="container">
-		<div class="row">
-			<div class="col-lg-3 col-md-6">
-				<div class="footer-logo">
-					<a  href="/">
-						<img style="height: 60px;position: relative; top: -22px" src="/static/picture/footer-logo.png" alt="logo">
-					</a>
-				</div>
-				<div class="footer-widget-text" style=" height: 100px;position: relative; top: 16px">
-					<p style="margin-right: 10px">
-						XL Academy offers you access to the most comprehensive educational resources.
-					</p>
-				</div>
-				<div class="footer-social-icon" style="margin-top: 20px;">
-					<ul>
-						<li><a target="_blank" href="https://www.facebook.com/xlacademytw?mibextid=YMEMSu"><i class="fab fa-facebook-f"></i></a></li>
-						<li><a target="_blank" href="https://www.youtube.com/@xlacademy698"><i class="fab fa-youtube"></i></a></li>
-
-						<li><a target="_blank" href="https://line.me/R/ti/p/@xlacademy"><i class="fab fa-line"></i></a></li>
-					</ul>
-				</div>
-			</div>
-			<div class="col-lg-3 col-md-6">
-				<div class="footer-widget-content">
-					<div class="footer-widget-title">
-						<h4>Link</h4>
-					</div>
-					<div class="footer-widget-menu">
-						<ul>
-							<li><a href="/" style="font-weight: 500;">Home</a></li>
-							<li><a href="/consult" style="font-weight: 500;">collage consult</a></li>
-							<li><a  href="/shop/" style="font-weight: 500;">online test question</a></li>
-						</ul>
-					</div>
-				</div>
-			</div>
-			<div class="col-lg-3 col-md-6">
-				<div class="footer-widget-content">
-					<div class="footer-widget-title">
-						<h4>Contact information</h4>
-					</div>
-					<div class="footer-widget-contact">
-						<ul>
-							<li><i class="bi bi-envelope"></i><a href="mailto:xlacademy168@gmail.com">xlacademy168@gmail.com</a></li>
-							<li><i class="bi bi-telephone-fill"></i><a href="tel:02 2532 2393">02 2532 2393</a></li>
-						</ul>
-					</div>
-				</div>
-			</div>
-			<div class="col-lg-3 col-md-6">
-				<div class="footer-widget-content">
-					<div class="footer-widget-title">
-						<h4>Location</h4>
-					</div>
-					<div class="footer-widget-text-2">
-						<p>st Floor, No. 61, Alley 7, Lane 397, Minshui Road., Taipei, Taiwan</p>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="copyriht-area">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-12 text-center">
-					<div class="copyriht-content">
-						<span>Copyright &copy; 2024.XL Academy All rights reserved . <a style="color: white" target="_blank" href="https://www.freepik.com">Image Source </a></span>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-
-
-
-{% endif %}
 
 {% endblock %}
 
