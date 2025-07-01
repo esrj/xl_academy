@@ -33,10 +33,10 @@
 
 <div class="service-section">
 	<div class="container">
-		<div class="row">
+		<div class="row ">
 
 		    {% if lang == 'zh' %}
-			<div class="col-md-12 text-center">
+			<div class="col-md-12 text-center animate-block">
 			    <div class="section-title">
 					<h4>一對一教學</h4>
 					<h1>個人化指導，成就你的學習目標</h1>
@@ -44,7 +44,7 @@
 			</div>
 
 
-			<div class="col-lg-6 col-md-12">
+			<div class="col-lg-6 col-md-12 animate-left">
 				<div class="section-title left">
 					<p class="course-phone-style">
 					歡迎來到我們的一對一教學區域！這裡是你專屬的學習空間，我們的專業老師將根據你的學習需求和節奏，量身訂製教學計劃，確保每一堂課都能夠精準解決你的學習難題。無論是學業上的疑惑還是考試準備，我們都將提供最有效的指導，讓你事半功倍，輕鬆取得學習成果。立即加入我們的一對一教學，開啟專屬你的成功之路！
@@ -64,14 +64,14 @@
 			</div>
 			{% else %}
 
-            <div class="col-md-12 text-center">
+            <div class="col-md-12 text-center animate-block">
                 <div class="section-title">
                     <h4>One-on-One Teaching</h4>
                     <h1>Personalized Guidance to Achieve Your Learning Goals</h1>
                 </div>
             </div>
 
-            <div class="col-lg-6 col-md-12">
+            <div class="col-lg-6 col-md-12 animate-left">
                 <div class="section-title left">
                     <p class="course-phone-style">
                         Welcome to our one-on-one teaching area! This is your exclusive learning space, where our professional teachers will tailor teaching plans based on your learning needs and pace, ensuring that each lesson precisely addresses your learning challenges. Whether it's academic doubts or exam preparation, we will provide the most effective guidance to help you achieve your learning goals with ease. Join our one-on-one teaching now and embark on the path to your personal success!
@@ -85,7 +85,7 @@
                         <li><img src="/static/picture/about-list-icon.png" alt="icon">Comprehensive Support</li>
                     </ul>
                 </div>
-                <div class="section-button course-phone-style3">
+                <div class="section-button course-phone-style3 ">
                     <a href="/#contact">Inquire for Details<i class="bi bi-arrow-right"></i></a>
                 </div>
             </div>
@@ -93,7 +93,7 @@
 			{% endif %}
 
 
-			<div class="col-lg-6 col-md-12">
+			<div class="col-lg-6 col-md-12 animate-right">
 				<div >
 					<img class="img_photo" style="margin-top: 25px" src="/static/picture/teacher.jpg" alt="about imgs">
 				</div>
@@ -103,7 +103,7 @@
 </div>
 
 <div class="service-section">
-	<div class="container">
+	<div class="container animate-block">
 		<div class="row">
 			<div class="row align-items-center">
 				<div class="col-md-12 phone-style">
@@ -117,7 +117,7 @@
 						</div>
 						<div style="position: relative;top:30px">
 							{% for ranking in rankings %}
-							<p style="display: inline;border-radius: 20px;background:#f3f3f5;padding:12px 25px;margin-right: 15px;line-height: 50px;">{{ranking.title}}</p>
+							<p style="white-space: nowrap;display: inline;border-radius: 20px;background: #f3f3f5;padding:12px 25px;margin-right: 15px;line-height: 50px;">{{ranking.title}}</p>
 							{% endfor %}
 						</div>
 						{% else %}
@@ -129,7 +129,7 @@
 						</div>
 						<div style="position: relative;top:30px">
 							{% for ranking in rankings %}
-							<p style="display: inline;border-radius: 20px;background: #f3f3f5;padding:12px 25px;margin-right: 15px;line-height: 50px;">{{ranking.title_en}}</p>
+							<p style="white-space: nowrap;display: inline;border-radius: 20px;background: #f3f3f5;padding:12px 25px;margin-right: 15px;line-height: 50px;">{{ranking.title_en}}</p>
 							{% endfor %}
 						</div>
 						{% endif %}

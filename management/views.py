@@ -107,14 +107,17 @@ def upload(request):
     if request.method == 'GET':
         return render(request,'upload.html')
     if request.method == 'POST':
-        pdf = request.FILES.get('pdf')
+        # pdf = request.FILES.get('pdf')
+        image = request.FILES.get('image')
+        details = request.POST.get('details')
+        details_en = request.POST.get('details_en')
         title = request.POST.get('title')
         title_en = request.POST.get('title_en')
         price = request.POST.get('price')
         introduce = request.POST.get('introduce')
         introduce_en = request.POST.get('introduce_en')
         classification = request.POST.get('classification')
-        testQuestion = TestQuestion.objects.create(pdf=pdf,title=title,price=price,introduce=introduce,classification=classification,title_en = title_en,introduce_en= introduce_en)
+        testQuestion = TestQuestion.objects.create(title=title,price=price,introduce=introduce,classification=classification,title_en = title_en,introduce_en= introduce_en,image=image,details=details,details_en = details_en)
         testQuestion.save()
         return JsonResponse({'errno':0})
 

@@ -18,19 +18,19 @@
 								<th scope="col">發送日期</th>
 								<th scope="col">姓名</th>
 								<th scope="col">電子郵件</th>
-								<th scope="col">帳號後五碼</th>
                                 <th scope="col">試題編號</th>
+                                <th scope="col">內容</th>
 								<th></th>
 							</tr>
 							</thead>
 							<tbody >
 								{% for order in orders %}
 								<tr id="contact_${item.id}">
-									<td  onclick="single('{{order.id}}')" >{{order.date}}</td>
-									<td  onclick="single('{{order.id}}')" >{{order.username}}</td>
-									<td  onclick="single('{{order.id}}')" >{{order.email}}</td>
-									<td  onclick="single('{{order.id}}')" >{{order.account}}</td>
-									<td  onclick="single('{{order.id}}')" >{{order.page_id}}</td>
+									<td >{{order.date}}</td>
+									<td >{{order.username}}</td>
+									<td >{{order.email}}</td>
+									<td >{{order.bookid}}</td>
+									<td >{{order.content}}</td>
 								</tr>
 								{% endfor %}
 							</tbody>

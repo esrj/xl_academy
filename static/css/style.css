@@ -6,7 +6,55 @@
     position: relative;
     top: 30px;
 }
+.course_page_padding{
+    padding-left: 30px;
+    margin-top: 10px
+}
+.run{
+    position: relative!important;
+    bottom: 100px!important;
+    padding-bottom: 0 !important;
+    background-color: #f1f1f1 !important;
+}
+.book{
+    padding-left: 50px;
+}
 
+.meanclose{
+    color: black !important;
+
+}
+.book-picture{
+    padding: 30px 120px;
+    width: 100%;
+}
+
+  .comparison {
+    border-collapse: collapse;
+    border-radius: 0px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  }
+  /* 內部所有格線預設為 #494b4d */
+  .comparison th,
+  .comparison td {
+    border: 1px solid #494b4d;
+    padding: 16px 24px;
+    color: #cccdcf;
+  }
+  /* 最上排 header 全線改為 #d8dde1 */
+  .comparison thead th {
+    background-color: #1b1c1e;
+    color: #6a6a6a;
+    border: 1px solid #494b4d;
+  }
+  /* 最左欄全線改為 #d8dde1 */
+  .comparison th:first-child,
+  .comparison td:first-child {
+    background-color: #1b1c1e;
+    color: #6a6a6a;
+    border: 1px solid #494b4d;
+  }
 
 
 /* 外層容器：控制可視區域與背景 */
@@ -191,6 +239,17 @@ color:#cccdcf;line-height: 1.4 ;font-size: 14px;margin-top: 20px
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
 }
 
+.consult_title{
+    margin-bottom: 20px;
+}
+.consult-title{
+    margin-top:50px !important;
+}
+
+
+.consult_title_margin{
+    margin-top: 0px;
+}
 
     .img_photo:hover {
         /* 滑鼠移入時添加陰影 */
@@ -211,11 +270,23 @@ color:#cccdcf;line-height: 1.4 ;font-size: 14px;margin-top: 20px
     .responsive_collage_title{
         height: 99px;
     }
+    .school-box{
+        margin:10px;box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);border-radius: 0
+    }
+    .join-us-title{
+        position: relative;
+        bottom: 25px;
+    }
+
+    .school-block{
+        margin-top:50px;
+        margin-bottom:15px;
+    }
 
     .contact_us_form{
-        padding: 40px 80px 25px 70px;
-        margin-bottom: 50px;
-        margin-top:40px
+        padding: 0;
+        margin-bottom: 60px;
+        margin-top:60px;
     }
     .contact_form_{
         display: flex;
@@ -417,8 +488,8 @@ color:#cccdcf;line-height: 1.4 ;font-size: 14px;margin-top: 20px
     }
     .header-menu ul li .sub-menu li a:hover{
         background: #fff;
-        color: #ff3838;
-        border: 1px solid #ff3838;
+        color: #6a6a6a;
+        border: 1px solid #6a6a6a;
     }
 
     .sticky {
@@ -685,6 +756,16 @@ color:#cccdcf;line-height: 1.4 ;font-size: 14px;margin-top: 20px
     .cover-button :hover{
         color: #fff;
         background-color: #4c4c4b;
+    }
+    .cover-button_{
+        background-color: #ffffff00 !important;
+        color: white !important;
+        border: 1px solid white !important;
+    }
+    .cover-button_:hover{
+        color: #fff !important;;
+        background-color: #4c4c4b !important;
+        border: 1px solid #4c4c4b !important;
     }
 
     .join-us-icon {

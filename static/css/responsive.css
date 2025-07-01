@@ -157,6 +157,11 @@
 
 /* Normal desktop :1300px. */
 @media (min-width: 1300px) and (max-width: 1399px) {
+
+    .book-picture{
+        padding: 30px 60px;
+        width: 100%;
+    }
     .video-rwd2{
         padding: 20px;
     }
@@ -449,6 +454,16 @@
 }
 /* Normal desktop :1200px. */
 @media (min-width: 1200px) and (max-width: 1299px) {
+
+    .school-block{
+        margin-top:50px;
+        margin-bottom:0;
+    }
+
+    .book-picture{
+        padding: 30px 60px;
+        width: 100%;
+    }
     .video-rwd2{
         padding: 15px;
     }
@@ -766,6 +781,24 @@
 
 /* Normal desktop :992px. */
 @media (min-width: 992px) and (max-width: 1199px) {
+
+    .school-box{
+        margin:0px;box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);border-radius: 0
+    }
+
+    .school-block{
+        margin-top:20px;
+        margin-bottom:0;
+    }
+    .book-picture{
+        padding: 30px 50px;
+        width: 100%;
+    }
+
+    .course_page_padding {
+        padding-left: 15px;
+        margin-top: 5px
+    }
     .video-rwd2{
         padding: 0;
         padding-top : 30px;
@@ -1321,6 +1354,38 @@
 
 /* Tablet desktop :768px. */
 @media (min-width: 768px) and (max-width: 991px) {
+    .school-box{
+        margin:0px;box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);border-radius: 0
+    }
+
+    .school-block{
+        margin-top:10px;
+        margin-bottom:0;
+    }
+    .consult_title{
+        margin-bottom: 0;
+    }
+
+     .book-picture{
+        padding: 30px 200px;
+        width: 100%;
+    }
+
+      .cover-button a {
+        padding: 7px 30px;
+        margin-top: 30px;
+    }
+
+     .cover-text{
+        font-size: 24px !important;
+        line-height: 1.5;
+        margin-bottom: 10px;
+     }
+
+    .course_page_padding {
+        padding-left: 15px;
+        margin-top: 5px
+    }
 
     .course-phone-style{
         position: relative;
@@ -1416,9 +1481,8 @@
     }
 
     .contact_us_form{
-        padding: 20px 50px 25px 40px;
-        margin: 0;
-        max-width: 2000px
+        margin-bottom: 60px;
+        margin-top:60px;
     }
 
     .contact_form {
@@ -1465,8 +1529,9 @@
     .blog-content-block{
         padding: 30px;
     }
-    .form-content-block{
-        padding: 70px;
+    .contact_us_form{
+        margin-bottom: 50px;
+        margin-top:50px;
     }
 
     .slider-sub-title h4:before {
@@ -1824,6 +1889,10 @@
     .class_env_font{
         font-size: 14px !important;
     }
+      .join-us-title{
+        position: relative;
+        bottom: 20px;
+    }
 
 
 
@@ -1831,6 +1900,41 @@
 
 /* Large Mobile :600px. */
 @media only screen and (min-width: 576px) and (max-width: 767px) {
+
+    .join-us-title{
+        position: relative;
+        bottom: 15px;
+    }
+    .school-box{
+        margin:0px;box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);border-radius: 0
+    }
+
+    .school-block{
+        margin-top: 10px;
+        margin-bottom:0;
+    }
+    .consult_title{
+        margin-bottom: 0;
+    }
+
+    .cover-button a {
+        padding: 7px 30px;
+        margin-top: 30px;
+    }
+
+    .course_page_padding {
+        padding-left: 15px;
+        margin-top: 5px
+    }
+
+    .run {
+        bottom: 72px!important;
+    }
+    .cover-text{
+        font-size: 22px !important;
+        line-height: 1.5;
+        margin-bottom: 15px;
+    }
      .course-phone-style{
         position: relative;
         top: -5px;
@@ -1856,7 +1960,7 @@
         padding-bottom: 15px;
     }
     .form-content-block{
-        padding: 50px;
+        padding: 30px 0;
     }
     .video-rwd2{
         padding: 0;
@@ -1941,9 +2045,8 @@
     }
 
     .contact_us_form{
-        padding: 20px 50px 25px 40px;
-        margin: 0;
-        max-width: 2000px
+        margin-bottom: 60px;
+        margin-top:60px;
     }
 
     .form_{
@@ -1957,7 +2060,8 @@
         justify-content: space-between;
     }
     .contact_us_form{
-        padding: 20px 50px 25px 50px;
+        margin-bottom: 50px;
+        margin-top:50px;
     }
     .contact_form {
         margin-top: 50px;
@@ -2182,7 +2286,7 @@
 
 
     .slider-content h1 {
-        font-size: 38px;
+        font-size: 35px;
         line-height: 50px;
     }
     .slider-shape-1 {
@@ -2440,6 +2544,73 @@
 
 /* Large Mobile :480px. */
 @media only screen and (min-width: 480px) and (max-width:575px) {
+    .join-us-title{
+        position: relative;
+        bottom: 12px;
+    }
+
+    .school-box{
+        margin:0px;box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);border-radius: 0
+    }
+
+    .school-block{
+        margin-top: 0px;
+        margin-bottom:0;
+    }
+
+    .school-block{
+        margin-top: 20px;
+        margin-bottom:0;
+    }
+    .consult-title{
+        margin-top:0px !important;
+        position: relative;
+        top: 50px;
+    }
+
+    .consult_title_margin{
+            margin-bottom: 10px !important;
+    }
+
+    .consult_title{
+        margin-bottom: 0;
+    }
+
+     .book-picture{
+        padding: 20px 80px;
+        width: 100%;
+    }
+
+
+    .cover-button a {
+        padding: 5px 25px;
+        margin-top: 20px;
+    }
+
+
+
+    table th,
+    table td {
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .comparison{
+        padding: 15px;
+    }
+
+    .course_page_padding {
+        padding-left: 15px;
+        margin-top: 5px
+    }
+    .run {
+        bottom: 72px!important;
+    }
+    .cover-text{
+        font-size: 20px !important;
+        line-height: 1.5;
+        margin-bottom: 10px;
+    }
 
 
     .course-phone-style{
@@ -2501,11 +2672,11 @@
         margin-bottom: 10px;
         font-size: 22px;
     }
-    .join-us-block{
-        padding: 60px 30px;
-        border-radius: 15px;
-        margin-right: 50px;
-        margin-left: 50px;
+    .join-us-block {
+        padding: 30px 10px;
+        border-radius: 10px;
+        margin-right: 0px;
+        margin-left: 0px;
     }
 
     .section-title2 h1 {
@@ -2613,9 +2784,8 @@
     }
 
     .contact_us_form{
-        padding: 20px 50px 25px 40px;
-        margin: 0;
-        max-width: 2000px
+        margin-bottom: 50px;
+        margin-top:50px;
     }
 
 
@@ -2642,9 +2812,8 @@
     }
 
     .contact_us_form{
-        padding: 25px 65px 25px 65px;
-        margin: 0;
-        max-width: 2000px
+        margin-bottom: 40px;
+        margin-top:40px;
     }
     .phone-style{
         padding-right: 50px;
@@ -2860,7 +3029,7 @@
     }
 
     .slider-content h1 {
-        font-size: 33px;
+        font-size: 28px;
         color: #ffff;
         line-height: 46px;
     }
@@ -3147,6 +3316,75 @@
 
 /* small mobile :320px. */
 @media only screen and (min-width: 320px) and (max-width: 479px) {
+    .join-us-title{
+        position: relative;
+        bottom: 12px;
+    }
+
+    .school-box{
+        margin:0px;box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);border-radius: 0
+    }
+
+    .school-block{
+        margin-top: 0px;
+        margin-bottom:0;
+    }
+
+    .comparison td {
+        border: 1px solid #494b4d;
+        padding: 8px 12px;
+        color: #cccdcf;
+    }
+
+     .consult-title{
+        margin-top:0px !important;
+        position: relative;
+        top: 40px;
+    }
+
+    .consult_title_margin{
+            margin-bottom: 10px !important;
+    }
+
+    .consult_title{
+        margin-bottom: 0;
+    }
+
+    .service-section {
+        padding: 30px 0 30px;
+    }
+    .book-picture{
+        padding: 20px 80px;
+        width: 100%;
+    }
+
+    table th, table td {
+        font-size: 14px;
+        line-height: 1.3;
+    }
+
+
+    .slider-content{
+        padding: 15px;
+    }
+
+    .cover-button a {
+        padding: 3px 12px;
+        margin-top: 15px;
+    }
+
+    .course_page_padding {
+        padding-left: 15px;
+        margin-top: 5px
+    }
+    .run {
+        bottom: 72px!important;
+    }
+    .cover-text{
+        font-size: 18px !important;
+        line-height: 1.5;
+        margin-bottom: 10px;
+    }
     .course-phone-style{
         position: relative;
         top: -35px;
@@ -3179,7 +3417,7 @@
         padding-bottom: 15px;
     }
     .form-content-block{
-        padding: 0;
+        padding: 10px 0;
     }
 
     .video-rwd2{
@@ -3203,11 +3441,11 @@
         margin-bottom: 25px;
         font-size: 22px;
     }
-    .join-us-block{
-        padding: 60px 30px;
-        border-radius: 15px;
-        margin-right: 30px;
-        margin-left: 30px;
+    .join-us-block {
+        padding: 30px 10px;
+        border-radius: 10px;
+        margin-right: 0px;
+        margin-left: 0px;
     }
 
     .section-title2 h1 {
@@ -3321,9 +3559,10 @@
 
 
     .contact_us_form{
-        padding: 20px 40px 20px 40px;
-        margin: 0;
-        max-width: 2000px
+        padding: 10px;
+        padding-top: 0;
+        padding-bottom: 0;
+
     }
 
     .contact_us_form_ {
@@ -3575,7 +3814,7 @@
     }
     /*blog-section*/
     .blog-section {
-        padding: 88px 0 168px;
+        padding: 50px 0 168px;
     }
      .single-blog-box {
         margin-bottom: 25px;
@@ -3940,6 +4179,7 @@
     .breadcubm-title h1 {
         font-size: 36px;
         margin-bottom: 6px;
+        line-height: 1.3;
     }
     /*shope*/
     .shope-section {
@@ -3953,7 +4193,6 @@
     /*project-details*/
     .project-details-title h4 {
         font-size: 22px;
-        line-height: 40px;
     }
     .project-info {
         margin-left: 0;
@@ -3978,7 +4217,6 @@
     .agency-content p {
         width: 100%;
     }
-
 
 
 }

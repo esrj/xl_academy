@@ -38,7 +38,6 @@ def index(request):
         print(testimony.video)
         return  JsonResponse({'video':str(testimony.video)})
 
-
 def consult(request):
     if request.method == 'GET':
         language = request.META.get('HTTP_ACCEPT_LANGUAGE')
@@ -48,22 +47,20 @@ def consult(request):
             lang = 'en'
         classification = request.GET.get('classification',None)
         if classification == None:
-        # zh , en 下的 consult 是 11 點介紹，無串接資料庫
             if lang == 'zh':
                 return render(request,'zh/consult.html',locals())
             else :
                 return render(request,'en/consult.html',locals())
-        # template 下的 consult 是大學介紹，有串接資料苦
+        # template 下的 consult 是大學介紹
         else:
             collages = Collage.objects.all().values('id','emblem','name','country','continent','classification','en_name')
             pages = Paginator(collages, 24)
             page = request.GET.get('page')
             try:
                 objects = pages.page(page)
-            except PageNotAnInteger:
+            except :
                 objects = pages.page(1)
-            except EmptyPage:
-                objects = pages.page(paginator.num_pages)
+
             num = (objects.number)
             num_page = (objects.paginator.num_pages)
             all_page = range(1,num_page+1)
@@ -142,7 +139,6 @@ def error_view(request, exception=None, template_name='error.html'):
     else:
         return render(request,'en/error.html',locals())
 
-
 def afficient(request):
     language = request.META.get('HTTP_ACCEPT_LANGUAGE')
     if language.split(',')[0] == 'zh-TW' or language.split(',')[0] == 'zh':
@@ -151,4 +147,10 @@ def afficient(request):
         lang = 'en'
     return render(request,'afficient.html',locals())
 
-
+def new_consult(request):
+    language = request.META.get('HTTP_ACCEPT_LANGUAGE')
+    if language.split(',')[0] == 'zh-TW' or language.split(',')[0] == 'zh':
+        lang = 'zh'
+    else:
+        lang = 'en'
+    return render(request,'new_consult.html',locals())

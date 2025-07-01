@@ -53,12 +53,15 @@ class Collage(models.Model):
     popular_departments_en = models.TextField(default="")
 
 class TestQuestion(models.Model):
-    pdf = models.FileField(upload_to='file/')
+    # pdf = models.FileField(upload_to='file/')
     title = models.CharField(max_length=200)
     title_en = models.CharField(max_length=200,default="")
     price = models.CharField(max_length=15)
     introduce = models.TextField()
     introduce_en = models.TextField(default="")
+    details = models.TextField(default="")
+    details_en = models.TextField(default="")
+    image = models.FileField(upload_to='image/')
     classification = models.CharField(max_length=15)
 
 
@@ -72,10 +75,8 @@ class Order(models.Model):
     username = models.CharField(max_length=50)
     email = models.CharField(max_length=50)
     phone = models.CharField(max_length=25)
-    account = models.CharField(max_length = 50)
-    price = models.CharField(max_length = 25)
-    page_id  = models.CharField(max_length=50)
-    is_send = models.BooleanField(default = False)
+    bookid  = models.CharField(max_length=50)
+    content = models.TextField(default="")
 
 class Token(models.Model):
     access_token = models.CharField(max_length = 300)

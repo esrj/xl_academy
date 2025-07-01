@@ -136,10 +136,10 @@ a.meanmenu-reveal{display:none}
   color: #111111;
 }
 .mean-container a.meanmenu-reveal span {
-  background: #a7a7a7;
+  background: #ffffff;
 }
-.mean-container .mean-bar::before {
-    color: #a7a7a7;
+.mean-container .mean-bar::before  {
+    color: #ffffff;
     content: "XL Academy";
     font-size: 25px;
     font-weight: 500;
@@ -149,3 +149,8 @@ a.meanmenu-reveal{display:none}
     font-family: serif;
     letter-spacing: -1px;
 }
+
+
+
+
+

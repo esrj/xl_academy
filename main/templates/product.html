@@ -7,10 +7,10 @@
 
 <div class="blog-section">
 	<div class="container">
-		<div class="row">
-            <div class="col-lg-6 col-md-12 phone-style">
+		<div class="row" >
+            <div class="col-lg-6 col-md-12 phone-style animate-left">
             {% if lang == 'zh' %}
-				<div class="project-details-content">
+				<div class="project-details-content ">
 					<div class="project-details-title">
                         <h2>{{testQuestion.classification}}</h2>
                         <div class="categories-title">
@@ -19,17 +19,15 @@
 					</div>
 
 					<div class="project-details-desc">
-						<p style="white-space: pre-line;font-size: large">{{testQuestion.introduce}}</p>
+						<p style="white-space: pre-line">{{testQuestion.introduce}}</p>
 					</div>
 
-                    <p class="detail-info2" ><span style=";color:#2e2e2e">試題編號 : </span>{{testQuestion.id}}</p>
-                    <p class="detail-info2" ><span style=";color:#2e2e2e">價格 : </span>{{testQuestion.price}}</p>
+                    <p style="white-space: pre-line;color: black">試題編號 : {{testQuestion.id}}</p>
+                    <p style="white-space: pre-line;color: black">價格 : {{testQuestion.price}}</p>
                     <div class="categories-title">
 						<h4 style="margin-top: 50px;">注意事項 </h4>
 					</div>
-                    <p class="detail-info" ><span style=";color:#2e2e2e">請您進行轉帳至以下銀行帳戶，如有任何疑問，請隨時向我們詢問。當您成功完成轉帳後，請填寫下方的表單，我們將盡快將試題寄送至您提供的電子郵件信箱。感謝您的合作。</span></p>
-                    <p class="detail-info2" ><span style=";color:#2e2e2e">銀行代號 : </span>700</p>
-                    <p class="detail-info2"><span style=";color:#2e2e2e">帳號名稱 : </span>1232412 3456754</p>
+                    <p style="white-space: pre-line">{{ testQuestion.details }}</p>
 				</div>
 				{% else %}
 				<div class="project-details-content">
@@ -41,7 +39,7 @@
 					</div>
 
 					<div class="project-details-desc">
-						<p style="white-space: pre-line;font-size: large">{{testQuestion.introduce_en}}</p>
+						<p  style="white-space: pre-line;font-size: large">{{testQuestion.introduce_en}}</p>
 					</div>
 
                      <p class="detail-info2" ><span style=";color:#2e2e2e">Test question id : </span>{{testQuestion.id}}</p>
@@ -49,151 +47,102 @@
                     <div class="categories-title">
                         <h4 style="margin-top: 50px;">Notice</h4>
                     </div>
-                    <p class="detail-info"><span style=";color:#2e2e2e">Please transfer to the following bank account. If you have any questions, feel free to inquire with us. Once you have successfully completed the transfer, please fill out the form below, and we will promptly send the test to the email address you provided. Thank you for your cooperation.</span></p>
-                    <p class="detail-info2"><span style=";color:#2e2e2e">Bank Code: </span>700</p>
-                    <p class="detail-info2"><span style=";color:#2e2e2e">Account Name: </span>1232412 3456754</p>
+                    <p style="white-space: pre-line;font-size: large">{{ testQuestion.details_en }}</p>
+
 				</div>
 				{% endif %}
 			</div>
-			<div class="col-lg-6 col-md-12 phone-style">
-				<div class="widget-categories-box" style="margin-top: 20px">
+			<div class="col-lg-6 col-md-12 phone-style animate-right">
+				<div class="widget-categories-box animate-block" style="margin-top: 20px;box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);border-radius: 15px">
 					<div class="categories-title">
 					    {% if lang == 'zh' %}
-						<h4> 全部試題 </h4>
+						<h4> 試題圖片 </h4>
 						{% else %}
-						<h4>All Test Questions</h4>
+						<h4> Picture </h4>
 					    {% endif %}
 					</div>
 
-
-					{% for product in testQuestions %}
-					<div class="sidber-widget-recent-post">
-						<div class="recent-widget-content" style="padding-top: 12px;">
-						    {% if lang == 'zh' %}
-							<a style="margin-left: 20px;font-weight: 500" href="/product/{{product.id}}">{{product.title}}</a>
-
-							<span  style="display:flex;align-items: flex-end;padding: 0;margin-left: 20px;margin-bottom: 7px">
-								<span style="color: black;margin-right: 10px">分類 : </span><span style="margin-right: 10px">{{product.classification}}</span>
-								<span style="color: black;margin-right: 10px">價格 : </span><span style="margin-right: 10px">{{product.price}} $</span>
-							</span>
-							{% else %}
-							<a style="margin-left: 20px;font-weight: 500" href="/product/{{product.id}}">{{product.title_en}}</a>
-							<span  style="display:flex;align-items: flex-end;padding: 0;margin-left: 20px;margin-bottom: 7px">
-								<span style="color: black;margin-right: 10px">classification : </span><span style="margin-right: 10px">{{product.classification}}</span>
-								<span style="color: black;margin-right: 10px">price : </span><span style="margin-right: 10px">{{product.price}} $</span>
-							</span>
-							{% endif %}
-						</div>
-					</div>
-					{% endfor %}
-
+					<img class = "book-picture" src="/media/{{ testQuestion.image }}">
 
 				</div>
 			</div>
+                <div class="col-md-12 text-center animate-block phone-style">
+              <div style="border-radius: 15px; padding: 50px; box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);background: #ffffff">
+                <div class="col-md-12 text-center">
+                  <div class="section-title">
+                    <h3 style="display: inline-block; border-bottom: 5px solid #ff3839; line-height: 1.2">詢問細節</h3>
+                  </div>
+                </div>
+                <form>
+                  <div class="contact_us_form_">
+                    <div class="col">
+                      <div class="input-box">
+                        <input id="username" class="contact_form_small" type="text" placeholder="姓名 *" required="">
+                      </div>
+                      <div class="input-box">
+                        <input id="email" class="contact_form_small" type="email" name="Email" placeholder="電子郵件地址 *" required="">
+                      </div>
+                      <div class="input-box">
+                        <input id="phone" class="contact_form_small" placeholder="聯絡電話">
+                      </div>
+                      <div class="input-box">
+                        <textarea id="content" name="message" class="contact_form_large" style="height: 50px" cols="30" rows="3" placeholder="請輸入您的問題... *"></textarea>
+                      </div>
+                    </div>
+                  </div>
+                </form>
+                <div class="submit-button">
+                  <button style="margin: 10px" type="submit" onclick="submit_()">送出 <i class="bi bi-arrow-right"></i></button>
+                </div>
+              </div>
+            </div>
+
 		</div>
-        <div class="contact_form">
-            <div class="col-md-12 text-center">
-				<div>
-
-				    {% if lang == 'zh' %}
-                    <div class="section-title left">
-					    <h4 style="display: flex;">填寫表單</h4>
-                    </div>
-					<form>
-						<div class ="contact_form_">
-							<div class="col-lg-6 col-md-6 contact_form_margin" style="margin-left: 5px;margin-right:5px">
-								<div class="input-box">
-									<input id="username" style="height: 50px;margin-bottom: 15px;background-color: white;border-color:#f3f3f3" type="text"  placeholder="姓名 *" required="">
-								</div>
-								<div class="input-box">
-									<input id="email" style="height: 50px;margin-bottom: 15px;" type="Email" name="Email" placeholder="電子郵件信箱 *" required="">
-								</div>
-								<div class="input-box">
-									<input id="phone" style="height: 50px;margin-bottom: 15px;" placeholder="聯絡號碼" >
-								</div>
-							</div>
-                            <div class="col-lg-6 col-md-6" style="margin-left: 5px;margin-right:5px">
-								<div class="input-box">
-									<input id="account" style="height: 50px;margin-bottom: 15px;background-color: white;border-color:#f3f3f3" type="text"  placeholder="匯款帳號後 5 碼 *" required="">
-								</div>
-								<div class="input-box">
-									<input id="price" style="height: 50px;margin-bottom: 15px;" type="Email" name="Email" placeholder="銀行代號 *" required="">
-								</div>
-								<div class="input-box">
-									<input id="id" style="height: 50px;margin-bottom: 15px;" placeholder="試題編號 *" >
-								</div>
-							</div>
-						</div>
-					</form>
-					<div class="submit-button" >
-						<button style="margin-top: 0" type="submit" onclick="submit_order()">確定送出<i class="bi bi-arrow-right"></i></button>
-					</div>
-					{% else %}
-                    <div class="section-title left">
-                        <h4 style="display: flex;">Fill out the Form</h4>
-                    </div>
-                    <form>
-                        <div class="contact_form_">
-                            <div class="col-lg-6 col-md-6 contact_form_margin" style="margin-left: 5px;margin-right:5px">
-                                <div class="input-box">
-                                    <input id="username" style="height: 50px;margin-bottom: 15px;background-color: white;border-color:#f3f3f3" type="text" placeholder="Name *" required="">
-                                </div>
-                                <div class="input-box">
-                                    <input id="email" style="height: 50px;margin-bottom: 15px;" type="Email" name="Email" placeholder="Email Address *" required="">
-                                </div>
-                                <div class="input-box">
-                                    <input id="phone" style="height: 50px;margin-bottom: 15px;" placeholder="Contact Number">
-                                </div>
-                            </div>
-                            <div class="col-lg-6 col-md-6" style="margin-left: 5px;margin-right:5px">
-                                <div class="input-box">
-                                    <input id="account" style="height: 50px;margin-bottom: 15px;background-color: white;border-color:#f3f3f3" type="text" placeholder="Last 5 Digits of Remittance Account *" required="">
-                                </div>
-                                <div class="input-box">
-                                    <input id="price" style="height: 50px;margin-bottom: 15px;" type="Email" name="Email" placeholder="Bank Code *" required="">
-                                </div>
-                                <div class="input-box">
-                                    <input id="id" style="height: 50px;margin-bottom: 15px;" placeholder="Test ID *" >
-                                </div>
-                            </div>
-                        </div>
-                    </form>
-                    <div class="submit-button">
-                        <button style="margin-top: 0" type="submit" onclick="submit_order()">Submit<i class="bi bi-arrow-right"></i></button>
-                    </div>
-					{% endif %}
-				</div>
-			</div>
-        </div>
 	</div>
 </div>
 
 <script>
-function submit_order(){
-	axios({
-		url:'/shop/',
-		method:"POST",
-		headers:{'X-CSRFToken': "{{ csrf_token }}"},
-		data:{
-			'username':$('#username').val(),
-			'email':$('#email').val(),
-			'phone':$('#phone').val(),
-			'account':$('#account').val(),
-			'price':$('#price').val(),
-			'id':$('#id').val(),
+function submit_(){
+			if(isNullOrWhitespace($('#username').val())==true || isNullOrWhitespace($('#email').val())==true || isNullOrWhitespace($('#content').val())==true){
+				swal({
+					'title':'資料填寫不全',
+					'text':'＊號為必填表格',
+					'icon':'warning',
+					'buttons':false,
+					'timer':1500
+				})
+			}else{
+				axios({
+					url:'/',
+					method:"POST",
+					headers:{'X-CSRFToken': "{{ csrf_token }}"},
+					data:{
+						'username':$('#username').val(),
+						'email':$('#email').val(),
+						'phone':$('#phone').val(),
+						'content':$('#content').val(),
+					}
+				}).then(res=>{
+					if(res.data.errno === 0){
+						swal({
+							'title':'已傳送',
+							'text':'我們會盡快回覆您',
+							'icon':'success',
+							'buttons':false,
+							'timer':1500
+						})
+					}else{
+						swal({
+							'title':'傳送失敗',
+							'text':'無效資料或填寫補全',
+							'icon':'error',
+							'buttons':false,
+							'timer':1500
+						})
+					}
+				})
+			}
 		}
-	}).then(res=>{
-		if(res.data.errno === 0){
-			swal({
-				'title':'已傳送',
-				'text':'確認收款後我們會盡快將試題傳送至您的電子郵件信箱',
-				'icon':'success',
-				'buttons':false,
-				'timer':3000
-			})
-		}
-	})
-}
 </script>
 
 {% endblock %}

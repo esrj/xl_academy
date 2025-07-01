@@ -1,16 +1,20 @@
 {# 升學大學介紹 #}
-
 {% extends 'zh/index.html' %}
 
 
 {% block navbar %}
+<style>
+.mean-container a.meanmenu-reveal span {
+    background: #000000;
+}
+</style>
 {% if lang == 'zh' %}
 <div id="sticky-header" class="main-header" style="height: 90px;  background: #ffffff;">
 	<div class="container" style="height: 90px;position: relative; z-index: 100;">
 		<div class="row align-items-center" style="height: 90px">
 			<div class="col-lg-2" style="height: 90px">
 				<div class="header-logo">
-					<a href="/"><img style="height:55px;position: relative; top:5px " src="/static/picture/logo.png" alt="logo"></a>
+					<a href="/"><img style="height:55px;position: relative; top:5px " src="/static/picture/footer-logo.png" alt="logo"></a>
 				</div>
 			</div>
 			<div class="col-lg-8" style="position: relative;bottom: 10px; ">
@@ -25,19 +29,20 @@
 								<i class="fas fa-caret-down"></i>
 							</a>
 							<ul class="sub-menu">
-								<li><a href="/consult">升學諮詢服務</a></li>
-								<li><a href="/consult?classification=type">學校類型分類</a></li>
-								<li><a href="/consult?classification=region">學校地區分類</a></li>
+								<li><a href="/consult">關於我們</a></li>
+								<li><a href="/consult?classification=type">學校類型</a></li>
+								<li><a href="/consult?classification=region">學校地區</a></li>
 							</ul>
 						</li>
 						<li class="menu-item-has-children">
 							<a  style="font-weight: 300;color:#000000" href="/course/">
-								課後專班
+								服務
 								<i class="fas fa-caret-down"></i>
 							</a>
 							<ul class="sub-menu">
-								<li><a href="/course/">課後專班</a></li>
-								<li><a href="/course?type=tutor">一對一家教</a></li>
+								<li><a href="/course/">課程</a></li>
+								<li><a href="/course?type=tutor">家教</a></li>
+                                <li><a href="/service/consult/">諮詢</a></li>
 								<li><a href="/shop/">線上試題</a></li>
 							</ul>
 						</li>
@@ -57,8 +62,7 @@
 		</div>
 	</div>
 </div>
-
-<div class="mobile-menu-area d-sm-block d-md-block d-lg-none" >
+<div class="mobile-menu-area d-sm-block d-md-block d-lg-none k" >
 		<div class="mobile-menu">
 			<nav class="header-menu" style="display: block;color: black">
 				<ul class="nav_scroll">
@@ -67,23 +71,22 @@
 					</li>
 					<li class="menu-item-has-children">
 						<a style="font-weight: 300;color:#000000" href="#">
-							大學諮詢
-							<i class="fas fa-caret-down"></i>
+							關於我們
 						</a>
 						<ul class="sub-menu">
-							<li><a style="font-weight: 300;color:#000000" href="/consult">升學諮詢</a></li>
-							<li><a style="font-weight: 300;color:#000000" href="/consult?classification=type">學校類型分類</a></li>
+							<li><a style="font-weight: 300;color:#000000" href="/consult">關於我們</a></li>
+							<li><a style="font-weight: 300;color:#000000" href="/consult?classification=type">學校類型</a></li>
 							<li><a style="font-weight: 300;color:#000000" href="/consult?classification=region">學校地區</a></li>
 						</ul>
 					</li>
 					<li class="menu-item-has-children">
 						<a style="font-weight: 300;color:#000000" href="/course/">
-							學術指導
-							<i class="fas fa-caret-down"></i>
+							服務
 						</a>
 						<ul class="sub-menu">
-							<li><a style="font-weight: 300;color:#000000" href="/course/">課後專班</a></li>
-							<li><a style="font-weight: 300;color:#000000" href="/consult?type=tutor">一對一教學</a></li>
+							<li><a style="font-weight: 300;color:#000000" href="/course/">課程</a></li>
+							<li><a style="font-weight: 300;color:#000000" href="/consult?type=tutor">家教</a></li>
+                            <li><a style="color:#000000; font-weight: 300" href="/service/consult/">諮詢</a></li>
 							<li><a style="font-weight: 300;color:#000000" href="/shop/">線上試題</a></li>
 						</ul>
 					</li>
@@ -102,7 +105,7 @@
     <div class="row align-items-center" style="height: 90px">
       <div class="col-lg-2" style="height: 90px">
         <div class="header-logo">
-          <a href="/"><img style="height:55px; position: relative; top:5px" src="/static/picture/logo.png" alt="logo"></a>
+          <a href="/"><img style="height:55px; position: relative; top:5px" src="/static/picture/footer-logo.png" alt="logo"></a>
         </div>
       </div>
       <div class="col-lg-8" style="position: relative; bottom: 10px;">
@@ -130,6 +133,7 @@
               <ul class="sub-menu">
                 <li><a href="/course/">Courses</a></li>
                 <li><a href="/course?type=tutor">Tutoring</a></li>
+                <li><a href="/service/consult/">Consult</a></li>
                 <li><a href="/shop/">Online Tests</a></li>
               </ul>
             </li>
@@ -176,6 +180,7 @@
           <ul class="sub-menu">
             <li><a style="font-weight: 300; color:#000000" href="/course/">Courses</a></li>
             <li><a style="font-weight: 300; color:#000000" href="/consult?type=tutor">Tutoring</a></li>
+            <li><a style="font-weight: 300; color:#000000" href="/service/consult/">Consult</a></li>
             <li><a style="font-weight: 300; color:#000000" href="/shop/">Online Tests</a></li>
           </ul>
         </li>
@@ -277,8 +282,8 @@
 		<div class="row image_load">
 		    {% if classification == 'type' %}
                 {% for collage in  collages %}
-                    <div class="col-lg-3 col-md-4 col-sm-6 col-6 grid-item {{collage.classification}}" style="margin-top:50px;margin-bottom:75px;">
-                        <div class="single-blog-box" style="margin:10px;box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);border-radius: 0">
+                    <div class="col-lg-3 col-md-4 col-sm-6 col-6 grid-item {{collage.classification}} school-block" >
+                        <div class="single-blog-box school-box" >
                             <div class="blog-content" style="background-color: #ffffff">
                                 <img style="width:100%" src="/media/{{collage.emblem}}" alt="image load error">
 
@@ -288,9 +293,9 @@
 
                                 <div class="blog-content-title">
                                     {% if lang == 'zh' %}
-                                    <h5 class="collage_title"><a class="collage_title" style="font-weight: 400" href="/detail/{{ collage.id}}">{{collage.name}}</a></h5>
+                                    <h5 class="collage_title"><a class="collage_title" style="font-weight: 400;line-height: 1.4" href="/detail/{{ collage.id}}">{{collage.name}}</a></h5>
                                     {% else %}
-                                    <h5 class="collage_title responsive_collage_title" ><a  style="font-weight: 400;font-size:17px" href="/detail/{{ collage.id}}">{{collage.en_name}}</a></h5>
+                                    <h5 class="collage_title responsive_collage_title" ><a  style="font-weight: 400;line-height: 1.4;font-size:17px" href="/detail/{{ collage.id}}">{{collage.en_name}}</a></h5>
                                     {% endif %}
                                 </div>
                                 <div class="blog-content-button">
@@ -302,8 +307,8 @@
                 {%endfor %}
 			{% else %}
                 {% for collage in  collages %}
-                    <div class="col-lg-3 col-md-4 col-sm-6 col-6 grid-item  {{collage.continent}}" style="margin-top:50px;margin-bottom:75px">
-                        <div class="single-blog-box" style="margin:10px;box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);border-radius: 0">
+                    <div class="col-lg-3 col-md-4 col-sm-6 col-6 grid-item school-block {{collage.continent}}" >
+                        <div class="single-blog-box school-box" >
                             <div class="blog-content" style="background-color: #ffffff">
                                 <img style="width:100%" src="/media/{{collage.emblem}}" alt="image load error">
 
@@ -312,9 +317,9 @@
                                 </div>
                                 <div class="blog-content-title">
                                     {% if lang == 'zh' %}
-                                    <h5 class="collage_title"><a class="collage_title" style="font-weight: 400" href="/detail/{{ collage.id}}">{{collage.name}}</a></h5>
+                                    <h5 class="collage_title"><a class="collage_title" style="font-weight: 400;line-height: 1.4" href="/detail/{{ collage.id}}">{{collage.name}}</a></h5>
                                     {% else %}
-                                    <h5 class="collage_title responsive_collage_title"><a class="collage_title" style="font-weight: 400;font-size:17px" href="/detail/{{ collage.id}}">{{collage.en_name}}</a></h5>
+                                    <h5 class="collage_title responsive_collage_title"><a class="collage_title" style="font-weight: 400;line-height: 1.4;font-size:17px" href="/detail/{{ collage.id}}">{{collage.en_name}}</a></h5>
                                     {% endif %}
                                 </div>
                                 <div class="blog-content-button">

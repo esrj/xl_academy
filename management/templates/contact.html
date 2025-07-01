@@ -29,12 +29,12 @@
 							<ul class="sub-menu">
 								<li><a href="/management/collage/">大學資訊</a></li>
 								<li><a href="/management/upload/">試題</a></li>
-								<li><a href="/management/course/">最新課程</a></li>
+{#								<li><a href="/management/course/">最新課程</a></li>#}
 							</ul>
 						</li>
-						<li class="menu-item-has-children">
-							<a style="font-weight: 400;color: black" href="/management/mail/">發送郵件</a>
-						</li>
+{#						<li class="menu-item-has-children">#}
+{#							<a style="font-weight: 400;color: black" href="/management/mail/">試題回覆</a>#}
+{#						</li>#}
 					</ul>
 				</div>
 			</div>
@@ -98,7 +98,12 @@
 {% endblock %}
 
 {% block content %}
-<div class="content" style="margin: 20px;margin-top :55px;margin-bottom: 55px">
+<style>
+    body{
+        background-color: #ffffff !important;
+    }
+</style>
+<div class="content" style="margin: 20px;margin-top :55px;margin-bottom: 150px">
 	<div class="page-inner">
 		<div class="row">
 			<div class="col-md-10" style="margin: 0 auto">

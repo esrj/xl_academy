@@ -68,6 +68,7 @@
 							<ul class="sub-menu">
 								<li><a href="/course/">Courses</a></li>
 								<li><a href="/course?type=tutor">Tutoring</a></li>
+                                <li><a href="/service/consult/">Consult</a></li>
 								<li><a href="/shop/">Online test </a></li>
 							</ul>
 						</li>
@@ -98,7 +99,7 @@
 					<li class="menu-item-has-children">
 						<a style="color:#000000;font-weight: 300" href="#">
 							About
-							<i class="fas fa-caret-down"></i>
+
 						</a>
 						<ul class="sub-menu">
 							<li><a style="color:#000000;font-weight: 300" href="/consult">About as</a></li>
@@ -114,6 +115,7 @@
 						<ul class="sub-menu">
 							<li><a style="color:#000000;font-weight: 300" href="/course/">Course</a></li>
 							<li><a style="color:#000000;font-weight: 300" href="/course?type=tutor">Tutoring</a></li>
+                            <li><a style="color:#000000;font-weight: 300" href="/service/consult/">Consult</a></li>
 							<li><a style="color:#000000;font-weight: 300" href="/shop/">Online test</a></li>
 						</ul>
 					</li>
@@ -134,23 +136,33 @@
 <div class="slider_list owl-carousel" style="top: -90px;">
 
 	<div class="slider-section style-2 align-items-center d-flex">
-        <video autoplay loop muted playsinline>
-            <source src="/static/slider/slider.mp4" type="video/mp4">
-            您的瀏覽器不支援此影片。
+        <video
+          id="hero-video"
+          autoplay
+          loop
+          muted
+          playsinline
+          preload="auto"
+        >
+          <source src="/static/slider/slider.mp4" type="video/mp4" />
+          您的瀏覽器不支援此影片。
         </video>
+
 		<div class="container">
 			<div class="row align-items-center cell-phone-style">
-				<div class="col-md-12 text-center">
+				<div class="col-md-12">
 					<div style="top: 30px" class="slider-content">
-						<div class="slider-sub-title">
-							<h4>XL Academy</h4>
-						</div>
-						<h1  style="font-weight: 400;">Taipei City Private XL Academy</h1>
-						<h1  style="font-weight: 400;">Cram School</h1>
+						<h1 class="background_title">Taipei City Private XL Academy</h1>
+						<h4 class="cover-text"  style="font-weight: 400;color: #d4d5d7">Taiwan’s Leading Cram School for Tutoring and College Consulting Excellence</h4>
+						<p  style="font-weight: 400;color: #d4d5d7">We specialize in two core areas:</p>
+						<p style="font-weight: 400;color: #d4d5d7"><strong>Tutoring Programs</strong> : Expert instruction in math, science, English, and test prep with proven strategies to boost scores and confidence.</p>
+						<p style="font-weight: 400;color: #d4d5d7"><strong>College Consulting</strong> : 1-on-1 mentorship to build competitive applications, develop standout personal statements, and guide students through every step of the admissions journey.</p>
+                        <div class ="cover-button" >
+                            <a href="/service/consult/">College Consulting</a>
+                            <a class ="cover-button_" href="/course/?type=tutor">Tutoring Programs</a>
+                        </div>
 					</div>
-					<div class ="cover-button" >
-						<a href="#service">Service<i class="bi bi-arrow-right"></i></a>
-					</div>
+
 				</div>
 			</div>
 		</div>
@@ -164,63 +176,58 @@
 			<div class="col-md-12 text-center">
 				<div class="section-title2 animate-block">
 					<h4 class="service-h4">Join us</h4>
-					<h1 style="position: relative;bottom: 25px">Maximize your potential</h1>
+					<h1 style="position: relative;bottom: 25px">Understand Your Child. Unlock Their Potential</h1>
                     <p style="color: #d5d6d8;">
-                        With our guidance, gain essential study abroad info and personalized application strategies.
+                        XL Academy has been at the forefront of academic success in Taiwan, delivering premium tutoring and college consulting services that help students unlock their full potential. Whether you're preparing for international standardized tests like the SAT, ACT, AP, IB, TOEFL, or IELTS, or aiming for top universities in the U.S., U.K., or Canada, XL Academy offers a results-driven, personalized approach to learning.Support your child’s growth with proven strategies that lead to real results—in school, on tests, and in life.
                     </p>
-                    <p style="color: #d5d6d8;">
-                        Enjoy one-on-one advice from school selection to interview coaching.
-                    </p>
-                    <p style="color: #d5d6d8;margin-bottom: 40px">
-                        Join us and start your international journey!
-                    </p>
+                    <br>
 				</div>
 
 			</div>
 		</div>
 		<div class="row cell-phone-style d-flex align-items-stretch">
-          <div class="col-lg-3 col-sm-6 d-flex">
+          <div class="col-lg-3 col-6 d-flex">
             <div class="flex-fill text-center join-us-block animate-left" >
               <div class="feature-icon">
                 <i style="font-size: xxx-large;" class="flaticon-user join-us-icon"></i>
               </div>
               <div class="feature-text">
-                  <h4 class = "join-us-h4" style="line-height: 1.2;min-height: 50px;font-weight: 400;">Professional faculty</h4>
-                  <p style="font-size: 14px;line-height: 1.2">Our faculty boasts exceptional academic credentials, ensuring top-tier instruction for all our students</p>
+                  <h4 class = "join-us-h4" style="line-height: 1.2;min-height: 50px;font-weight: 400;">Small group classes </h4>
+                  <p style="font-size: 14px;line-height: 1.2">We keep class sizes to just 1–3 students to ensure focused support. Students get the attention they need in a calm, productive setting ideal for faster progress.</p>
               </div>
             </div>
           </div>
-          <div class="col-lg-3 col-sm-6 d-flex">
+          <div class="col-lg-3 col-6 d-flex">
               <div class="flex-fill text-center join-us-block animate-left">
                 <div class="feature-icon">
                   <i style="font-size: xxx-large;" class="flaticon-idea join-us-icon"></i>
                 </div>
                 <div class="feature-text">
-                  <h4 class = "join-us-h4" style="line-height: 1.2;min-height: 50px;font-weight: 400;">self-growth</h4>
-                  <p style="font-size: 14px;line-height: 1.2">Offering personalized support to help students uncover their strengths and potential</p>
+                  <h4 class = "join-us-h4" style="line-height: 1.2;min-height: 50px;font-weight: 400;">Personalized teaching</h4>
+                  <p style="font-size: 14px;line-height: 1.2">Every class is tailored to the student’s needs. We adjust materials and teaching style based on their level, school curriculum, and academic goals.</p>
                 </div>
               </div>
           </div>
-          <div class="col-lg-3 col-sm-6 d-flex">
+          <div class="col-lg-3 col-6 d-flex">
             <div class="flex-fill text-center join-us-block animate-right" >
               <div class="feature-icon">
                 <i style="font-size: xxx-large;" class="flaticon-flag join-us-icon"></i>
               </div>
               <div class="feature-text">
-                <h4  class = "join-us-h4" style="line-height: 1.2;min-height: 50px;font-weight: 400;">nurturing interests</h4>
-				<p style="font-size: 14px;line-height: 1.2">Fostering a passion for learning, and nurturing their unique talents and abilities</p>
+                <h4  class = "join-us-h4" style="line-height: 1.2;min-height: 50px;font-weight: 400;">Qualified teachers</h4>
+				<p style="font-size: 14px;line-height: 1.2">Our instructors are from top 30 universities, have 10+ years of experience, or rank in the top 1% on major exams like SAT, ACT, AP, and IB.</p>
 
               </div>
             </div>
           </div>
-          <div class="col-lg-3 col-sm-6 d-flex">
+          <div class="col-lg-3 col-6 d-flex">
             <div class="flex-fill text-center join-us-block animate-right" >
               <div class="feature-icon">
                 <i style="font-size: xxx-large;" class="flaticon-help join-us-icon"></i>
               </div>
               <div class="feature-text">
-                <h4 class = "join-us-h4" style="line-height: 1.2;min-height: 50px;font-weight: 400;">lifelong support</h4>
-				<p style="font-size: 14px;line-height: 1.2">Supporting students from college to career with ongoing guidance at every step</p>
+                <h4 class = "join-us-h4" style="line-height: 1.2;min-height: 50px;font-weight: 400;">Scholar One-Stop</h4>
+				<p style="font-size: 14px;line-height: 1.2">We offer full academic support from lower grades to college prep. From tutoring to consulting, everything your child needs is in one place.</p>
 
               </div>
             </div>
@@ -230,7 +237,7 @@
 </div>
 
 {#  跑馬燈  #}
-<div  class=" style-home2 section-separate" style="position: relative;bottom: 100px;padding-bottom: 0;background-color: #f1f1f1">
+<div  class=" style-home2 section-separate run" >
     <div class="marquee-container">
       <div class="marquee-text">
         <span class="hollow">EMPOWERING  </span><span class="filled"> STUDENTS </span><span class="hollow"> FOR A BRIGHTER </span><span class="filled"> TOMORROW</span>
@@ -266,7 +273,6 @@
 		</div>
 	</div>
 </div>
-
 
 {# 關於我們#}
 <div style="margin-bottom: 100px" class=" style-home2">
@@ -329,8 +335,8 @@
 						 <div class="text-center">
                                 <h6 style="color: white" class="mb-0">Ellen Chu</h6>
                                 <p class="text-muted fs-14 mb-0" style="line-height: 1.2">Owner/Founder</p>
-                                <p class="text-muted fs-14 mb-0" style="line-height: 1.2">UC Berkley</p>
-                                <p class="teacher_text">XL Academy is the educational revolution students have been waiting for. With innovative teaching methods and expert tutors, every lesson is designed to spark success.</p>
+                                <p class="text-muted fs-14 mb-0" style="line-height: 1.2">UC Berkeley</p>
+                                <p class="teacher_text">Founder with 20+ years of experience. Has personally coached hundreds of successful college applicants across the U.S., U.K., and Asia.</p>
 						 </div>
 					</div>
 
@@ -349,7 +355,7 @@
                                 <h6 style="color: white" class="mb-0">Eric Chang</h6>
                                 <p class="text-muted fs-14 mb-0" style="line-height: 1.2">Academic Director</p>
                                 <p class="text-muted fs-14 mb-0" style="line-height: 1.2">University of British Columbia</p>
-                                <p class="teacher_text">Driven by creativity and commitment, XL Academy redefines tutoring. We focus on engagement, tailored instruction, and practical skills that prepare students for the future.</p>
+                                <p class="teacher_text">Academic Director with extensive experience in college counseling, debate, and AP instruction. Specializes in student growth and long-term academic strategy.</p>
 						 </div>
 					</div>
 					<div class="card team-box border-0 mt-3 teacher_border">
@@ -366,7 +372,7 @@
                                 <h6 style="color: white"  class="mb-0">Stephanie Chen</h6>
                                 <p class="text-muted fs-14 mb-0" style="line-height: 1.2">Teacher</p>
                                 <p class="text-muted fs-14 mb-0" style="line-height: 1.2">Boston University</p>
-                                <p  class="teacher_text">XL Academy revolutionizes learning by combining innovative teaching, personalized tutoring, and a dedicated team to unlock every student’s full potential.</p>
+                                <p  class="teacher_text">Creative writing and literature expert. Builds voice, clarity, and critical thinking through engaging, high-level instruction tailored to young writers.</p>
 						 </div>
 					</div>
 					<div class="card team-box border-0  mt-3 teacher_border">
@@ -383,7 +389,7 @@
                                 <h6 style="color: white" class="mb-0">Amy</h6>
                                 <p class="text-muted fs-14 mb-0" style="line-height: 1.2">Teacher</p>
                                 <p class="text-muted fs-14 mb-0" style="line-height: 1.2">University of Alberta</p>
-                                <p class="teacher_text">XL Academy offers a dynamic, student-centered experience. Our expert educators and advanced methods ensure that learning is both effective and inspiring.</p>
+                                <p class="teacher_text">Trusted English teacher for elementary and middle school students. Specializes in phonics, grammar, and international school admissions in Taipei.</p>
 						 </div>
 					</div>
 					<div class="card team-box border-0  mt-3 teacher_border">
@@ -400,7 +406,7 @@
                                 <h6 style="color: white" class="mb-0">Sven</h6>
                                 <p class="text-muted fs-14 mb-0" style="line-height: 1.2">Teacher</p>
                                 <p class="text-muted fs-14 mb-0" style="line-height: 1.2">National Taiwan University</p>
-                                <p class="teacher_text">XL Academy is the educational revolution students have been waiting for. With innovative teaching methods and expert tutors, every lesson is designed to spark success.</p>
+                                <p class="teacher_text">Future Physics PhD. AP Physics and Calculus specialist who simplifies complex concepts into clear, test-ready strategies for high-achieving students.</p>
 						 </div>
 					</div>
                     <div class="card team-box border-0  mt-3 teacher_border">
@@ -417,7 +423,7 @@
                                 <h6 style="color: white" class="mb-0">Preston</h6>
                                 <p class="text-muted fs-14 mb-0" style="line-height: 1.2">Teacher</p>
                                 <p class="text-muted fs-14 mb-0" style="line-height: 1.2">Columbia University</p>
-                                <p class="teacher_text">In today’s competitive landscape, XL Academy stands out with modern techniques and a passion for education. We empower students to excel academically and beyond</p>
+                                <p class="teacher_text">Top SAT & AP Math instructor helping students excel in problem-solving, advanced reasoning, and test strategy with proven score improvements.</p>
 						 </div>
 					</div>
                  </div>
@@ -430,93 +436,156 @@
 <div class="style-home2 section-separate" style="background-color: #1b1c1e">
     <div class="container">
         <div class="row cell-phone-style">
-            <div class="col-md-12 text-center">
+            <div class="col-sm-12" style="  text-align: center;">
                 <div style="display: flex; justify-content: center; align-items: baseline;">
-                    <h1 class="hour_title" id="counter" data-target="200000">0</h1>
-                    <h1 class="hour_title">+</h1>
+                    <h1 class="hour_title" id="counter" data-target="300000">0</h1>
+                    <h1  class="hour_title">$</h1>
                 </div>
-               <h3 class="hour_text">Hours of Tutoring Delivered</h3>
+                <h3 class="hour_text">Yearly scholarships offered by universities</h3>
             </div>
+{#            <div class="col-sm-6" style="  text-align: center;">#}
+{#                <div style="display: flex; justify-content: center; align-items: baseline;" >#}
+{#                    <h1  class="hour_title" id="counter_" data-target="83">0</h1>#}
+{#                    <h1  class="hour_title">%</h1>#}
+{#                </div>#}
+{#                <h3  class="hour_text">Acceptance rate into target schools</h3>#}
+{#            </div>#}
+
         </div>
     </div>
 </div>
 
 {# 環境照片 #}
+{#<div style="padding-top: 80px; padding-bottom: 90px; background-color:#111111" class="style-home2">#}
+{#  <div class="container">#}
+{#    <div class="row" style="align-items: stretch;">#}
+{#      <div class="col-lg-3 col-sm-6 animate-block d-flex blog-content-block">#}
+{#        <div class="single-blog-box blog-block flex-fill">#}
+{#          <div class="single-blog-thumb">#}
+{#            <img src="/static/image/env1.jpg" alt="imgs">#}
+{#          </div>#}
+{#          <div class="blog-content">#}
+{#            <div class="meta-blog">#}
+{#              <span><i class="bi bi-person"></i> By Admin</span>#}
+{#            </div>#}
+{#            <div class="blog-content-title">#}
+{#              <p>#}
+{#                Offering innovative courses and state-of-the-art facilities, nurturing independent thinking and problem-solving skills to empower students to create their future.#}
+{#              </p>#}
+{#            </div>#}
+{#          </div>#}
+{#        </div>#}
+{#      </div>#}
+{##}
+{#      <div class="col-lg-3 col-sm-6 animate-block d-flex blog-content-block">#}
+{#        <div class="single-blog-box blog-block flex-fill">#}
+{#          <div class="single-blog-thumb">#}
+{#            <img src="/static/image/env2.jpg" alt="imgs">#}
+{#          </div>#}
+{#          <div class="blog-content">#}
+{#            <div class="meta-blog">#}
+{#              <span><i class="bi bi-person"></i> By Admin</span>#}
+{#            </div>#}
+{#            <div class="blog-content-title">#}
+{#              <p>#}
+{#                Utilizing interdisciplinary teaching that blends technology and art, broadening students' perspectives and driving success on the global stage.#}
+{#              </p>#}
+{#            </div>#}
+{#          </div>#}
+{#        </div>#}
+{#      </div>#}
+{##}
+{#      <div class="col-lg-3 col-sm-6 animate-block d-flex blog-content-block">#}
+{#        <div class="single-blog-box blog-block flex-fill">#}
+{#          <div class="single-blog-thumb">#}
+{#            <img src="/static/image/env3.jpg" alt="imgs">#}
+{#          </div>#}
+{#          <div class="blog-content">#}
+{#            <div class="meta-blog">#}
+{#              <span><i class="bi bi-person"></i> By Admin</span>#}
+{#            </div>#}
+{#            <div class="blog-content-title">#}
+{#              <p>#}
+{#                Creating an interactive learning environment that inspires discussion and collaboration, fostering exceptional communication and leadership skills.#}
+{#              </p>#}
+{#            </div>#}
+{#          </div>#}
+{#        </div>#}
+{#      </div>#}
+{##}
+{#      <div class="col-lg-3 col-sm-6 animate-block d-flex blog-content-block">#}
+{#        <div class="single-blog-box blog-block flex-fill">#}
+{#          <div class="single-blog-thumb">#}
+{#            <img src="/static/image/env2.jpg" alt="imgs">#}
+{#          </div>#}
+{#          <div class="blog-content">#}
+{#            <div class="meta-blog">#}
+{#              <span><i class="bi bi-person"></i> By Admin</span>#}
+{#            </div>#}
+{#            <div class="blog-content-title">#}
+{#              <p>#}
+{#                Integrating an international curriculum with diverse cultures, encouraging exploration of the unknown, and expanding global perspectives as well as cross-cultural communication skills.#}
+{#              </p>#}
+{#            </div>#}
+{#          </div>#}
+{#        </div>#}
+{#      </div>#}
+{##}
+{#    </div>#}
+{#  </div>#}
+{#</div>#}
+
+
+
+{#    表格 #}
 <div style="padding-top: 80px; padding-bottom: 90px; background-color:#111111" class="style-home2">
   <div class="container">
     <div class="row" style="align-items: stretch;">
-      <div class="col-lg-3 col-sm-6 animate-block d-flex blog-content-block">
-        <div class="single-blog-box blog-block flex-fill">
-          <div class="single-blog-thumb">
-            <img src="/static/image/env1.jpg" alt="imgs">
-          </div>
-          <div class="blog-content">
-            <div class="meta-blog">
-              <span><i class="bi bi-person"></i> By Admin</span>
-            </div>
-            <div class="blog-content-title">
-              <p>
-                Offering innovative courses and state-of-the-art facilities, nurturing independent thinking and problem-solving skills to empower students to create their future.
-              </p>
-            </div>
-          </div>
-        </div>
+      <!-- 加上 px-0 取消左右 padding，讓子元素可以貼齊 container 兩側 -->
+      <div class="col-lg-12 animate-block px-0">
+        <!-- 表格寬度設為 100%，就會填滿這個 col -->
+        <table class="comparison" >
+          <thead>
+            <tr>
+              <th>Feature</th>
+              <th>Our Cram School</th>
+              <th>Competitors</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Curriculum Focus</td>
+              <td>Specialized programs for DSAT, TOEFL, business English, and conversation skills.</td>
+              <td>Generic English programs with no specialization.</td>
+            </tr>
+            <tr>
+              <td>Teaching Method</td>
+              <td>Conscientious focused: to be more honest, to be more trustworthy and to develop more self control. Real-world, interactive learning with practical applications.</td>
+              <td>Traditional, grammar-focused lessons.</td>
+            </tr>
+            <tr>
+              <td>Class Size</td>
+              <td>Small classes for personalized attention.</td>
+              <td>Large classes with less individual focus.</td>
+            </tr>
+            <tr>
+              <td>Support</td>
+              <td>Continuous tracking and personalized academic support.</td>
+              <td>Minimal student tracking and support.</td>
+            </tr>
+            <tr>
+              <td>Flexibility</td>
+              <td>Flexible scheduling with evening, weekend, and online options.</td>
+              <td>Fixed class schedules.</td>
+            </tr>
+            <tr>
+              <td>Exam Prep</td>
+              <td>Expert prep for IELTS, TOEFL, SAT with previous practice tests.</td>
+              <td>Basic exam preparation with fewer resources.</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
-
-      <div class="col-lg-3 col-sm-6 animate-block d-flex blog-content-block">
-        <div class="single-blog-box blog-block flex-fill">
-          <div class="single-blog-thumb">
-            <img src="/static/image/env2.jpg" alt="imgs">
-          </div>
-          <div class="blog-content">
-            <div class="meta-blog">
-              <span><i class="bi bi-person"></i> By Admin</span>
-            </div>
-            <div class="blog-content-title">
-              <p>
-                Utilizing interdisciplinary teaching that blends technology and art, broadening students' perspectives and driving success on the global stage.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-lg-3 col-sm-6 animate-block d-flex blog-content-block">
-        <div class="single-blog-box blog-block flex-fill">
-          <div class="single-blog-thumb">
-            <img src="/static/image/env3.jpg" alt="imgs">
-          </div>
-          <div class="blog-content">
-            <div class="meta-blog">
-              <span><i class="bi bi-person"></i> By Admin</span>
-            </div>
-            <div class="blog-content-title">
-              <p>
-                Creating an interactive learning environment that inspires discussion and collaboration, fostering exceptional communication and leadership skills.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-lg-3 col-sm-6 animate-block d-flex blog-content-block">
-        <div class="single-blog-box blog-block flex-fill">
-          <div class="single-blog-thumb">
-            <img src="/static/image/env2.jpg" alt="imgs">
-          </div>
-          <div class="blog-content">
-            <div class="meta-blog">
-              <span><i class="bi bi-person"></i> By Admin</span>
-            </div>
-            <div class="blog-content-title">
-              <p>
-                Integrating an international curriculum with diverse cultures, encouraging exploration of the unknown, and expanding global perspectives as well as cross-cultural communication skills.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-
     </div>
   </div>
 </div>
@@ -630,7 +699,7 @@
 			<div class="row">
 				<div class="col-md-12 text-center">
 					<div class="copyriht-content">
-						<span>Copyright &copy; 2024.XL Academy All rights reserved . <a style="color: white" target="_blank" href="https://www.freepik.com">Image Source </a></span>
+						<span>Copyright &copy; 2024.XL Academy All rights reserved .
 					</div>
 				</div>
 			</div>
@@ -761,31 +830,50 @@
                 }, stepTime);
             }
 
-              // 使用 Intersection Observer API 偵測元素進入畫面
-            const counterEl = document.getElementById('counter');
-            if (counterEl) {
-                const observer1 = new IntersectionObserver(entries => {
-                    try {
-                        entries.forEach(entry => {
-                            if (entry.isIntersecting) {
-                                // 避免重複觸發
-                                if (!counterEl.getAttribute('data-counted')) {
-                                    animateCounter(counterEl, 1000);
-                                    counterEl.setAttribute('data-counted', 'true');
-                                }
-                                observer1.unobserve(counterEl); // 停止觀察，避免重複觸發
-                            }
-                        });
-                    } catch (error) {
-                        console.error('Error in IntersectionObserver callback for counter:', error);
+              const DURATION = 3000;
+
+              // 取得所有有 data-target 的 <h1>
+              const counters = document.querySelectorAll('h1.hour_title[data-target]');
+
+              if (counters.length === 0) {
+                console.warn('找不到任何帶 data-target 的 counter 元素');
+              } else {
+                const observer = new IntersectionObserver((entries, obs) => {
+                  entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                      const el = entry.target;
+                      if (!el.hasAttribute('data-counted')) {
+                        animateCounter(el, DURATION);
+                        el.setAttribute('data-counted', 'true');
+                      }
+                      obs.unobserve(el);
                     }
-                }, {
-                    threshold: 0.5  // 元素超過一半進入視窗即觸發特效
-                });
-                observer1.observe(counterEl);
-            } else {
-                console.warn('找不到 id 為 counter 的元素');
-            }
+                  });
+                }, { threshold: 0.5 });
+
+                counters.forEach(el => observer.observe(el));
+              }
+
+              // 基於時間插值的動畫函式
+              function animateCounter(el, duration) {
+                const target = +el.getAttribute('data-target');
+                let startTime = null;
+
+                function update(timestamp) {
+                  if (!startTime) startTime = timestamp;
+                  const elapsed = timestamp - startTime;
+                  const progress = Math.min(elapsed / duration, 1);
+                  el.textContent = Math.floor(progress * target);
+
+                  if (elapsed < duration) {
+                    requestAnimationFrame(update);
+                  } else {
+                    el.textContent = target; // 確保結束時值剛好等於 target
+                  }
+                }
+
+                requestAnimationFrame(update);
+              }
 
             document.addEventListener("DOMContentLoaded", () => {
                 try {
@@ -818,6 +906,33 @@
             } catch (error) {
                 console.error('Error in overall script:', error);
             }
+
+
+          const vid = document.getElementById('hero-video');
+
+          // 第一次 canplay 時顯示並播放
+          vid.addEventListener('canplay', () => {
+            vid.style.visibility = 'visible';
+            vid.play();
+          });
+
+          // 若從其他頁面返回（bfcache），pageshow 會被呼叫
+          window.addEventListener('pageshow', (event) => {
+            if (event.persisted) {
+              // 重新載入影片，再啟動播放
+              vid.load();
+              vid.play();
+              vid.style.visibility = 'visible';
+            }
+          });
+
+          // 如果用同一頁多區塊切換，也可加 visibilitychange 保險
+          document.addEventListener('visibilitychange', () => {
+            if (!document.hidden) {
+              vid.play();
+            }
+          });
+
 
 
 	</script>

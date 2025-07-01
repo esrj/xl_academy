@@ -3,13 +3,23 @@
 
 
 {% block content %}
+<style>
+    body{
+        background-color: #ffffff !important;
+    }
+</style>
 <div class="content" style="margin: 20px;margin-top :55px;margin-bottom: 55px">
     <div class="col-md-9" style="margin: 0 auto">
         <h4>上傳試題與試題介紹</h4>
         <form>
+{#            <div class="mb-3">#}
+{#                <h6 style="font-weight: 500">上傳試題:</h6>#}
+{#                <input id="pdf" type="file" class="form-control">#}
+{#            </div>#}
+
             <div class="mb-3">
-                <h6 style="font-weight: 500">上傳試題:</h6>
-                <input id="pdf" type="file" class="form-control">
+                <h6 style="font-weight: 500">試題照片範例:</h6>
+                <input id="image" type="file" class="form-control">
             </div>
 
             <select id="classification" class=" form-select  mb-3 " style="border: 1px solid #cfd5dc;border-radius: 4px;" aria-label="Default select example">
@@ -34,6 +44,12 @@
             <div class="mb-3">
                 <textarea id="introduce_en" class="form-control"  rows="3" placeholder="介紹(英文)"></textarea>
             </div>
+            <div class="mb-3">
+                <textarea id="details" class="form-control"  rows="3" placeholder="細節"></textarea>
+            </div>
+            <div class="mb-3">
+                <textarea id="details_en" class="form-control"  rows="3" placeholder="細節(英文)"></textarea>
+            </div>
             <button onclick="upload_()" style="background: #ff3938;border: #ff3938;" type="button" class="btn btn-primary">確定上傳</button>
         </form>
     </div>
@@ -53,14 +69,18 @@
         return filename.toLowerCase().endsWith('.pdf');
     }
 
+    function isImage(filename) {
+        const allowedExtensions = ['.jpg', '.jpeg', '.png'];
+        return allowedExtensions.some(ext => filename.toLowerCase().endsWith(ext));
+    }
+
 
     function upload_(){
-
-        if($('#title').val() && $('#price').val() && $('#introduce').val() && $('#pdf').prop('files')[0] && $('#classification').val() !== "0" ){
-            if(!isPDF($('#pdf').prop('files')[0]['name'])){
+        if($('#title').val() && $('#price').val() && $('#introduce').val() && $('#image').prop('files')[0] && $('#classification').val() !== "0" ){
+            if(!isImage($('#image').prop('files')[0]['name'])){
                 swal({
                     'title':'格式不符',
-                    'text':'檔案必須是 pdf',
+                    'text':'照片必須是 jpg、png、jpeg 檔案',
                     "buttons":['確定'],
                     'icon':'warning'
                 })
@@ -73,13 +93,15 @@
                 })
             }else {
                 const formData = new FormData();
+                formData.append('details', $('#details').val());
+                formData.append('details_en', $('#details_en').val());
                 formData.append('title', $('#title').val());
                 formData.append('title_en', $('#title_en').val());
                 formData.append('price', $('#price').val());
                 formData.append('introduce', $('#introduce').val());
                 formData.append('introduce_en', $('#introduce_en').val());
                 formData.append('classification', $('#classification').val());
-                formData.append('pdf', $('#pdf').prop('files')[0]);
+                formData.append('image', $('#image').prop('files')[0]);
                 axios({
                     url: '/management/upload/',
                     method: "POST",

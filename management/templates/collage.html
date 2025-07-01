@@ -5,6 +5,11 @@
 
 
 {% block content %}
+<style>
+    body{
+        background-color: #ffffff !important;
+    }
+</style>
 <div class="content" style="margin: 20px;margin-top :55px;margin-bottom: 55px">
     <div class="col-md-9" style="margin: 0 auto">
         <h4>上傳大學資訊</h4>
@@ -13,10 +18,12 @@
                 <h6 style="font-weight: 500">上傳校徽:(限制：白底、正方形)</h6>
                 <input id="emblem" type="file" class="form-control">
             </div>
+
             <div class="mb-3">
                 <h6 style="font-weight: 500">上傳學校形象照片:</h6>
                 <input id="picture" type="file" class="form-control" >
             </div>
+
             <div class="row">
                 <h6 style="font-weight: 500">學校名稱:</h6>
                 <div class="mb-3 col-lg-6 col-md-12">
@@ -64,7 +71,6 @@
                 <div class="mb-3 ">
                     <input id="address" type="text" class="form-control"  placeholder="輸入學校所在地址">
                 </div>
-
             </div>
 
 
