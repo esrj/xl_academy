@@ -3317,12 +3317,18 @@
         position: relative;
         top: -5px
     }
+            .contact_us_text{
+        font-size: 24px;
+    }
 
 
 }
 
 /* small mobile :320px. */
 @media only screen and (min-width: 320px) and (max-width: 479px) {
+    .contact_us_text{
+        font-size: 23px;
+    }
         .footer-logo-pic{
         height: 50px;
         position: relative;
