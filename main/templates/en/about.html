@@ -1,0 +1,66 @@
+<body style=" background:#f9f9fc">
+{% extends 'school.html' %}
+
+
+{% block content %}
+<div class="breadcumb-area">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="breadcumb-content">
+					<div class="breadcubm-title">
+						{% if lang == 'zh' %}
+							<h1>發掘潛能，啟航未來</h1>
+							<ul>
+								<li><a href="/">首頁</a></li>
+								<li>/ 升學諮詢 </li>
+							</ul>
+						{% else %}
+							<h1>Unleash Potential, Embark on the Future</h1>
+							<ul>
+								<li><a href="/">Home</a></li>
+								<li>/ After-school Programs</li>
+							</ul>
+						{% endif %}
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<div style="margin-bottom: 100px;margin-top: 50px" class="style-home2">
+  <div class="container">
+    <div class="row align-items-center cell-phone-style animate-block">
+      <div class="col-lg-12">
+        <div class="section-title left">
+          <h4>Admissions</h4>
+          <h1>Inspire Wisdom, Shape the Future</h1>
+          <p style="margin-top: 10px;margin-bottom: 10px">
+            Since its founding in 2015 by distinguished UC Berkeley alumnus Ellen Chu, XL Academy has been committed to providing first-class education and study abroad services, building a solid bridge to top universities worldwide. Leveraging Ellen Chu's invaluable experience at world-class institutions, we have assembled a team of seasoned education experts and international study abroad consultants dedicated to offering comprehensive academic tutoring and study abroad planning.
+          </p>
+          <p style="margin-bottom: 10px">
+            Our educational system not only encompasses domestic academic tutoring but also focuses on tailoring application strategies for each student. From school selection consultation, application document preparation, and essay writing to interview simulations, we perfect every step to ensure that students stand out in fierce international competition. With our close partnerships with world-renowned universities such as Harvard, Oxford, Cambridge, and Stanford, we are able to keep abreast of admissions policies and the latest updates, securing the best admission opportunities for our students.
+          </p>
+          <p>
+            Furthermore, XL Academy places special emphasis on students' adaptation to overseas environments and career development. We provide professional guidance on cultural adaptation and subsequent career planning services, helping students quickly integrate into local academic and living environments upon entering foreign campuses, thereby laying a solid foundation for their future global careers. Every student's success is a testament to our passion for education and our comprehensive support, allowing every dream to set sail here and become a force for changing the world.
+          </p>
+        </div>
+        <div class="about-list-item">
+          <ul>
+            <li><img src="/static/picture/about-list-icon.png" alt="icon">Helped over 200 students gain admission to top universities worldwide, such as Stanford, MIT, etc.</li>
+            <li><img src="/static/picture/about-list-icon.png" alt="icon">Focused on cultivating students' critical thinking, creativity, and sense of responsibility.</li>
+            <li><img src="/static/picture/about-list-icon.png" alt="icon">Innovative, personalized teaching methods that empower students with the confidence to tackle academic challenges.</li>
+          </ul>
+        </div>
+        <div class="section-button">
+          <a href="/#contact">Contact Us<i class="bi bi-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
+</body>
