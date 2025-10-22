@@ -22,7 +22,12 @@
 @media (min-width: 1601px) and (max-width: 1800px){
     .breadcumb-area {
         padding: 250px 0 250px;
-
+    }
+    .breadcumb-area2 {
+        padding: 250px 0 250px;
+    }
+    .breadcumb-area3 {
+        padding: 250px 0 250px;
     }
     .slider-section.style-2 {
         height: 1050px;
@@ -52,6 +57,12 @@
     .breadcumb-area {
         padding: 300px 0 300px;
     }
+    .breadcumb-area2 {
+        padding: 300px 0 300px;
+    }
+    .breadcumb-area3 {
+        padding: 300px 0 300px;
+    }
 }
 /* Normal desktop :1400x. */
 @media (min-width: 1400px) and (max-width: 1600px){
@@ -63,6 +74,12 @@
 
 
     .breadcumb-area {
+        padding: 275px 0 275px;
+    }
+    .breadcumb-area2 {
+        padding: 275px 0 275px;
+    }
+    .breadcumb-area3 {
         padding: 275px 0 275px;
     }
 
@@ -188,7 +205,13 @@
 
     .breadcumb-area {
         padding: 250px 0 250px;
+    }
 
+    .breadcumb-area2 {
+        padding: 250px 0 250px;
+    }
+    .breadcumb-area3 {
+        padding: 250px 0 250px;
     }
 
     .section-separate-title {
@@ -488,8 +511,14 @@
 
     .breadcumb-area {
         padding: 220px 0 220px;
+    }
 
-     }
+    .breadcumb-area2 {
+        padding: 220px 0 220px;
+    }
+    .breadcumb-area3 {
+        padding: 220px 0 220px;
+    }
 
 
     .section-separate-title {
@@ -858,7 +887,13 @@
 
     .breadcumb-area {
         padding: 175px 0 175px;
+    }
 
+    .breadcumb-area2 {
+        padding: 175px 0 175px;
+    }
+    .breadcumb-area3 {
+        padding: 175px 0 175px;
     }
 
     .section-separate-title {
@@ -1424,7 +1459,14 @@
 
     .breadcumb-area {
         padding: 160px 0 160px;
+    }
 
+    .breadcumb-area2 {
+        padding: 160px 0 160px;
+    }
+
+    .breadcumb-area3 {
+        padding: 160px 0 160px;
     }
     .academy_title{
         font-size: 45px !important;
@@ -2002,7 +2044,12 @@
 
     .breadcumb-area {
         padding: 150px 0 150px;
-
+    }
+    .breadcumb-area2 {
+        padding: 150px 0 150px;
+    }
+    .breadcumb-area3 {
+        padding: 150px 0 150px;
     }
     .academy_title{
         font-size: 30px !important;
@@ -2705,9 +2752,14 @@
         transition: 0.5s;
         font-family: 'Roboto', sans-serif;
     }
-     .breadcumb-area {
+    .breadcumb-area {
         padding: 130px 0 130px;
-
+    }
+    .breadcumb-area2 {
+        padding: 130px 0 130px;
+    }
+    .breadcumb-area3 {
+        padding: 130px 0 130px;
     }
     .academy_title{
         font-size: 28px !important;
@@ -3497,6 +3549,12 @@
         font-family: 'Roboto', sans-serif;
     }
     .breadcumb-area {
+        padding: 80px 0 80px;
+    }
+    .breadcumb-area2 {
+        padding: 80px 0 80px;
+    }
+    .breadcumb-area3 {
         padding: 80px 0 80px;
     }
     .academy_title{

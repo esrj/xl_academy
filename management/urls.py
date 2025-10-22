@@ -8,15 +8,9 @@ urlpatterns = [
     path("contact/",views.contact),
     path("logout/",views.logout),
     path("",views.login),
-    path('testimony/',views.testimony),
     path('upload/',views.upload),
     path('collage/',views.collage),
-    path('mail/',views.mail),
-    path('mail/<int:id>/',views.sendmail),
     path('single/<int:id>/',views.single),
-    path('course/',views.course)
-
-
 ]
 if settings.DEBUG:
     urlpatterns+=static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)

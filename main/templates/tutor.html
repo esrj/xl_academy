@@ -2,9 +2,8 @@
 <body style=" background:#f9f9fc">
 {% extends 'school.html' %}
 
-
 {% block content %}
-<div class="breadcumb-area">
+<div class="breadcumb-area2">
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12">
@@ -51,7 +50,7 @@
 					</p>
 				</div>
 				<div class="about-list-item">
-					<ul class="course-phone-style2">
+					<ul >
 						<li><img src="/static/picture/about-list-icon.png" alt="icon">專業師資：我們擁有經驗豐富、專業的師資團隊</li>
 						<li><img src="/static/picture/about-list-icon.png" alt="icon">個人化教學：量身定制教學計劃，確保教學效果最大化</li>
 						<li><img src="/static/picture/about-list-icon.png" alt="icon">靈活彈性：提供彈性的上課時間安排，適應學生的時間和節奏</li>
@@ -78,7 +77,7 @@
                     </p>
                 </div>
                 <div class="about-list-item">
-                    <ul class="course-phone-style2">
+                    <ul >
                         <li><img src="/static/picture/about-list-icon.png" alt="icon">Experienced Faculty</li>
                         <li><img src="/static/picture/about-list-icon.png" alt="icon">Personalized Teaching</li>
                         <li><img src="/static/picture/about-list-icon.png" alt="icon">Flexible Scheduling</li>
@@ -95,7 +94,8 @@
 
 			<div class="col-lg-6 col-md-12 animate-right">
 				<div >
-					<img class="img_photo" style="margin-top: 25px" src="/static/picture/teacher.jpg" alt="about imgs">
+                    <img class="img_photo" style="margin-top: 25px" src="/static/picture/teacher.jpg" alt="about imgs">
+{#					<img class="img_photo" style="margin-top: 25px" src="/static/image/IMG_5473.JPG" alt="about imgs">#}
 				</div>
 			</div>
 		</div>
@@ -105,12 +105,12 @@
 <div class="service-section" style="margin-bottom: 25px">
 	<div class="container animate-block">
 		<div class="row">
-			<div class="row align-items-center">
-				<div class="col-md-12 phone-style">
+			<div class="">
+				<div class="col-md-12">
 					<div class="project-details-content">
 						{% if lang == 'zh' %}
 						<div class="project-details-title">
-							<div class="section-title">
+							<div class="section-t itle">
 								<h1 style="margin-top: 30px;margin-bottom: 10px">年度榜單</h1>
 							</div>
 							<p>我們非常榮幸地宣布，今年我們的補習班獲得了非常漂亮的榜單！這是對我們團隊的共同努力的最佳證明，也是對家長學生信任的極大回饋。值此喜慶時刻，我們滿懷自豪地宣布，我們的學子們在這個學年錄取了眾多優秀學府。未來，我們將繼續秉承培育精英的使命，為更多學子的夢想啟航！</p>

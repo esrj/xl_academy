@@ -4057,7 +4057,7 @@ color:#cccdcf;line-height: 1.4 ;font-size: 14px;margin-top: 20px
 ==========================*/
     .breadcumb-area {
         position: relative;
-        background: url(../image/slider2.jpg);
+        background: url(../image/IMG_5474.JPG);
         background-repeat: no-repeat;
         background-size: cover;
         background-position: center center;
@@ -4076,6 +4076,54 @@ color:#cccdcf;line-height: 1.4 ;font-size: 14px;margin-top: 20px
         background: rgba(0, 0, 0, 0.55);
         z-index:1
     }
+
+
+    .breadcumb-area2 {
+        position: relative;
+        background: url(../image/IMG_5470.JPG);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+        padding: 325px 0 325px;
+        text-align: center;
+        min-height: 200px; /* 设置一个最小高度，适应不同屏幕尺寸 */
+    }
+
+    .breadcumb-area2::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.55);
+        z-index:1
+    }
+
+
+    .breadcumb-area3 {
+        position: relative;
+        background: url(../image/IMG_5476.JPG);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+        padding: 325px 0 325px;
+        text-align: center;
+        min-height: 200px; /* 设置一个最小高度，适应不同屏幕尺寸 */
+    }
+
+    .breadcumb-area3::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.55);
+        z-index:1
+    }
+
+
     .breadcumb-content{
         position: relative;
         z-index: 2000;

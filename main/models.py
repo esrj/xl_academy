@@ -65,35 +65,28 @@ class TestQuestion(models.Model):
     classification = models.CharField(max_length=15)
 
 
-class BankAccount(models.Model):
-    bank_id = models.CharField(max_length=15)
-    account = models.CharField(max_length=25)
+# class BankAccount(models.Model):
+#     bank_id = models.CharField(max_length=15)
+#     account = models.CharField(max_length=25)
 
 
-class Order(models.Model):
-    date =  models.DateTimeField(auto_now_add = True)
-    username = models.CharField(max_length=50)
-    email = models.CharField(max_length=50)
-    phone = models.CharField(max_length=25)
-    bookid  = models.CharField(max_length=50)
-    content = models.TextField(default="")
+# class Order(models.Model):
+#     date =  models.DateTimeField(auto_now_add = True)
+#     username = models.CharField(max_length=50)
+#     email = models.CharField(max_length=50)
+#     phone = models.CharField(max_length=25)
+#     bookid  = models.CharField(max_length=50)
+#     content = models.TextField(default="")
 
-class Token(models.Model):
-    access_token = models.CharField(max_length = 300)
-    scope = models.CharField(max_length = 100)
-    token_type = models.CharField(max_length = 300)
-    expires_in = models.IntegerField()
-    refresh_token = models.CharField(max_length = 300)
-    client_id = models.CharField(max_length = 300)
-    client_secret = models.CharField(max_length = 100)
 
-class Course(models.Model):
-    title =  models.CharField(max_length = 300)
-    picture = models.FileField(upload_to = 'picture/')
-    text = models.TextField()
-    date = models.CharField(max_length = 100)
-    title_en =  models.CharField(max_length = 300,default="")
-    text_en = models.TextField(default="")
+
+# class Course(models.Model):
+#     title =  models.CharField(max_length = 300)
+#     picture = models.FileField(upload_to = 'picture/')
+#     text = models.TextField()
+#     date = models.CharField(max_length = 100)
+#     title_en =  models.CharField(max_length = 300,default="")
+#     text_en = models.TextField(default="")
 
 class Ranking(models.Model):
     title =   models.CharField(max_length = 300)

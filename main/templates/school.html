@@ -25,14 +25,14 @@
 							<a    style="font-weight: 300;color:#000000" href="/">首頁</a>
 						</li>
 						<li class="menu-item-has-children">
-							<a style="font-weight: 300;color:#000000" href="/consult">
+							<a style="font-weight: 300;color:#000000" href="/school">
 								大學諮詢
 								<i class="fas fa-caret-down"></i>
 							</a>
 							<ul class="sub-menu">
-								<li><a href="/consult">關於我們</a></li>
-								<li><a href="/consult?classification=type">學校類型</a></li>
-								<li><a href="/consult?classification=region">學校地區</a></li>
+								<li><a href="/school">關於我們</a></li>
+								<li><a href="/school/?classification=type">學校類型</a></li>
+								<li><a href="/school?classification=region">學校地區</a></li>
 							</ul>
 						</li>
 						<li class="menu-item-has-children">
@@ -75,9 +75,9 @@
 							關於我們
 						</a>
 						<ul class="sub-menu">
-							<li><a style="font-weight: 300;color:#000000" href="/consult">關於我們</a></li>
-							<li><a style="font-weight: 300;color:#000000" href="/consult?classification=type">學校類型</a></li>
-							<li><a style="font-weight: 300;color:#000000" href="/consult?classification=region">學校地區</a></li>
+							<li><a style="font-weight: 300;color:#000000" href="/school">關於我們</a></li>
+							<li><a style="font-weight: 300;color:#000000" href="/school?classification=type">學校類型</a></li>
+							<li><a style="font-weight: 300;color:#000000" href="/school?classification=region">學校地區</a></li>
 						</ul>
 					</li>
 					<li class="menu-item-has-children">
@@ -116,14 +116,14 @@
               <a style="font-weight: 300; color:#000000" href="/">Home</a>
             </li>
             <li class="menu-item-has-children">
-              <a style="font-weight: 300; color:#000000" href="/consult">
+              <a style="font-weight: 300; color:#000000" href="/school">
                 about
                 <i class="fas fa-caret-down"></i>
               </a>
               <ul class="sub-menu">
-                <li><a href="/consult">about as</a></li>
-                <li><a href="/consult?classification=type">School Types</a></li>
-                <li><a href="/consult?classification=region">School Regions</a></li>
+                <li><a href="/school">about as</a></li>
+                <li><a href="/school?classification=type">School Types</a></li>
+                <li><a href="/school?classification=region">School Regions</a></li>
               </ul>
             </li>
             <li class="menu-item-has-children">
@@ -168,9 +168,9 @@
             <i class="fas fa-caret-down"></i>
           </a>
           <ul class="sub-menu">
-            <li><a style="font-weight: 300; color:#000000" href="/consult">About as</a></li>
-            <li><a style="font-weight: 300; color:#000000" href="/consult?classification=type">School Types</a></li>
-            <li><a style="font-weight: 300; color:#000000" href="/consult?classification=region">School Regions</a></li>
+            <li><a style="font-weight: 300; color:#000000" href="/school">About as</a></li>
+            <li><a style="font-weight: 300; color:#000000" href="/school?classification=type">School Types</a></li>
+            <li><a style="font-weight: 300; color:#000000" href="/school?classification=region">School Regions</a></li>
           </ul>
         </li>
         <li class="menu-item-has-children">
@@ -337,11 +337,11 @@
                 {% if num > 1 %}
                 <li class="page-item">
 					{% if classification == 'type' %}
-                    <a style="color:black" class="page-link" href="/consult/?classification=type&page={{prev}}" aria-label="Previous">
+                    <a style="color:black" class="page-link" href="/school/?classification=type&page={{prev}}" aria-label="Previous">
                         <span aria-hidden="true">&laquo;</span>
                     </a>
 					{% else %}
-					 <a style="color:black" class="page-link" href="/consult/?classification=region&page={{prev}}" aria-label="Previous">
+					 <a style="color:black" class="page-link" href="/school/?classification=region&page={{prev}}" aria-label="Previous">
                         <span aria-hidden="true">&laquo;</span>
                     </a>
 					{% endif %}
@@ -349,19 +349,19 @@
                 {% endif %}
                 {% for i in all_page %}
 					{% if classification == 'type' %}
-                    <li class="page-item" ><a style="color:black" class="page-link" href="/consult/?classification=type&page={{i}}">{{i}}</a></li>
+                    <li class="page-item" ><a style="color:black" class="page-link" href="/school/?classification=type&page={{i}}">{{i}}</a></li>
 					{% else %}
-					<li class="page-item" ><a style="color:black" class="page-link" href="/consult/?classification=region&page={{i}}">{{i}}</a></li>
+					<li class="page-item" ><a style="color:black" class="page-link" href="/school/?classification=region&page={{i}}">{{i}}</a></li>
 					{% endif %}
                 {% endfor %}
                 {% if num !=  num_page  %}
                 <li class="page-item">
 					{% if classification == 'type' %}
-                    <a style="color:black" class="page-link" href="/consult/?classification=type&page={{next}}" aria-label="Next">
+                    <a style="color:black" class="page-link" href="/school/?classification=type&page={{next}}" aria-label="Next">
                         <span aria-hidden="true">&raquo;</span>
                     </a>
 					{% else %}
-					 <a style="color:black" class="page-link" href="/consult/?classification=region&page={{next}}" aria-label="Next">
+					 <a style="color:black" class="page-link" href="/school/?classification=region&page={{next}}" aria-label="Next">
                         <span aria-hidden="true">&raquo;</span>
                     </a>
 					{% endif %}

@@ -3,18 +3,9 @@ from django.http import JsonResponse, HttpResponse
 from django.contrib.auth import authenticate
 from django.contrib import auth
 import json
-from main.models import Profile,Contact,Testimony,Collage,TestQuestion,Order,Token,Course
+from main.models import Profile,Contact,Testimony,Collage,TestQuestion
 from django.contrib.auth.decorators import login_required
-import os
-from google.oauth2.credentials import Credentials
-from google.auth.transport.requests import Request
-from googleapiclient.discovery import build
 from django.shortcuts import render
-from django.http import HttpResponse
-import os.path
-from XL_Academy_website import settings
-
-from .mail import send_email
 
 
 SCOPES = ['https://mail.google.com/']
@@ -81,25 +72,7 @@ def single(request,id):
         contact.delete()
         return JsonResponse({'errno':0})
 
-# 感言影片上傳
-@login_required(login_url='/management/')
-def testimony(request):
-    if request.method == 'GET':
-        return render(request,'testimony.html')
-    if request.method == 'POST':
-        previous = Testimony.objects.all()
-        for prev in previous:
-            prev.delete()
-        video = request.POST.get('video')
-        title = request.POST.get('title')
-        student_name = request.POST.get('student_name')
-        content = request.POST.get('content')
-        content_en = request.POST.get('content_en')
-        title_en = request.POST.get('title_en')
-        student_name_en = request.POST.get('student_name_en')
-        testimony = Testimony.objects.create(title = title,video = video,student_name = student_name ,content = content , content_en = content_en,title_en = title_en ,student_name_en = student_name_en)
-        testimony.save()
-        return JsonResponse({'errno':0})
+
 
 # 試題上傳
 @login_required(login_url='/management/')
@@ -154,75 +127,11 @@ def collage(request):
         collage.save()
         return JsonResponse({'errno':0})
 
-@login_required(login_url='/management/')
-def mail(request):
-    orders = Order.objects.all()
-    return render(request,'mail.html',locals())
-
-@login_required(login_url='/management/')
-def course(request):
-    if request.method == 'GET':
-        return render(request,'course_.html')
-    else:
-        picture = request.FILES.get('picture')
-        print(picture)
-        title = request.POST.get('title')
-        date = request.POST.get('date')
-        text = request.POST.get('text')
-        text_en = request.POST.get('text_en')
-        title_en = request.POST.get('title_en')
-        course = Course.objects.create(picture = picture,title = title,date = date,text = text,title_en = title_en,text_en = text_en)
-        course.save()
-        return JsonResponse({'errno':0})
-
-
-@login_required(login_url='/management/')
-def sendmail(request, id):
-    if request.method == 'GET':
-        order = Order.objects.filter(id=id).first()
-        testQuestions = TestQuestion.objects.all()
-        return render(request, 'sendmail.html', locals())
-    if request.method == 'POST':
-        req = json.loads(request.body)
-        send_email(req['email'],'media/mail_template/mail.html','static/picture/footer-logo.png',req['checkedValue'],req['name'],'media')
-        # 伺服器環境
-        # send_email(req['email'],'/var/www/xl_academy/media/mail_template/mail.html','/var/www/staticfiles/static/picture/footer-logo.png',req['checkedValue'],req['name'],'/var/www/xl_academy/media')
-
-        return JsonResponse({"message": "Email sent successfully!"})
 
 
 
-def google_auth(request):
-    auth_url = (
-            "https://accounts.google.com/o/oauth2/auth"
-            "?client_id=" + settings.GMAIL_CLIENT_ID +
-            "&redirect_uri=" + settings.GMAIL_REDIRECT_URI +
-            "&response_type=code"
-            "&scope=https://www.googleapis.com/auth/gmail.send"
-            "&access_type=offline"
-    )
-    return redirect(auth_url)
 
 
-# 取得 refresh_token
-def google_callback(request):
-    code = request.GET.get("code")
-    token_url = "https://oauth2.googleapis.com/token"
-    data = {
-        "client_id": settings.GMAIL_CLIENT_ID,
-        "client_secret": settings.GMAIL_CLIENT_SECRET,
-        "code": code,
-        "redirect_uri": settings.GMAIL_REDIRECT_URI,
-        "grant_type": "authorization_code",
-    }
-
-    response = request.post(token_url, data=data).json()
-
-    refresh_token = response.get("refresh_token")
-    if refresh_token:
-        print("請存入 settings.py：", refresh_token)
-
-    return render(request, "callback.html", {"response": response})
 
 
 

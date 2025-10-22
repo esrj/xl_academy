@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'social_django',
+    # 'social_django',
     'main',
     'management'
 ]
@@ -118,14 +118,14 @@ USE_I18N = True
 USE_TZ = True
 
 
-SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '347464423661-sk33qi31bvdfdiaciol1qfu5fuqsjs8r.apps.googleusercontent.com'
-SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = '347464423661-sk33qi31bvdfdiaciol1qfu5fuqsjs8r.apps.googleusercontent.com'
-
-AUTHENTICATION_BACKENDS = (
-    'social_core.backends.google.GoogleOAuth2',
-    'django.contrib.auth.backends.ModelBackend',
-    # ...
-)
+# SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '347464423661-sk33qi31bvdfdiaciol1qfu5fuqsjs8r.apps.googleusercontent.com'
+# SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = '347464423661-sk33qi31bvdfdiaciol1qfu5fuqsjs8r.apps.googleusercontent.com'
+#
+# AUTHENTICATION_BACKENDS = (
+#     'social_core.backends.google.GoogleOAuth2',
+#     'django.contrib.auth.backends.ModelBackend',
+#     # ...
+# )
 
 LOGIN_URL = '/management'
 LOGOUT_URL = '/management/logout'
@@ -145,17 +145,5 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = 'media/'
 
 
-GMAIL_CLIENT_ID = "347464423661-sk33qi31bvdfdiaciol1qfu5fuqsjs8r.apps.googleusercontent.com"
-GMAIL_CLIENT_SECRET = "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"
-GMAIL_REDIRECT_URI = "http://localhost:8000/auth/callback/"
-GMAIL_REFRESH_TOKEN = "1//04VH_37zW7pg7CgYIARAAGAQSNwF-L9IrK_TjfNlxOQOmTCUI2DY4l7Bjm4N7hw5hBtv3iqv2iH06mW6fnVHcSE2NCch1PNj00VY"  # 取得後填入
-
-
-
-
-# Default primary key field type
-# https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
-
-DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 

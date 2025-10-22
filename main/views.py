@@ -1,16 +1,9 @@
 from django.shortcuts import render,redirect
 from django.http import JsonResponse, HttpResponse
-from django.contrib.auth import authenticate
-from django.contrib import auth
 import json
-from django.views.decorators.csrf import csrf_exempt
-from main.models import Profile,Contact,Testimony,Collage,TestQuestion,Order,Course,Ranking
-from django.contrib.auth.decorators import login_required
-from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+from main.models import Contact,Testimony,Collage,TestQuestion,Ranking
+from django.core.paginator import Paginator
 
-
-
-# Create your views here.
 def index(request):
     if request.method == 'GET':
         testimony = Testimony.objects.all().first()
@@ -38,7 +31,7 @@ def index(request):
         print(testimony.video)
         return  JsonResponse({'video':str(testimony.video)})
 
-def consult(request):
+def school(request):
     if request.method == 'GET':
         language = request.META.get('HTTP_ACCEPT_LANGUAGE')
         if language.split(',')[0] == 'zh-TW'  or language.split(',')[0] == 'zh':
@@ -48,9 +41,9 @@ def consult(request):
         classification = request.GET.get('classification',None)
         if classification == None:
             if lang == 'zh':
-                return render(request,'zh/consult.html',locals())
+                return render(request, 'zh/about.html', locals())
             else :
-                return render(request,'en/consult.html',locals())
+                return render(request, 'en/about.html', locals())
         # template 下的 consult 是大學介紹
         else:
             collages = Collage.objects.all().values('id','emblem','name','country','continent','classification','en_name')
@@ -129,7 +122,7 @@ def course(request):
     if  request.GET.get('type') == 'tutor':
         return render(request,'tutor.html',locals())
     else:
-        courses = Course.objects.all()
+        # courses = Course.objects.all()
         return render(request,'course.html',locals())
 
 def error_view(request, exception=None, template_name='error.html'):
@@ -153,4 +146,4 @@ def new_consult(request):
         lang = 'zh'
     else:
         lang = 'en'
-    return render(request,'new_consult.html',locals())
+    return render(request, 'consult.html', locals())
