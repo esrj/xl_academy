@@ -1,0 +1,63 @@
+{% extends 'school.html' %}
+
+{% block title %}關於 XL Academy | 愛斯樂文理補習班與留學代辦{% endblock %}
+{% block meta_description %}認識 XL Academy 愛斯樂文理補習班。我們提供留學代辦、升學諮詢、學術輔導與海外申請規劃，協助學生邁向世界名校。{% endblock %}
+{% block meta_keywords %}XL Academy, XL academy, xlacademy, 台北市私立艾司樂文理補習班, 艾司樂文理短期補習班, 愛斯樂文理補習班, 留學代辦, 升學諮詢, 海外申請{% endblock %}
+{% block og_title %}關於 XL Academy | 愛斯樂文理補習班與留學代辦{% endblock %}
+{% block og_description %}認識 XL Academy 愛斯樂文理補習班，提供留學代辦、升學諮詢、學術輔導與海外申請規劃。{% endblock %}
+
+{% block content %}
+<section class="page-hero">
+  <span class="orb a"></span>
+  <span class="orb b"></span>
+  <span class="grid"></span>
+  <div class="wrap">
+    <div class="inner">
+      <span class="crumb" data-reveal>
+        <a href="/">{% if lang == 'zh' %}首頁{% else %}Home{% endif %}</a>
+        <span class="sep">/</span>
+        {% if lang == 'zh' %}關於我們{% else %}About{% endif %}
+      </span>
+      <h1 data-reveal style="--d:60ms">
+        {% if lang == 'zh' %}發掘潛能，<span class="grad">啟航未來</span>{% else %}Unleash Potential, <span class="grad">Embark on the Future</span>{% endif %}
+      </h1>
+      <p class="lead" data-reveal style="--d:120ms">
+        {% if lang == 'zh' %}由柏克萊傑出校友創辦，XL Academy 是通往全球名校的堅實橋樑。{% else %}Founded by a UC Berkeley alumna, XL Academy is your bridge to the world's top universities.{% endif %}
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="split">
+      <div data-reveal="left">
+        <span class="eyebrow"><span class="dot"></span>升學諮詢與留學代辦</span>
+        <h2 class="h-title" style="margin-top:18px">啟迪智慧，<span class="grad">成就未來</span></h2>
+        <div class="prose" style="margin-top:22px">
+          <p>自 2015 年由加州大學柏克萊分校傑出校友 Ellen Chu 創辦以來，XL Academy 愛斯樂文理補習班便致力於提供一流的教育與留學服務，打造通向全球名校的堅實橋樑。憑藉 Ellen Chu 在世界頂尖學府累積的寶貴經驗，我們建立了一支由資深教育專家與國際留學顧問組成的團隊，專注於為學生提供全方位的學術輔導、升學諮詢與留學代辦規劃。</p>
+          <p>我們的教育體系不僅涵蓋國內學業輔導，更注重為學生量身定制申請策略。從選校諮詢、申請文件準備、文書撰寫到面試模擬，每個環節我們都精益求精。憑藉與哈佛、牛津、劍橋、史丹佛等世界知名大學建立的緊密合作，我們能第一時間掌握招生政策與最新動態，為學生爭取最佳錄取機會。</p>
+          <p>此外，XL Academy 還特別注重學生的海外適應與職涯發展，提供專業的海外文化適應指導與後續職業規劃服務，幫助學生迅速融入當地學習與生活環境，為未來全球職場發展奠定堅實基礎。</p>
+        </div>
+        <div style="margin-top:30px">
+          <a href="/#contact" class="btn btn-primary">聯絡我們
+            <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div data-reveal="right">
+        <article class="glass" style="padding:34px">
+          <span class="glow" style="background:rgba(45,212,191,.2)"></span>
+          <h3 style="font-size:18px;font-weight:600;color:#fff">我們的成果</h3>
+          <ul class="check-list" style="margin-top:22px">
+            <li><span class="tick"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>幫助超過 200 名學生進入世界頂尖大學，如史丹佛、麻省理工等。</li>
+            <li><span class="tick"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>著重培養學生的批判性思維、創造力與責任感。</li>
+            <li><span class="tick"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>創新、個性化的教學方法，賦予學生面對學術挑戰的信心。</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

@@ -1,0 +1,79 @@
+{% extends 'school.html' %}
+
+{% block title %}{% if lang == 'zh' %}{{testQuestion.title}}（{{testQuestion.classification}} 試題）| XL Academy 台北市私立艾司樂文理補習班{% else %}{{testQuestion.title_en}} ({{testQuestion.classification}}) | XL Academy{% endif %}{% endblock %}
+{% block meta_description %}{% if lang == 'zh' %}{{testQuestion.title}} － XL Academy 台北市私立艾司樂文理補習班的 {{testQuestion.classification}} 試題與教材，並提供留學代辦與升學諮詢。{% else %}{{testQuestion.title_en}} — {{testQuestion.classification}} test material from XL Academy, with study abroad support.{% endif %}{% endblock %}
+{% block meta_keywords %}{% if lang == 'zh' %}XL Academy, 台北市私立艾司樂文理補習班, 留學代辦, {{testQuestion.classification}}, {{testQuestion.title}}, 試題, 教材, 升學諮詢{% else %}XL Academy, 台北市私立艾司樂文理補習班, 留學代辦, {{testQuestion.classification}}, test material{% endif %}{% endblock %}
+{% block og_title %}{% if lang == 'zh' %}{{testQuestion.title}} | XL Academy{% else %}{{testQuestion.title_en}} | XL Academy{% endif %}{% endblock %}
+{% block og_description %}{% if lang == 'zh' %}{{testQuestion.classification}} 試題與教材，XL Academy 留學代辦與升學諮詢。{% else %}{{testQuestion.classification}} test material at XL Academy.{% endif %}{% endblock %}
+
+{% block content %}
+<section class="page-hero" style="padding-bottom:40px">
+  <span class="orb a"></span>
+  <span class="grid"></span>
+  <div class="wrap">
+    <div class="inner">
+      <span class="crumb" data-reveal>
+        <a href="/">{% if lang == 'zh' %}首頁{% else %}Home{% endif %}</a>
+        <span class="sep">/</span>
+        <a href="/shop/">{% if lang == 'zh' %}探索更多{% else %}Explore{% endif %}</a>
+        <span class="sep">/</span>
+        {{testQuestion.classification}}
+      </span>
+      <h1 data-reveal style="--d:60ms">{% if lang == 'zh' %}{{testQuestion.title}}{% else %}{{testQuestion.title_en}}{% endif %}</h1>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:56px">
+  <div class="wrap">
+    <div class="split" style="align-items:stretch">
+      <div data-reveal="left">
+        <span class="track-pill">{{testQuestion.classification}}</span>
+        <h2 style="margin-top:16px;font-size:24px;font-weight:600;color:#fff">{% if lang == 'zh' %}{{testQuestion.title}}{% else %}{{testQuestion.title_en}}{% endif %}</h2>
+        <p style="margin-top:14px;white-space:pre-line;line-height:1.85;color:var(--muted);font-weight:300">{% if lang == 'zh' %}{{testQuestion.introduce}}{% else %}{{testQuestion.introduce_en}}{% endif %}</p>
+
+        <div class="detail-meta" style="margin-top:22px">
+          <span class="chip">{% if lang == 'zh' %}試題編號{% else %}ID{% endif %} · {{testQuestion.id}}</span>
+        </div>
+        <div class="price-tag" style="margin-top:18px"><span class="cur">$</span>{{testQuestion.price}}</div>
+
+        <h3 style="margin-top:32px;font-size:18px;font-weight:600;color:#fff">{% if lang == 'zh' %}注意事項{% else %}Notice{% endif %}</h3>
+        <p style="margin-top:12px;white-space:pre-line;line-height:1.85;color:var(--muted);font-weight:300">{% if lang == 'zh' %}{{testQuestion.details}}{% else %}{{testQuestion.details_en}}{% endif %}</p>
+      </div>
+
+      <div data-reveal="right">
+        <article class="glass" style="padding:20px;height:100%">
+          <span class="glow"></span>
+          <div style="font-size:12px;font-weight:600;letter-spacing:.14em;color:var(--teal);padding:8px 4px">{% if lang == 'zh' %}試題圖片{% else %}PICTURE{% endif %}</div>
+          <div style="border-radius:16px;overflow:hidden;border:1px solid var(--border);margin-top:8px">
+            <img src="/media/{{ testQuestion.image }}" alt="{{testQuestion.title}}" style="width:100%;display:block">
+          </div>
+        </article>
+      </div>
+    </div>
+
+    <div class="cta-card" style="margin-top:48px" data-reveal>
+      <span class="cta-orb a"></span>
+      <span class="cta-orb b"></span>
+      <div class="cta-grid">
+        <div>
+          <span class="eyebrow"><span class="dot"></span>{% if lang == 'zh' %}詢問細節{% else %}Inquire{% endif %}</span>
+          <h2 class="h-title" style="margin-top:16px;font-size:clamp(24px,2.6vw,34px)">{% if lang == 'zh' %}想了解更多？<span class="grad">與我們聯繫</span>{% else %}Want to know more? <span class="grad">Contact us</span>{% endif %}</h2>
+          <p class="h-sub">{% if lang == 'zh' %}留下資料，我們會盡快回覆您關於這份試題的細節。{% else %}Leave your details and we'll get back to you about this item.{% endif %}</p>
+        </div>
+        <form class="contact-form" onsubmit="return false;">
+          <div class="field-row">
+            <div class="field"><label class="sr-only" for="username">{% if lang == 'zh' %}姓名{% else %}Name{% endif %}</label><input id="username" type="text" placeholder="{% if lang == 'zh' %}姓名 *{% else %}Name *{% endif %}" required></div>
+            <div class="field"><label class="sr-only" for="email">Email</label><input id="email" type="email" name="Email" placeholder="{% if lang == 'zh' %}電子郵件地址 *{% else %}Email *{% endif %}" required></div>
+          </div>
+          <div class="field"><label class="sr-only" for="phone">{% if lang == 'zh' %}聯絡電話{% else %}Phone{% endif %}</label><input id="phone" placeholder="{% if lang == 'zh' %}聯絡電話{% else %}Phone{% endif %}"></div>
+          <div class="field"><label class="sr-only" for="content">{% if lang == 'zh' %}問題內容{% else %}Message{% endif %}</label><textarea id="content" name="message" rows="4" placeholder="{% if lang == 'zh' %}請輸入您的問題... *{% else %}Your message... *{% endif %}"></textarea></div>
+          <button type="button" class="btn btn-primary" onclick="submit_()">{% if lang == 'zh' %}送出訊息{% else %}Send{% endif %}
+            <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

@@ -1,0 +1,143 @@
+{% extends 'contact.html' %}
+
+{% block admin_title %}上傳大學資訊 | XL Academy 管理後台{% endblock %}
+
+{% block content %}
+<div class="admin-head">
+  <h1>上傳大學資訊</h1>
+  <p>新增世界名校資料卡，所有欄位皆為必填。</p>
+</div>
+
+<div class="glass" style="max-width:900px;padding:34px">
+  <span class="glow"></span>
+  <form class="admin-form">
+    <div class="grid-2">
+      <div class="field"><label class="flabel" for="emblem">校徽（白底、正方形）</label><input id="emblem" type="file" accept=".jpg,.jpeg,.png"></div>
+      <div class="field"><label class="flabel" for="picture">學校形象照片</label><input id="picture" type="file" accept=".jpg,.jpeg,.png"></div>
+    </div>
+
+    <div class="grid-2">
+      <div class="field"><label class="flabel" for="name">學校名稱</label><input id="name" type="text" placeholder="輸入學校名稱"></div>
+      <div class="field"><label class="flabel" for="en_name">學校名稱（英文）</label><input id="en_name" type="text" placeholder="School name"></div>
+    </div>
+
+    <div class="grid-2">
+      <div class="field"><label class="flabel" for="info">學校資訊（排名、特色）</label><input id="info" type="text" placeholder="輸入學校資訊"></div>
+      <div class="field"><label class="flabel" for="info_en">學校資訊（英文）</label><input id="info_en" type="text" placeholder="School info"></div>
+    </div>
+
+    <div class="grid-2">
+      <div class="field"><label class="flabel" for="country">所在國家</label><input id="country" type="text" placeholder="輸入國家"></div>
+      <div class="field"><label class="flabel" for="country_en">所在國家（英文）</label><input id="country_en" type="text" placeholder="Country"></div>
+    </div>
+
+    <div class="grid-2">
+      <div class="field"><label class="flabel" for="city">所在城市</label><input id="city" type="text" placeholder="輸入城市"></div>
+      <div class="field"><label class="flabel" for="city_en">所在城市（英文）</label><input id="city_en" type="text" placeholder="City"></div>
+    </div>
+
+    <div class="grid-2">
+      <div class="field">
+        <label class="flabel" for="continent">所在洲</label>
+        <select id="continent">
+          <option value="0" selected>選擇學校所在洲</option>
+          <option value="America">America</option>
+          <option value="Europe">Europe</option>
+          <option value="Asia">Asia</option>
+          <option value="Australia">Australia</option>
+        </select>
+      </div>
+      <div class="field"><label class="flabel" for="address">學校地址</label><input id="address" type="text" placeholder="輸入學校地址"></div>
+    </div>
+
+    <div class="grid-2">
+      <div class="field"><label class="flabel" for="link">學校官方網址</label><input id="link" type="text" placeholder="https://"></div>
+      <div class="field">
+        <label class="flabel" for="classification">學校類別</label>
+        <select id="classification">
+          <option value="0" selected>選擇學校類別</option>
+          <option value="1">公立大學</option>
+          <option value="2">私立大學</option>
+          <option value="3">公立技術學院</option>
+          <option value="4">私立技術學院</option>
+          <option value="5">大學附設語言學校</option>
+          <option value="6">技術學院附設語言學校</option>
+          <option value="7">私立語言學校</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="grid-2">
+      <div class="field"><label class="flabel" for="introduction">大學介紹（建議 300–400 字）</label><textarea id="introduction" rows="5" placeholder="輸入主要大學介紹"></textarea></div>
+      <div class="field"><label class="flabel" for="introduction_en">大學介紹（英文）</label><textarea id="introduction_en" rows="5" placeholder="Introduction"></textarea></div>
+    </div>
+
+    <div class="grid-2">
+      <div class="field"><label class="flabel" for="achievement">學術成就（每條換行）</label><textarea id="achievement" rows="3" placeholder="每條輸入結束換行"></textarea></div>
+      <div class="field"><label class="flabel" for="achievement_en">學術成就（英文）</label><textarea id="achievement_en" rows="3" placeholder="One per line"></textarea></div>
+    </div>
+
+    <div class="grid-2">
+      <div class="field"><label class="flabel" for="reason">選擇此大學的理由</label><textarea id="reason" rows="3" placeholder="輸入理由"></textarea></div>
+      <div class="field"><label class="flabel" for="reason_en">選擇理由（英文）</label><textarea id="reason_en" rows="3" placeholder="Reasons"></textarea></div>
+    </div>
+
+    <div class="grid-2">
+      <div class="field"><label class="flabel" for="popular_departments">熱門科系（每條換行）</label><textarea id="popular_departments" rows="3" placeholder="每條輸入結束換行"></textarea></div>
+      <div class="field"><label class="flabel" for="popular_departments_en">熱門科系（英文）</label><textarea id="popular_departments_en" rows="3" placeholder="One per line"></textarea></div>
+    </div>
+
+    <div>
+      <button onclick="upload_()" type="button" class="btn btn-primary">確定上傳
+        <svg viewBox="0 0 24 24" fill="none" width="16" height="16"><path d="M12 19V6M5 12l7-7 7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+    </div>
+  </form>
+</div>
+
+<script>
+  function isImage(filename) { return ['.jpg', '.jpeg', '.png'].some(ext => filename.toLowerCase().endsWith(ext)); }
+
+  function upload_() {
+    if ($('#picture').prop('files')[0] && $('#emblem').prop('files')[0] && $('#name').val() && $('#en_name').val() &&
+        $('#info').val() && $('#country').val() && $('#city').val() && $('#continent').val() !== "0" &&
+        $('#address').val() && $('#link').val() && $('#classification').val() !== "0" &&
+        $('#introduction').val() && $('#achievement').val() && $('#reason').val() && $('#popular_departments').val()) {
+      if (!isImage($('#emblem').prop('files')[0]['name']) || !isImage($('#picture').prop('files')[0]['name'])) {
+        swal({ 'title': '格式不符', 'text': '照片必須是 jpg、png、jpeg 檔案', 'buttons': ['確定'], 'icon': 'warning' });
+      } else {
+        const formData = new FormData();
+        formData.append('image', $('#picture').prop('files')[0]);
+        formData.append('emblem', $('#emblem').prop('files')[0]);
+        formData.append('name', $('#name').val());
+        formData.append('en_name', $('#en_name').val());
+        formData.append('info', $('#info').val());
+        formData.append('info_en', $('#info_en').val());
+        formData.append('country', $('#country').val());
+        formData.append('country_en', $('#country_en').val());
+        formData.append('address', $('#address').val());
+        formData.append('city', $('#city').val());
+        formData.append('city_en', $('#city_en').val());
+        formData.append('continent', $('#continent').val());
+        formData.append('link', $('#link').val());
+        formData.append('classification', $('#classification').val());
+        formData.append('introduction', $('#introduction').val());
+        formData.append('introduction_en', $('#introduction_en').val());
+        formData.append('achievement', $('#achievement').val());
+        formData.append('achievement_en', $('#achievement_en').val());
+        formData.append('reason', $('#reason').val());
+        formData.append('reason_en', $('#reason_en').val());
+        formData.append('popular_departments', $('#popular_departments').val());
+        formData.append('popular_departments_en', $('#popular_departments_en').val());
+        axios({ url: '/management/collage/', method: "POST", headers: { 'X-CSRFToken': "{{ csrf_token }}", 'Content-Type': 'multipart/form-data;charset=UTF-8' }, data: formData }).then(res => {
+          if (res.data.errno === 0) {
+            swal({ 'title': '已成功更新', 'text': '請回主頁檢查', 'buttons': ['確定'], 'icon': 'success' });
+          }
+        });
+      }
+    } else {
+      swal({ 'title': '資料不全', 'text': '所有資料皆為必填', 'buttons': ['確定'], 'icon': 'warning' });
+    }
+  }
+</script>
+{% endblock %}

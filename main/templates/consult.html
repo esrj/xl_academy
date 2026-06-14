@@ -1,0 +1,198 @@
+{% extends 'school.html' %}
+
+{% block title %}{% if lang == 'zh' %}留學代辦與大學升學諮詢 | XL Academy 愛斯樂文理補習班{% else %}College Consulting and Study Abroad Guidance | XL Academy{% endif %}{% endblock %}
+{% block meta_description %}{% if lang == 'zh' %}XL Academy 愛斯樂文理補習班提供留學代辦、大學升學諮詢、選校策略、申請文件、文書修改與面試準備，協助學生申請海外名校。{% else %}XL Academy provides college consulting, study abroad guidance, school selection, essay support, and interview preparation for overseas university admissions.{% endif %}{% endblock %}
+{% block meta_keywords %}{% if lang == 'zh' %}XL Academy, XL academy, xlacademy, 台北市私立艾司樂文理補習班, 艾司樂文理短期補習班, 留學代辦, 升學諮詢, 大學申請, 海外留學{% else %}XL Academy, xlacademy, 台北市私立艾司樂文理補習班, 留學代辦, college consulting, study abroad guidance, overseas admissions, essay support, interview preparation{% endif %}{% endblock %}
+{% block og_title %}{% if lang == 'zh' %}留學代辦與大學升學諮詢 | XL Academy 愛斯樂文理補習班{% else %}College Consulting and Study Abroad Guidance | XL Academy{% endif %}{% endblock %}
+{% block og_description %}{% if lang == 'zh' %}XL Academy 提供留學代辦、大學升學諮詢、選校策略、文書修改與面試準備。{% else %}XL Academy provides college consulting, study abroad guidance, school selection, essay support, and interview preparation.{% endif %}{% endblock %}
+{% block structured_data %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "{% if lang == 'zh' %}XL Academy 留學代辦與大學升學諮詢{% else %}XL Academy College Consulting and Study Abroad Guidance{% endif %}",
+  "provider": { "@type": "EducationalOrganization", "name": "XL Academy" },
+  "areaServed": "Taipei",
+  "serviceType": "{% if lang == 'zh' %}留學代辦、升學諮詢、大學申請輔導{% else %}College consulting, study abroad guidance, and admissions support{% endif %}",
+  "url": "{{ request.build_absolute_uri }}"
+}
+</script>
+{% endblock %}
+
+{% block content %}
+<section class="page-hero">
+  <span class="orb a"></span>
+  <span class="orb b"></span>
+  <span class="grid"></span>
+  <div class="wrap">
+    <div class="inner">
+      <span class="crumb" data-reveal>
+        <a href="/">{% if lang == 'zh' %}首頁{% else %}Home{% endif %}</a>
+        <span class="sep">/</span>
+        {% if lang == 'zh' %}升學諮詢{% else %}College Consulting{% endif %}
+      </span>
+      <h1 data-reveal style="--d:60ms">
+        {% if lang == 'zh' %}量身升學諮詢，<span class="grad">一路領航</span>{% else %}Personalized College <span class="grad">Consulting</span>{% endif %}
+      </h1>
+      <p class="lead" data-reveal style="--d:120ms">
+        {% if lang == 'zh' %}台北留學代辦 · 30+ 年經驗 · 常春藤與全球大學申請支援，從定位、文書到面試，全程陪跑。{% else %}Taipei-based · 30+ years of experience · Ivy League & global admissions support — from positioning to essays and interviews.{% endif %}
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="head" style="max-width:760px">
+      <span class="eyebrow" data-reveal><span class="dot"></span>{% if lang == 'zh' %}大學升學諮詢 / 留學代辦{% else %}College Consulting{% endif %}</span>
+      <h2 class="h-title" data-reveal style="--d:60ms; margin-top:14px">
+        {% if lang == 'zh' %}常春藤與全球大學<span class="grad">申請支援</span>{% else %}Ivy League & Global <span class="grad">Admissions Support</span>{% endif %}
+      </h2>
+      <div class="prose" data-reveal style="--d:120ms; margin-top:18px">
+        <p>{% if lang == 'zh' %}在 XL Academy，我們提供專為台灣國際學校與雙語學校學生量身打造的全方位升學諮詢與留學代辦服務。無論申請美國常春藤、加州大學、英國名校（牛津、劍橋），或加拿大、歐洲、亞洲的頂尖學府，我們都協助學生掌握申請流程的每個環節，並以成績證明實力。{% else %}At XL Academy, we offer comprehensive college admissions consulting tailored to students at international and bilingual schools in Taiwan — from US Ivy Leagues and UC schools to Oxbridge and top universities across Canada, Europe, and Asia.{% endif %}</p>
+      </div>
+    </div>
+
+    <p style="margin:26px 0 14px; color:var(--muted); font-size:14px" data-reveal>{% if lang == 'zh' %}我們的學生錄取經歷包括：{% else %}Our students have been admitted to:{% endif %}</p>
+    <div class="detail-meta" data-reveal style="--d:60ms">
+      <span class="chip">Harvard</span><span class="chip">Yale</span><span class="chip">Stanford</span>
+      <span class="chip">Princeton</span><span class="chip">UC Berkeley</span><span class="chip">UCLA</span>
+      <span class="chip">U Michigan</span><span class="chip">Oxford</span><span class="chip">Imperial College</span>
+      <span class="chip">NYU</span><span class="chip">USC</span><span class="chip">Duke</span><span class="chip">Northwestern</span>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0">
+  <div class="wrap">
+    <div class="split">
+      <div data-reveal="left">
+        <h2 class="h-title" style="font-size:clamp(24px,2.6vw,34px)">{% if lang == 'zh' %}為什麼大學申請<span class="grad">比以往更嚴苛</span>{% else %}Why Admissions Are <span class="grad">Tougher Than Ever</span>{% endif %}</h2>
+        <p class="h-sub">{% if lang == 'zh' %}強而有力的申請不僅取決於「聰明」，更在於策略、時機與敘事。{% else %}A strong application is not just about being smart — it's about strategy, timing, and storytelling.{% endif %}</p>
+      </div>
+      <div data-reveal="right">
+        <ul class="check-list">
+          {% if lang == 'zh' %}
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>學校期待獨特的個人故事，而不僅僅是考試成績</li>
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>許多申請因文章撰寫不佳或活動經歷平凡而失敗</li>
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>學生不了解如何打造自己的「亮點」或定位</li>
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>截止日期與申請平台（Common App、UCAS）因國家而異</li>
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>若無指導，許多學生申請範圍過廣或缺乏策略</li>
+          {% else %}
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Schools expect unique personal stories, not just test scores</li>
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Many applications fail due to weak essays or generic activities</li>
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Students don't know how to build their "hook" or positioning</li>
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Deadlines and portals vary by country</li>
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Without guidance, students apply too broadly or without strategy</li>
+          {% endif %}
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0">
+  <div class="wrap">
+    <div class="head center">
+      <span class="eyebrow" data-reveal><span class="dot"></span>{% if lang == 'zh' %}服務內容{% else %}Services{% endif %}</span>
+      <h2 class="h-title" data-reveal style="--d:60ms">{% if lang == 'zh' %}我們的<span class="grad">升學諮詢服務</span>{% else %}Our Consulting <span class="grad">Services</span>{% endif %}</h2>
+    </div>
+    <div class="compare" data-reveal style="--d:120ms">
+      <table>
+        <thead><tr><th>{% if lang == 'zh' %}類別{% else %}Category{% endif %}</th><th>{% if lang == 'zh' %}服務{% else %}Service{% endif %}</th><th>{% if lang == 'zh' %}詳情{% else %}Details{% endif %}</th></tr></thead>
+        <tbody>
+          {% if lang == 'zh' %}
+          <tr><td>學業規劃</td><td>策略性學業規劃</td><td>根據申請科系選擇適當的 AP/IB 課程</td></tr>
+          <tr><td>課外活動</td><td>課外活動規劃</td><td>打造強而有力且具熱情驅動的獨特專案經歷</td></tr>
+          <tr><td>大學名單</td><td>大學名單規劃</td><td>根據個人背景與目標匹配目標校、挑戰校與安全校</td></tr>
+          <tr><td>申請書指導</td><td>個人陳述指導</td><td>一對一腦力激盪、撰寫與修改（美國/英國）</td></tr>
+          <tr><td>補充文書</td><td>補充文書指導</td><td>逐行審閱與潤飾每篇文章</td></tr>
+          <tr><td>申請平台</td><td>平台操作協助</td><td>Common App、UCAS、OUAC、Coalition、ApplyTexas 等</td></tr>
+          <tr><td>面試準備</td><td>面試模擬</td><td>牛津、劍橋、常春藤及熱門科系模擬面試</td></tr>
+          <tr><td>時間規劃</td><td>時間管理</td><td>追蹤所有截止日期，絕不錯過</td></tr>
+          {% else %}
+          <tr><td>Academic Planning</td><td>Strategic Academic Planning</td><td>Choose the right AP/IB courses for your major</td></tr>
+          <tr><td>Extracurricular</td><td>Extracurricular Planning</td><td>Build a strong, passion-driven resume with unique projects</td></tr>
+          <tr><td>College List</td><td>College List Building</td><td>Match target/reach/safety schools based on profile & goals</td></tr>
+          <tr><td>Essay Coaching</td><td>Personal Statement Coaching</td><td>1-on-1 brainstorming, drafting, and revision (US/UK)</td></tr>
+          <tr><td>Supplemental Essays</td><td>Supplemental Essay Guidance</td><td>We review & edit every essay line by line</td></tr>
+          <tr><td>Application Help</td><td>Application Portals Help</td><td>Common App, UCAS, OUAC, Coalition, ApplyTexas & more</td></tr>
+          <tr><td>Interview Prep</td><td>Interview Preparation</td><td>Mock interviews for Oxbridge, Ivies, and competitive majors</td></tr>
+          <tr><td>Timeline</td><td>Timeline Management</td><td>Never miss a deadline — we track it for you</td></tr>
+          {% endif %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0">
+  <div class="wrap">
+    <div class="head center">
+      <span class="eyebrow" data-reveal><span class="dot"></span>{% if lang == 'zh' %}時程規劃{% else %}Timeline{% endif %}</span>
+      <h2 class="h-title" data-reveal style="--d:60ms">{% if lang == 'zh' %}何時<span class="grad">開始準備</span>？{% else %}When Should You <span class="grad">Start</span>?{% endif %}</h2>
+    </div>
+    <div class="compare" data-reveal style="--d:120ms">
+      <table>
+        <thead><tr><th>{% if lang == 'zh' %}階段{% else %}Phase{% endif %}</th><th>{% if lang == 'zh' %}年級{% else %}Grade Level{% endif %}</th><th>{% if lang == 'zh' %}我們做什麼{% else %}What We Do{% endif %}</th></tr></thead>
+        <tbody>
+          {% if lang == 'zh' %}
+          <tr><td>基礎階段</td><td>9–10 年級</td><td>建立學術與課外活動基礎</td></tr>
+          <tr><td>準備階段</td><td>11 年級</td><td>確立大學名單、開始撰寫申請文件、啟動專案</td></tr>
+          <tr><td>最終階段</td><td>12 年級前暑假</td><td>完成文書、準備面試、提交早申請</td></tr>
+          <tr><td>申請階段</td><td>12 年級</td><td>提交常規申請、獎學金申請與面試準備</td></tr>
+          {% else %}
+          <tr><td>Foundation</td><td>Grade 9–10</td><td>Build academic & extracurricular foundation</td></tr>
+          <tr><td>Preparation</td><td>Grade 11</td><td>Identify college list, begin essays, launch projects</td></tr>
+          <tr><td>Finalization</td><td>Summer before Grade 12</td><td>Finalize essays, prep interviews, submit early apps</td></tr>
+          <tr><td>Application</td><td>Grade 12</td><td>Submit regular decisions, scholarships, interview prep</td></tr>
+          {% endif %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0">
+  <div class="wrap">
+    <div class="head center">
+      <span class="eyebrow" data-reveal><span class="dot"></span>{% if lang == 'zh' %}選擇我們{% else %}Why Us{% endif %}</span>
+      <h2 class="h-title" data-reveal style="--d:60ms">{% if lang == 'zh' %}為何家長選擇 <span class="grad">XL Academy</span>？{% else %}Why Families Choose <span class="grad">XL Academy</span>{% endif %}</h2>
+    </div>
+    <div class="compare" data-reveal style="--d:120ms">
+      <table>
+        <thead><tr><th>{% if lang == 'zh' %}優勢{% else %}Advantage{% endif %}</th><th>{% if lang == 'zh' %}說明{% else %}What It Means{% endif %}</th></tr></thead>
+        <tbody>
+          {% if lang == 'zh' %}
+          <tr><td>超過 30 年經驗</td><td>我們了解招生委員的思維</td></tr>
+          <tr><td>文章專家</td><td>專精於競爭激烈科系的個人故事撰寫</td></tr>
+          <tr><td>多地區支援</td><td>涵蓋美國、英國、加拿大、亞洲、歐洲、澳洲</td></tr>
+          <tr><td>教育與招生背景</td><td>前招生顧問、教師及頂尖大學畢業生</td></tr>
+          <tr><td>雙語團隊</td><td>以中文或英文向家長完整匯報</td></tr>
+          <tr><td>線上與面授選項</td><td>靈活配合台北及海外學生</td></tr>
+          {% else %}
+          <tr><td>30+ Years of Experience</td><td>We know how admissions officers think</td></tr>
+          <tr><td>Essay Experts</td><td>We specialize in personal storytelling for competitive majors</td></tr>
+          <tr><td>Multi-Region Support</td><td>US, UK, Canada, Asia, Europe, Australia — all covered</td></tr>
+          <tr><td>Education & Admissions Background</td><td>Former counselors, teachers, and top university graduates</td></tr>
+          <tr><td>Bilingual Team</td><td>Parents receive full updates in Mandarin or English</td></tr>
+          <tr><td>Online & In-Person</td><td>Flexible for students in Taipei or overseas</td></tr>
+          {% endif %}
+        </tbody>
+      </table>
+    </div>
+
+    <div class="cta-strip" data-reveal style="margin-top:48px">
+      <span class="cta-orb a"></span>
+      <span class="cta-orb b"></span>
+      <div>
+        <h2 class="h-title" style="font-size:clamp(22px,2.4vw,30px)">{% if lang == 'zh' %}準備好開始了嗎？{% else %}Ready to start?{% endif %}</h2>
+        <p class="h-sub" style="margin-top:10px">{% if lang == 'zh' %}預約一次免費策略諮詢，為孩子規劃最合適的升學路徑。{% else %}Book a free strategy session and map out the best path for your child.{% endif %}</p>
+      </div>
+      <a href="/#contact" class="btn btn-primary">{% if lang == 'zh' %}預約諮詢{% else %}Book a Call{% endif %}
+        <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+{% endblock %}

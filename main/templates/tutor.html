@@ -1,0 +1,84 @@
+{# 一對一家教頁面 #}
+{% extends 'school.html' %}
+
+{% block title %}{% if lang == 'zh' %}一對一家教課程 | XL Academy 台北市私立艾司樂文理補習班{% else %}One-on-One Tutoring | XL Academy Taipei{% endif %}{% endblock %}
+{% block meta_description %}{% if lang == 'zh' %}XL Academy 台北市私立艾司樂文理補習班提供一對一客製化家教，涵蓋 SAT、AP、IB 與校內課業，並結合留學代辦與升學諮詢。{% else %}XL Academy provides personalized one-on-one tutoring for SAT, AP, IB, and school subjects, with study abroad support.{% endif %}{% endblock %}
+{% block meta_keywords %}{% if lang == 'zh' %}XL Academy, XL academy, 台北市私立艾司樂文理補習班, 艾司樂文理短期補習班, 留學代辦, 一對一家教, SAT, AP, IB, 升學諮詢{% else %}XL Academy, 台北市私立艾司樂文理補習班, 留學代辦, one-on-one tutoring, SAT, AP, IB{% endif %}{% endblock %}
+{% block og_title %}{% if lang == 'zh' %}一對一家教課程 | XL Academy{% else %}One-on-One Tutoring | XL Academy{% endif %}{% endblock %}
+{% block og_description %}{% if lang == 'zh' %}XL Academy 一對一客製化家教，涵蓋 SAT、AP、IB 與留學代辦升學諮詢。{% else %}Personalized one-on-one tutoring with study abroad support at XL Academy.{% endif %}{% endblock %}
+
+{% block content %}
+<section class="page-hero">
+  <span class="orb a"></span>
+  <span class="orb b"></span>
+  <span class="grid"></span>
+  <div class="wrap">
+    <div class="inner">
+      <span class="crumb" data-reveal>
+        <a href="/">{% if lang == 'zh' %}首頁{% else %}Home{% endif %}</a>
+        <span class="sep">/</span>
+        {% if lang == 'zh' %}一對一教學{% else %}One-on-One Teaching{% endif %}
+      </span>
+      <h1 data-reveal style="--d:60ms">
+        {% if lang == 'zh' %}個性化學習體驗，<span class="grad">開啟無限可能</span>{% else %}Personalized Learning, <span class="grad">Infinite Possibilities</span>{% endif %}
+      </h1>
+      <p class="lead" data-reveal style="--d:120ms">
+        {% if lang == 'zh' %}專業老師依你的需求與節奏量身訂製教學計劃，精準解決每一個學習難題。{% else %}Expert teachers tailor each lesson to your needs and pace, solving every learning challenge precisely.{% endif %}
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="split">
+      <div data-reveal="left">
+        <span class="eyebrow"><span class="dot"></span>{% if lang == 'zh' %}一對一教學{% else %}One-on-One Teaching{% endif %}</span>
+        <h2 class="h-title" style="margin-top:16px">{% if lang == 'zh' %}個人化指導，<span class="grad">成就你的學習目標</span>{% else %}Personalized Guidance to <span class="grad">Achieve Your Goals</span>{% endif %}</h2>
+        <div class="prose" style="margin-top:18px">
+          <p>{% if lang == 'zh' %}歡迎來到我們的一對一教學區域！這裡是你專屬的學習空間，專業老師將根據你的學習需求和節奏量身訂製教學計劃，確保每一堂課都能精準解決學習難題。無論是學業疑惑或考試準備，我們都提供最有效的指導，讓你事半功倍。{% else %}Welcome to our one-on-one teaching space. Our professional teachers tailor plans to your needs and pace, ensuring every lesson addresses your challenges — whether academic doubts or exam preparation.{% endif %}</p>
+        </div>
+        <ul class="check-list" style="margin-top:24px">
+          {% if lang == 'zh' %}
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>專業師資：經驗豐富、專業的師資團隊</li>
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>個人化教學：量身定制教學計劃</li>
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>靈活彈性：彈性的上課時間安排</li>
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>全方位支援：資源分享、作業輔導與考試準備</li>
+          {% else %}
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Experienced faculty</li>
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Personalized teaching</li>
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Flexible scheduling</li>
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Comprehensive support</li>
+          {% endif %}
+        </ul>
+        <div style="margin-top:28px">
+          <a href="/#contact" class="btn btn-primary">{% if lang == 'zh' %}詢問詳細細節{% else %}Inquire for Details{% endif %}
+            <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="media" data-reveal="right" style="border-radius:var(--radius);overflow:hidden;border:1px solid var(--border)">
+        <img src="/static/picture/teacher.jpg" alt="{% if lang == 'zh' %}一對一教學{% else %}One-on-one teaching{% endif %}" style="width:100%;display:block">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0">
+  <div class="wrap">
+    <div class="head center">
+      <span class="eyebrow" data-reveal><span class="dot"></span>{% if lang == 'zh' %}年度榜單{% else %}Annual Rankings{% endif %}</span>
+      <h2 class="h-title" data-reveal style="--d:60ms">{% if lang == 'zh' %}學子們的<span class="grad">亮眼錄取</span>{% else %}Our Students' <span class="grad">Admissions</span>{% endif %}</h2>
+      <p class="h-sub" data-reveal style="--d:120ms">
+        {% if lang == 'zh' %}我們非常榮幸宣布今年漂亮的榜單！這是團隊共同努力的最佳證明，也是對家長與學生信任的回饋。{% else %}We are delighted to share this year's impressive rankings — proof of our team's efforts and the trust of our families.{% endif %}
+      </p>
+    </div>
+
+    <div class="detail-meta" data-reveal style="--d:160ms; justify-content:center">
+      {% for ranking in rankings %}
+      <span class="chip">{% if lang == 'zh' %}{{ranking.title}}{% else %}{{ranking.title_en}}{% endif %}</span>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endblock %}

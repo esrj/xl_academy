@@ -1,0 +1,311 @@
+{% extends 'school.html' %}
+
+{% block title %}{% if lang == 'zh' %}AP 課程輔導與數位 SAT 衝刺 | XL Academy 台北市私立艾司樂文理補習班{% else %}AP & Digital SAT Tutoring | XL Academy Taipei{% endif %}{% endblock %}
+{% block meta_description %}{% if lang == 'zh' %}XL Academy 台北市私立艾司樂文理補習班提供 AP 課程輔導、數位 SAT 衝刺、家教與課後專班，並結合留學代辦與升學諮詢，協助學生申請海外名校。{% else %}XL Academy offers AP tutoring, Digital SAT prep, and after-school programs in Taipei, with study abroad support and college consulting.{% endif %}{% endblock %}
+{% block meta_keywords %}{% if lang == 'zh' %}XL Academy, XL academy, 台北市私立艾司樂文理補習班, 艾司樂文理短期補習班, 留學代辦, AP 課程, 數位 SAT, DSAT, 家教, 升學諮詢{% else %}XL Academy, 台北市私立艾司樂文理補習班, 留學代辦, AP tutoring, Digital SAT, DSAT, Taipei tutoring{% endif %}{% endblock %}
+{% block og_title %}{% if lang == 'zh' %}AP 課程輔導與數位 SAT 衝刺 | XL Academy{% else %}AP & Digital SAT Tutoring | XL Academy{% endif %}{% endblock %}
+{% block og_description %}{% if lang == 'zh' %}XL Academy 提供 AP 課程輔導、數位 SAT 衝刺、家教與留學代辦升學諮詢。{% else %}AP tutoring, Digital SAT prep, tutoring, and study abroad support at XL Academy.{% endif %}{% endblock %}
+
+{% block content %}
+<section class="page-hero">
+  <span class="orb a"></span>
+  <span class="orb b"></span>
+  <span class="grid"></span>
+  <div class="wrap">
+    <div class="inner">
+      <span class="crumb" data-reveal>
+        <a href="/">{% if lang == 'zh' %}首頁{% else %}Home{% endif %}</a>
+        <span class="sep">/</span>
+        {% if lang == 'zh' %}學術指導{% else %}Academic Guidance{% endif %}
+      </span>
+      <h1 data-reveal style="--d:60ms">
+        {% if lang == 'zh' %}發掘潛能，<span class="grad">啟航未來</span>{% else %}Unleash Potential, <span class="grad">Embark on the Future</span>{% endif %}
+      </h1>
+      <p class="lead" data-reveal style="--d:120ms">
+        {% if lang == 'zh' %}課後專班、AP 課程輔導與數位 SAT 衝刺，專業師資帶你穩定突破。{% else %}After-school programs, AP tutoring, and Digital SAT prep — guided by expert instructors.{% endif %}
+      </p>
+    </div>
+  </div>
+</section>
+
+{# Intro #}
+<section class="section">
+  <div class="wrap">
+    <div class="split">
+      <div data-reveal="left">
+        <span class="eyebrow"><span class="dot"></span>{% if lang == 'zh' %}課後專班{% else %}After-school Programs{% endif %}</span>
+        <h2 class="h-title" style="margin-top:16px">{% if lang == 'zh' %}專業指導，<span class="grad">成就多彩人生</span>{% else %}Professional Guidance, <span class="grad">a Colorful Life</span>{% endif %}</h2>
+        <div class="prose" style="margin-top:18px">
+          <p>{% if lang == 'zh' %}歡迎來到我們的課後專班！這裡不僅提供豐富多彩的課後活動，讓學生探索興趣、啟發創造力，更有專業老師帶領多元課程，打造充滿樂趣與成長的學習空間。透過實際操作、互動討論與創意挑戰，讓孩子在輕鬆環境中發掘潛能、學會解決問題與表達自我。{% else %}Welcome to our after-school programs — a world beyond learning. We offer diverse activities to explore interests, inspire creativity, and foster holistic development, with professional teachers creating a fun and growth-oriented learning space.{% endif %}</p>
+        </div>
+        <ul class="check-list" style="margin-top:24px">
+          {% if lang == 'zh' %}
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>專業師資：經驗豐富、專業的師資團隊</li>
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>個人化教學：量身定制教學計劃，效果最大化</li>
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>靈活彈性：彈性的上課時間安排</li>
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>全方位支援：資源分享、作業輔導與考試準備</li>
+          {% else %}
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Professional faculty</li>
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Personalized teaching</li>
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Flexibility</li>
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Comprehensive support</li>
+          {% endif %}
+        </ul>
+        <div style="margin-top:28px">
+          <a href="/#contact" class="btn btn-primary">{% if lang == 'zh' %}詢問詳細細節{% else %}Inquire for details{% endif %}
+            <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="media" data-reveal="right" style="border-radius:var(--radius);overflow:hidden;border:1px solid var(--border)">
+        <img src="/static/image/logo2.jpg" alt="XL Academy" style="width:100%;display:block">
+      </div>
+    </div>
+  </div>
+</section>
+
+{# Overview with toggles #}
+<section class="section course-track-overview" style="padding-top:0" id="course-overview">
+  <div class="wrap">
+    <div class="head center">
+      <span class="eyebrow" data-reveal><span class="dot"></span>{% if lang == 'zh' %}課程總覽{% else %}Program Overview{% endif %}</span>
+      <h2 class="h-title" data-reveal style="--d:60ms">{% if lang == 'zh' %}AP 與數位 SAT <span class="grad">一頁掌握</span>{% else %}AP & Digital SAT <span class="grad">on One Page</span>{% endif %}</h2>
+      <p class="h-sub" data-reveal style="--d:120ms">{% if lang == 'zh' %}先快速比較兩種課程的重點，再點擊查看完整介紹、表格與報名資訊。{% else %}Compare both programs at a glance, then click for the full breakdown and key dates.{% endif %}</p>
+    </div>
+
+    <div class="course-tracks">
+      <button type="button" class="track-card course-track-toggle" data-target="AP-panel" id="AP" data-reveal aria-expanded="false">
+        <span class="glow"></span>
+        <span class="track-pill">{% if lang == 'zh' %}AP 課程輔導{% else %}AP Course Tutoring{% endif %}</span>
+        <h3>{% if lang == 'zh' %}適合需要學科深度、校內成績與考試策略同步提升的學生{% else %}Best for students who need subject depth, GPA support, and exam strategy{% endif %}</h3>
+        <p>{% if lang == 'zh' %}聚焦 AP 理科、人文社科與自學規劃，補強課綱、實驗、寫作與考前衝刺。{% else %}Focused on AP sciences, humanities, and self-study support with labs, writing, and intensive prep.{% endif %}</p>
+        <div class="track-points">
+          {% if lang == 'zh' %}<span>學科深度</span><span>校內成績</span><span>考試策略</span>{% else %}<span>Subject depth</span><span>GPA support</span><span>Exam strategy</span>{% endif %}
+        </div>
+        <span class="track-link">{% if lang == 'zh' %}查看 AP 課程{% else %}View AP Program{% endif %}<svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </button>
+
+      <button type="button" class="track-card course-track-toggle" data-target="DSAT-panel" id="DSAT" data-reveal style="--d:80ms" aria-expanded="false">
+        <span class="glow" style="background:rgba(45,212,191,.2)"></span>
+        <span class="track-pill" style="background:rgba(45,212,191,.14);color:var(--teal)">{% if lang == 'zh' %}數位 SAT 課程{% else %}Digital SAT Tutoring{% endif %}</span>
+        <h3>{% if lang == 'zh' %}適合需要適應新考制、提升分數效率與掌握數位節奏的學生{% else %}Best for students adapting to the new format and improving score efficiency{% endif %}</h3>
+        <p>{% if lang == 'zh' %}聚焦 DSAT 自適應題型、模擬測驗、時間管理與衝分計畫。{% else %}Focused on adaptive modules, realistic simulation, pacing, and targeted score improvement.{% endif %}</p>
+        <div class="track-points">
+          {% if lang == 'zh' %}<span>自適應題型</span><span>模擬考</span><span>衝分規劃</span>{% else %}<span>Adaptive format</span><span>Mock tests</span><span>Score growth</span>{% endif %}
+        </div>
+        <span class="track-link">{% if lang == 'zh' %}查看 DSAT 課程{% else %}View DSAT Program{% endif %}<svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </button>
+    </div>
+  </div>
+</section>
+
+{# AP panel #}
+<section class="section course-detail-panel" id="AP-panel" style="padding-top:0">
+  <div class="wrap">
+    <button type="button" class="course-back-btn"><svg viewBox="0 0 24 24" fill="none"><path d="M19 12H5M11 6l-6 6 6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>{% if lang == 'zh' %}返回課程總覽{% else %}Back to Overview{% endif %}</button>
+
+    <span class="eyebrow"><span class="dot"></span>{% if lang == 'zh' %}AP 課程輔導{% else %}AP Course Tutoring{% endif %}</span>
+    <h2 class="h-title" style="margin-top:14px">{% if lang == 'zh' %}為什麼 AP 課程對台灣學生<span class="grad">具挑戰性</span>{% else %}Why AP Classes Are <span class="grad">Challenging in Taiwan</span>{% endif %}</h2>
+
+    <ul class="check-list" style="margin-top:26px">
+      {% if lang == 'zh' %}
+      <li><span class="tick"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>學校課程進度迅速</li>
+      <li><span class="tick"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>自學者支援有限</li>
+      <li><span class="tick"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>GPA 與 SAT 壓力過大</li>
+      <li><span class="tick"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>英文術語複雜，特別是 AP 物理、化學與微積分</li>
+      <li><span class="tick"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>缺乏 AP 歷史與心理學的考試策略、時間分配與寫作練習</li>
+      <li><span class="tick"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>即使是校內頂尖學生，若無外部協助也常在 AP 考試表現不佳</li>
+      {% else %}
+      <li><span class="tick"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Fast-paced curricula at school</li>
+      <li><span class="tick"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Limited support for self-learners</li>
+      <li><span class="tick"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>High pressure from GPA and SAT demands</li>
+      <li><span class="tick"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Complex English terminology in AP Physics, Chemistry, Calculus</li>
+      <li><span class="tick"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Lack of exam strategy and writing practice for AP History/Psychology</li>
+      <li><span class="tick"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Even top students underperform on AP exams without outside help</li>
+      {% endif %}
+    </ul>
+
+    <h3 style="margin-top:44px;font-size:22px;font-weight:600;color:#fff">{% if lang == 'zh' %}自學 AP vs. 校內 AP 課程{% else %}Self-Studying vs. Taking AP Classes{% endif %}</h3>
+    <div class="compare" style="margin-top:20px">
+      <table>
+        <thead><tr><th>{% if lang == 'zh' %}類別{% else %}Category{% endif %}</th><th>{% if lang == 'zh' %}自學陷阱{% else %}Self-Study Pitfalls{% endif %}</th><th>{% if lang == 'zh' %}我們提供{% else %}What We Provide{% endif %}</th></tr></thead>
+        <tbody>
+          {% if lang == 'zh' %}
+          <tr><td>課程大綱</td><td>無結構化大綱或教師支援</td><td>系統化大綱與專業教師指導</td></tr>
+          <tr><td>實驗支援</td><td>無實驗室設備使用（AP 理科）</td><td>完整實驗室實作與指導</td></tr>
+          <tr><td>學分認證</td><td>無官方學校成績單學分</td><td>正式學校成績單記錄</td></tr>
+          <tr><td>進度節奏</td><td>校內課程進度過快，無充分複習</td><td>彈性進度安排與加強複習</td></tr>
+          {% else %}
+          <tr><td>Syllabus</td><td>No structured syllabus or teacher support</td><td>Systematic syllabus and professional support</td></tr>
+          <tr><td>Lab Access</td><td>No lab access (for AP Sciences)</td><td>Full lab practice and guided instruction</td></tr>
+          <tr><td>Transcript</td><td>No official transcript credit</td><td>Official transcript credit recorded</td></tr>
+          <tr><td>Pacing</td><td>Schools rush through materials</td><td>Flexible pacing with thorough review</td></tr>
+          {% endif %}
+        </tbody>
+      </table>
+    </div>
+
+    <div class="info-grid cols-2" style="margin-top:44px">
+      <article class="glass info-card" data-reveal>
+        <span class="glow"></span>
+        <h3>{% if lang == 'zh' %}AP 報名與截止日期{% else %}AP Registration & Deadlines{% endif %}</h3>
+        <ul class="check-list" style="margin-top:16px">
+          {% if lang == 'zh' %}
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>多數 AP 考試報名於 11 月初截止</li>
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>逾期報名費用更高且可能影響考場選擇</li>
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>須透過學校或 College Board 認可考點報名（我們可協助）</li>
+          {% else %}
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Most AP sign-ups close by early November</li>
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Late sign-ups cost more and may limit centers</li>
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Register via school or College Board centers (we assist)</li>
+          {% endif %}
+        </ul>
+      </article>
+      <article class="glass info-card" data-reveal style="--d:80ms">
+        <span class="glow"></span>
+        <h3>{% if lang == 'zh' %}為何家長選擇我們{% else %}Why Parents Choose Us{% endif %}</h3>
+        <ul class="check-list" style="margin-top:16px">
+          {% if lang == 'zh' %}
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>雙語支援：英語及中文授課</li>
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>經驗豐富師資：曾獲 AP 5 分或主修相關科目</li>
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>彈性排課：協助同時備考 IB、SAT 或校內考試</li>
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>一對一與小班制：依學習習慣最佳化</li>
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>衝刺課程：考前 1 個月集中訓練</li>
+          {% else %}
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Bilingual support: English or Mandarin</li>
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Experienced instructors (AP 5 scorers)</li>
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Custom schedules for IB/SAT/local exams</li>
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>1-on-1 and small group classes</li>
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Crash courses: 1-month intensive prep</li>
+          {% endif %}
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+{# DSAT panel #}
+<section class="section course-detail-panel" id="DSAT-panel" style="padding-top:0">
+  <div class="wrap">
+    <button type="button" class="course-back-btn"><svg viewBox="0 0 24 24" fill="none"><path d="M19 12H5M11 6l-6 6 6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>{% if lang == 'zh' %}返回課程總覽{% else %}Back to Overview{% endif %}</button>
+
+    <span class="eyebrow"><span class="dot"></span>{% if lang == 'zh' %}數位 SAT 課程輔導{% else %}Digital SAT Tutoring{% endif %}</span>
+    <h2 class="h-title" style="margin-top:14px">{% if lang == 'zh' %}為何數位 SAT <span class="grad">比以往更具挑戰性</span>{% else %}Why the Digital SAT Is <span class="grad">More Challenging</span>{% endif %}</h2>
+
+    <ul class="check-list" style="margin-top:26px">
+      {% if lang == 'zh' %}
+      <li><span class="tick"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>自適應題組（題目越難，壓力越大）</li>
+      <li><span class="tick"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>更緊湊的數位考試節奏帶來時間壓力</li>
+      <li><span class="tick"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>閱讀理解與文法的新題型</li>
+      <li><span class="tick"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>數學部分計算器使用規則變更</li>
+      <li><span class="tick"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>缺乏紙本模擬考或針對 DSAT 格式的實用策略</li>
+      <li><span class="tick"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>即使基礎良好，因不熟悉考試形式，成績常偏低</li>
+      {% else %}
+      <li><span class="tick"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Adaptive modules (harder questions = higher stakes)</li>
+      <li><span class="tick"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Time pressure with tighter digital pacing</li>
+      <li><span class="tick"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>New question types in reading and grammar</li>
+      <li><span class="tick"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Calculator usage changes in the math section</li>
+      <li><span class="tick"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Lack of mock exams or proven DSAT strategies</li>
+      <li><span class="tick"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Strong students score lower due to format unfamiliarity</li>
+      {% endif %}
+    </ul>
+
+    <h3 style="margin-top:44px;font-size:22px;font-weight:600;color:#fff">{% if lang == 'zh' %}自學 DSAT 適合嗎？{% else %}Should You Self-Study for the DSAT?{% endif %}</h3>
+    <div class="compare" style="margin-top:20px">
+      <table>
+        <thead><tr><th>{% if lang == 'zh' %}類別{% else %}Category{% endif %}</th><th>{% if lang == 'zh' %}自學陷阱{% else %}Self-Study Pitfalls{% endif %}</th><th>{% if lang == 'zh' %}我們提供{% else %}What We Provide{% endif %}</th></tr></thead>
+        <tbody>
+          {% if lang == 'zh' %}
+          <tr><td>資源</td><td>不符合 DSAT 考試風格的過時資源</td><td>DSAT 專屬練習與模擬</td></tr>
+          <tr><td>管道</td><td>無法使用數位自適應模擬平臺</td><td>真實自適應模擬考試與進度追蹤</td></tr>
+          <tr><td>回饋</td><td>對寫作或閱讀錯誤的回饋有限</td><td>一對一輔導與詳細分析</td></tr>
+          <tr><td>節奏</td><td>缺乏節奏管理策略</td><td>具信心的完卷技巧</td></tr>
+          {% else %}
+          <tr><td>Resources</td><td>Outdated resources that don't match DSAT</td><td>DSAT-specific drills & simulations</td></tr>
+          <tr><td>Access</td><td>No access to adaptive mock platforms</td><td>Real adaptive mock tests & tracking</td></tr>
+          <tr><td>Feedback</td><td>Limited feedback on errors</td><td>1-on-1 coaching with detailed analysis</td></tr>
+          <tr><td>Pacing</td><td>Lack of pacing strategies</td><td>Proven techniques to finish on time</td></tr>
+          {% endif %}
+        </tbody>
+      </table>
+    </div>
+    <p class="h-sub" style="margin-top:18px">{% if lang == 'zh' %}📣 大多數自學者每月僅進步 20–30 分，而我們的平均學員在 2–3 個月內進步 80–150+ 分。{% else %}📣 Most self-studiers improve only 20–30 points per month. Our average student improves 80–150+ points in 2–3 months.{% endif %}</p>
+
+    <div class="info-grid cols-2" style="margin-top:44px">
+      <article class="glass info-card" data-reveal>
+        <span class="glow" style="background:rgba(45,212,191,.2)"></span>
+        <h3>{% if lang == 'zh' %}DSAT 重要日期與資訊（2025）{% else %}Important DSAT Dates & Facts (2025){% endif %}</h3>
+        <ul class="check-list" style="margin-top:16px">
+          {% if lang == 'zh' %}
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>DSAT 考試場次：3、5、8、10、12 月</li>
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>報名於考前約 1 個月截止</li>
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>大多數美國大學（尤其百大）要求 DSAT 成績</li>
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>成績選擇政策可只寄送最佳成績</li>
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>競爭科系（CS、醫科、商科）仍重視高分</li>
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>台灣考場很快額滿，我們協助提前規劃</li>
+          {% else %}
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Test dates: March, May, August, October, December</li>
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Registration closes ~1 month before</li>
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Required for most U.S. top-100 universities</li>
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Score Choice lets you send your best score</li>
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>CS, Pre-Med, Business remain score-sensitive</li>
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Taiwan centers fill quickly — we plan ahead</li>
+          {% endif %}
+        </ul>
+      </article>
+      <article class="glass info-card" data-reveal style="--d:80ms">
+        <span class="glow" style="background:rgba(45,212,191,.2)"></span>
+        <h3>{% if lang == 'zh' %}為何家長信任 XL Academy 的 DSAT 課程{% else %}Why Parents Trust XL Academy for DSAT{% endif %}</h3>
+        <ul class="check-list" style="margin-top:16px">
+          {% if lang == 'zh' %}
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>雙語輔導：英語或中文授課</li>
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>客製學習計畫：依初診結果與校內課表</li>
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>高分師資：1500–1580 分得主或名校校友</li>
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>一對一／小班制：專注、精準教學</li>
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>數位模擬考：真實自適應考場體驗</li>
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>衝刺課程＆密集營：考前最後衝刺</li>
+          {% else %}
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Bilingual coaching: English or Mandarin</li>
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Customized study plans from diagnostics</li>
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Top-scoring instructors (1500–1580)</li>
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>1-on-1 or small group classes</li>
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Digital mock exams (fully adaptive)</li>
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Crash courses & intensive camps</li>
+          {% endif %}
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<script>
+  (function () {
+    var overview = document.querySelector('.course-track-overview');
+    var panels = document.querySelectorAll('.course-detail-panel');
+    var cards = document.querySelectorAll('.course-track-toggle');
+    var backBtns = document.querySelectorAll('.course-back-btn');
+    if (!overview || panels.length === 0 || cards.length === 0) return;
+
+    function closeAll() {
+      panels.forEach(function (p) { p.classList.remove('is-open'); });
+      overview.classList.remove('is-hidden');
+    }
+    cards.forEach(function (card) {
+      card.addEventListener('click', function () {
+        var panel = document.getElementById(card.getAttribute('data-target'));
+        if (!panel) return;
+        closeAll();
+        overview.classList.add('is-hidden');
+        panel.classList.add('is-open');
+        setTimeout(function () { panel.scrollIntoView({ behavior: 'smooth', block: 'start' }); }, 60);
+      });
+    });
+    backBtns.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        closeAll();
+        setTimeout(function () { overview.scrollIntoView({ behavior: 'smooth', block: 'start' }); }, 60);
+      });
+    });
+  })();
+</script>
+{% endblock %}

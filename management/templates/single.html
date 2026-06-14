@@ -1,0 +1,44 @@
+{% extends 'contact.html' %}
+
+{% block admin_title %}聯絡詳細內容 | XL Academy 管理後台{% endblock %}
+
+{% block content %}
+<div class="admin-head">
+  <a href="/management/contact/" class="btn btn-ghost" style="padding:9px 18px;font-size:14px">
+    <svg viewBox="0 0 24 24" fill="none" width="15" height="15"><path d="M19 12H5M11 6l-6 6 6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    返回聯絡狀態
+  </a>
+  <h1 style="margin-top:18px">詳細內容</h1>
+</div>
+
+<div class="glass" style="max-width:720px;padding:34px">
+  <span class="glow"></span>
+  <div class="detail-rows">
+    <div class="drow"><span class="dk">姓名</span><span class="dv">{{contact.name}}</span></div>
+    <div class="drow"><span class="dk">聯絡電話</span><span class="dv">{{contact.phone|default:"—"}}</span></div>
+    <div class="drow"><span class="dk">電子郵件</span><span class="dv">{{contact.email}}</span></div>
+    <div class="drow"><span class="dk">聯絡內容</span><span class="dv">{{contact.content}}</span></div>
+    <div class="drow"><span class="dk">狀態</span><span class="dv">
+      {% if contact.reply %}<span class="status ok">已確認寄出</span>{% else %}<span class="status pending">尚未回覆</span>{% endif %}
+    </span></div>
+  </div>
+
+  <div style="margin-top:28px">
+    <button type="button" onclick="delete_({{contact.id}})" class="btn" style="background:linear-gradient(100deg,#f43f5e,#dc2626);color:#fff;box-shadow:0 14px 40px -16px rgba(220,38,38,.8)">
+      刪除這筆訊息
+      <svg viewBox="0 0 24 24" fill="none" width="16" height="16"><path d="M4 7h16M9 7V5a1 1 0 011-1h4a1 1 0 011 1v2m-9 0l1 13a1 1 0 001 1h6a1 1 0 001-1l1-13" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+  </div>
+</div>
+
+<script>
+  function delete_(id) {
+    axios({ url: `/management/single/${id}/`, method: "POST", headers: { 'X-CSRFToken': "{{ csrf_token }}" } }).then(res => {
+      if (res.data.errno === 0) {
+        swal({ 'title': '已刪除', 'text': '正在返回上一頁', 'timer': 1500, 'buttons': false, 'icon': 'success' });
+        setTimeout(() => { location.href = '/management/contact/'; }, 1200);
+      }
+    });
+  }
+</script>
+{% endblock %}

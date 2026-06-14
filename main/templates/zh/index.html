@@ -1,0 +1,556 @@
+<!DOCTYPE HTML>
+<html lang="{% if lang == 'en' %}en-US{% else %}zh-Hant{% endif %}">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<title>{% block title %}XL Academy | 愛斯樂文理補習班、艾司樂文理短期補習班、留學代辦與升學諮詢{% endblock %}</title>
+    <meta name="description" content="{% block meta_description %}XL Academy（愛斯樂文理補習班／台北市私立艾司樂文理短期補習班）提供留學代辦、升學諮詢、SAT、AP、IB、家教與課後課程，協助學生申請海外名校。{% endblock %}">
+    <meta name="keywords" content="{% block meta_keywords %}XL Academy, XL academy, xlacademy, 台北市私立艾司樂文理補習班, 艾司樂文理短期補習班, 愛斯樂文理補習班, 留學代辦, 升學諮詢, SAT, AP, IB, 家教, 台北補習班{% endblock %}">
+	<meta name="owner" content="XL Academy 台北市私立艾司樂文理短期補習班" />
+	<meta name="author" content="XL Academy 台北市私立艾司樂文理短期補習班">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="{{ request.build_absolute_uri }}">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="{% block og_title %}XL Academy | 愛斯樂文理補習班、留學代辦與升學諮詢{% endblock %}">
+    <meta property="og:description" content="{% block og_description %}XL Academy 提供留學代辦、升學諮詢、SAT、AP、IB、家教與課後課程，協助學生申請海外名校。{% endblock %}">
+    <meta property="og:url" content="{{ request.build_absolute_uri }}">
+
+	<link rel="icon" href="/static/picture/icon.png" type="image/png" />
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+	<link rel="stylesheet" href="/static/css/home-premium.css?v=20260615b" type="text/css" media="all">
+	{% block extra_css %}{% endblock %}
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "EducationalOrganization",
+      "name": "XL Academy",
+      "alternateName": [
+        "愛斯樂文理補習班",
+        "台北市私立艾司樂文理短期補習班",
+        "xlacademy"
+      ],
+      "url": "{{ request.build_absolute_uri }}",
+      "description": "提供留學代辦、升學諮詢、SAT、AP、IB、家教與課後課程。",
+      "sameAs": [
+        "https://www.facebook.com/xlacademytw?mibextid=YMEMSu",
+        "https://www.youtube.com/@xlacademy698",
+        "https://line.me/R/ti/p/@xlacademy"
+      ]
+    }
+    </script>
+    {% block structured_data %}{% endblock %}
+</head>
+
+<body class="xl">
+
+{% block navbar %}
+<header class="nav" id="xl-nav">
+  <div class="wrap">
+    <div class="nav-inner">
+      <a href="/" class="brand">
+        <span class="mark">XL</span>
+        <span>XL Academy</span>
+      </a>
+
+      <nav class="nav-links">
+        <a href="/">首頁</a>
+        <div class="has-dropdown">
+          <a href="/school" class="nav-trigger">關於我們 <svg viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <div class="dropdown">
+            <a href="/school">關於我們</a>
+            <a href="/school/?classification=type">學校類型</a>
+            <a href="/school/?classification=region">學校地區</a>
+          </div>
+        </div>
+        <div class="has-dropdown">
+          <a href="/course/" class="nav-trigger">服務 <svg viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <div class="dropdown">
+            <a href="/course/">課程</a>
+            <a href="/course/?type=tutor">家教</a>
+            <a href="/service/consult/">升學諮詢</a>
+            <a href="/shop/">探索更多</a>
+          </div>
+        </div>
+        <a href="/afficient/">Afficient</a>
+      </nav>
+
+      <div class="nav-cta">
+        <a href="/#contact" class="btn btn-primary">
+          預約諮詢
+          <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <button class="burger" id="xl-burger" aria-label="開啟選單">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+
+    <div class="mobile-panel">
+      <a href="/">首頁</a>
+      <span class="m-label">關於我們</span>
+      <a href="/school">關於我們</a>
+      <a href="/school/?classification=type">學校類型</a>
+      <a href="/school/?classification=region">學校地區</a>
+      <span class="m-label">服務</span>
+      <a href="/course/">課程</a>
+      <a href="/course/?type=tutor">家教</a>
+      <a href="/service/consult/">升學諮詢</a>
+      <a href="/shop/">探索更多</a>
+      <a href="/afficient/">Afficient</a>
+      <a href="/#contact" class="btn btn-primary">預約諮詢</a>
+    </div>
+  </div>
+</header>
+{% endblock %}
+
+{% block content %}
+
+{# Hero #}
+<section class="hero">
+  <video class="hero-video" autoplay loop muted playsinline>
+    <source src="/static/slider.mp4" type="video/mp4">
+  </video>
+  <div class="hero-overlay"></div>
+  <div class="hero-grid"></div>
+  <span class="orb orb-1"></span>
+  <span class="orb orb-2"></span>
+  <span class="orb orb-3"></span>
+
+  <div class="wrap">
+    <div class="hero-inner">
+      <span class="eyebrow" data-reveal><span class="dot"></span>台北市私立艾司樂文理短期補習班</span>
+
+      <h1 data-reveal style="--d:80ms">
+        讓每一次學習，<br>都通往<span class="grad">理想學校</span>
+      </h1>
+
+      <p class="h-sub" data-reveal style="--d:160ms">
+        XL Academy 是台灣領先的家教與升學諮詢機構。我們以一對一輔導與經驗證的策略，
+        從家教、標準化考試到留學申請，陪伴學生發揮最大潛能。
+      </p>
+
+      <div class="hero-actions" data-reveal style="--d:240ms">
+        <a href="/service/consult/" class="btn btn-primary">
+          了解升學諮詢
+          <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <a href="/course/?type=tutor" class="btn btn-ghost">探索家教課程</a>
+      </div>
+
+      <div class="hero-stats" data-reveal style="--d:320ms">
+        <div class="stat-card"><div class="num">200<span class="grad">+</span></div><div class="lbl">名校錄取學生</div></div>
+        <div class="stat-card"><div class="num">10<span class="grad">+</span></div><div class="lbl">年教學經驗</div></div>
+        <div class="stat-card"><div class="num">1–3</div><div class="lbl">人小班制</div></div>
+        <div class="stat-card"><div class="num">Top 1%</div><div class="lbl">頂尖師資</div></div>
+      </div>
+
+      <a href="#features" class="scroll-cue" data-reveal style="--d:420ms">
+        <span class="mouse"></span>
+        SCROLL
+      </a>
+    </div>
+  </div>
+</section>
+
+{# Features #}
+<section class="section" id="features">
+  <div class="wrap">
+    <div class="head center">
+      <span class="eyebrow" data-reveal><span class="dot"></span>加入我們</span>
+      <h2 class="h-title" data-reveal style="--d:60ms">瞭解您的孩子，<span class="grad">釋放他們的潛能</span></h2>
+      <p class="h-sub" data-reveal style="--d:120ms">
+        無論準備 SAT、ACT、AP、IB、TOEFL 或 IELTS，還是以美、英、加頂尖大學為目標，
+        XL Academy 都提供以結果為導向、量身訂製的學習方案。
+      </p>
+    </div>
+
+    <div class="features">
+      <article class="glass feature" data-reveal style="--d:0ms">
+        <span class="glow"></span>
+        <div class="ficon"><svg viewBox="0 0 24 24" fill="none"><path d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM5 21a7 7 0 0114 0" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></div>
+        <h4>小班制</h4>
+        <p>班級人數控制在 1–3 位學生，確保專注輔導。學生在安靜高效的環境中獲得所需關注，進步更快速。</p>
+      </article>
+      <article class="glass feature" data-reveal style="--d:80ms">
+        <span class="glow"></span>
+        <div class="ficon"><svg viewBox="0 0 24 24" fill="none"><path d="M9 18h6M10 21h4M12 3a6 6 0 00-3.6 10.8c.6.45 1 .9 1.1 1.7h5c.1-.8.5-1.25 1.1-1.7A6 6 0 0012 3z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h4>個性化教學</h4>
+        <p>每堂課依照學生需求量身訂製，根據學生程度、學校課程與學術目標調整教材與教學方式。</p>
+      </article>
+      <article class="glass feature" data-reveal style="--d:160ms">
+        <span class="glow"></span>
+        <div class="ficon"><svg viewBox="0 0 24 24" fill="none"><path d="M5 21V4m0 0l9 2.5L9 9l8 2-12 3.5M5 4l9 2.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h4>師資優秀</h4>
+        <p>講師來自全球前 30 名大學，擁有逾 10 年教學經驗，或在 SAT、ACT、AP、IB 等考試名列前 1%。</p>
+      </article>
+      <article class="glass feature" data-reveal style="--d:240ms">
+        <span class="glow"></span>
+        <div class="ficon"><svg viewBox="0 0 24 24" fill="none"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h4>一站式學習支援</h4>
+        <p>從低年級到升大學的全方位學術支援，從家教到升學諮詢，孩子所需一應俱全。</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+{# Workflow #}
+<section class="section" id="xl-flow">
+  <div class="wrap">
+    <div class="flow-grid">
+      <div class="flow-aside">
+        <span class="eyebrow" data-reveal><span class="dot"></span>升學旅程</span>
+        <h2 class="h-title" data-reveal style="--d:60ms">三個階段，<span class="grad">穩穩</span>走進理想學校</h2>
+        <p class="h-sub" data-reveal style="--d:120ms">
+          我們把複雜的申請流程拆解成清晰的三個階段，每一步都有明確目標、
+          可量化的進度，以及顧問的全程陪伴。
+        </p>
+        <div class="flow-progress" data-reveal style="--d:180ms">
+          <span class="track"><span class="bar" id="xl-flow-bar"></span></span>
+          <span class="hint">滾動以瀏覽流程</span>
+        </div>
+      </div>
+
+      <div class="flow-cards">
+        <article class="glass phase" data-reveal="right">
+          <span class="glow"></span>
+          <div class="phase-top"><span class="phase-tag">PHASE 01</span><span class="phase-no">1</span></div>
+          <h3>定位與評估</h3>
+          <p>深入了解學生的學術背景、興趣與目標，用數據與經驗找出最適合的學校與科系方向。</p>
+          <ul>
+            <li><span class="tick"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>一對一深度諮詢</li>
+            <li><span class="tick"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>選校選系策略</li>
+            <li><span class="tick"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>時程與里程碑規劃</li>
+          </ul>
+        </article>
+
+        <article class="glass phase" data-reveal="right" style="--d:80ms">
+          <span class="glow"></span>
+          <div class="phase-top"><span class="phase-tag">PHASE 02</span><span class="phase-no">2</span></div>
+          <h3>客製化備考</h3>
+          <p>針對 SAT / AP / IB 與語言檢定打造專屬學習路徑，搭配文書與履歷的同步打磨。</p>
+          <ul>
+            <li><span class="tick"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>標準化測驗衝刺</li>
+            <li><span class="tick"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Essay 與文書指導</li>
+            <li><span class="tick"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>課外活動與背景強化</li>
+          </ul>
+        </article>
+
+        <article class="glass phase" data-reveal="right" style="--d:160ms">
+          <span class="glow"></span>
+          <div class="phase-top"><span class="phase-tag">PHASE 03</span><span class="phase-no">3</span></div>
+          <h3>申請與錄取</h3>
+          <p>從送件、面試到獎學金談判，全程陪跑，把每一個細節都打磨到最好。</p>
+          <ul>
+            <li><span class="tick"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>申請文件審查</li>
+            <li><span class="tick"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>模擬面試演練</li>
+            <li><span class="tick"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>錄取與簽證支援</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+{# Marquee #}
+<div class="marquee">
+  <div class="marquee-row">
+    <span>EMPOWERING</span><span class="fill">STUDENTS</span><span>FOR A BRIGHTER</span><span class="fill">TOMORROW</span>
+    <span>EMPOWERING</span><span class="fill">STUDENTS</span><span>FOR A BRIGHTER</span><span class="fill">TOMORROW</span>
+  </div>
+</div>
+
+{# Testimony / video #}
+<section class="section">
+  <div class="wrap">
+    <div class="testi-grid">
+      <div data-reveal="left">
+        <div class="video-frame">
+          <iframe
+            src="{{testimony.video}}"
+            title="YouTube 影片播放器"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen>
+          </iframe>
+        </div>
+      </div>
+      <div data-reveal="right">
+        <span class="eyebrow"><span class="dot"></span>學生見證</span>
+        <h2 class="h-title" style="margin-top:18px; font-size:clamp(24px,2.6vw,34px)">{{testimony.title}}</h2>
+        <p class="h-sub">{{testimony.content}}</p>
+        <div class="testi-name"><span class="line"></span>學生姓名：{{testimony.student_name}}</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{# About #}
+<section class="section">
+  <div class="wrap">
+    <div class="about-grid">
+      <div data-reveal="left">
+        <span class="eyebrow"><span class="dot"></span>關於我們</span>
+        <h2 class="h-title" style="margin-top:18px">啟迪智慧，<span class="grad">成就未來</span></h2>
+        <p class="h-sub">
+          XL Academy 愛斯樂文理補習班由加州大學柏克萊分校優秀畢業生 Ellen Chu 於 2015 年創立，
+          致力於提供卓越的教育服務。除了家教與課程輔導，我們也以專業留學代辦、升學諮詢，
+          及成功送學生進入全球知名大學而聞名。
+        </p>
+        <ul class="about-list">
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>指導超過 200 位學生考取史丹佛、麻省理工等名校</li>
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>培養批判性思考、創造力與責任感</li>
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>創新教學助力學生突破挑戰</li>
+        </ul>
+        <div style="margin-top:30px">
+          <a href="#contact" class="btn btn-ghost">聯絡我們
+            <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="about-media" data-reveal="right">
+        <img src="/static/image/about.jpg" alt="XL Academy 愛斯樂文理補習班 升學諮詢與教學環境">
+      </div>
+    </div>
+  </div>
+</section>
+
+{# Team #}
+<section class="section">
+  <div class="wrap">
+    <div class="head center">
+      <span class="eyebrow" data-reveal><span class="dot"></span>師資團隊</span>
+      <h2 class="h-title" data-reveal style="--d:60ms">介紹我們<span class="grad">傑出的師資陣容</span></h2>
+    </div>
+
+    <div class="team-grid">
+      <article class="glass teacher" data-reveal style="--d:0ms">
+        <span class="glow"></span>
+        <div class="avatar"><img src="/static/picture/1.jpg" alt="Ellen Chu"></div>
+        <div class="tname">Ellen Chu</div>
+        <div class="trole">創辦人兼負責人</div>
+        <div class="tschool">加州大學柏克萊分校</div>
+        <p class="tbio">擁有超過 20 年教學與升學輔導經驗，親自指導數百位美國、英國及亞洲地區的成功大學申請者。</p>
+      </article>
+      <article class="glass teacher" data-reveal style="--d:90ms">
+        <span class="glow"></span>
+        <div class="avatar"><img src="/static/picture/2.jpg" alt="Eric Chang"></div>
+        <div class="tname">Eric Chang</div>
+        <div class="trole">學術總監</div>
+        <div class="tschool">英屬哥倫比亞大學</div>
+        <p class="tbio">擁有豐富的大學諮詢、辯論及 AP 教學經驗，專注於學生成長及長期學術規劃。</p>
+      </article>
+      <article class="glass teacher" data-reveal style="--d:180ms">
+        <span class="glow"></span>
+        <div class="avatar"><img src="/static/picture/3.jpg" alt="Stephanie Chen"></div>
+        <div class="tname">Stephanie Chen</div>
+        <div class="trole">教師</div>
+        <div class="tschool">波士頓大學</div>
+        <p class="tbio">創意寫作與文學專家，為年輕寫作者量身打造，提升表達風格、清晰度與批判思考能力。</p>
+      </article>
+      <article class="glass teacher" data-reveal style="--d:270ms">
+        <span class="glow"></span>
+        <div class="avatar"><img src="/static/picture/4.jpg" alt="Amy"></div>
+        <div class="tname">Amy</div>
+        <div class="trole">教師</div>
+        <div class="tschool">阿爾伯塔大學</div>
+        <p class="tbio">深受信賴的小學及中學英語教師，專長自然拼讀、文法，以及臺北國際學校入學輔導。</p>
+      </article>
+      <article class="glass teacher" data-reveal style="--d:360ms">
+        <span class="glow"></span>
+        <div class="avatar"><img src="/static/picture/5.jpg" alt="Sven"></div>
+        <div class="tname">Sven</div>
+        <div class="trole">教師</div>
+        <div class="tschool">國立臺灣大學</div>
+        <p class="tbio">未來物理博士生，精通 AP 物理與微積分，善於化繁為簡，提供頂尖學生考試策略與清晰解題方法。</p>
+      </article>
+      <article class="glass teacher" data-reveal style="--d:450ms">
+        <span class="glow"></span>
+        <div class="avatar"><img src="/static/picture/6.jpg" alt="Preston"></div>
+        <div class="tname">Preston</div>
+        <div class="trole">教師</div>
+        <div class="tschool">哥倫比亞大學</div>
+        <p class="tbio">頂尖 SAT 及 AP 數學導師，協助學生在解題、進階推理及考試策略上取得卓越成果。</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+{# Stat band #}
+<section class="section">
+  <div class="wrap">
+    <div class="band" data-reveal>
+      <div class="big"><span id="counter" data-count="300000">0</span><span class="cur">$</span></div>
+      <div class="cap">大學每年提供的獎學金總額（美元）</div>
+    </div>
+  </div>
+</section>
+
+{# Comparison #}
+<section class="section">
+  <div class="wrap">
+    <div class="head center">
+      <span class="eyebrow" data-reveal><span class="dot"></span>為何選擇我們</span>
+      <h2 class="h-title" data-reveal style="--d:60ms">我們與其他補習班的<span class="grad">差異</span></h2>
+    </div>
+
+    <div class="compare" data-reveal style="--d:120ms">
+      <table>
+        <thead>
+          <tr><th>特色</th><th>XL Academy</th><th>競爭對手</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>課程重點</td><td>提供 DSAT、TOEFL、商業英語與會話技巧的專業化課程。</td><td>通用英語課程，無專項化。</td></tr>
+          <tr><td>教學方法</td><td>專注誠信教育，培養誠實、信賴與自我控制力；結合實務應用的互動式學習。</td><td>傳統以文法為主的課堂教學。</td></tr>
+          <tr><td>班級規模</td><td>小班制，提供個性化關注。</td><td>大班制，個別關注較少。</td></tr>
+          <tr><td>支援</td><td>持續追蹤學習進度並提供個性化學術支援。</td><td>學生追蹤與支援有限。</td></tr>
+          <tr><td>彈性</td><td>晚間、週末及線上排課彈性高。</td><td>固定上課時間。</td></tr>
+          <tr><td>考試準備</td><td>提供 IELTS、TOEFL、SAT 專業考前準備，搭配歷屆模擬試題。</td><td>基礎考試準備，資源較少。</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+{# Contact #}
+<section class="section" id="contact">
+  <div class="wrap">
+    <div class="cta-card" data-reveal>
+      <span class="cta-orb a"></span>
+      <span class="cta-orb b"></span>
+      <div class="cta-grid">
+        <div>
+          <span class="eyebrow"><span class="dot"></span>聯絡我們</span>
+          <h2 class="h-title" style="margin-top:18px">有任何問題，<span class="grad">歡迎與我們聯繫</span></h2>
+          <p class="h-sub">無論是課程規劃、家教安排或升學諮詢，留下資料後我們會盡快回覆您。</p>
+          <div class="contact-meta">
+            <a href="mailto:xlacademy168@gmail.com"><span class="mi"><svg viewBox="0 0 24 24" fill="none"><path d="M3 7l9 6 9-6M4 5h16a1 1 0 011 1v12a1 1 0 01-1 1H4a1 1 0 01-1-1V6a1 1 0 011-1z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>xlacademy168@gmail.com</a>
+            <a href="tel:0225322393"><span class="mi"><svg viewBox="0 0 24 24" fill="none"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6A19.8 19.8 0 012.1 4.2 2 2 0 014 2h3a2 2 0 012 1.7c.1.9.3 1.8.6 2.6a2 2 0 01-.5 2.1L8 9.6a16 16 0 006 6l1.2-1.2a2 2 0 012.1-.4c.8.3 1.7.5 2.6.6a2 2 0 011.7 2z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>02-2532-2393</a>
+            <a href="#"><span class="mi"><svg viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-5.5-7-11a7 7 0 0114 0c0 5.5-7 11-7 11z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="10" r="2.5" stroke="currentColor" stroke-width="1.8"/></svg></span>台北市民生路397巷7弄61號1樓</a>
+          </div>
+        </div>
+
+        <form class="contact-form" onsubmit="return false;">
+          <div class="field-row">
+            <div class="field">
+              <label class="sr-only" for="username">姓名</label>
+              <input id="username" type="text" placeholder="姓名 *" required>
+            </div>
+            <div class="field">
+              <label class="sr-only" for="email">電子郵件地址</label>
+              <input id="email" type="email" name="Email" placeholder="電子郵件地址 *" required>
+            </div>
+          </div>
+          <div class="field">
+            <label class="sr-only" for="phone">聯絡電話</label>
+            <input id="phone" placeholder="聯絡電話">
+          </div>
+          <div class="field">
+            <label class="sr-only" for="content">問題內容</label>
+            <textarea id="content" name="message" rows="5" placeholder="請輸入您的問題... *"></textarea>
+          </div>
+          <button type="button" class="btn btn-primary" onclick="submit_()">
+            送出訊息
+            <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}
+
+{% block footer %}
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <a href="/" class="brand"><span class="mark">XL</span><span>XL Academy</span></a>
+        <p class="f-brand">專注海外名校申請與學術指導的升學顧問團隊，從定位、備考到錄取，陪你走完每一步。</p>
+        <div class="socials">
+          <a target="_blank" rel="noreferrer" href="https://www.facebook.com/xlacademytw?mibextid=YMEMSu" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 9h3V6h-3c-1.7 0-3 1.3-3 3v2H9v3h2v6h3v-6h2.5l.5-3H14V9.5c0-.3.2-.5.5-.5z"/></svg></a>
+          <a target="_blank" rel="noreferrer" href="https://www.youtube.com/@xlacademy698" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12s0-3.1-.4-4.5a2.5 2.5 0 00-1.7-1.7C18.4 5.4 12 5.4 12 5.4s-6.4 0-7.9.4A2.5 2.5 0 002.4 7.5C2 8.9 2 12 2 12s0 3.1.4 4.5a2.5 2.5 0 001.7 1.7c1.5.4 7.9.4 7.9.4s6.4 0 7.9-.4a2.5 2.5 0 001.7-1.7C22 15.1 22 12 22 12zM10 15V9l5 3z"/></svg></a>
+          <a target="_blank" rel="noreferrer" href="https://line.me/R/ti/p/@xlacademy" aria-label="LINE"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3C6.5 3 2 6.6 2 11c0 4 3.6 7.3 8.4 7.9.3.1.8.2.9.5.1.3.1.7 0 1l-.1.9c-.1.3-.3 1.1 1 .6 1.3-.5 6.8-4 9.3-6.9C23 13.2 22 8 22 11c0-4.4-4.5-8-10-8zm-3.7 9.9H6.5a.5.5 0 01-.5-.5V9.9a.5.5 0 011 0v2h1.3a.5.5 0 010 1zm2-2.5v2.5a.5.5 0 01-1 0V9.9a.5.5 0 011 0zm5 2.5h-1.8a.5.5 0 01-.5-.5V9.9a.5.5 0 01.5-.5h1.8a.5.5 0 010 1h-1.3v.5h1.3a.5.5 0 010 1h-1.3v.5h1.3a.5.5 0 010 1zm3.7-.5a.5.5 0 01-.4.5h-.1a.5.5 0 01-.4-.2l-1.3-1.8v1.5a.5.5 0 01-1 0V9.9a.5.5 0 01.9-.3l1.3 1.8V9.9a.5.5 0 011 0z"/></svg></a>
+        </div>
+      </div>
+
+      <div>
+        <h5>連結</h5>
+        <ul>
+          <li><a href="/">首頁</a></li>
+          <li><a href="/school/">升學諮詢</a></li>
+          <li><a href="/shop/">探索更多</a></li>
+          <li><a href="/course/">學術指導</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>聯絡資訊</h5>
+        <ul>
+          <li><a href="mailto:xlacademy168@gmail.com">xlacademy168@gmail.com</a></li>
+          <li><a href="tel:0225322393">02-2532-2393</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>地址</h5>
+        <ul>
+          <li><a href="#">台灣台北市民生路397巷7弄61號1樓</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2024 XL Academy 版權所有。</span>
+      <span>愛斯樂文理補習班 · 留學代辦與升學諮詢</span>
+    </div>
+  </div>
+</footer>
+{% endblock %}
+
+<button class="to-top" id="xl-totop" aria-label="回到頂部">
+  <svg viewBox="0 0 24 24" fill="none"><path d="M12 19V5M5 12l7-7 7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+</button>
+
+<script src="/static/js/jquery-3.6.2.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.5/axios.min.js" integrity="sha512-TjBzDQIDnc6pWyeM1bhMnDxtWH0QpOXMcVooglXrali/Tj7W569/wd4E8EDjk1CwOAOPSJon1VfcEt1BI4xIrA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+  function isNullOrWhitespace(value) {
+    return value === undefined || value === null || value.trim() === '' || value === 'none';
+  }
+
+  function submit_() {
+    if (isNullOrWhitespace($('#username').val()) == true || isNullOrWhitespace($('#email').val()) == true || isNullOrWhitespace($('#content').val()) == true) {
+      swal({ 'title': '資料填寫不全', 'text': '＊號為必填表格', 'icon': 'warning', 'buttons': false, 'timer': 1500 })
+    } else {
+      axios({
+        url: '/',
+        method: "POST",
+        headers: { 'X-CSRFToken': "{{ csrf_token }}" },
+        data: {
+          'username': $('#username').val(),
+          'email': $('#email').val(),
+          'phone': $('#phone').val(),
+          'content': $('#content').val(),
+        }
+      }).then(res => {
+        if (res.data.errno === 0) {
+          swal({ 'title': '已傳送', 'text': '我們會盡快回覆您', 'icon': 'success', 'buttons': false, 'timer': 1500 })
+          $('#username').val(''); $('#email').val(''); $('#phone').val(''); $('#content').val('');
+        } else {
+          swal({ 'title': '傳送失敗', 'text': '無效資料或填寫補全', 'icon': 'error', 'buttons': false, 'timer': 1500 })
+        }
+      })
+    }
+  }
+</script>
+<script src="/static/js/home-premium.js?v=20260615b"></script>
+{% block extra_js %}{% endblock %}
+
+</body></html>

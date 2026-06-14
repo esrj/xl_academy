@@ -1,0 +1,133 @@
+{% extends 'school.html' %}
+
+{% block title %}{% if lang == 'zh' %}Afficient AI 數學與英語學習系統 | XL Academy 台北市私立艾司樂文理補習班{% else %}Afficient AI Math & English | XL Academy Taipei{% endif %}{% endblock %}
+{% block meta_description %}{% if lang == 'zh' %}XL Academy 台北市私立艾司樂文理補習班引進 Afficient AI 數學與英語學習系統，對應美國 Common Core，並提供留學代辦與升學諮詢。{% else %}XL Academy offers the Afficient AI Math & English learning system aligned with U.S. Common Core, with study abroad support.{% endif %}{% endblock %}
+{% block meta_keywords %}{% if lang == 'zh' %}XL Academy, XL academy, 台北市私立艾司樂文理補習班, 艾司樂文理短期補習班, 留學代辦, Afficient, AI 學習, 數學, 英語, 升學諮詢{% else %}XL Academy, 台北市私立艾司樂文理補習班, 留學代辦, Afficient, AI learning, math, English{% endif %}{% endblock %}
+{% block og_title %}{% if lang == 'zh' %}Afficient AI 數學與英語學習系統 | XL Academy{% else %}Afficient AI Math & English | XL Academy{% endif %}{% endblock %}
+{% block og_description %}{% if lang == 'zh' %}Afficient AI 數學與英語學習系統，對應美國 Common Core，結合留學代辦升學諮詢。{% else %}Afficient AI Math & English aligned with U.S. Common Core at XL Academy.{% endif %}{% endblock %}
+
+{% block content %}
+<section class="page-hero">
+  <span class="orb a"></span>
+  <span class="orb b"></span>
+  <span class="grid"></span>
+  <div class="wrap">
+    <div class="inner">
+      <span class="crumb" data-reveal>
+        <a href="/">{% if lang == 'zh' %}首頁{% else %}Home{% endif %}</a>
+        <span class="sep">/</span>
+        Afficient Academy
+      </span>
+      <h1 data-reveal style="--d:60ms">
+        {% if lang == 'zh' %}矽谷智能教育 · <span class="grad">AI 個性化學習</span>{% else %}Silicon Valley <span class="grad">Smart Education</span>{% endif %}
+      </h1>
+      <p class="lead" data-reveal style="--d:120ms">
+        {% if lang == 'zh' %}AI 數學與英語學習系統，以美國 Common Core 標準，助孩子高效提升。{% else %}AI Math & English learning system aligned with U.S. Common Core — boost your child's learning efficiency.{% endif %}
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="head center">
+      <span class="eyebrow" data-reveal><span class="dot"></span>Afficient</span>
+      <h2 class="h-title" data-reveal style="--d:60ms">{% if lang == 'zh' %}AI 數學與英語<span class="grad">學習系統</span>{% else %}AI Math & English <span class="grad">Learning System</span>{% endif %}</h2>
+    </div>
+
+    <div class="info-grid" data-reveal style="--d:120ms; margin-top:48px">
+      <article class="glass info-card">
+        <span class="glow"></span>
+        <div class="ficon"><svg viewBox="0 0 24 24" fill="none"><path d="M4 4h16v16H4zM8 9h8M8 13h5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></div>
+        <div class="kicker">Afficient Math</div>
+        <h3>{% if lang == 'zh' %}對應美國 K-12 Common Core{% else %}U.S. K-12 Common Core{% endif %}</h3>
+        <ul class="check-list" style="margin-top:14px">
+          {% if lang == 'zh' %}
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>AI 智能診斷 + 個性化學習計劃</li>
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>美國專利 AI 取題系統，精準推送知識點</li>
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>平均 2-4 個月完成 1 個年級</li>
+          {% else %}
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>AI diagnostics + personalized plans</li>
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Patented AI topic recommendations</li>
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Finish one grade in just 2-4 months</li>
+          {% endif %}
+        </ul>
+      </article>
+
+      <article class="glass info-card">
+        <span class="glow" style="background:rgba(45,212,191,.2)"></span>
+        <div class="ficon" style="background:rgba(45,212,191,.12);color:var(--teal)"><svg viewBox="0 0 24 24" fill="none"><path d="M4 19V6a2 2 0 012-2h7v15H6a2 2 0 00-2 2zM13 4h5a2 2 0 012 2v13H13z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></div>
+        <div class="kicker" style="color:var(--teal)">Afficient English</div>
+        <h3>{% if lang == 'zh' %}對應美國 Common Core{% else %}U.S. Common Core{% endif %}</h3>
+        <ul class="check-list" style="margin-top:14px">
+          {% if lang == 'zh' %}
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>詞彙、閱讀、語法、寫作四大能力提升</li>
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>AI 智能學習系統，自動適配進度</li>
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>以美國學校標準扎實學好英語</li>
+          {% else %}
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Vocabulary, reading, grammar, writing</li>
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>AI system adapts to individual progress</li>
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Master English by U.S. school standards</li>
+          {% endif %}
+        </ul>
+      </article>
+
+      <article class="glass info-card">
+        <span class="glow" style="background:rgba(244,114,182,.2)"></span>
+        <div class="ficon" style="background:rgba(244,114,182,.12);color:var(--pink)"><svg viewBox="0 0 24 24" fill="none"><path d="M12 2l2.4 7.4H22l-6 4.5 2.3 7.1L12 16.8 5.7 21l2.3-7.1-6-4.5h7.6z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg></div>
+        <div class="kicker" style="color:var(--pink)">{% if lang == 'zh' %}AA 課程優勢{% else %}AA Advantages{% endif %}</div>
+        <h3>{% if lang == 'zh' %}高效輔助校內學習{% else %}Efficient School Support{% endif %}</h3>
+        <ul class="check-list" style="margin-top:14px">
+          {% if lang == 'zh' %}
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>針對學校課綱，高效輔助學習</li>
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>AI 智能推送知識點，確保熟練掌握</li>
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>家長 APP 即時監控，線上/線下彈性選擇</li>
+          {% else %}
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Tailored to school curricula</li>
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>AI knowledge recommendations for mastery</li>
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Parent app + flexible online tutoring</li>
+          {% endif %}
+        </ul>
+      </article>
+    </div>
+
+    <div style="text-align:center;margin-top:36px" data-reveal>
+      <a href="/#contact" class="btn btn-primary">{% if lang == 'zh' %}詢問詳細細節{% else %}Inquire for details{% endif %}
+        <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0">
+  <div class="wrap">
+    <div class="split">
+      <div data-reveal="left">
+        <span class="eyebrow"><span class="dot"></span>{% if lang == 'zh' %}學術認證{% else %}Accreditation{% endif %}</span>
+        <h2 class="h-title" style="margin-top:16px">{% if lang == 'zh' %}獲得 <span class="grad">WASC 認證</span>{% else %}<span class="grad">WASC</span> Accreditation{% endif %}</h2>
+        <div class="prose" style="margin-top:18px">
+          <p>{% if lang == 'zh' %}WASC（美國西部學校與學院認證協會）負責評鑑學術機構的教學質量與認證標準。Afficient Academy 獲得 WASC 認證，代表我們的課程：{% else %}WASC (Western Association of Schools and Colleges) evaluates academic quality and standards. Afficient Academy's WASC accreditation means our programs:{% endif %}</p>
+        </div>
+        <ul class="check-list" style="margin-top:20px">
+          {% if lang == 'zh' %}
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>符合美國學術標準，確保教學品質</li>
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>課程可銜接各大國際學校與標準考試</li>
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>提供穩固學術基礎，為未來升學做好準備</li>
+          {% else %}
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Meet U.S. academic standards</li>
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Align with international schools and exams</li>
+          <li><span class="tick"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Provide a strong academic foundation</li>
+          {% endif %}
+        </ul>
+      </div>
+      <div data-reveal="right">
+        <article class="glass" style="padding:40px;text-align:center">
+          <span class="glow"></span>
+          <img src="/static/image/wasc.png" alt="WASC Accreditation" style="width:100%;margin:0 auto;border-radius:14px">
+          <p style="margin-top:16px;font-size:13px;color:var(--muted-dim);letter-spacing:.04em">{% if lang == 'zh' %}WASC 官方認證{% else %}WASC Accredited{% endif %}</p>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

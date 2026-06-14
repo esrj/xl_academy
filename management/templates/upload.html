@@ -1,0 +1,86 @@
+{% extends 'contact.html' %}
+
+{% block admin_title %}上傳試題 | XL Academy 管理後台{% endblock %}
+
+{% block content %}
+<div class="admin-head">
+  <h1>上傳試題與試題介紹</h1>
+  <p>新增 SAT / AP / IB 試題資源，所有欄位皆為必填。</p>
+</div>
+
+<div class="glass" style="max-width:820px;padding:34px">
+  <span class="glow"></span>
+  <form class="admin-form">
+    <div class="field">
+      <label class="flabel" for="image">試題照片範例（jpg / png / jpeg）</label>
+      <input id="image" type="file" accept=".jpg,.jpeg,.png">
+    </div>
+
+    <div class="field">
+      <label class="flabel" for="classification">類型</label>
+      <select id="classification">
+        <option value="0" selected>請選擇類型</option>
+        <option value="SAT">SAT</option>
+        <option value="AP">AP</option>
+        <option value="IB">IB</option>
+      </select>
+    </div>
+
+    <div class="grid-2">
+      <div class="field"><label class="flabel" for="title">標題</label><input id="title" type="text" placeholder="標題"></div>
+      <div class="field"><label class="flabel" for="title_en">標題（英文）</label><input id="title_en" type="text" placeholder="Title"></div>
+    </div>
+
+    <div class="field"><label class="flabel" for="price">價格</label><input id="price" type="number" placeholder="價格"></div>
+
+    <div class="grid-2">
+      <div class="field"><label class="flabel" for="introduce">介紹</label><textarea id="introduce" rows="4" placeholder="介紹"></textarea></div>
+      <div class="field"><label class="flabel" for="introduce_en">介紹（英文）</label><textarea id="introduce_en" rows="4" placeholder="Introduction"></textarea></div>
+    </div>
+
+    <div class="grid-2">
+      <div class="field"><label class="flabel" for="details">細節</label><textarea id="details" rows="4" placeholder="細節"></textarea></div>
+      <div class="field"><label class="flabel" for="details_en">細節（英文）</label><textarea id="details_en" rows="4" placeholder="Details"></textarea></div>
+    </div>
+
+    <div>
+      <button onclick="upload_()" type="button" class="btn btn-primary">確定上傳
+        <svg viewBox="0 0 24 24" fill="none" width="16" height="16"><path d="M12 19V6M5 12l7-7 7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+    </div>
+  </form>
+</div>
+
+<script>
+  function isNumber(value) { try { Number(value); return true; } catch (e) { return false; } }
+  function isImage(filename) { return ['.jpg', '.jpeg', '.png'].some(ext => filename.toLowerCase().endsWith(ext)); }
+
+  function upload_() {
+    if ($('#title').val() && $('#price').val() && $('#introduce').val() && $('#image').prop('files')[0] && $('#classification').val() !== "0") {
+      if (!isImage($('#image').prop('files')[0]['name'])) {
+        swal({ 'title': '格式不符', 'text': '照片必須是 jpg、png、jpeg 檔案', 'buttons': ['確定'], 'icon': 'warning' });
+      } else if (!isNumber($('#price').val())) {
+        swal({ 'title': '格式不符', 'text': '價格必須是數字', 'buttons': ['確定'], 'icon': 'warning' });
+      } else {
+        const formData = new FormData();
+        formData.append('details', $('#details').val());
+        formData.append('details_en', $('#details_en').val());
+        formData.append('title', $('#title').val());
+        formData.append('title_en', $('#title_en').val());
+        formData.append('price', $('#price').val());
+        formData.append('introduce', $('#introduce').val());
+        formData.append('introduce_en', $('#introduce_en').val());
+        formData.append('classification', $('#classification').val());
+        formData.append('image', $('#image').prop('files')[0]);
+        axios({ url: '/management/upload/', method: "POST", headers: { 'X-CSRFToken': "{{ csrf_token }}", 'Content-Type': 'multipart/form-data;charset=UTF-8' }, data: formData }).then(res => {
+          if (res.data.errno === 0) {
+            swal({ 'title': '上傳成功', 'text': '請至主頁面檢查', 'timer': 1500, 'icon': 'success' });
+          }
+        });
+      }
+    } else {
+      swal({ 'title': '資料不全', 'text': '所有資料皆為必填', 'buttons': ['確定'], 'icon': 'warning' });
+    }
+  }
+</script>
+{% endblock %}

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>{% block admin_title %}XL Academy 管理後台{% endblock %}</title>
+  <link rel="icon" href="/static/picture/icon.png" type="image/png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/css/home-premium.css?v=20260615b" type="text/css" media="all">
+  <script src="/static/js/jquery-3.6.2.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.5/axios.min.js" integrity="sha512-TjBzDQIDnc6pWyeM1bhMnDxtWH0QpOXMcVooglXrali/Tj7W569/wd4E8EDjk1CwOAOPSJon1VfcEt1BI4xIrA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script>
+    function logout() {
+      axios({ url: '/management/logout/', method: "POST", headers: { 'X-CSRFToken': "{{ csrf_token }}" } }).then(res => {
+        if (res.data.errno === 0) {
+          swal({ 'title': '已成功登出', 'text': '正在跳轉回登入頁面', 'timer': 1500, 'buttons': false, 'icon': 'success' });
+          setTimeout(() => { location.href = '/management/'; }, 1500);
+        }
+      });
+    }
+  </script>
+  {% block admin_head %}{% endblock %}
+</head>
+
+<body class="xl admin">
+
+{% block admin_nav %}
+<header class="admin-nav">
+  <div class="wrap">
+    <div class="inner">
+      <a href="/management/contact/" class="brand"><span class="mark">XL</span><span>管理後台</span></a>
+      <nav class="admin-links">
+        <a href="/management/contact/">聯絡狀態</a>
+        <div class="has-dropdown">
+          <span class="nav-trigger">上傳 <svg viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <div class="dropdown">
+            <a href="/management/collage/">大學資訊</a>
+            <a href="/management/upload/">試題</a>
+          </div>
+        </div>
+        <a href="/" target="_blank" rel="noreferrer">前台網站</a>
+        <a href="#" onclick="logout(); return false;">登出</a>
+      </nav>
+    </div>
+  </div>
+</header>
+{% endblock %}
+
+<main class="admin-main">
+  <div class="wrap">
+    {% block content %}
+    <div class="admin-head">
+      <h1>聯絡狀態</h1>
+      <p>所有來自網站聯絡表單的訊息，點擊任一列查看詳細內容。</p>
+    </div>
+
+    <div class="glass" style="padding:10px 4px">
+      <div class="admin-table-wrap">
+        <table class="admin-table">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>聯絡日期</th>
+              <th>姓名</th>
+              <th>電子郵件</th>
+              <th>聯絡電話</th>
+              <th>已回覆</th>
+            </tr>
+          </thead>
+          <tbody id="contact_"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <script>
+      axios({ url: '/management/contact/', method: "POST", headers: { 'X-CSRFToken': "{{ csrf_token }}" } }).then(res => {
+        if (res.data.errno === 0) {
+          const contacts = res.data.contact;
+          if (!contacts.length) {
+            $('#contact_').append('<tr><td colspan="6" style="text-align:center;color:var(--muted-dim);padding:40px">目前沒有任何聯絡訊息</td></tr>');
+          }
+          contacts.forEach((item) => {
+            const checked = item.reply === true ? 'checked' : '';
+            $('#contact_').append($(`
+              <tr id="contact_${item.id}">
+                <td class="cell-click" onclick="single(${item.id})">${item.id}</td>
+                <td class="cell-click" onclick="single(${item.id})">${item.date}</td>
+                <td class="cell-click" onclick="single(${item.id})">${item.name}</td>
+                <td class="cell-click" onclick="single(${item.id})">${item.email}</td>
+                <td class="cell-click" onclick="single(${item.id})">${item.phone || '—'}</td>
+                <td><label class="admin-check"><input onclick="reply(${item.id})" type="checkbox" ${checked}> 已回覆</label></td>
+              </tr>
+            `));
+          });
+        }
+      });
+
+      function single(id) { location.href = `/management/single/${id}`; }
+      function reply(id) {
+        axios({ url: '/management/contact/', method: "PATCH", headers: { 'X-CSRFToken': "{{ csrf_token }}" }, data: { 'id': id } });
+      }
+    </script>
+    {% endblock %}
+  </div>
+</main>
+
+{% block admin_js %}{% endblock %}
+</body>
+</html>

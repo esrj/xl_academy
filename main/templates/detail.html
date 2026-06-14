@@ -1,0 +1,94 @@
+{% extends 'school.html' %}
+
+{% block title %}{% if lang == 'zh' %}{{collage.name}} 介紹與升學資訊 | XL Academy 留學代辦{% else %}{{collage.en_name}} | XL Academy Study Abroad{% endif %}{% endblock %}
+{% block meta_description %}{% if lang == 'zh' %}{{collage.name}}（{{collage.en_name}}）位於{{collage.country}}{{collage.city}}，由 XL Academy 台北市私立艾司樂文理補習班提供留學代辦與升學諮詢，協助申請此校。{% else %}{{collage.en_name}} in {{collage.country_en}} — study abroad support and college consulting from XL Academy.{% endif %}{% endblock %}
+{% block meta_keywords %}{% if lang == 'zh' %}XL Academy, 台北市私立艾司樂文理補習班, 留學代辦, 升學諮詢, {{collage.name}}, {{collage.en_name}}, {{collage.country}}, 海外名校{% else %}XL Academy, 台北市私立艾司樂文理補習班, 留學代辦, {{collage.en_name}}, {{collage.country_en}}, study abroad{% endif %}{% endblock %}
+{% block og_title %}{% if lang == 'zh' %}{{collage.name}} | XL Academy 留學代辦{% else %}{{collage.en_name}} | XL Academy{% endif %}{% endblock %}
+{% block og_description %}{% if lang == 'zh' %}{{collage.name}} 介紹、學術成就與熱門系所，XL Academy 留學代辦與升學諮詢。{% else %}{{collage.en_name}} overview and admissions support by XL Academy.{% endif %}{% endblock %}
+
+{% block content %}
+<section class="page-hero" style="padding-bottom:40px">
+  <span class="orb a"></span>
+  <span class="grid"></span>
+  <div class="wrap">
+    <div class="inner">
+      <span class="crumb" data-reveal>
+        <a href="/">{% if lang == 'zh' %}首頁{% else %}Home{% endif %}</a>
+        <span class="sep">/</span>
+        <a href="/school/?classification=region">{% if lang == 'zh' %}世界名校{% else %}Universities{% endif %}</a>
+        <span class="sep">/</span>
+        {% if lang == 'zh' %}{{collage.name}}{% else %}{{collage.en_name}}{% endif %}
+      </span>
+      <h1 data-reveal style="--d:60ms">{% if lang == 'zh' %}{{collage.name}}{% else %}{{collage.en_name}}{% endif %}</h1>
+      <p class="lead" data-reveal style="--d:120ms">{% if lang == 'zh' %}{{collage.en_name}}{% else %}{{collage.name}}{% endif %}</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:56px">
+  <div class="wrap">
+    <div class="split" style="align-items:stretch">
+      <div class="media" data-reveal="left">
+        <img src="/media/{{collage.image}}" alt="{{collage.name}}">
+      </div>
+      <div data-reveal="right">
+        <article class="glass" style="padding:34px;height:100%">
+          <span class="glow"></span>
+          <h2 style="font-size:22px;font-weight:600;color:#fff">{% if lang == 'zh' %}{{collage.name}}{% else %}{{collage.en_name}}{% endif %}</h2>
+          <p class="h-sub" style="margin-top:12px">{% if lang == 'zh' %}{{collage.info}}{% else %}{{collage.info_en}}{% endif %}</p>
+          <div class="detail-meta">
+            <span class="chip"><svg viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-5.5-7-11a7 7 0 0114 0c0 5.5-7 11-7 11z" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="10" r="2.5" stroke="currentColor" stroke-width="1.8"/></svg>{% if lang == 'zh' %}{{collage.country}}{% else %}{{collage.country_en}}{% endif %}</span>
+            <span class="chip">{% if lang == 'zh' %}{{collage.city}}{% else %}{{collage.city_en}}{% endif %}</span>
+            <span class="chip">{{collage.classification}}</span>
+          </div>
+          <p style="margin-top:16px;font-size:14px;color:var(--muted)">{% if lang == 'zh' %}學校地址：{% else %}Address: {% endif %}{{collage.address}}</p>
+          {% if collage.links %}
+          <div style="margin-top:24px">
+            <a href="{{collage.links}}" target="_blank" rel="noreferrer" class="btn btn-ghost">{% if lang == 'zh' %}前往官方網站{% else %}Official Website{% endif %}
+              <svg viewBox="0 0 24 24" fill="none"><path d="M7 17L17 7M17 7H9M17 7v8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+          </div>
+          {% endif %}
+        </article>
+      </div>
+    </div>
+
+    <div class="detail-grid">
+      <article class="glass full" style="padding:34px" data-reveal>
+        <span class="glow"></span>
+        <h2 style="font-size:20px;font-weight:600;color:#fff">{% if lang == 'zh' %}大學介紹{% else %}University Introduction{% endif %}</h2>
+        <p style="margin-top:14px;white-space:pre-line;line-height:1.9;color:var(--muted);font-weight:300">{% if lang == 'zh' %}{{collage.introduction}}{% else %}{{collage.introduction_en}}{% endif %}</p>
+      </article>
+
+      <article class="glass" style="padding:34px" data-reveal>
+        <span class="glow"></span>
+        <h3 style="font-size:18px;font-weight:600;color:#fff">{% if lang == 'zh' %}{{collage.name}}的學術成就{% else %}Academic Achievements{% endif %}</h3>
+        <div style="margin-top:14px">
+          {% if lang == 'zh' %}
+            {% for achievement in achievements %}<p style="white-space:pre-line;line-height:1.85;color:var(--muted);font-weight:300;margin-top:8px">{{achievement}}</p>{% endfor %}
+          {% else %}
+            {% for achievement in achievements_en %}<p style="white-space:pre-line;line-height:1.85;color:var(--muted);font-weight:300;margin-top:8px">{{achievement}}</p>{% endfor %}
+          {% endif %}
+        </div>
+      </article>
+
+      <article class="glass" style="padding:34px;--d:80ms" data-reveal>
+        <span class="glow" style="background:rgba(45,212,191,.2)"></span>
+        <h3 style="font-size:18px;font-weight:600;color:#fff">{% if lang == 'zh' %}選擇{{collage.name}}的首要理由{% else %}Reasons to Choose {{collage.en_name}}{% endif %}</h3>
+        <p style="margin-top:14px;white-space:pre-line;line-height:1.85;color:var(--muted);font-weight:300">{% if lang == 'zh' %}{{collage.reason}}{% else %}{{collage.reason_en}}{% endif %}</p>
+      </article>
+    </div>
+
+    <div style="margin-top:48px" data-reveal>
+      <h2 class="h-title" style="font-size:clamp(22px,2.4vw,30px)">{% if lang == 'zh' %}熱門<span class="grad">系所</span>{% else %}Popular <span class="grad">Departments</span>{% endif %}</h2>
+      <div class="detail-meta" style="margin-top:20px">
+        {% if lang == 'zh' %}
+          {% for popular_department in popular_departments %}<span class="chip">{{popular_department}}</span>{% endfor %}
+        {% else %}
+          {% for popular_department in popular_departments_en %}<span class="chip">{{popular_department}}</span>{% endfor %}
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

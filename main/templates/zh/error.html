@@ -1,0 +1,26 @@
+{% extends 'zh/index.html' %}
+
+{% block content %}
+<section class="page-hero" style="min-height:80vh;display:flex;align-items:center">
+  <span class="orb a"></span>
+  <span class="orb b"></span>
+  <span class="grid"></span>
+  <div class="wrap">
+    <div class="inner">
+      <span class="crumb" data-reveal>
+        <a href="/">首頁</a>
+        <span class="sep">/</span>
+        錯誤頁面
+      </span>
+      <div data-reveal style="--d:60ms;font-size:clamp(80px,16vw,180px);font-weight:700;line-height:1;letter-spacing:-.04em" class="grad">{{status_code}}</div>
+      <h1 data-reveal style="--d:120ms;font-size:clamp(24px,3vw,38px)">此頁面不存在或不提供瀏覽</h1>
+      <p class="lead" data-reveal style="--d:180ms">您要找的頁面可能已被移除、更名，或暫時無法使用。</p>
+      <div data-reveal style="--d:240ms;margin-top:28px">
+        <a href="/" class="btn btn-primary">回到首頁
+          <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

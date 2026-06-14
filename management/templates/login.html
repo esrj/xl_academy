@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>管理員登入 | XL Academy</title>
+  <link rel="icon" href="/static/picture/icon.png" type="image/png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700&family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/css/home-premium.css?v=20260615b" type="text/css" media="all">
+  <script src="/static/js/jquery-3.6.2.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js" integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.5/axios.min.js" integrity="sha512-TjBzDQIDnc6pWyeM1bhMnDxtWH0QpOXMcVooglXrali/Tj7W569/wd4E8EDjk1CwOAOPSJon1VfcEt1BI4xIrA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+
+<body class="xl">
+<section class="page-hero" style="min-height:100vh;display:flex;align-items:center">
+  <span class="orb a"></span>
+  <span class="orb b"></span>
+  <span class="grid"></span>
+  <div class="wrap">
+    <div style="max-width:440px;margin:0 auto">
+      <div style="text-align:center">
+        <a href="/" class="brand" style="justify-content:center"><span class="mark">XL</span><span>XL Academy</span></a>
+      </div>
+      <div class="glass" style="margin-top:28px;padding:40px" data-reveal>
+        <span class="glow"></span>
+        <h1 style="font-size:26px;font-weight:700;color:#fff;text-align:center">管理員登入</h1>
+        <p style="margin-top:8px;text-align:center;color:var(--muted);font-size:14px">請輸入帳號與密碼以進入後台</p>
+
+        <form class="admin-form" style="margin-top:28px" onsubmit="login_();return false;">
+          <div class="field"><label class="flabel" for="username">使用者名稱</label><input id="username" type="text" placeholder="使用者名稱"></div>
+          <div class="field"><label class="flabel" for="password">密碼</label><input id="password" type="password" placeholder="密碼"></div>
+          <button type="button" onclick="login_()" class="btn btn-primary" style="width:100%;margin-top:6px">登入
+            <svg viewBox="0 0 24 24" fill="none" width="16" height="16"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </form>
+      </div>
+      <p style="text-align:center;margin-top:20px"><a href="/" style="color:var(--muted-dim);font-size:13px">← 返回前台網站</a></p>
+    </div>
+  </div>
+</section>
+
+<script>
+  function login_() {
+    axios({ url: '/management/', method: "POST", headers: { 'X-CSRFToken': "{{ csrf_token }}" }, data: { 'username': $('#username').val(), 'password': $('#password').val() } }).then(res => {
+      if (res.data.errno === 0) {
+        swal({ 'title': '登入成功', 'text': '正在為您跳轉到管理員頁面', 'icon': 'success', 'buttons': false, 'timer': 1500 });
+        setTimeout(() => { location.href = '/management/contact/'; }, 1500);
+      } else {
+        swal({ 'title': '帳號或密碼錯誤', 'text': '請聯絡管理員或開發人員', 'icon': 'error', 'buttons': false, 'timer': 1500 });
+      }
+    });
+  }
+</script>
+</body>
+</html>

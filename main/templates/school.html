@@ -1,0 +1,110 @@
+{% extends 'zh/index.html' %}
+
+{% block title %}{% if lang == 'zh' %}XL Academy | 愛斯樂文理補習班、留學代辦與升學諮詢{% else %}XL Academy | College Consulting, Tutoring, and Study Abroad Support{% endif %}{% endblock %}
+{% block meta_description %}{% if lang == 'zh' %}XL Academy 愛斯樂文理補習班提供留學代辦、升學諮詢、家教與課程服務，並整理海外學校資訊，協助學生申請世界名校。{% else %}XL Academy provides college consulting, tutoring, study abroad support, and school information for students planning overseas admissions.{% endif %}{% endblock %}
+{% block meta_keywords %}{% if lang == 'zh' %}XL Academy, XL academy, xlacademy, 台北市私立艾司樂文理補習班, 艾司樂文理短期補習班, 愛斯樂文理補習班, 留學代辦, 升學諮詢, 海外學校, 海外名校{% else %}XL Academy, xlacademy, 台北市私立艾司樂文理補習班, college consulting, study abroad support, tutoring, overseas admissions{% endif %}{% endblock %}
+{% block og_title %}{% if lang == 'zh' %}XL Academy | 愛斯樂文理補習班、留學代辦與升學諮詢{% else %}XL Academy | College Consulting, Tutoring, and Study Abroad Support{% endif %}{% endblock %}
+{% block og_description %}{% if lang == 'zh' %}XL Academy 愛斯樂文理補習班提供留學代辦、升學諮詢、家教與課程服務，協助學生申請世界名校。{% else %}XL Academy provides college consulting, tutoring, and study abroad support for overseas admissions.{% endif %}{% endblock %}
+
+{% block content %}
+<section class="page-hero">
+  <span class="orb a"></span>
+  <span class="orb b"></span>
+  <span class="grid"></span>
+  <div class="wrap">
+    <div class="inner">
+      <span class="crumb" data-reveal>
+        <a href="/">{% if lang == 'zh' %}首頁{% else %}Home{% endif %}</a>
+        <span class="sep">/</span>
+        {% if lang == 'zh' %}世界名校{% else %}Universities{% endif %}
+      </span>
+      <h1 data-reveal style="--d:60ms">
+        {% if lang == 'zh' %}探索<span class="grad">世界各地</span>頂尖學府{% else %}Explore <span class="grad">renowned</span> universities worldwide{% endif %}
+      </h1>
+      <p class="lead" data-reveal style="--d:120ms">
+        {% if lang == 'zh' %}我們整理全球頂尖大學的招生資訊，協助你找到最適合的留學目標。{% else %}A curated overview of top universities worldwide to help you find the right fit.{% endif %}
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    {% if classification == 'type' %}
+      <ul class="filter-bar menu-filtering" data-reveal>
+        <li class="active" data-filter="*">{% if lang == 'zh' %}全部{% else %}All{% endif %}</li>
+        <li data-filter=".pub">{% if lang == 'zh' %}公立大學{% else %}Public{% endif %}</li>
+        <li data-filter=".pri">{% if lang == 'zh' %}私立大學{% else %}Private{% endif %}</li>
+        <li data-filter=".tech">{% if lang == 'zh' %}技術學院{% else %}Technical{% endif %}</li>
+        <li data-filter=".lang">{% if lang == 'zh' %}語言學校{% else %}Language{% endif %}</li>
+      </ul>
+    {% else %}
+      <ul class="filter-bar menu-filtering" data-reveal>
+        <li class="active" data-filter="*">{% if lang == 'zh' %}全部{% else %}All{% endif %}</li>
+        <li data-filter=".America">{% if lang == 'zh' %}美洲{% else %}America{% endif %}</li>
+        <li data-filter=".Europe">{% if lang == 'zh' %}歐洲{% else %}Europe{% endif %}</li>
+        <li data-filter=".Asia">{% if lang == 'zh' %}亞洲{% else %}Asia{% endif %}</li>
+        <li data-filter=".Australia">{% if lang == 'zh' %}澳洲{% else %}Australia{% endif %}</li>
+      </ul>
+    {% endif %}
+
+    <div class="card-grid">
+      {% if classification == 'type' %}
+        {% for collage in collages %}
+        <article class="glass uni-card grid-item {{collage.classification}}" data-reveal>
+          <span class="glow"></span>
+          <div class="emblem"><img src="/media/{{collage.emblem}}" alt="{{collage.name}}"></div>
+          <span class="place"><svg viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-5.5-7-11a7 7 0 0114 0c0 5.5-7 11-7 11z" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="10" r="2.5" stroke="currentColor" stroke-width="1.8"/></svg>{{collage.country}}</span>
+          <h3><a href="/detail/{{ collage.id }}">{% if lang == 'zh' %}{{collage.name}}{% else %}{{collage.en_name}}{% endif %}</a></h3>
+          <a class="more" href="/detail/{{ collage.id }}">{% if lang == 'zh' %}了解更多{% else %}Read More{% endif %}
+            <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </article>
+        {% endfor %}
+      {% else %}
+        {% for collage in collages %}
+        <article class="glass uni-card grid-item {{collage.continent}}" data-reveal>
+          <span class="glow"></span>
+          <div class="emblem"><img src="/media/{{collage.emblem}}" alt="{{collage.name}}"></div>
+          <span class="place"><svg viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-5.5-7-11a7 7 0 0114 0c0 5.5-7 11-7 11z" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="10" r="2.5" stroke="currentColor" stroke-width="1.8"/></svg>{{collage.country}}</span>
+          <h3><a href="/detail/{{ collage.id }}">{% if lang == 'zh' %}{{collage.name}}{% else %}{{collage.en_name}}{% endif %}</a></h3>
+          <a class="more" href="/detail/{{ collage.id }}">{% if lang == 'zh' %}了解更多{% else %}Read More{% endif %}
+            <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </article>
+        {% endfor %}
+      {% endif %}
+    </div>
+
+    <nav aria-label="pagination">
+      <ul class="pagination">
+        {% if num > 1 %}
+        <li class="page-item">
+          {% if classification == 'type' %}
+          <a class="page-link" href="/school/?classification=type&page={{prev}}" aria-label="Previous">&laquo;</a>
+          {% else %}
+          <a class="page-link" href="/school/?classification=region&page={{prev}}" aria-label="Previous">&laquo;</a>
+          {% endif %}
+        </li>
+        {% endif %}
+        {% for i in all_page %}
+          {% if classification == 'type' %}
+          <li class="page-item"><a class="page-link" href="/school/?classification=type&page={{i}}">{{i}}</a></li>
+          {% else %}
+          <li class="page-item"><a class="page-link" href="/school/?classification=region&page={{i}}">{{i}}</a></li>
+          {% endif %}
+        {% endfor %}
+        {% if num != num_page %}
+        <li class="page-item">
+          {% if classification == 'type' %}
+          <a class="page-link" href="/school/?classification=type&page={{next}}" aria-label="Next">&raquo;</a>
+          {% else %}
+          <a class="page-link" href="/school/?classification=region&page={{next}}" aria-label="Next">&raquo;</a>
+          {% endif %}
+        </li>
+        {% endif %}
+      </ul>
+    </nav>
+  </div>
+</section>
+{% endblock %}

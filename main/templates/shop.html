@@ -1,0 +1,61 @@
+{# 試題購買 #}
+{% extends 'school.html' %}
+
+{% block title %}{% if lang == 'zh' %}試題與教材總覽 | XL Academy 台北市私立艾司樂文理補習班{% else %}Test Materials | XL Academy Taipei{% endif %}{% endblock %}
+{% block meta_description %}{% if lang == 'zh' %}XL Academy 台北市私立艾司樂文理補習班精選 SAT、AP、IB 試題與教材，並提供留學代辦與升學諮詢服務。{% else %}Curated SAT, AP, and IB test materials at XL Academy, with study abroad support and college consulting.{% endif %}{% endblock %}
+{% block meta_keywords %}{% if lang == 'zh' %}XL Academy, XL academy, 台北市私立艾司樂文理補習班, 艾司樂文理短期補習班, 留學代辦, SAT 試題, AP 試題, IB 試題, 教材, 升學諮詢{% else %}XL Academy, 台北市私立艾司樂文理補習班, 留學代辦, SAT, AP, IB, test materials{% endif %}{% endblock %}
+{% block og_title %}{% if lang == 'zh' %}試題與教材總覽 | XL Academy{% else %}Test Materials | XL Academy{% endif %}{% endblock %}
+{% block og_description %}{% if lang == 'zh' %}精選 SAT、AP、IB 試題與教材，XL Academy 留學代辦與升學諮詢。{% else %}Curated SAT, AP, IB test materials at XL Academy.{% endif %}{% endblock %}
+
+{% block content %}
+<section class="page-hero">
+  <span class="orb a"></span>
+  <span class="orb b"></span>
+  <span class="grid"></span>
+  <div class="wrap">
+    <div class="inner">
+      <span class="crumb" data-reveal>
+        <a href="/">{% if lang == 'zh' %}首頁{% else %}Home{% endif %}</a>
+        <span class="sep">/</span>
+        {% if lang == 'zh' %}探索更多{% else %}Explore{% endif %}
+      </span>
+      <h1 data-reveal style="--d:60ms">
+        {% if lang == 'zh' %}XL Academy <span class="grad">課程總覽</span>{% else %}Courses Offered at <span class="grad">XL Academy</span>{% endif %}
+      </h1>
+      <p class="lead" data-reveal style="--d:120ms">
+        {% if lang == 'zh' %}精選 SAT、AP、IB 試題與教材，依分類快速找到你需要的資源。{% else %}Curated SAT, AP, and IB materials — filter by category to find what you need.{% endif %}
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <ul class="filter-bar menu-filtering" data-reveal>
+      <li class="active" data-filter="*">{% if lang == 'zh' %}全部{% else %}All{% endif %}</li>
+      <li data-filter=".SAT">SAT</li>
+      <li data-filter=".AP">AP</li>
+      <li data-filter=".IB">IB</li>
+    </ul>
+
+    <div class="card-grid">
+      {% for testQuestion in testQuestions %}
+      <article class="glass uni-card grid-item {{testQuestion.classification}}" data-reveal>
+        <span class="glow"></span>
+        <div style="display:flex;align-items:center;justify-content:space-between">
+          <span class="track-pill" style="padding:5px 13px;font-size:12px">{{testQuestion.classification}}</span>
+          <span style="color:var(--accent-amber, #fbbf24);font-size:13px;letter-spacing:2px">★★★★★</span>
+        </div>
+        <h3 style="margin-top:16px"><a href="/product/{{testQuestion.id}}/">{% if lang == 'zh' %}{{testQuestion.title}}{% else %}{{testQuestion.title_en}}{% endif %}</a></h3>
+        <div class="price-tag" style="margin-top:14px;font-size:26px"><span class="cur">$</span>{{testQuestion.price}}</div>
+        <a class="more" href="/product/{{testQuestion.id}}/">{% if lang == 'zh' %}查看詳情{% else %}View Details{% endif %}
+          <svg viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </article>
+      {% empty %}
+      <div class="empty">{% if lang == 'zh' %}目前尚無資料。{% else %}No items available yet.{% endif %}</div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endblock %}
